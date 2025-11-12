@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soloplugs Magazine — La voix de la solitude</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background-color: #f7f6f3;
+      color: #1A2332;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .magazine-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .magazine-header h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.3rem;
+      margin-bottom: 0.6rem;
+      color: #1A2332;
+    }
+
+    .magazine-header p {
+      font-style: italic;
+      color: #6C757D;
+      font-size: 1.1rem;
+    }
+
+    .magazine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      animation: fadeIn 3s ease;
+    }
+
+    .mag-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .mag-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .mag-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .mag-card-content {
+      padding: 1.2rem;
+    }
+
+    .mag-card-content h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      color: #1A2332;
+      margin-bottom: 0.5rem;
+    }
+
+    .mag-card-content p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      main { margin: 2.5rem auto; }
+      .magazine-header h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div include-html="includes/header.html"></div>
+  <script src="includes/include.js"></script>
+
+  <main>
+    <div class="magazine-header">
+      <h1>Soloplugs Magazine</h1>
+      <p>Articles, portraits et pensées pour mieux habiter sa solitude.</p>
+    </div>
+
+    <section class="magazine-grid">
+
+      <!-- Carte 1 -->
+      <article class="mag-card">
+        <img src="images/mag1.jpg" alt="Lecture en solo au café">
+        <div class="mag-card-content">
+          <h3>Apprivoiser le silence</h3>
+          <p>Et si le silence n'était pas vide, mais un espace à écouter ? Comment en faire un allié dans un monde saturé de bruit.</p>
+        </div>
+      </article>
+
+      <!-- Carte 2 -->
+      <article class="mag-card">
+        <img src="images/mag2.jpg" alt="Fenêtre ouverte sur la mer">
+        <div class="mag-card-content">
+          <h3>La fenêtre intérieure</h3>
+          <p>Ouvrir ses pensées comme on entrouvre une fenêtre : pour laisser entrer un peu d'air, de lumière et d'imprévu.</p>
+        </div>
+      </article>
+
+      <!-- Carte 3 -->
+      <article class="mag-card">
+        <img src="images/mag3.jpg" alt="Promenade solitaire">
+        <div class="mag-card-content">
+          <h3>Marcher seul, marcher vrai</h3>
+          <p>Marcher seul, c'est parfois retrouver la cadence de sa propre vie. Et sentir qu'on avance, même sans témoin.</p>
+        </div>
+      </article>
+
+      <!-- Carte 4 -->
+      <article class="mag-card">
+        <img src="images/mag4.jpg" alt="Carnet et stylo sur une table">
+        <div class="mag-card-content">
+          <h3>Écrire pour se retrouver</h3>
+          <p>L'écriture n'est pas toujours une réponse. Elle est souvent une main tendue vers soi-même.</p>
+        </div>
+      </article>
+
+      <!-- Carte 5 -->
+      <article class="mag-card">
+        <img src="images/mag5.jpg" alt="Tasse de café et aube claire">
+        <div class="mag-card-content">
+          <h3>Les petits rituels du matin</h3>
+          <p>Ces gestes anodins qui structurent les jours, ces instants où l'on revient doucement à soi.</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div include-html="includes/footer.html"></div>
+
+</body>
+</html>

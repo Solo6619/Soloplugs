@@ -1,0 +1,188 @@
+<!-- FOOTER SOLOPLUGS -->
+<footer id="footer">
+  <div class="footer-inner">
+
+    <!-- LOGO -->
+    <div class="footer-logo" onclick="window.location='/soloplugs/index.html'">
+      <div class="logo-box">Solo</div>
+      <div class="logo-text">plugs</div>
+    </div>
+
+    <!-- CITATION -->
+    <p class="footer-quote">
+      La voix de la solitude — Aider chacun à mieux vivre avec soi-même.
+    </p>
+
+    <!-- LIENS -->
+    <div class="footer-links">
+      <a href="/soloplugs/index.html">Accueil</a>
+      <a href="/soloplugs/solo.html">Solo</a>
+      <a href="/soloplugs/soli.html">Soli</a>
+      <a href="/soloplugs/magazine_photos.html">Magazine</a>
+      <a href="/soloplugs/ressources.html">Ressources</a>
+      <a href="/soloplugs/apropos.html">À propos</a>
+      <a href="/soloplugs/contact.html">Contact</a>
+    </div>
+
+    <!-- RÉSEAUX SOCIAUX -->
+    <div class="footer-social">
+      <a href="#" title="Facebook">🌐</a>
+      <a href="#" title="YouTube">▶️</a>
+      <a href="mailto:contact@soloplugs.com" title="Courriel">✉️</a>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <p class="footer-copy">
+      © 2025 Soloplugs — La voix de la solitude. Tous droits réservés.
+    </p>
+
+    <!-- RETOUR EN HAUT -->
+    <a href="#" class="back-to-top" title="Retour en haut">↑</a>
+
+  </div>
+</footer>
+
+<style>
+/* ====== STYLES DU FOOTER ====== */
+#footer {
+  background: #1A2332;
+  color: #f5f5f0;
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* LOGO */
+.footer-logo {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+}
+.footer-logo .logo-box {
+  background: #f5f5f0;
+  color: #1A2332;
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+}
+.footer-logo .logo-text {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #E63946;
+}
+
+/* CITATION */
+.footer-quote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #D4A574;
+  margin: 1.2rem auto 1.8rem;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* LIENS */
+.footer-links {
+  margin-bottom: 1.2rem;
+}
+.footer-links a {
+  color: #f5f5f0;
+  text-decoration: none;
+  margin: 0 0.8rem;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #D4A574;
+}
+
+/* RÉSEAUX */
+.footer-social a {
+  font-size: 1.3rem;
+  margin: 0 0.4rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.footer-social a:hover {
+  opacity: 1;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-top: 1.2rem;
+}
+
+/* RETOUR EN HAUT */
+.back-to-top {
+  opacity: 1;
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  background: #D4A574;
+  color: #1A2332;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.back-to-top.visible {
+  opacity: 1;
+}
+.back-to-top:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+  background: #E8BB85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #footer {
+    padding: 2rem 1rem;
+  }
+  .footer-quote {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<script>
+// === Bouton "Retour en haut" ===
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.querySelector(".back-to-top");
+
+  if (!backToTop) return;
+
+  // Afficher la flèche après un petit défilement
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  });
+
+  // Remonter en douceur
+  backToTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+</script>

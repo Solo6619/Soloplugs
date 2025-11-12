@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soloplugs — Choix du pays et de la langue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #1A2332, #3B495A);
+      color: #f5f5f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover { transform: scale(1.05); }
+    .logo-box {
+      background: #f5f5f0;
+      color: #1A2332;
+      font-family: 'Lora', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      border-radius: 12px;
+      padding: 0.2rem 0.6rem;
+      transition: box-shadow 0.4s ease;
+    }
+    .logo-text {
+      font-family: 'Lora', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      font-weight: 600;
+      color: #E63946;
+      margin-left: 6px;
+      margin-top: 3px;
+    }
+
+    h1 {
+      margin-top: 1.5rem;
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: #f5f5f0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-top: 0.5rem;
+      max-width: 500px;
+    }
+
+    .select-container {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    select {
+      background: #f5f5f0;
+      color: #1A2332;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button {
+      background: linear-gradient(135deg, #D4A574, #C17B6F);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <div class="logo-box">Solo</div>
+    <div class="logo-text">plugs</div>
+  </div>
+
+  <h1>Bienvenue sur Soloplugs</h1>
+  <p>Choisissez votre pays et votre langue pour accéder à la version adaptée de la plateforme.</p>
+
+  <div class="select-container">
+    <div>
+      <label for="country">Pays :</label><br>
+      <select id="country">
+        <option value="CA">🇨🇦 Canada</option>
+        <option value="FR">🇫🇷 France</option>
+        <option value="BE">🇧🇪 Belgique</option>
+        <option value="CH">🇨🇭 Suisse</option>
+        <option value="US">🇺🇸 États-Unis</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="language">Langue :</label><br>
+      <select id="language">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <button onclick="enterSite()">Entrer sur Soloplugs</button>
+  </div>
+
+  <footer>© 2025 Soloplugs — La voix de la solitude</footer>
+
+  <script>
+    function enterSite() {
+      const country = document.getElementById("country").value;
+      const lang = document.getElementById("language").value;
+
+      // Sauvegarde du choix dans le navigateur (cookie ou localStorage)
+      localStorage.setItem("country", country);
+      localStorage.setItem("lang", lang);
+
+      // Redirection vers la page d'accueil
+      window.location.href = "index.html";
+    }
+
+    // (Optionnel) Préremplissage si déjà choisi
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedCountry = localStorage.getItem("country");
+      const savedLang = localStorage.getItem("lang");
+      if (savedCountry) document.getElementById("country").value = savedCountry;
+      if (savedLang) document.getElementById("language").value = savedLang;
+    });
+  </script>
+</body>
+</html>
