@@ -89,6 +89,7 @@ def lire_fichier_docx(chemin):
 
 def charger_connaissances():
     fichiers = {
+        "ontologie_multilingue": {"chemin": CONNAISSANCES_DIR / "ontologie" / "00_ONTOLOGIE_MULTILINGUE.md", "type": "md"},
         "ontologie": {"chemin": CONNAISSANCES_DIR / "ontologie" / "00_DISTINCTION_SOLITUDE_ISOLEMENT.md", "type": "md"},
         "statistiques": {"chemin": CONNAISSANCES_DIR / "statistiques" / "00_COMPILATION_STATISTIQUES.md", "type": "md"},
         "ressources_urgence": {"chemin": CONNAISSANCES_DIR / "05_RESSOURCES_URGENCE.md", "type": "md"},
