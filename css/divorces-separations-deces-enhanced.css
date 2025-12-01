@@ -1,0 +1,642 @@
+/* ============================================================
+   🕊️ DIVORCES-SEPARATIONS-DECES — CSS Enhanced
+   Thème : Deuil, rupture, perte
+   Palette : Bleu-gris (#7BA5C1) + Lavande (#B8A9C9)
+   Ton : Sobre, enveloppant, réconfortant
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  /* Couleurs principales */
+  --blue-main: #7BA5C1;
+  --blue-light: #A8C5D9;
+  --blue-dark: #5A8AAD;
+  --blue-pale: #EEF4F8;
+  
+  --lavender-main: #B8A9C9;
+  --lavender-light: #D4CAE0;
+  --lavender-pale: #F5F2F8;
+  
+  /* Fonds */
+  --bg-cream: #FDFCFA;
+  --bg-warm: #FAF8F5;
+  --bg-soft: #F5F3F0;
+  
+  /* Textes */
+  --text-primary: #2C3338;
+  --text-secondary: #5A6068;
+  --text-muted: #8A9199;
+  
+  /* Accent */
+  --accent-gold: #D4A574;
+  
+  /* Typographies */
+  --font-display: 'Crimson Pro', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Inter', sans-serif;
+  
+  /* Transitions */
+  --transition-gentle: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   BASE & RESET
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-cream);
+  color: var(--text-primary);
+  line-height: 1.8;
+  padding-top: 130px;
+  
+  /* Fond subtil */
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(123, 165, 193, 0.04) 0%, transparent 70%);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero-deuil {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, 
+    var(--blue-pale) 0%, 
+    var(--bg-cream) 50%, 
+    var(--lavender-pale) 100%);
+  position: relative;
+}
+
+.hero-deuil::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(184, 169, 201, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-icon {
+  margin-bottom: 2rem;
+  animation: gentle-float 5s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   WELCOME SECTION
+   ============================================================ */
+.welcome-section {
+  padding: 4rem 2rem;
+  background: var(--bg-cream);
+}
+
+.welcome-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.welcome-box {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--blue-main);
+  box-shadow: 0 4px 20px rgba(123, 165, 193, 0.1);
+}
+
+.welcome-box p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+}
+
+.welcome-box p:last-child {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.emphasis {
+  background: var(--blue-pale);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: var(--blue-dark);
+}
+
+/* ============================================================
+   FEELINGS SECTION
+   ============================================================ */
+.feelings-section {
+  padding: 5rem 2rem;
+  background: var(--bg-warm);
+}
+
+.section-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feelings-section h2,
+.implications-section h2,
+.duality-section h2,
+.resources-section h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-intro {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.feelings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feeling-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: all var(--transition-gentle);
+  border: 1px solid transparent;
+}
+
+.feeling-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue-light);
+  box-shadow: 0 8px 30px rgba(123, 165, 193, 0.15);
+}
+
+.feeling-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--blue-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.feeling-card:nth-child(even) .feeling-icon {
+  background: var(--lavender-pale);
+}
+
+.feeling-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.feeling-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   QUOTE SECTION
+   ============================================================ */
+.quote-section {
+  padding: 4rem 2rem;
+  background: var(--bg-cream);
+  text-align: center;
+}
+
+.main-quote {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-quote::before {
+  content: '"';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--lavender-light);
+  line-height: 1;
+}
+
+.main-quote p {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding-top: 2rem;
+}
+
+/* ============================================================
+   IMPLICATIONS SECTION
+   ============================================================ */
+.implications-section {
+  padding: 5rem 2rem;
+  background: var(--lavender-pale);
+}
+
+.implications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.implication-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all var(--transition-gentle);
+}
+
+.implication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(184, 169, 201, 0.2);
+}
+
+.implication-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.implication-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.implication-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   DUALITY SECTION
+   ============================================================ */
+.duality-section {
+  padding: 5rem 2rem;
+  background: var(--bg-cream);
+}
+
+.duality-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.duality-card {
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.duality-card.suffered {
+  background: linear-gradient(135deg, var(--blue-pale) 0%, white 100%);
+  border: 1px solid var(--blue-light);
+}
+
+.duality-card.chosen {
+  background: linear-gradient(135deg, var(--lavender-pale) 0%, white 100%);
+  border: 1px solid var(--lavender-light);
+}
+
+.duality-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.duality-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.duality-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.duality-note {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ============================================================
+   RESOURCES SECTION
+   ============================================================ */
+.resources-section {
+  padding: 5rem 2rem;
+  background: var(--bg-warm);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.resource-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--blue-main);
+  transition: all var(--transition-gentle);
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(123, 165, 193, 0.15);
+}
+
+.resource-card:nth-child(2) {
+  border-left-color: var(--lavender-main);
+}
+
+.resource-card:nth-child(3) {
+  border-left-color: var(--accent-gold);
+}
+
+.resource-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.resource-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.resource-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.resource-card strong {
+  color: var(--text-primary);
+}
+
+.resource-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bg-soft);
+}
+
+/* ============================================================
+   CLOSING SECTION
+   ============================================================ */
+.closing-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, var(--bg-cream) 0%, var(--blue-pale) 100%);
+  text-align: center;
+}
+
+.closing-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.closing-message {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.closing-emphasis {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+  
+  .hero-deuil {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .welcome-box {
+    padding: 2rem;
+  }
+  
+  .feelings-section,
+  .implications-section,
+  .duality-section,
+  .resources-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .feelings-section h2,
+  .implications-section h2,
+  .duality-section h2,
+  .resources-section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .feelings-grid,
+  .implications-grid,
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .duality-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-quote p {
+    font-size: 1.35rem;
+  }
+  
+  .main-quote::before {
+    font-size: 4rem;
+    top: -20px;
+  }
+  
+  .closing-emphasis {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  
+  .hero-icon svg {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .welcome-box {
+    padding: 1.5rem;
+  }
+  
+  .feeling-card,
+  .implication-card,
+  .resource-card,
+  .duality-card {
+    padding: 1.5rem;
+  }
+  
+  .feelings-section h2,
+  .implications-section h2,
+  .duality-section h2,
+  .resources-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .main-quote p {
+    font-size: 1.15rem;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.feeling-card,
+.implication-card,
+.resource-card,
+.duality-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.feeling-card:nth-child(1) { animation-delay: 0.1s; }
+.feeling-card:nth-child(2) { animation-delay: 0.15s; }
+.feeling-card:nth-child(3) { animation-delay: 0.2s; }
+.feeling-card:nth-child(4) { animation-delay: 0.25s; }
+.feeling-card:nth-child(5) { animation-delay: 0.3s; }
+.feeling-card:nth-child(6) { animation-delay: 0.35s; }
+.feeling-card:nth-child(7) { animation-delay: 0.4s; }
+.feeling-card:nth-child(8) { animation-delay: 0.45s; }
+
+.implication-card:nth-child(1) { animation-delay: 0.1s; }
+.implication-card:nth-child(2) { animation-delay: 0.2s; }
+.implication-card:nth-child(3) { animation-delay: 0.3s; }
+.implication-card:nth-child(4) { animation-delay: 0.4s; }
+
+.resource-card:nth-child(1) { animation-delay: 0.1s; }
+.resource-card:nth-child(2) { animation-delay: 0.2s; }
+.resource-card:nth-child(3) { animation-delay: 0.3s; }
+
+.duality-card:nth-child(1) { animation-delay: 0.1s; }
+.duality-card:nth-child(2) { animation-delay: 0.25s; }

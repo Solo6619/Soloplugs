@@ -1,0 +1,725 @@
+/* ============================================================
+   🌿 GLOBAL.CSS — Styles communs Soloplugs
+   Contient : Variables, Reset, Header, Footer, Back-to-top
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES GLOBALES
+   ============================================================ */
+:root {
+  /* Couleurs principales */
+  --bg-primary: #FBF9F6;
+  --bg-secondary: #F5F1EB;
+  --bg-warm: #F5EDD9;
+  --accent-gold: #D4A574;
+  --accent-brown: #8B6F47;
+  --text-primary: #2C3338;
+  --text-secondary: #6B7280;
+  
+  /* Logo */
+  --logo-dark: #2c3e50;
+  --logo-red: #e74c3c;
+  
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-normal: 0.5s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  padding-top: 130px;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   🌿 HEADER
+   ============================================================ */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(251, 249, 246, 0.95);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+  backdrop-filter: blur(10px);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  transition: all 0.5s ease;
+  padding: 1.5rem 0;
+}
+
+#header-inner {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === LOGO === */
+.logo-soloplugs {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.solo-container {
+  position: relative;
+  z-index: 1;
+}
+
+.solo-bg {
+  background: #2c3e50;
+  border-radius: 14px;
+  padding: 14px 21px 14px 24px;
+  display: inline-block;
+}
+
+.solo-text {
+  font-size: 46px;
+  font-weight: bold;
+  color: white;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1;
+  margin: 0;
+}
+
+.plugs-container {
+  position: absolute;
+  top: 52px;
+  left: 108px;
+  z-index: 2;
+}
+
+.plugs-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e74c3c;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  line-height: 1;
+  margin: 0;
+}
+
+.logo-soloplugs:hover {
+  transform: scale(1.05);
+}
+
+.logo-soloplugs:hover .solo-bg {
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+/* === MENU === */
+#menu-main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+#menu-main a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+#menu-main a:hover {
+  color: var(--accent-gold);
+}
+
+#menu-main a.active-link {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+#menu-main a.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-gold);
+}
+
+/* === HEADER SCROLLED === */
+#header.header-scrolled {
+  padding: 0.6rem 0;
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+
+#header.header-scrolled .logo-soloplugs {
+  transform: scale(0.65);
+  margin-bottom: 0;
+  transition: all 0.4s ease;
+}
+
+#header.header-scrolled #menu-main {
+  margin-top: 0;
+  flex: 1;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  gap: 1rem;
+}
+
+/* ============================================================
+   🦶 FOOTER
+   ============================================================ */
+#footer {
+  background: var(--text-primary);
+  color: #E5E5E0;
+  padding: 3rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.footer-logo .solo-container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo .solo-bg {
+  background: white;
+  border-radius: 11px;
+  padding: 11px 16px 11px 19px;
+}
+
+.footer-logo .solo-text {
+  font-size: 37px;
+  color: #2c3e50;
+}
+
+.footer-logo .plugs-container {
+  position: absolute;
+  top: 42px;
+  left: 86px;
+  z-index: 2;
+}
+
+.footer-logo .plugs-text {
+  font-size: 19px;
+}
+
+.footer-quote {
+  font-style: italic;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--accent-gold);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: #E5E5E0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.footer-social a {
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: #999;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   ⬆️ BACK TO TOP
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 2rem;
+  background: var(--accent-gold);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 998;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--accent-brown);
+  transform: translateY(-5px);
+}
+
+/* ============================================================
+   🎬 ANIMATIONS COMMUNES
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-delay-1 { transition-delay: 0.15s; }
+.animate-delay-2 { transition-delay: 0.3s; }
+.animate-delay-3 { transition-delay: 0.45s; }
+
+/* ============================================================
+   📱 RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+
+  #header {
+    padding: 1rem 0;
+  }
+
+  /* Logo responsive - réduit de 20% */
+  .logo-soloplugs .solo-text {
+    font-size: 38px;
+  }
+
+  .logo-soloplugs .plugs-text {
+    font-size: 20px;
+  }
+
+  .logo-soloplugs .plugs-container {
+    top: 43px;
+    left: 89px;
+  }
+
+  .logo-soloplugs .solo-bg {
+    padding: 12px 18px 12px 20px;
+  }
+
+  #menu-main {
+    gap: 1rem;
+  }
+
+  #menu-main a {
+    font-size: 0.85rem;
+  }
+
+  /* Header scrolled mobile */
+  #header.header-scrolled .logo-soloplugs {
+    transform: scale(0.55);
+  }
+
+  #header.header-scrolled #menu-main {
+    gap: 0.6rem;
+  }
+
+  #header.header-scrolled #menu-main a {
+    font-size: 0.8rem;
+  }
+
+  /* Footer responsive */
+  .footer-logo .solo-text {
+    font-size: 30px;
+  }
+
+  .footer-logo .plugs-text {
+    font-size: 16px;
+  }
+
+  .footer-logo .plugs-container {
+    top: 35px;
+    left: 70px;
+  }
+
+  .footer-logo .solo-bg {
+    padding: 9px 13px 9px 16px;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+  .back-to-top {
+    bottom: 80px;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 110px;
+  }
+
+  /* Logo encore plus petit */
+  .logo-soloplugs .solo-text {
+    font-size: 32px;
+  }
+
+  .logo-soloplugs .plugs-text {
+    font-size: 17px;
+  }
+
+  .logo-soloplugs .plugs-container {
+    top: 37px;
+    left: 75px;
+  }
+
+  .logo-soloplugs .solo-bg {
+    padding: 10px 15px 10px 17px;
+  }
+
+  #menu-main {
+    gap: 0.8rem;
+  }
+
+  #menu-main a {
+    font-size: 0.8rem;
+  }
+
+  /* Footer mobile */
+  .footer-logo .solo-text {
+    font-size: 26px;
+  }
+
+  .footer-logo .plugs-text {
+    font-size: 14px;
+  }
+
+  .footer-logo .plugs-container {
+    top: 30px;
+    left: 60px;
+  }
+
+  .footer-logo .solo-bg {
+    padding: 8px 11px 8px 14px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+/* ============================================================
+   MENU THÈMES - À ajouter à global.css
+   ============================================================ */
+
+/* Container du menu thèmes */
+.themes-menu {
+  position: relative;
+  z-index: 1001;
+}
+
+/* Bouton toggle */
+.themes-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.themes-toggle:hover {
+  background: rgba(212, 165, 116, 0.1);
+}
+
+/* Icône hamburger */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 16px;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary, #2C3338);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation hamburger quand ouvert */
+.themes-menu.open .hamburger-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.themes-menu.open .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.themes-menu.open .hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Label "Thèmes" */
+.themes-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary, #2C3338);
+  transition: color 0.3s ease;
+}
+
+.themes-toggle:hover .themes-label {
+  color: var(--accent-gold, #D4A574);
+}
+
+/* Menu déroulant */
+.themes-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 0.75rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Menu ouvert */
+.themes-menu.open .themes-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Liens du menu */
+.themes-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary, #2C3338);
+  transition: all 0.2s ease;
+}
+
+.themes-dropdown a:hover {
+  background: rgba(212, 165, 116, 0.1);
+  color: var(--accent-gold, #D4A574);
+}
+
+/* Icône emoji */
+.theme-icon {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Nom du thème */
+.theme-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Séparateur subtil entre items */
+.themes-dropdown a:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* ============================================================
+   AJUSTEMENT DU HEADER INNER
+   ============================================================ */
+
+#header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .themes-label {
+    display: none;
+  }
+  
+  .themes-dropdown {
+    min-width: 200px;
+  }
+  
+  .themes-dropdown a {
+    padding: 0.65rem 1rem;
+  }
+  
+  .theme-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .themes-menu {
+    position: static;
+  }
+  
+  .themes-dropdown {
+    position: fixed;
+    top: 120px;
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
+  }
+}
+/* ============================================================
+   FIX MENU THÈMES - Force le dropdown à être caché
+   ============================================================ */
+.themes-dropdown {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.themes-menu:not(.open) .themes-dropdown {
+  display: none !important;
+}
+
+.themes-menu.open .themes-dropdown {
+  display: flex !important;
+  flex-direction: column !important;
+}
+/* Dropdown aligné à droite */
+.themes-dropdown {
+  left: auto;
+  right: 0;
+}
+/* ============================================================
+   FIX HEADER SCROLLED
+   ============================================================ */
+#header.header-scrolled .logo-soloplugs {
+  transform: scale(0.65) !important;
+  margin-bottom: 0 !important;
+}
+/* ============================================================
+   FIX HEADER SCROLLED - Alignement complet
+   ============================================================ */
+#header.header-scrolled #header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#header.header-scrolled .logo-soloplugs {
+  transform: scale(0.65) !important;
+  transform-origin: left center !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+#header.header-scrolled #menu-main {
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+}
+
+#header.header-scrolled .themes-menu {
+  flex-shrink: 0 !important;
+}
