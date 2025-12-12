@@ -1,192 +1,242 @@
 # 🌿 SOLOPLUGS — LA VOIX DE LA SOLITUDE
 
-## ✅ FICHIERS CORRIGÉS — VERSION UTF-8
-
-Tous les fichiers ont été corrigés pour respecter l'encodage UTF-8 propre. 
-Tous les caractères spéciaux français s'affichent maintenant correctement.
+> *"Là où la rencontre ne se fait pas avec les autres, mais avec soi-même."*
 
 ---
 
-## 📂 STRUCTURE DU SITE
+## 🎯 À PROPOS
+
+**Soloplugs** est une plateforme dédiée à la compréhension et à l'accompagnement de la solitude humaine. Elle distingue la **solitude choisie** (enrichissante) de **l'isolement subi** (douloureux), et propose des ressources adaptées à chaque situation.
+
+### Les 3 piliers de l'écosystème
+
+| Module | Rôle | Description |
+|--------|------|-------------|
+| **SOLO** | La Voix | Guide conversationnel, bibliothécaire des ressources |
+| **SOLI** | L'Oreille | Journal intime intelligent, miroir émotionnel |
+| **SOLOTECH** | Le Moteur | Intelligence documentaire, cohérence philosophique |
+
+---
+
+## 📂 STRUCTURE DU PROJET
 
 ```
-soloplugs_corriges/
+Soloplugs_11/
 │
-├── index.html              # Page d'accueil principale
-├── selection.html          # Page de sélection pays/langue
-├── magazine.html           # Magazine avec articles
+├── 📄 Pages principales (PHP)
+│   ├── index.php           # Page d'accueil
+│   ├── solo.php            # Page Solo (guide)
+│   ├── soli.php            # Page Soli (journal)
+│   ├── magazine.php        # Magazine avec articles
+│   ├── ressources.php      # Ressources et liens utiles
+│   └── apropos.php         # À propos de Soloplugs
 │
-├── solo.html               # Page Solo (en construction)
-├── soli.html               # Page Soli (en construction)
-├── ressources.html         # Page Ressources (en construction)
-├── apropos.html            # Page À propos
-├── magazine_photos.html    # Magazine photos (en construction)
+├── 📁 7_themes/            # Les 7 thématiques
+│   ├── vivre-solo.php
+│   ├── ado-solo.php
+│   ├── parent-solo.php
+│   ├── vieillir-solo.php
+│   ├── voyages-solo.php
+│   ├── sorties-loisirs-rencontres.php
+│   └── divorces-separations-deces.php
 │
-├── css/
-│   ├── style.css           # Styles principaux
-│   └── themes-overlay.css  # Overlays pour les pages thématiques
+├── 📁 components/          # Composants PHP réutilisables
+│   ├── head.php            # Meta tags, CSS, fonts
+│   ├── header.php          # Logo + menu + menu thèmes
+│   ├── footer.php          # Pied de page
+│   ├── scripts.php         # JavaScript
+│   └── emergency-banner.php # Bandeau ressources d'urgence
 │
-├── includes/
-│   ├── header.html         # Header commun à toutes les pages
-│   ├── footer.html         # Footer commun à toutes les pages
-│   ├── include.js          # Script d'inclusion header/footer
-│   └── main.js             # Gestion langue et pays
+├── 📁 css/                 # Feuilles de style
+│   ├── global.css          # Styles communs (header, footer, etc.)
+│   ├── magazine.css        # Styles du magazine
+│   └── [theme]-enhanced.css # Styles par thème (7 fichiers)
 │
-├── 7_themes/
-│   ├── vivre-solo.html
-│   ├── ado-solo.html
-│   ├── parent-solo.html
-│   ├── separation-divorce-deces.html
-│   ├── vieillir-solo.html
-│   ├── voyages-solo.html
-│   └── sorties-loisirs-rencontres.html
+├── 📁 docs/                # Documentation Solotech
+│   ├── architecture/       # Architecture technique
+│   ├── connaissances/      # Ontologie, statistiques
+│   └── guides/             # Guides éditoriaux
 │
-└── images/
-    └── backgrounds/        # Dossier pour les images de fond (à ajouter)
+├── 📁 solotech/            # Module Solotech
+│   ├── docs/               # Documentation interne
+│   └── src/                # Code source
+│
+├── 📁 images/              # Images et logos
+├── 📁 donnees/             # Données (memory, logs)
+└── 📁 config/              # Configuration
 ```
 
 ---
 
-## 🚀 INSTALLATION ET UTILISATION
+## 🚀 INSTALLATION
 
-### Option 1 : Test en local (recommandé)
+### Prérequis
 
-1. **Télécharge tous les fichiers** et place-les dans un dossier nommé `soloplugs`
+- **WAMP** (Windows) ou **MAMP** (Mac) ou **LAMP** (Linux)
+- PHP 7.4+ 
+- Navigateur moderne (Chrome, Firefox, Edge)
 
-2. **Lance un serveur local** (obligatoire pour le système d'inclusion header/footer)
+### Installation locale
 
-   **Avec Python 3 :**
+1. **Clone le repository**
    ```bash
-   cd soloplugs
-   python3 -m http.server 8000
-   ```
-   
-   Puis ouvre : `http://localhost:8000/index.html`
-
-   **Avec Node.js :**
-   ```bash
-   npx http-server soloplugs -p 8000
+   git clone https://github.com/Solo6619/Soloplugs.git
    ```
 
-   **Avec PHP :**
-   ```bash
-   cd soloplugs
-   php -S localhost:8000
+2. **Place le dossier dans ton serveur local**
+   ```
+   C:\wamp64\www\Soloplugs_11\
    ```
 
-3. **Ouvre ton navigateur** et teste toutes les pages !
+3. **Lance WAMP** et démarre les services
 
-### Option 2 : Hébergement web
-
-Si tu veux mettre le site en ligne :
-
-1. **Uploads les fichiers** sur ton hébergeur (ex: Hostinger, OVH, GitHub Pages, Netlify)
-
-2. **Modifie les chemins** dans `header.html` et `footer.html` :
-   - Remplace/soloplugs/ `` par `/` si le site est à la racine
-   - Ou adapte selon ton nom de dossier
+4. **Ouvre dans ton navigateur**
+   ```
+   http://localhost/Soloplugs_11/
+   ```
 
 ---
 
-## 🛠️ CORRECTIONS EFFECTUÉES
+## 🎨 LES 7 THÈMES
 
-### ✅ Encodage UTF-8
-- Tous les caractères spéciaux français sont maintenant corrects
-- `À propos` au lieu de `Ã€ propos`
-- `é è ê ô ç` au lieu de `Ã© Ã¨ Ãª Ã´ Ã§`
-- Guillemets typographiques `" "` au lieu de `â€œ â€`
-- Tirets cadratins `—` au lieu de `â€"`
-- Emojis corrects : `🌐 ✉️ ▶️` 
-
-### ✅ Structure complète
-- Header et footer créés et fonctionnels
-- Toutes les pages thématiques corrigées
-- CSS propre et organisé
-- JavaScript fonctionnel
-
-### ✅ Pages créées (même si en construction)
-- solo.html
-- soli.html
-- ressources.html
-- apropos.html
-- magazine_photos.html
+| Thème | Public cible | Couleur |
+|-------|--------------|---------|
+| **Vivre solo** | Personnes vivant seules | Or `#D4A574` |
+| **Ado solo** | Adolescents | Violet `#9B59B6` |
+| **Parent solo** | Parents célibataires | Vert `#6BA368` |
+| **Vieillir solo** | Seniors | Or/Terre `#C9A26F` |
+| **Voyages solo** | Voyageurs solitaires | Bleu `#3498DB` |
+| **Sorties & loisirs** | Personnes cherchant activités | Magenta `#E91E63` |
+| **Séparation & deuil** | Personnes en transition | Bleu-gris `#7BA5C1` |
 
 ---
 
-## 🎨 PERSONNALISATION
+## 🛠️ ARCHITECTURE PHP
 
-### Modifier les couleurs
-Édite `css/style.css` et cherche :
-- `#1A2332` (bleu foncé principal)
-- `#D4A574` (doré/beige)
-- `#E63946` (rouge accent)
-- `#FBF9F6` (fond clair)
+### Variables de page
 
-### Ajouter des images de fond
-Place tes images dans `images/backgrounds/` avec ces noms :
-- `bg_ado.jpg`
-- `bg_voyages.jpg`
-- `bg_parent.jpg`
-- `bg_vivre.jpg`
-- `bg_separation.jpg`
-- `bg_vieillir.jpg`
-- `bg_sorties.jpg`
+Chaque page PHP utilise ces variables :
 
-### Modifier les textes
-Tous les textes sont directement dans les fichiers HTML. 
-Utilise un éditeur de texte en UTF-8 (VS Code, Sublime Text, Notepad++).
+```php
+<?php
+$pageTitle = "Titre de la page";
+$pageDescription = "Description pour SEO";
+$currentPage = "accueil"; // Pour menu actif
+$basePath = "";           // "" pour racine, "../" pour sous-dossiers
+$additionalCSS = ["style-specifique.css"];
+?>
+```
 
----
+### Inclusion des composants
 
-## 📋 PAGES À DÉVELOPPER
-
-Les pages suivantes ont une structure de base mais attendent du contenu :
-
-1. **solo.html** — La voix de Solo
-2. **soli.html** — Le journal intime
-3. **ressources.html** — Liens et ressources utiles
-4. **magazine_photos.html** — Galerie photo
-5. **Les 7 thèmes** — Enrichir avec plus de contenu
-
----
-
-## 🐛 DÉPANNAGE
-
-### Le header/footer ne s'affiche pas
-→ Tu dois utiliser un **serveur local** (voir section Installation)
-→ Les inclusions HTML ne fonctionnent pas en ouvrant directement les fichiers
-
-### Les accents sont mal affichés
-→ Vérifie que ton éditeur de texte est bien configuré en **UTF-8**
-→ Ne pas utiliser Notepad Windows (préférer Notepad++ ou VS Code)
-
-### Les liens ne fonctionnent pas
-→ Vérifie les chemins dans header.html et footer.html
-→ Adapte `/soloplugs/` selon ton installation
+```php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <?php include 'components/head.php'; ?>
+</head>
+<body>
+  <?php include 'components/header.php'; ?>
+  
+  <!-- Contenu de la page -->
+  
+  <?php include 'components/footer.php'; ?>
+  <?php include 'components/scripts.php'; ?>
+</body>
+</html>
+```
 
 ---
 
-## 💡 CONSEILS
+## 📱 FONCTIONNALITÉS
 
-1. **Toujours éditer en UTF-8** pour éviter les problèmes d'encodage
-2. **Tester en local** avant de mettre en ligne
-3. **Sauvegarder régulièrement** tes modifications
-4. **Commencer par ajouter du contenu** aux pages en construction
-5. **Ajouter des images** pour enrichir l'expérience visuelle
+### ✅ Implémentées
+
+- [x] Architecture PHP modulaire
+- [x] 7 thèmes complets avec contenu
+- [x] Menu déroulant des thèmes
+- [x] Header responsive (réduction au scroll)
+- [x] Design magazine littéraire
+- [x] Bandeau ressources d'urgence
+- [x] Back-to-top button
+- [x] Animations au scroll
+
+### 🔜 À venir
+
+- [ ] Contenu complet pages Solo et Soli
+- [ ] Système d'articles pour le magazine
+- [ ] Intégration IA conversationnelle
+- [ ] Multi-langue (FR/EN)
+- [ ] Espace membre
+
+---
+
+## 🌐 DÉPLOIEMENT
+
+### Hébergement recommandé
+
+- **Hostpapa** (prévu)
+- Tout hébergeur PHP (OVH, Infomaniak, etc.)
+
+### Checklist déploiement
+
+- [ ] Uploader tous les fichiers via FTP
+- [ ] Vérifier les chemins `$basePath`
+- [ ] Tester toutes les pages
+- [ ] Configurer le domaine
+
+---
+
+## 📚 DOCUMENTATION SOLOTECH
+
+La documentation complète se trouve dans `/docs/` :
+
+- **Architecture** : Structure technique du projet
+- **Ontologie** : Distinction solitude/isolement, concepts clés
+- **Statistiques** : Données sur la solitude (France, Canada)
+- **Guides** : Tonalités par thème, publics cibles
+
+---
+
+## 🤝 CONTRIBUTION
+
+Ce projet est développé par **Solo** avec l'aide de **Claude (Anthropic)**.
+
+Pour contribuer :
+1. Fork le projet
+2. Crée une branche (`git checkout -b feature/ma-feature`)
+3. Commit (`git commit -m "Ajout de ma feature"`)
+4. Push (`git push origin feature/ma-feature`)
+5. Ouvre une Pull Request
 
 ---
 
 ## 📧 CONTACT
 
-Pour toute question sur l'utilisation de ces fichiers, n'hésite pas !
-
-**© 2025 Soloplugs — La voix de la solitude**
+- **Site** : [soloplugs.com](https://soloplugs.com) *(à venir)*
+- **GitHub** : [github.com/Solo6619/Soloplugs](https://github.com/Solo6619/Soloplugs)
 
 ---
 
-## 🎉 BRAVO !
+## 📜 LICENCE
 
-Ton site est maintenant prêt à être développé. Tous les fichiers sont corrigés et fonctionnels.
-Il ne reste plus qu'à ajouter ton contenu et tes images !
+© 2025 Soloplugs — La voix de la solitude
 
-Bonne continuation avec ce beau projet ! 🌿
+*"Parce que bien vivre seul, c'est d'abord apprendre l'art de sa propre compagnie."*
+
+---
+
+## 📋 CHANGELOG
+
+### v1.1 — 30 novembre 2025
+- ✅ Migration HTML → PHP complète
+- ✅ Composants réutilisables (head, header, footer, scripts)
+- ✅ Menu déroulant des 7 thèmes
+- ✅ Nouveau thème : Séparation & deuil
+- ✅ Header scrolled fonctionnel
+- ✅ Nettoyage fichiers obsolètes
+
+### v1.0 — Novembre 2025
+- 🚀 Lancement initial
+- 📄 7 thèmes créés
+- 🎨 Design magazine littéraire

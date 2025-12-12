@@ -25,48 +25,7 @@
   <section class="hero-voyages">
     <div class="hero-content">
       
-      <!-- Icône SVG : Avion + boussole + horizon -->
-      <div class="hero-icon">
-        <svg viewBox="0 0 120 120" width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Cercle horizon / boussole -->
-          <circle cx="60" cy="60" r="50" stroke="#7EC8E3" stroke-width="2" fill="url(#skyGradient)" opacity="0.3"/>
-          <circle cx="60" cy="60" r="40" stroke="#3498DB" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
-          
-          <!-- Avion stylisé -->
-          <g transform="translate(30, 35)">
-            <path d="M30 5L45 25L30 22L15 25L30 5Z" fill="#3498DB"/>
-            <path d="M30 22L30 45" stroke="#3498DB" stroke-width="3" stroke-linecap="round"/>
-            <path d="M20 35L30 30L40 35" stroke="#3498DB" stroke-width="2" stroke-linecap="round"/>
-            <path d="M25 45L30 42L35 45" stroke="#3498DB" stroke-width="2" stroke-linecap="round"/>
-          </g>
-          
-          <!-- Points cardinaux -->
-          <text x="60" y="18" text-anchor="middle" fill="#3498DB" font-size="10" font-weight="600">N</text>
-          <text x="60" y="108" text-anchor="middle" fill="#7EC8E3" font-size="9" font-weight="500">S</text>
-          <text x="14" y="64" text-anchor="middle" fill="#7EC8E3" font-size="9" font-weight="500">O</text>
-          <text x="106" y="64" text-anchor="middle" fill="#7EC8E3" font-size="9" font-weight="500">E</text>
-          
-          <!-- Petits éléments décoratifs -->
-          <circle cx="95" cy="30" r="3" fill="#1ABC9C" opacity="0.6"/>
-          <circle cx="25" cy="90" r="2" fill="#1ABC9C" opacity="0.5"/>
-          
-          <defs>
-            <linearGradient id="skyGradient" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#E8F4FC"/>
-              <stop offset="100%" stop-color="#F5E6D3"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      <!-- Badge -->
-      <div class="hero-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
-        </svg>
-        Solitude active
-      </div>
+    
 
       <!-- Titre -->
       <h1 class="hero-title">Voyager <span class="highlight">solo</span></h1>

@@ -82,99 +82,11 @@ body::before {
 }
 
 /* ============================================================
-   HEADER
+   HEADER - Bordure verte Parent Solo
    ============================================================ */
+
 #header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255, 253, 249, 0.95);
-  border-bottom: 1px solid rgba(107, 163, 104, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  text-align: center;
-  transition: all var(--ps-transition);
-  padding: 1.5rem 0;
-}
-
-#header-inner {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.logo-soloplugs {
-  display: inline-block;
-  cursor: pointer;
-  transition: transform var(--ps-transition);
-  margin-bottom: 1rem;
-}
-
-.logo-soloplugs img {
-  height: 50px;
-  width: auto;
-}
-
-.logo-soloplugs:hover {
-  transform: scale(1.05);
-}
-
-#menu-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.25rem;
-}
-
-#menu-main a {
-  text-decoration: none;
-  color: var(--ps-text);
-  font-weight: 600;
-  font-size: 0.95rem;
-  position: relative;
-  transition: all var(--ps-transition);
-}
-
-#menu-main a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--ps-green);
-  transition: width var(--ps-transition);
-}
-
-#menu-main a:hover {
-  color: var(--ps-green-dark);
-}
-
-#menu-main a:hover::after {
-  width: 100%;
-}
-
-/* Header scrolled */
-#header.header-scrolled {
-  padding: 0.6rem 0;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-}
-
-#header.header-scrolled #header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#header.header-scrolled .logo-soloplugs {
-  margin-bottom: 0;
-}
-
-#header.header-scrolled .logo-soloplugs img {
-  height: 40px;
+  border-bottom: 5px solid rgba(180, 206, 179, 0.7);
 }
 
 /* ============================================================

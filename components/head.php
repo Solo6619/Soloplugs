@@ -4,7 +4,7 @@
 <meta name="description" content="<?php echo $pageDescription ?? 'Soloplugs accompagne les personnes dans leurs différentes expériences de solitude.'; ?>">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="<?php echo $basePath ?? ''; ?>images/favicon.png">
+<link rel="icon" type="image/png" href="<?php echo $basePath ?? ''; ?>images/favicon.ico">
 
 <!-- Typographies Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">

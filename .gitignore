@@ -1,0 +1,95 @@
+#############################################
+#   SOLPLUGS + SOLOTECH — FICHIER GITIGNORE
+#   Empêche Git d'ajouter les fichiers inutiles
+#############################################
+
+#############
+# ENV PYTHON
+#############
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#############
+# DEPENDANCES PYTHON
+#############
+env/
+venv/
+pip-wheel-metadata/
+
+#############
+# LOGS
+#############
+*.log
+logs/
+debug.log
+
+#############
+# FICHIERS TEMPORAIRES
+#############
+*.tmp
+*.temp
+*.swp
+*.swo
+
+#############
+# SYSTEME WINDOWS / MAC
+#############
+Thumbs.db
+Desktop.ini
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+
+#############
+# BACKUP FILES
+#############
+*.bak
+*.old
+*.orig
+
+#############
+# CACHE EDITEURS
+#############
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+#############
+# NODE (si un jour tu l'utilises)
+#############
+node_modules/
+
+#############
+# COMPOSER / PHP (optionnel)
+#############
+vendor/
+
+#############
+# FICHIERS COMPILÉS
+#############
+*.exe
+*.dll
+*.so
+
+#############
+# EXPORTS / ARCHIVES
+#############
+*.zip
+*.rar
+*.tar.gz
+
+#############
+# MINIATURES / PREVIEWS AUTO-GÉNÉRÉES
+#############
+*.thumb
+*.thumbnail
+
+#############
+# BACKUPS WORDPRESS (si présents dans tes archives)
+#############
+wp-content/debug.log

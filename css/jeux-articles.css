@@ -1,0 +1,284 @@
+/* ============================================================
+   🎴 SOLOPLUGS - STYLES POUR ARTICLES AVEC JEUX
+   Intégration de jeux en ligne dans les articles
+   VERSION AVEC !IMPORTANT POUR FORCER LES STYLES
+   ============================================================ */
+
+/* ============================================================
+   SECTION JEU INTÉGRÉ
+   ============================================================ */
+section.jeu-section {
+  background: linear-gradient(135deg, #F5F1EB 0%, #FBF9F6 100%) !important;
+  padding: 3rem 1rem !important;
+  margin: 3rem 0 !important;
+  border-top: 3px solid #D4A574 !important;
+  border-bottom: 3px solid #D4A574 !important;
+  display: block !important;
+}
+
+div.jeu-container {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+h2.jeu-titre {
+  font-family: 'Lora', serif !important;
+  font-size: 2rem !important;
+  color: #2C3338 !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+p.jeu-intro {
+  text-align: center !important;
+  color: #6B7280 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 2rem !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ============================================================
+   JEU INTÉGRÉ (IFRAME)
+   ============================================================ */
+div.jeu-integre {
+  margin-bottom: 2rem !important;
+}
+
+div.jeu-wrapper {
+  background: white !important;
+  border-radius: 1rem !important;
+  padding: 1rem !important;
+  box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15) !important;
+  overflow: hidden !important;
+}
+
+div.jeu-wrapper iframe {
+  display: block !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  min-height: 600px !important;
+}
+
+p.jeu-credit {
+  text-align: center !important;
+  font-size: 0.875rem !important;
+  color: #6B7280 !important;
+  margin-top: 1rem !important;
+  font-style: italic !important;
+}
+
+p.jeu-credit a {
+  color: #D4A574 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.3s ease !important;
+}
+
+p.jeu-credit a:hover {
+  color: #2C3338 !important;
+  text-decoration: underline !important;
+}
+
+/* ============================================================
+   BOUTONS DE JEU
+   ============================================================ */
+div.jeu-boutons {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin-top: 1.5rem !important;
+}
+
+a.btn-jeu {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 1rem 2rem !important;
+  border-radius: 3rem !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+a.btn-jeu-primaire {
+  background: linear-gradient(135deg, #D4A574 0%, #C4956A 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3) !important;
+}
+
+a.btn-jeu-primaire:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4) !important;
+}
+
+a.btn-jeu-secondaire {
+  background: white !important;
+  color: #D4A574 !important;
+  border: 2px solid #D4A574 !important;
+}
+
+a.btn-jeu-secondaire:hover {
+  background: #D4A574 !important;
+  color: white !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.2) !important;
+}
+
+/* ============================================================
+   CARTES JEUX SIMILAIRES
+   ============================================================ */
+div.jeux-similaires {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin: 2rem 0 !important;
+}
+
+a.jeu-card {
+  background: white !important;
+  padding: 1.5rem !important;
+  border-radius: 1rem !important;
+  border: 2px solid #F5F1EB !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+}
+
+a.jeu-card:hover {
+  border-color: #D4A574 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15) !important;
+}
+
+a.jeu-card h4 {
+  font-family: 'Lora', serif !important;
+  font-size: 1.5rem !important;
+  color: #2C3338 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+a.jeu-card p {
+  color: #6B7280 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* ============================================================
+   TIPS & WARNINGS DANS ARTICLES
+   ============================================================ */
+div.article-tip {
+  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%) !important;
+  border-left: 4px solid #4CAF50 !important;
+  padding: 1.25rem !important;
+  border-radius: 0.5rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+div.article-tip strong {
+  color: #2E7D32 !important;
+}
+
+div.article-warning {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%) !important;
+  border-left: 4px solid #FF9800 !important;
+  padding: 1.25rem !important;
+  border-radius: 0.5rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+div.article-warning strong {
+  color: #E65100 !important;
+}
+
+/* ============================================================
+   BOUTON RETOUR
+   ============================================================ */
+a.btn-retour {
+  display: inline-block !important;
+  padding: 0.875rem 2rem !important;
+  background: #F5F1EB !important;
+  color: #2C3338 !important;
+  text-decoration: none !important;
+  border-radius: 2rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  margin-top: 2rem !important;
+}
+
+a.btn-retour:hover {
+  background: #D4A574 !important;
+  color: white !important;
+  transform: translateX(-4px) !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  section.jeu-section {
+    padding: 2rem 1rem !important;
+    margin: 2rem 0 !important;
+  }
+
+  h2.jeu-titre {
+    font-size: 1.5rem !important;
+  }
+
+  p.jeu-intro {
+    font-size: 1rem !important;
+  }
+
+  div.jeu-wrapper {
+    padding: 0.5rem !important;
+  }
+
+  div.jeu-wrapper iframe {
+    min-height: 500px !important;
+  }
+
+  a.btn-jeu {
+    font-size: 1rem !important;
+    padding: 0.875rem 1.5rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  div.jeu-boutons {
+    flex-direction: column !important;
+  }
+
+  div.jeux-similaires {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section.jeu-section {
+    padding: 1.5rem 0.5rem !important;
+  }
+
+  div.jeu-wrapper iframe {
+    min-height: 400px !important;
+  }
+
+  a.btn-jeu {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+}
+
+/* ============================================================   UTILITAIRES
+   ============================================================ */
+.text-center {
+  text-align: center !important;
+}

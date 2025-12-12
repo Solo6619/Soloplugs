@@ -1,0 +1,56 @@
+<!-- LOGO SOLOPLUGS -->
+<div class="logo-soloplugs" onclick="window.location='index.html'">
+  <div class="logo-box">Solo</div>
+  <div class="logo-text">plugs</div>
+</div>
+
+<style>
+/* ==== STYLE DU LOGO SOLOPLUGS ==== */
+
+.logo-soloplugs {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  font-family: 'Lora', serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Bloc "Solo" */
+.logo-box {
+  background: #1A2332;
+  color: #F5F5F0;
+  font-weight: 900;
+  border-radius: 8px;
+  padding: 0.15rem 0.5rem;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Bloc "plugs" */
+.logo-text {
+  font-style: italic;
+  color: #E63946;
+  font-weight: 600;
+}
+
+/* Animation au survol */
+.logo-soloplugs:hover {
+  transform: scale(1.04);
+}
+.logo-soloplugs:hover .logo-box {
+  box-shadow: 0 0 6px 1px rgba(212,165,116,0.4);
+}
+
+/* ---- TAILLES ---- */
+.logo-large .logo-box { font-size: 2.2rem; }
+.logo-large .logo-text { font-size: 2rem; }
+
+.logo-medium .logo-box { font-size: 1.3rem; }
+.logo-medium .logo-text { font-size: 1.15rem; }
+
+.logo-small .logo-box { font-size: 1rem; }
+.logo-small .logo-text { font-size: 0.9rem; }
+</style>

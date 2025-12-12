@@ -1,0 +1,296 @@
+/* ============================================================
+   CSS JEUX SOLOPLUGS - VERSION 3 FINALE
+   Design professionnel complet pour articles avec jeux
+   Palette : Or #D4A574 / Crème #FBF9F6 / Texte #2C3338
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  padding: 20px;
+  background: #FBF9F6;
+  color: #2C3338;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #D4A574;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* ============================================================
+   SECTION JEU PRINCIPALE
+   ============================================================ */
+.jeu-section {
+  background: linear-gradient(135deg, #F5F1EB 0%, #FBF9F6 100%) !important;
+  padding: 3rem 1rem !important;
+  margin: 3rem -1rem !important;
+  border-top: 3px solid #D4A574 !important;
+  border-bottom: 3px solid #D4A574 !important;
+  display: block !important;
+}
+
+.jeu-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   BADGE "JEUX EN SOLO"
+   ============================================================ */
+.jeu-badge {
+  display: inline-block !important;
+  background: linear-gradient(135deg, #D4A574 0%, #C4956A 100%) !important;
+  color: white !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 2rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', Arial, sans-serif !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.25) !important;
+}
+
+/* ============================================================
+   TITRE DU JEU
+   ============================================================ */
+.jeu-titre {
+  color: #D4A574 !important;
+  font-size: 2.2rem !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+  font-weight: 600 !important;
+  font-family: 'Lora', Georgia, serif !important;
+  line-height: 1.3 !important;
+}
+
+/* ============================================================
+   INTRODUCTION / DESCRIPTION
+   ============================================================ */
+.jeu-intro {
+  color: #2C3338 !important;
+  text-align: center !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.7 !important;
+  max-width: 700px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ============================================================
+   STATS (durée, gratuit, etc.)
+   ============================================================ */
+.jeu-stats {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+  flex-wrap: wrap !important;
+}
+
+.jeu-stat {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: #2C3338 !important;
+  font-size: 0.95rem !important;
+  font-family: 'Inter', Arial, sans-serif !important;
+}
+
+.jeu-stat-icon {
+  font-size: 1.2rem !important;
+  color: #D4A574 !important;
+}
+
+/* ============================================================
+   WRAPPER IFRAME
+   ============================================================ */
+.jeu-wrapper {
+  background: white !important;
+  padding: 1rem !important;
+  margin: 2rem 0 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15) !important;
+  overflow: hidden !important;
+}
+
+.jeu-wrapper iframe {
+  display: block !important;
+  width: 100% !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+}
+
+/* ============================================================
+   BOUTONS D'ACTION
+   ============================================================ */
+.jeu-boutons {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  margin: 2rem 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.btn-jeu {
+  padding: 1rem 2rem !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', Arial, sans-serif !important;
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+}
+
+.btn-jeu-primaire {
+  background: linear-gradient(135deg, #D4A574 0%, #C4956A 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3) !important;
+}
+
+.btn-jeu-primaire:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4) !important;
+}
+
+.btn-jeu-secondaire {
+  background: white !important;
+  color: #D4A574 !important;
+  border: 2px solid #D4A574 !important;
+  box-shadow: 0 2px 8px rgba(212, 165, 116, 0.1) !important;
+}
+
+.btn-jeu-secondaire:hover {
+  background: #FBF9F6 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.2) !important;
+}
+
+/* ============================================================
+   ENCADRÉ "POURQUOI CE JEU ?"
+   ============================================================ */
+.jeu-pourquoi {
+  background: white !important;
+  border-left: 4px solid #D4A574 !important;
+  padding: 1.5rem 2rem !important;
+  margin: 2rem 0 !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.1) !important;
+}
+
+.jeu-pourquoi-titre {
+  color: #D4A574 !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  font-family: 'Lora', Georgia, serif !important;
+}
+
+.jeu-pourquoi p {
+  color: #2C3338 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ============================================================
+   LISTE DES BÉNÉFICES
+   ============================================================ */
+.jeu-benefices {
+  margin: 2rem 0 !important;
+}
+
+.jeu-benefices-titre {
+  color: #D4A574 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  font-family: 'Lora', Georgia, serif !important;
+}
+
+.jeu-benefices-liste {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 1.5rem !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+.jeu-benefice {
+  background: white !important;
+  padding: 1.5rem !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.jeu-benefice:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.15) !important;
+}
+
+.jeu-benefice-icon {
+  font-size: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+.jeu-benefice-titre {
+  color: #D4A574 !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  font-family: 'Lora', Georgia, serif !important;
+}
+
+.jeu-benefice-desc {
+  color: #2C3338 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .jeu-section {
+    padding: 2rem 1rem !important;
+  }
+  
+  .jeu-titre {
+    font-size: 1.8rem !important;
+  }
+  
+  .jeu-intro {
+    font-size: 1rem !important;
+  }
+  
+  .jeu-stats {
+    gap: 1rem !important;
+  }
+  
+  .jeu-boutons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .btn-jeu {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .jeu-benefices-liste {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -88,115 +88,11 @@ body::before {
 }
 
 /* ============================================================
-   HEADER - Plus simple, plus lisible
+   HEADER - Bordure en bas
    ============================================================ */
 #header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255, 252, 247, 0.95);
-  border-bottom: 2px solid var(--vs-gold-light);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  text-align: center;
-  transition: all var(--vs-transition);
-  padding: 1.5rem 0;
+  border-bottom: 5px solid rgba(139, 115, 85, 0.3);
 }
-
-#header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.logo-soloplugs {
-  display: inline-block;
-  cursor: pointer;
-  transition: transform var(--vs-transition);
-  margin-bottom: 1rem;
-}
-
-.logo-soloplugs img {
-  height: 55px;
-  width: auto;
-}
-
-.logo-soloplugs:hover {
-  transform: scale(1.03);
-}
-
-#menu-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-}
-
-#menu-main a {
-  text-decoration: none;
-  color: var(--vs-text);
-  font-weight: 500;
-  font-size: 1.05rem;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: color var(--vs-transition);
-}
-
-#menu-main a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--vs-gold);
-  transition: width var(--vs-transition);
-}
-
-#menu-main a:hover {
-  color: var(--vs-gold-dark);
-}
-
-#menu-main a:hover::after {
-  width: 100%;
-}
-
-#menu-main a.active-link {
-  color: var(--vs-gold-dark);
-  font-weight: 600;
-}
-
-#menu-main a.active-link::after {
-  width: 100%;
-}
-
-/* Header scrolled */
-#header.header-scrolled {
-  padding: 0.75rem 0;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-}
-
-#header.header-scrolled #header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#header.header-scrolled .logo-soloplugs {
-  margin-bottom: 0;
-}
-
-#header.header-scrolled .logo-soloplugs img {
-  height: 45px;
-}
-
-#header.header-scrolled #menu-main {
-  gap: 2rem;
-}
-
 /* ============================================================
    HERO SECTION — Élégant et apaisant
    ============================================================ */

@@ -1,0 +1,258 @@
+/* ============================================================
+   SORTIES-LOISIRS-RENCONTRES - PAGE DE CHOIX
+   Styles spécifiques pour la page d'aiguillage vers les 3 thèmes
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES MAGENTA
+   ============================================================ */
+:root {
+  --magenta: #C24B8B;
+  --magenta-dark: #9A3A6E;
+  --magenta-light: #E891B9;
+}
+
+/* ============================================================
+   HERO - EN-TÊTE DE PAGE
+   ============================================================ */
+.choices-hero {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  background: linear-gradient(180deg, #fff 0%, var(--bg-primary, #FBF9F6) 100%);
+}
+
+.choices-hero h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--magenta);
+  margin-bottom: 0.75rem;
+}
+
+.choices-hero .subtitle {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-secondary, #6B7280);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SECTION DES CHOIX
+   ============================================================ */
+.choices-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.choices-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.choices-intro p {
+  font-size: 1.1rem;
+  color: var(--text-secondary, #6B7280);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   GRILLE DES 3 CARTES
+   ============================================================ */
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ============================================================
+   CARTE INDIVIDUELLE
+   ============================================================ */
+.choice-card {
+  position: relative;
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(194, 75, 139, 0.3);
+}
+
+/* DÉGRADÉ MAGENTA LUMINEUX (remplace le noir) */
+.choice-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(194, 75, 139, 0.85) 0%,
+    rgba(194, 75, 139, 0.4) 35%,
+    transparent 100%
+  );
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.choice-card:hover::before {
+  background: linear-gradient(
+    to top,
+    rgba(194, 75, 139, 0.95) 0%,
+    rgba(194, 75, 139, 0.5) 40%,
+    rgba(194, 75, 139, 0.1) 100%
+  );
+}
+
+/* IMAGE */
+.choice-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.choice-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   CONTENU DE LA CARTE
+   ============================================================ */
+.choice-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  z-index: 2;
+  color: #fff;
+}
+
+.choice-content h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.choice-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 1rem;
+}
+
+/* BOUTON CTA */
+.choice-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.choice-card:hover .choice-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.choice-cta svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.choice-card:hover .choice-cta svg {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   CITATION EN BAS DE PAGE
+   ============================================================ */
+.page-quote {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, var(--bg-primary, #FBF9F6) 0%, #fff 100%);
+}
+
+.page-quote blockquote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--magenta);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  border: none;
+  padding: 0;
+}
+
+.page-quote blockquote::before {
+  content: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .choices-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .choice-card {
+    height: 320px;
+  }
+  
+  .choices-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .choices-hero {
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .choices-section {
+    padding: 1.5rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .choice-card {
+    height: 280px;
+  }
+  
+  .choice-content {
+    padding: 1.5rem;
+  }
+  
+  .choice-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .choice-content p {
+    font-size: 0.9rem;
+  }
+  
+  .choices-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .page-quote blockquote {
+    font-size: 1.1rem;
+  }
+}

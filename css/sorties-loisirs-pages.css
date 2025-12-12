@@ -1,0 +1,545 @@
+/* ============================================================
+   SORTIES-LOISIRS-PAGES.CSS
+   Styles partagés pour les pages Sorties, Loisirs et Rencontres
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  --magenta: #C24B8B;
+  --magenta-dark: #9A3A6E;
+  --magenta-light: #E891B9;
+  --sorties-color: #E74C3C;
+  --loisirs-color: #3498DB;
+  --rencontres-color: #9B59B6;
+}
+
+/* ============================================================
+   HERO SECTIONS
+   ============================================================ */
+.page-hero {
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(251, 249, 246, 0.95) 0%,
+    rgba(251, 249, 246, 0.85) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-sorties .hero-tag {
+  background: rgba(231, 76, 60, 0.15);
+  color: var(--sorties-color);
+}
+
+.hero-loisirs .hero-tag {
+  background: rgba(52, 152, 219, 0.15);
+  color: var(--loisirs-color);
+}
+
+.hero-rencontres .hero-tag {
+  background: rgba(155, 89, 182, 0.15);
+  color: var(--rencontres-color);
+}
+
+.page-hero h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+  color: #5A5A5A;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-alt {
+  background: #F5F1EB;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.75rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #6B7280;
+}
+
+/* ============================================================
+   FEARS GRID (Ce qui te retient)
+   ============================================================ */
+.fears-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.fear-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.fear-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.fear-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.75rem;
+}
+
+.fear-card p {
+  font-size: 0.95rem;
+  color: #5A5A5A;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   IDEAS GRID (Idées de sorties)
+   ============================================================ */
+.ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.idea-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  position: relative;
+  border-top: 4px solid #ccc;
+}
+
+.idea-card.difficulty-easy {
+  border-top-color: #27AE60;
+}
+
+.idea-card.difficulty-medium {
+  border-top-color: #F39C12;
+}
+
+.idea-card.difficulty-bold {
+  border-top-color: #E74C3C;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.difficulty-easy .difficulty-badge {
+  background: rgba(39, 174, 96, 0.15);
+  color: #27AE60;
+}
+
+.difficulty-medium .difficulty-badge {
+  background: rgba(243, 156, 18, 0.15);
+  color: #F39C12;
+}
+
+.difficulty-bold .difficulty-badge {
+  background: rgba(231, 76, 60, 0.15);
+  color: #E74C3C;
+}
+
+.idea-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.5rem;
+}
+
+.idea-card p {
+  font-size: 0.9rem;
+  color: #5A5A5A;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CATEGORY GRID (Catégories de loisirs)
+   ============================================================ */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 1rem;
+}
+
+.category-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-card li {
+  font-size: 0.9rem;
+  color: #5A5A5A;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.category-card li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   PLACES GRID (Où rencontrer)
+   ============================================================ */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.place-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.place-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.place-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.75rem;
+}
+
+.place-card p {
+  font-size: 0.9rem;
+  color: #5A5A5A;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   LINK TYPES (Types de liens)
+   ============================================================ */
+.link-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.link-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.link-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.75rem;
+}
+
+.link-card p {
+  font-size: 0.9rem;
+  color: #5A5A5A;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   TIPS LIST (Conseils)
+   ============================================================ */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tip-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tip-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--magenta);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.tip-content h4 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.35rem;
+}
+
+.tip-content p {
+  font-size: 0.95rem;
+  color: #5A5A5A;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   QUOTE SECTION
+   ============================================================ */
+.section-quote {
+  background: linear-gradient(135deg, #2C3338 0%, #3d4449 100%);
+  padding: 4rem 1.5rem;
+}
+
+.section-quote blockquote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  border: none;
+  padding: 0;
+}
+
+.section-quote blockquote::before {
+  content: none;
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.section-cta {
+  text-align: center;
+  background: linear-gradient(180deg, #fff 0%, var(--bg-primary, #FBF9F6) 100%);
+  padding: 4rem 1.5rem;
+}
+
+.section-cta h2 {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-bottom: 0.75rem;
+}
+
+.section-cta p {
+  font-size: 1.1rem;
+  color: #5A5A5A;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--magenta);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--magenta-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #5A5A5A;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  border-color: var(--magenta);
+  color: var(--magenta);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .fears-grid,
+  .ideas-grid,
+  .category-grid,
+  .places-grid,
+  .link-types {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .page-hero h1 {
+    font-size: 2.25rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .fears-grid,
+  .ideas-grid,
+  .category-grid,
+  .places-grid,
+  .link-types {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-hero {
+    padding: 4rem 1rem 3rem;
+  }
+  
+  .page-hero h1 {
+    font-size: 1.85rem;
+  }
+  
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+  
+  .section {
+    padding: 3rem 1rem;
+  }
+  
+  .tip-item {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .tip-number {
+    margin: 0 auto;
+  }
+  
+  .section-quote blockquote {
+    font-size: 1.25rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

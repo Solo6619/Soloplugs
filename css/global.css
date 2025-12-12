@@ -57,7 +57,7 @@ body {
   width: 100%;
   z-index: 1000;
   background: rgba(251, 249, 246, 0.95);
-  border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+  border-bottom: 5px solid rgba(212, 166, 116, 0.119);
   backdrop-filter: blur(10px);
   font-family: 'Inter', sans-serif;
   text-align: center;

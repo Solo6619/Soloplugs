@@ -64,8 +64,9 @@
       
       <!-- Description -->
       <p class="hero-description">
-        Vivre seul·e n'est ni une épreuve ni un échec. C'est un art à cultiver, 
-        une autonomie à célébrer, une relation à soi-même à apprivoiser.
+         On peut être seul et bien.
+         On peut être entouré et se sentir seul.
+         La solitude, c’est ce qui se passe en soi — pas autour de soi.
       </p>
 
       <!-- Citation -->
@@ -92,66 +93,283 @@
 
       <div class="duality-grid">
         
-        <!-- Solitude choisie -->
-        <div class="duality-card animate-on-scroll">
-          <div class="duality-icon">
-            <!-- SVG Soleil -->
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="10" stroke-width="2.5" fill="none"/>
-              <line x1="25" y1="5" x2="25" y2="10" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="25" y1="40" x2="25" y2="45" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="5" y1="25" x2="10" y2="25" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="40" y1="25" x2="45" y2="25" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="10.86" y1="10.86" x2="14.4" y2="14.4" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="35.6" y1="35.6" x2="39.14" y2="39.14" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="10.86" y1="39.14" x2="14.4" y2="35.6" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="35.6" y1="14.4" x2="39.14" y2="10.86" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Solitude choisie</h3>
-          <p>
-            C'est la solitude que l'on cultive volontairement. Un temps pour soi, 
-            un espace de création, de réflexion, de ressourcement.
-          </p>
-          <p>
-            Elle est source de liberté, d'autonomie et de croissance personnelle. 
-            Une pratique philosophique millénaire, des ermites aux philosophes stoïciens.
-          </p>
-          <p class="duality-quote">
-            « On ne peut être vraiment soi qu'aussi longtemps qu'on est seul » — Schopenhauer
-          </p>
-        </div>
-
-        <!-- Isolement subi -->
-        <div class="duality-card card-isolation animate-on-scroll animate-delay-1">
-          <div class="duality-icon">
-            <!-- SVG Lune -->
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M35 25C35 14.5 26.5 6 16 6C14.5 6 13 6.2 11.6 6.5C17.4 9.5 21.5 15.6 21.5 22.7C21.5 29.8 17.4 35.9 11.6 38.9C13 39.2 14.5 39.4 16 39.4C26.5 39.4 35 31 35 20.5" 
-                    stroke-width="2.5" stroke-linecap="round" fill="none"/>
-              <circle cx="30" cy="12" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="38" cy="20" r="1" fill="currentColor" opacity="0.4"/>
-              <circle cx="42" cy="30" r="1.5" fill="currentColor" opacity="0.3"/>
-            </svg>
-          </div>
-          <h3>Isolement subi</h3>
-          <p>
-            C'est la solitude non désirée, celle qui s'impose à nous. 
-            Une rupture des liens, un manque de connexion, une sensation d'être seul·e au milieu du monde.
-          </p>
-          <p>
-            Elle peut être douloureuse et fragilisante. Mais elle n'est pas une fatalité. 
-            Avec du soutien et des outils, on peut transformer l'isolement en chemin vers soi.
-          </p>
-          <p class="duality-quote">
-            Soloplugs est là pour t'accompagner, quelle que soit ton expérience de la solitude.
-          </p>
-        </div>
-
-      </div>
-    </div>
+       <!-- Solitude choisie -->
+<div class="duality-card animate-on-scroll">
+  <div class="duality-image">
+    <img src="../images/vivre-solo/vivre_solo_02.jpg" 
+         alt="Femme lisant paisiblement dans un salon lumineux" 
+         title="Photo : IA générée">
+  </div>
+  <h3>Solitude choisie</h3>
+  <p>
+    C'est la solitude que l'on cultive volontairement. Un temps pour soi, 
+    un espace de création, de réflexion, de ressourcement.
+  </p>
+  <p>
+    Elle est source de liberté, d'autonomie et de croissance personnelle. 
+    Une pratique philosophique millénaire, des ermites aux philosophes stoïciens.
+  </p>
+  <p class="duality-quote">
+    « On ne peut être vraiment soi qu'aussi longtemps qu'on est seul » — Schopenhauer
+  </p>
+</div>
+<!-- Isolement subi -->
+<div class="duality-card card-isolation animate-on-scroll animate-delay-1">
+  <div class="duality-image">
+    <img src="../images/vivre-solo/vivre_solo_01.jpg" 
+         alt="Petite figurine seule sous une lampe" 
+         title="Photo : Pixabay">
+  </div>
+  <h3>Isolement subi</h3>
+  <p>
+    C'est la solitude non désirée, celle qui s'impose à nous. 
+    Une rupture des liens, un manque de connexion, une sensation d'être seul·e au milieu du monde.
+  </p>
+  <p>
+    Elle peut être douloureuse et fragilisante. Mais elle n'est pas une fatalité. 
+    Avec du soutien et des outils, on peut transformer l'isolement en chemin vers soi.
+  </p>
+  <p class="duality-quote">
+    Soloplugs est là pour t'accompagner, quelle que soit ton expérience de la solitude.
+  </p>
+</div>
+       
   </section>
+<!-- ============================================================
+     SECTION : STATISTIQUES MONDIALES
+     ============================================================ -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>L'épidémie silencieuse en chiffres</h2>
+      <p>
+        La solitude est devenue un enjeu majeur de santé publique à l'échelle mondiale. 
+        Ces chiffres révèlent l'ampleur d'un phénomène trop longtemps ignoré.
+      </p>
+    </div>
 
+ <div class="stats-grid">
+
+  <!-- USA -->
+  <div class="stat-card stat-highlight animate-on-scroll">
+    <div class="stat-flag">🇺🇸</div>
+    <div class="stat-number">1 sur 2</div>
+    <div class="stat-label">adulte américain souffrait de solitude avant même la pandémie</div>
+    <div class="stat-compare">US Surgeon General, 2023</div>
+  </div>
+
+  <div class="stat-card animate-on-scroll animate-delay-1">
+    <div class="stat-flag">🇺🇸</div>
+    <div class="stat-number">52M</div>
+    <div class="stat-label">d'Américains vivent une solitude quotidienne</div>
+    <div class="stat-compare">Gallup, septembre 2024</div>
+  </div>
+
+  <div class="stat-card animate-on-scroll animate-delay-2">
+    <div class="stat-flag">🇺🇸</div>
+    <div class="stat-number">30%</div>
+    <div class="stat-label">des 18-34 ans se sentent seuls chaque jour</div>
+    <div class="stat-compare">American Psychiatric Association, 2024</div>
+  </div>
+
+  <div class="stat-card stat-warning animate-on-scroll animate-delay-3">
+    <div class="stat-flag">🚬</div>
+    <div class="stat-number">15</div>
+    <div class="stat-label">cigarettes/jour — équivalent santé du manque de connexion</div>
+    <div class="stat-compare">US Surgeon General Advisory</div>
+  </div>
+
+  <div class="stat-card animate-on-scroll">
+    <div class="stat-flag">❤️</div>
+    <div class="stat-number">+29%</div>
+    <div class="stat-label">risque de maladie cardiaque lié à l'isolement</div>
+    <div class="stat-compare">+32% AVC, +50% démence</div>
+  </div>
+
+  <div class="stat-card animate-on-scroll animate-delay-1">
+    <div class="stat-flag">📉</div>
+    <div class="stat-number">-70%</div>
+    <div class="stat-label">de temps avec des amis pour les 15-24 ans</div>
+    <div class="stat-compare">en 20 ans — remplacé par les écrans</div>
+  </div>
+
+  <!-- France -->
+  <div class="stat-card animate-on-scroll animate-delay-2">
+    <div class="stat-flag">🇫🇷</div>
+    <div class="stat-number">31%</div>
+    <div class="stat-label">des Français expriment un sentiment de solitude en 2024</div>
+    <div class="stat-compare">contre 25% en 2018</div>
+  </div>
+
+  <div class="stat-card animate-on-scroll animate-delay-3">
+    <div class="stat-flag">🇫🇷</div>
+    <div class="stat-number">17%</div>
+    <div class="stat-label">souffrent de solitude chronique</div>
+    <div class="stat-compare">contre 13% avant la pandémie</div>
+  </div>
+
+  <!-- Canada -->
+  <div class="stat-card animate-on-scroll">
+    <div class="stat-flag">🇨🇦</div>
+    <div class="stat-number">24%</div>
+    <div class="stat-label">des personnes vivant seules se sentent souvent seules</div>
+    <div class="stat-compare">Statistique Canada, 2021</div>
+  </div>
+
+  <!-- Jeunes -->
+  <div class="stat-card stat-highlight animate-on-scroll animate-delay-1">
+    <div class="stat-flag">👥</div>
+    <div class="stat-number">1 sur 3</div>
+    <div class="stat-label">jeune actif (25-39 ans) se sent particulièrement seul</div>
+    <div class="stat-compare">deux fois plus que les 60-69 ans</div>
+  </div>
+
+  <!-- Santé mentale -->
+  <div class="stat-card stat-warning animate-on-scroll animate-delay-2">
+    <div class="stat-flag">⚠️</div>
+    <div class="stat-number">65%</div>
+    <div class="stat-label">des personnes isolées ont envisagé de mettre fin à leurs jours</div>
+    <div class="stat-compare">deux fois la moyenne nationale</div>
+  </div>
+
+  <!-- Paradoxe -->
+  <div class="stat-card animate-on-scroll animate-delay-3">
+    <div class="stat-flag">📱</div>
+    <div class="stat-number">Paradoxe</div>
+    <div class="stat-label">Plus connectés que jamais, plus seuls que jamais</div>
+    <div class="stat-compare">Le défilement passif augmente la solitude</div>
+  </div>
+
+</div>
+
+    </div>
+
+    <div class="stats-source">
+  Sources : US Surgeon General 2023, Gallup 2024, American Psychiatric Association, 
+  Harvard Making Caring Common, Fondation de France, Statistique Canada
+</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION : HISTOIRE ET CULTURE DE LA SOLITUDE
+     ============================================================ -->
+<section class="section section-alt history-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>La solitude à travers le temps et les cultures</h2>
+      <p>
+        D'expérience spirituelle valorisée à « épidémie » moderne, 
+        la perception de la solitude a profondément évolué.
+      </p>
+    </div>
+
+    <!-- Timeline historique -->
+    <div class="history-timeline">
+      
+      <div class="timeline-era animate-on-scroll">
+        <div class="era-period">Antiquité — XVIIIe siècle</div>
+        <h3>La solitude valorisée</h3>
+        <p>
+          Ermites, philosophes et mystiques recherchaient activement la solitude 
+          comme voie vers la sagesse, Dieu ou la vérité intérieure.
+        </p>
+        <div class="era-quotes">
+          <blockquote>
+            « On ne peut être vraiment soi qu'aussi longtemps qu'on est seul »
+            <cite>— Schopenhauer</cite>
+          </blockquote>
+          <blockquote>
+            « La citadelle intérieure » comme refuge de l'âme
+            <cite>— Marc Aurèle</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="timeline-era animate-on-scroll animate-delay-1">
+        <div class="era-period">XIXe siècle</div>
+        <h3>Le basculement moderne</h3>
+        <p>
+          La révolution industrielle et l'urbanisation massive détruisent les liens 
+          communautaires traditionnels. Émile Durkheim théorise l'isolement comme 
+          problème social et invente le concept d'« anomie ».
+        </p>
+        <div class="era-highlight">
+          Premier lien scientifique établi entre isolement social et suicide.
+        </div>
+      </div>
+
+      <div class="timeline-era animate-on-scroll animate-delay-2">
+        <div class="era-period">XXe siècle</div>
+        <h3>La médicalisation progressive</h3>
+        <p>
+          L'isolement devient un symptôme médical. La solitude est de plus en plus 
+          approchée par le « prisme du manque » et associée à un défaut d'intégration sociale.
+        </p>
+      </div>
+
+      <div class="timeline-era timeline-present animate-on-scroll animate-delay-3">
+        <div class="era-period">2011 — Aujourd'hui</div>
+        <h3>L'épidémie reconnue</h3>
+        <p>
+          2011 : La solitude devient « Grande Cause Nationale » en France.<br>
+          2023 : Le Surgeon General américain déclare officiellement une « épidémie de solitude ».
+        </p>
+        <div class="era-highlight">
+          L'impact sur la santé est comparable à fumer 15 cigarettes par jour.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Perspectives culturelles -->
+    <div class="section-header" style="margin-top: 4rem;">
+      <h2>Regards culturels sur la solitude</h2>
+    </div>
+
+    <div class="culture-grid">
+      
+      <div class="culture-card animate-on-scroll">
+        <div class="culture-icon">🇯🇵</div>
+        <h3>Japon</h3>
+        <p>
+          Le concept de <em>hikikomori</em> (retrait social extrême) côtoie celui 
+          de <em>kodokushi</em> (mort solitaire). Mais aussi une culture profonde 
+          de l'introspection et du silence contemplatif.
+        </p>
+      </div>
+
+      <div class="culture-card animate-on-scroll animate-delay-1">
+        <div class="culture-icon">🇩🇰</div>
+        <h3>Scandinavie</h3>
+        <p>
+          Le <em>hygge</em> danois célèbre le confort solitaire. Les pays nordiques 
+          valorisent l'autonomie individuelle tout en maintenant des filets sociaux solides.
+        </p>
+      </div>
+
+      <div class="culture-card animate-on-scroll animate-delay-2">
+        <div class="culture-icon">🌍</div>
+        <h3>Cultures communautaires</h3>
+        <p>
+          En Afrique, Asie du Sud et Amérique latine, la solitude est souvent perçue 
+          comme anormale. La famille élargie et la communauté restent centrales.
+        </p>
+      </div>
+
+      <div class="culture-card animate-on-scroll animate-delay-3">
+        <div class="culture-icon">🇺🇸</div>
+        <h3>Occident moderne</h3>
+        <p>
+          Individualisme valorisé mais solitude stigmatisée. Le paradoxe d'une société 
+          qui célèbre l'indépendance tout en pathologisant le fait d'être seul.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
   <!-- ============================================================
        SECTION : LES DÉFIS UNIVERSELS
        ============================================================ -->

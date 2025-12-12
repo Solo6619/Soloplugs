@@ -81,44 +81,10 @@ body::before {
 }
 
 /* ============================================================
-   HEADER
+   HEADER - Bordure en bas
    ============================================================ */
 #header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(251, 249, 246, 0.92);
-  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  text-align: center;
-  transition: all var(--vs-transition);
-  padding: 1.5rem 0;
-}
-
-#header-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Logo */
-.logo-soloplugs {
-  display: inline-block;
-  cursor: pointer;
-  transition: transform var(--vs-transition);
-  margin-bottom: 1rem;
-}
-
-.logo-soloplugs img {
-  height: 50px;
-  width: auto;
-}
-
-.logo-soloplugs:hover {
-  transform: scale(1.05);
+  border-bottom: 5px solid rgba(212, 165, 116, 0.4);
 }
 
 /* Navigation */
@@ -551,6 +517,25 @@ body::before {
   margin-top: 1.5rem;
 }
 
+/* Image dans les cartes duality */
+.duality-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.duality-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.duality-card:hover .duality-image img {
+  transform: scale(1.05);
+}
 /* ============================================================
    CARTES DE DÉFIS / RESSOURCES
    ============================================================ */
@@ -1094,4 +1079,215 @@ body::before {
   .duality-card {
     padding: 2rem;
   }
+}
+
+/* ============================================================
+   SECTION STATISTIQUES
+   ============================================================ */
+
+.stats-section {
+  background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+  color: white;
+}
+
+.stats-section .section-header h2 {
+  color: var(--vs-gold);
+}
+
+.stats-section .section-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.stat-flag {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--vs-gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.stat-compare {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.stat-card.stat-highlight {
+  background: rgba(212, 165, 116, 0.2);
+  border-color: var(--vs-gold);
+}
+
+.stat-card.stat-warning {
+  background: rgba(200, 80, 80, 0.15);
+  border-color: rgba(200, 80, 80, 0.5);
+}
+
+.stat-card.stat-warning .stat-number {
+  color: #E57373;
+}
+
+.stats-source {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================
+   SECTION HISTOIRE & CULTURE
+   ============================================================ */
+
+.history-timeline {
+  margin-top: 3rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--vs-gold-light);
+}
+
+.timeline-era {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-era::before {
+  content: '';
+  position: absolute;
+  left: -2.65rem;
+  top: 0.5rem;
+  width: 14px;
+  height: 14px;
+  background: var(--vs-gold);
+  border-radius: 50%;
+  border: 3px solid var(--vs-cream);
+}
+
+.timeline-era.timeline-present::before {
+  background: var(--vs-gold);
+  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.3);
+}
+
+.era-period {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vs-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-era h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  color: var(--vs-text);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-era p {
+  color: var(--vs-text-soft);
+  line-height: 1.7;
+}
+
+.era-quotes {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--vs-gold-pale);
+  border-radius: 0.5rem;
+}
+
+.era-quotes blockquote {
+  font-style: italic;
+  color: var(--vs-text-soft);
+  margin-bottom: 0.5rem;
+}
+
+.era-quotes cite {
+  font-size: 0.85rem;
+  color: var(--vs-gold-dark);
+}
+
+.era-highlight {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(212, 165, 116, 0.15);
+  border-left: 3px solid var(--vs-gold);
+  font-weight: 500;
+  color: var(--vs-text);
+}
+
+/* Grille cultures */
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.culture-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.culture-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.culture-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.culture-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  color: var(--vs-text);
+  margin-bottom: 0.75rem;
+}
+
+.culture-card p {
+  font-size: 0.95rem;
+  color: var(--vs-text-soft);
+  line-height: 1.6;
+}
+
+.culture-card em {
+  color: var(--vs-gold-dark);
+  font-style: italic;
 }
