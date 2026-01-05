@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "date_creation": "2025-12-31",
+    "projet": "SOLOPLUGS - Ado Solo",
+    "description": "Répertoire des Maisons des jeunes par région administrative du Québec",
+    "source_principale": "Regroupement des maisons des jeunes du Québec (RMJQ)",
+    "total_mdj": 249,
+    "total_milieux_vie": "330+",
+    "public_cible": "Adolescents 12-17 ans"
+  },
+
+  "acces_rapide": {
+    "description": "Pour trouver une MDJ près de chez toi",
+    "outils": [
+      {
+        "nom": "Répertoire RMJQ",
+        "url": "https://rmjq.org/liste-des-maisons-de-jeunes/",
+        "description": "Liste complète avec filtre par région - OUTIL RECOMMANDÉ"
+      },
+      {
+        "nom": "211 Québec",
+        "telephone": "211",
+        "url": "https://www.211qc.ca",
+        "description": "Répertoire général des ressources communautaires par région"
+      }
+    ]
+  },
+
+  "rmjq_provincial": {
+    "nom": "Regroupement des maisons des jeunes du Québec (RMJQ)",
+    "adresse": "6502 rue des Écores, Montréal, QC H2G 2J7",
+    "url": "https://rmjq.org",
+    "description": "Organisme provincial qui regroupe 249 maisons des jeunes dans plus de 330 milieux de vie",
+    "public_cible": "Jeunes 12-17 ans",
+    "type_service": "Lieux de vie gratuits, sans rendez-vous, animés par des adultes significatifs (animateurs-intervenants qualifiés)",
+    "gratuit": true,
+    "sans_rendez_vous": true,
+    "statistiques": {
+      "jeunes_rejoints": "50 000 jeunes de 12-17 ans",
+      "animateurs": "500+",
+      "benevoles": "1000+"
+    }
+  },
+
+  "regions": {
+    "01_bas_saint_laurent": {
+      "nom_region": "Bas-Saint-Laurent",
+      "code_region": "01",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Rimouski", "Rivière-du-Loup", "Matane", "Saint-Pascal"],
+      "exemples_mdj": [
+        {"nom": "Quartier jeunesse 1995", "ville": "Saint-Pascal"},
+        {"nom": "Maison des jeunes La Lucarne", "ville": "Matane"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=bas-saint-laurent"
+    },
+
+    "02_saguenay_lac_saint_jean": {
+      "nom_region": "Saguenay—Lac-Saint-Jean",
+      "code_region": "02",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": {
+        "nom": "RMJQ-02 - Regroupement des maisons des jeunes du Saguenay-Lac-Saint-Jean",
+        "url": "https://www.rmjq02.org",
+        "description": "Regroupement régional avec plusieurs MDJ membres"
+      },
+      "villes_principales": ["Saguenay (Chicoutimi, Jonquière, La Baie)", "Alma", "Roberval"],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=saguenay-lac-saint-jean"
+    },
+
+    "03_capitale_nationale": {
+      "nom_region": "Capitale-Nationale",
+      "code_region": "03",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": {
+        "nom": "MDJCN - Maisons des jeunes de la Capitale-Nationale",
+        "url": "https://mdjcn.ca",
+        "telephone": "418-635-1026",
+        "courriel": "info@mdjcn.ca",
+        "nombre_mdj": 34,
+        "territoire": "De Portneuf à Charlevoix"
+      },
+      "villes_principales": ["Québec", "Lévis", "Saint-Raymond", "Portneuf", "Charlevoix"],
+      "exemples_mdj": [
+        {"nom": "Pilier Jeunesse", "ville": "Québec"},
+        {"nom": "MDJ de Saint-Raymond", "ville": "Saint-Raymond"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=capitale-nationale"
+    },
+
+    "04_mauricie": {
+      "nom_region": "Mauricie",
+      "code_region": "04",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Trois-Rivières", "Shawinigan", "Louiseville", "La Tuque"],
+      "exemples_mdj": [
+        {"nom": "MDJ Le Transit", "ville": "Trois-Rivières"},
+        {"nom": "MDJ Alternative jeunesse de Trois-Rivières", "ville": "Trois-Rivières"},
+        {"nom": "MDJ L'Éveil Jeunesse de Louiseville", "ville": "Louiseville"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=mauricie"
+    },
+
+    "05_estrie": {
+      "nom_region": "Estrie",
+      "code_region": "05",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": {
+        "nom": "RMJCE - Regroupement des Maisons de Jeunes des Cantons-de-l'Est",
+        "description": "Regroupement régional pour l'Estrie"
+      },
+      "villes_principales": ["Sherbrooke", "Magog", "Granby", "Cowansville", "Farnham"],
+      "exemples_mdj": [
+        {"nom": "Maison des Jeunes de Cowansville", "ville": "Cowansville"},
+        {"nom": "MDJ de Farnham", "ville": "Farnham"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=estrie"
+    },
+
+    "06_montreal": {
+      "nom_region": "Montréal",
+      "code_region": "06",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "note": "Le filtre RMJQ 'Montréal-Laval' inclut aussi des MDJ de Laval (région 13). Sélectionne ta ville dans le répertoire.",
+      "arrondissements_couverts": [
+        "Ahuntsic-Cartierville", "Anjou", "Côte-des-Neiges—Notre-Dame-de-Grâce",
+        "Lachine", "LaSalle", "Le Sud-Ouest", "Mercier—Hochelaga-Maisonneuve",
+        "Montréal-Nord", "Le Plateau-Mont-Royal", "Rivière-des-Prairies—Pointe-aux-Trembles",
+        "Rosemont—La Petite-Patrie", "Saint-Laurent", "Saint-Léonard", "Verdun",
+        "Ville-Marie", "Villeray—Saint-Michel—Parc-Extension"
+      ],
+      "exemples_mdj": [
+        {"nom": "MDJ du Plateau", "ville": "Le Plateau-Mont-Royal"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=montreal-laval"
+    },
+
+    "07_outaouais": {
+      "nom_region": "Outaouais",
+      "code_region": "07",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Gatineau", "Hull", "Aylmer", "Maniwaki", "Papineauville"],
+      "exemples_mdj": [
+        {"nom": "Saga Jeunesse", "ville": "Gatineau"},
+        {"nom": "Mani-jeunes Inc.", "ville": "Maniwaki"},
+        {"nom": "Prévention César", "ville": "Papineauville"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=outaouais"
+    },
+
+    "08_abitibi_temiscamingue": {
+      "nom_region": "Abitibi-Témiscamingue",
+      "code_region": "08",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Rouyn-Noranda", "Val-d'Or", "Amos", "Témiscaming"],
+      "exemples_mdj": [
+        {"nom": "Maison des jeunes l'Énergiteck", "ville": "Val-d'Or"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=abitibi-temiscamingue-nord-du-quebec"
+    },
+
+    "09_cote_nord": {
+      "nom_region": "Côte-Nord",
+      "code_region": "09",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Baie-Comeau", "Sept-Îles", "Port-Cartier"],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=cote-nord"
+    },
+
+    "10_nord_du_quebec": {
+      "nom_region": "Nord-du-Québec",
+      "code_region": "10",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "note": "Région avec moins de MDJ - consulter le répertoire RMJQ",
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=abitibi-temiscamingue-nord-du-quebec"
+    },
+
+    "11_gaspesie_iles_madeleine": {
+      "nom_region": "Gaspésie—Îles-de-la-Madeleine",
+      "code_region": "11",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Gaspé", "Percé", "Carleton-sur-Mer", "Îles-de-la-Madeleine"],
+      "exemples_mdj": [
+        {"nom": "Maison des jeunes des Îles", "ville": "Fatima (Îles-de-la-Madeleine)"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=gaspesie-iles-de-la-madeleine"
+    },
+
+    "12_chaudiere_appalaches": {
+      "nom_region": "Chaudière-Appalaches",
+      "code_region": "12",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Lévis", "Saint-Georges", "Thetford Mines", "Montmagny", "Lotbinière"],
+      "exemples_mdj": [
+        {"nom": "Regroupement des jeunes de Lotbinière", "ville": "Dosquet"},
+        {"nom": "Maison des jeunes de Beauce-Sartigan", "ville": "Beauce"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=chaudiere-appalaches"
+    },
+
+    "13_laval": {
+      "nom_region": "Laval",
+      "code_region": "13",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "note": "Le filtre RMJQ 'Montréal-Laval' inclut Montréal et Laval. Sélectionne Laval dans le répertoire.",
+      "villes_principales": ["Laval"],
+      "exemples_mdj": [
+        {"nom": "MDJ Val-Martin", "ville": "Laval"},
+        {"nom": "MDJ Marigot et Laval-Ouest", "ville": "Laval"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=montreal-laval"
+    },
+
+    "14_lanaudiere": {
+      "nom_region": "Lanaudière",
+      "code_region": "14",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Joliette", "Terrebonne", "Repentigny", "Mascouche", "Berthierville"],
+      "exemples_mdj": [
+        {"nom": "MDJ La Barak de Mascouche", "ville": "Mascouche"},
+        {"nom": "Place Jeunesse Berthier", "ville": "Berthierville"},
+        {"nom": "MDJ Les Mayais (MDJ Jeunesse Énergie)", "ville": "Sainte-Émélie-de-l'Énergie"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=lanaudiere"
+    },
+
+    "15_laurentides": {
+      "nom_region": "Laurentides",
+      "code_region": "15",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": {
+        "nom": "RMJL - Regroupement des maisons des jeunes des Laurentides",
+        "nombre_mdj": 13,
+        "territoire": "De Mont-Laurier à Saint-Eustache"
+      },
+      "villes_principales": ["Saint-Jérôme", "Blainville", "Saint-Eustache", "Mont-Tremblant", "Mont-Laurier", "Lachute", "Labelle"],
+      "exemples_mdj": [
+        {"nom": "Maison des jeunes St-Eustache (Le Spot!)", "ville": "Saint-Eustache"},
+        {"nom": "MDJ de Labelle", "ville": "Labelle"},
+        {"nom": "Maison des jeunes Univers jeunesse Argenteuil", "ville": "Lachute"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=laurentides"
+    },
+
+    "16_monteregie": {
+      "nom_region": "Montérégie",
+      "code_region": "16",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": {
+        "nom": "RMJM - Regroupement des Maisons de Jeunes de la Montérégie",
+        "description": "Regroupement régional couvrant la Montérégie"
+      },
+      "villes_principales": [
+        "Longueuil", "Brossard", "Saint-Jean-sur-Richelieu", "Saint-Hyacinthe",
+        "Châteauguay", "Granby", "Sorel-Tracy", "Beloeil", "Chambly",
+        "Sainte-Catherine", "Delson", "Marieville", "Roxton"
+      ],
+      "exemples_mdj": [
+        {"nom": "MDJ de Tracy L'Air du temps", "ville": "Sorel-Tracy"},
+        {"nom": "MDJ Sympholie", "ville": "Delson"},
+        {"nom": "MDJ l'Adrén'Ado de Marieville", "ville": "Marieville"},
+        {"nom": "Maison jeunesse Oxybulle de Roxton", "ville": "Roxton"},
+        {"nom": "Programme Intervention Jeunesse (L'Équinox)", "ville": "Sainte-Catherine"},
+        {"nom": "MDJ Adomissile", "ville": "Montérégie"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=monteregie"
+    },
+
+    "17_centre_du_quebec": {
+      "nom_region": "Centre-du-Québec",
+      "code_region": "17",
+      "public_cible": "Jeunes 12-17 ans",
+      "regroupement_regional": null,
+      "villes_principales": ["Drummondville", "Victoriaville", "Bécancour", "Wickham", "Saint-François-du-Lac"],
+      "exemples_mdj": [
+        {"nom": "Maison des jeunes Trait d'Union de Victoriaville", "ville": "Victoriaville"},
+        {"nom": "MDJ Le Tag", "ville": "Bécancour"},
+        {"nom": "MDJ du Bas-Saint-François", "ville": "Saint-François-du-Lac"},
+        {"nom": "MDJ de Wickham", "ville": "Wickham"}
+      ],
+      "lien_recherche": "https://rmjq.org/liste-des-maisons-de-jeunes/?_sft_regions=centre-du-quebec"
+    }
+  },
+
+  "ce_quest_une_mdj": {
+    "description": "Une maison des jeunes est un lieu de rencontre animé où les jeunes de 12 à 17 ans peuvent se retrouver dans un environnement sécuritaire, avec des adultes significatifs qui les accompagnent.",
+    "services_typiques": [
+      "Lieu d'appartenance et de socialisation",
+      "Activités variées (jeux, sports, arts, cuisine, etc.)",
+      "Discussions et échanges sur des sujets qui te touchent",
+      "Aide aux devoirs",
+      "Soutien et écoute par des intervenant·es qualifié·es",
+      "Projets et implications citoyennes"
+    ],
+    "gratuit": true,
+    "volontaire": true,
+    "confidentiel": true,
+    "approche": "Sans jugement, à ton rythme"
+  },
+
+  "pourquoi_aller_mdj": [
+    "Tu te sens seul·e et tu cherches un endroit où aller",
+    "Tu veux rencontrer d'autres jeunes de ton âge",
+    "Tu as besoin de parler à un adulte de confiance",
+    "Tu veux participer à des activités le fun",
+    "Tu cherches un endroit safe après l'école",
+    "Tu veux t'impliquer dans ta communauté"
+  ],
+
+  "note_importante": {
+    "message": "Les MDJ sont des lieux d'accueil, pas des centres de crise. Si tu vis une situation urgente, contacte Tel-jeunes (1-800-263-2266) ou le 988.",
+    "conseil": "Appelle ou visite le site web de la MDJ près de chez toi pour connaître les heures d'ouverture et les activités proposées."
+  }
+}

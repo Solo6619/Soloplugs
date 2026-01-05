@@ -3,11 +3,11 @@
 <head>
   <?php
     // Configuration de la page
-    $pageTitle = 'Vivre solo — L\'art de vivre seul·e';
-    $pageDescription = 'Découvrez l\'art de vivre seul·e avec Soloplugs. Ressources, conseils et accompagnement pour transformer votre solitude en force.';
+    $pageTitle = 'Vivre solo — Trouve ton chemin dans la solitude';
+    $pageDescription = 'Que tu choisisses la solitude ou que tu la subisses, trouve ton parcours personnalisé sur Soloplugs.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['vivre-solo-enhanced.css'];
+    $additionalCSS = ['vivre-solo.css'];
     
     include '../components/head.php';
   ?>
@@ -18,567 +18,593 @@
 
   <?php include '../components/header.php'; ?>
 
-
   <!-- ============================================================
-       HERO SECTION
+       HERO SIMPLIFIÉ
        ============================================================ -->
   <section class="hero-vivre-solo">
     <div class="hero-content">
-      
-      <!-- Icône SVG personnalisée : Maison chaleureuse -->
-      <div class="hero-icon">
-        <svg viewBox="0 0 100 100" width="100" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Maison -->
-          <path d="M50 10L10 45V90H40V65C40 62 42 60 45 60H55C58 60 60 62 60 65V90H90V45L50 10Z" 
-                stroke="#D4A574" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- Toit avec cheminée -->
-          <path d="M75 25V15H85V35" stroke="#D4A574" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Fenêtre -->
-          <rect x="30" y="50" width="15" height="15" rx="2" stroke="#D4A574" stroke-width="2.5" fill="none"/>
-          <line x1="37.5" y1="50" x2="37.5" y2="65" stroke="#D4A574" stroke-width="2"/>
-          <line x1="30" y1="57.5" x2="45" y2="57.5" stroke="#D4A574" stroke-width="2"/>
-          <!-- Fumée -->
-          <path d="M80 10C80 10 82 5 78 3" stroke="#D4A574" stroke-width="2" stroke-linecap="round" opacity="0.6">
-            <animate attributeName="d" 
-                     values="M80 10C80 10 82 5 78 3;M80 10C80 10 78 5 82 3;M80 10C80 10 82 5 78 3" 
-                     dur="3s" repeatCount="indefinite"/>
-          </path>
-          <!-- Cœur dans la maison -->
-          <path d="M55 42C55 38 60 35 63 38C66 35 71 38 71 42C71 48 63 54 63 54C63 54 55 48 55 42Z" 
-                fill="#D4A574" opacity="0.3"/>
-        </svg>
-      </div>
-
-      <!-- Ornement -->
       <div class="hero-ornament">
-        <span class="hero-ornament-line"></span>
-        <span class="hero-ornament-diamond"></span>
-        <span class="hero-ornament-line"></span>
+        <div class="hero-ornament-line"></div>
+        <div class="hero-ornament-diamond"></div>
+        <div class="hero-ornament-line"></div>
       </div>
-
-      <!-- Titre -->
-      <h1 class="hero-title">Vivre solo</h1>
-      
-      <!-- Sous-titre -->
-      <p class="hero-subtitle">L'art de vivre seul·e</p>
-      
-      <!-- Description -->
+      <h1 class="hero-title">Vivre <span class="highlight">solo</span></h1>
+      <p class="hero-subtitle">La solitude a mille visages</p>
       <p class="hero-description">
-         On peut être seul et bien.
-         On peut être entouré et se sentir seul.
-         La solitude, c’est ce qui se passe en soi — pas autour de soi.
-      </p>
-
-      <!-- Citation -->
-      <div class="hero-quote">
-        Je n'ai jamais trouvé de compagnon qui me tînt aussi bonne compagnie que la solitude.
-        <cite>— Henry David Thoreau</cite>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION : LES DEUX VISAGES
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Les deux visages de la solitude</h2>
-        <p>
-          La solitude a mille nuances. Elle peut être choisie ou subie, 
-          refuge ou vertige. Comprendre cette distinction est essentiel.
-        </p>
-      </div>
-
-      <div class="duality-grid">
-        
-       <!-- Solitude choisie -->
-<div class="duality-card animate-on-scroll">
-  <div class="duality-image">
-    <img src="../images/vivre-solo/vivre_solo_02.jpg" 
-         alt="Femme lisant paisiblement dans un salon lumineux" 
-         title="Photo : IA générée">
-  </div>
-  <h3>Solitude choisie</h3>
-  <p>
-    C'est la solitude que l'on cultive volontairement. Un temps pour soi, 
-    un espace de création, de réflexion, de ressourcement.
-  </p>
-  <p>
-    Elle est source de liberté, d'autonomie et de croissance personnelle. 
-    Une pratique philosophique millénaire, des ermites aux philosophes stoïciens.
-  </p>
-  <p class="duality-quote">
-    « On ne peut être vraiment soi qu'aussi longtemps qu'on est seul » — Schopenhauer
-  </p>
-</div>
-<!-- Isolement subi -->
-<div class="duality-card card-isolation animate-on-scroll animate-delay-1">
-  <div class="duality-image">
-    <img src="../images/vivre-solo/vivre_solo_01.jpg" 
-         alt="Petite figurine seule sous une lampe" 
-         title="Photo : Pixabay">
-  </div>
-  <h3>Isolement subi</h3>
-  <p>
-    C'est la solitude non désirée, celle qui s'impose à nous. 
-    Une rupture des liens, un manque de connexion, une sensation d'être seul·e au milieu du monde.
-  </p>
-  <p>
-    Elle peut être douloureuse et fragilisante. Mais elle n'est pas une fatalité. 
-    Avec du soutien et des outils, on peut transformer l'isolement en chemin vers soi.
-  </p>
-  <p class="duality-quote">
-    Soloplugs est là pour t'accompagner, quelle que soit ton expérience de la solitude.
-  </p>
-</div>
-       
-  </section>
-<!-- ============================================================
-     SECTION : STATISTIQUES MONDIALES
-     ============================================================ -->
-<section class="section stats-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>L'épidémie silencieuse en chiffres</h2>
-      <p>
-        La solitude est devenue un enjeu majeur de santé publique à l'échelle mondiale. 
-        Ces chiffres révèlent l'ampleur d'un phénomène trop longtemps ignoré.
+        Elle peut être refuge ou vertige, liberté ou poids. 
+        L'important, c'est de trouver son chemin.
       </p>
     </div>
+  </section>
 
- <div class="stats-grid">
-
-  <!-- USA -->
-  <div class="stat-card stat-highlight animate-on-scroll">
-    <div class="stat-flag">🇺🇸</div>
-    <div class="stat-number">1 sur 2</div>
-    <div class="stat-label">adulte américain souffrait de solitude avant même la pandémie</div>
-    <div class="stat-compare">US Surgeon General, 2023</div>
-  </div>
-
-  <div class="stat-card animate-on-scroll animate-delay-1">
-    <div class="stat-flag">🇺🇸</div>
-    <div class="stat-number">52M</div>
-    <div class="stat-label">d'Américains vivent une solitude quotidienne</div>
-    <div class="stat-compare">Gallup, septembre 2024</div>
-  </div>
-
-  <div class="stat-card animate-on-scroll animate-delay-2">
-    <div class="stat-flag">🇺🇸</div>
-    <div class="stat-number">30%</div>
-    <div class="stat-label">des 18-34 ans se sentent seuls chaque jour</div>
-    <div class="stat-compare">American Psychiatric Association, 2024</div>
-  </div>
-
-  <div class="stat-card stat-warning animate-on-scroll animate-delay-3">
-    <div class="stat-flag">🚬</div>
-    <div class="stat-number">15</div>
-    <div class="stat-label">cigarettes/jour — équivalent santé du manque de connexion</div>
-    <div class="stat-compare">US Surgeon General Advisory</div>
-  </div>
-
-  <div class="stat-card animate-on-scroll">
-    <div class="stat-flag">❤️</div>
-    <div class="stat-number">+29%</div>
-    <div class="stat-label">risque de maladie cardiaque lié à l'isolement</div>
-    <div class="stat-compare">+32% AVC, +50% démence</div>
-  </div>
-
-  <div class="stat-card animate-on-scroll animate-delay-1">
-    <div class="stat-flag">📉</div>
-    <div class="stat-number">-70%</div>
-    <div class="stat-label">de temps avec des amis pour les 15-24 ans</div>
-    <div class="stat-compare">en 20 ans — remplacé par les écrans</div>
-  </div>
-
-  <!-- France -->
-  <div class="stat-card animate-on-scroll animate-delay-2">
-    <div class="stat-flag">🇫🇷</div>
-    <div class="stat-number">31%</div>
-    <div class="stat-label">des Français expriment un sentiment de solitude en 2024</div>
-    <div class="stat-compare">contre 25% en 2018</div>
-  </div>
-
-  <div class="stat-card animate-on-scroll animate-delay-3">
-    <div class="stat-flag">🇫🇷</div>
-    <div class="stat-number">17%</div>
-    <div class="stat-label">souffrent de solitude chronique</div>
-    <div class="stat-compare">contre 13% avant la pandémie</div>
-  </div>
-
-  <!-- Canada -->
-  <div class="stat-card animate-on-scroll">
-    <div class="stat-flag">🇨🇦</div>
-    <div class="stat-number">24%</div>
-    <div class="stat-label">des personnes vivant seules se sentent souvent seules</div>
-    <div class="stat-compare">Statistique Canada, 2021</div>
-  </div>
-
-  <!-- Jeunes -->
-  <div class="stat-card stat-highlight animate-on-scroll animate-delay-1">
-    <div class="stat-flag">👥</div>
-    <div class="stat-number">1 sur 3</div>
-    <div class="stat-label">jeune actif (25-39 ans) se sent particulièrement seul</div>
-    <div class="stat-compare">deux fois plus que les 60-69 ans</div>
-  </div>
-
-  <!-- Santé mentale -->
-  <div class="stat-card stat-warning animate-on-scroll animate-delay-2">
-    <div class="stat-flag">⚠️</div>
-    <div class="stat-number">65%</div>
-    <div class="stat-label">des personnes isolées ont envisagé de mettre fin à leurs jours</div>
-    <div class="stat-compare">deux fois la moyenne nationale</div>
-  </div>
-
-  <!-- Paradoxe -->
-  <div class="stat-card animate-on-scroll animate-delay-3">
-    <div class="stat-flag">📱</div>
-    <div class="stat-number">Paradoxe</div>
-    <div class="stat-label">Plus connectés que jamais, plus seuls que jamais</div>
-    <div class="stat-compare">Le défilement passif augmente la solitude</div>
-  </div>
-
-</div>
-
-    </div>
-
-    <div class="stats-source">
-  Sources : US Surgeon General 2023, Gallup 2024, American Psychiatric Association, 
-  Harvard Making Caring Common, Fondation de France, Statistique Canada
-</div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION : HISTOIRE ET CULTURE DE LA SOLITUDE
-     ============================================================ -->
-<section class="section section-alt history-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>La solitude à travers le temps et les cultures</h2>
-      <p>
-        D'expérience spirituelle valorisée à « épidémie » moderne, 
-        la perception de la solitude a profondément évolué.
-      </p>
-    </div>
-
-    <!-- Timeline historique -->
-    <div class="history-timeline">
-      
-      <div class="timeline-era animate-on-scroll">
-        <div class="era-period">Antiquité — XVIIIe siècle</div>
-        <h3>La solitude valorisée</h3>
-        <p>
-          Ermites, philosophes et mystiques recherchaient activement la solitude 
-          comme voie vers la sagesse, Dieu ou la vérité intérieure.
-        </p>
-        <div class="era-quotes">
-          <blockquote>
-            « On ne peut être vraiment soi qu'aussi longtemps qu'on est seul »
-            <cite>— Schopenhauer</cite>
-          </blockquote>
-          <blockquote>
-            « La citadelle intérieure » comme refuge de l'âme
-            <cite>— Marc Aurèle</cite>
-          </blockquote>
-        </div>
-      </div>
-
-      <div class="timeline-era animate-on-scroll animate-delay-1">
-        <div class="era-period">XIXe siècle</div>
-        <h3>Le basculement moderne</h3>
-        <p>
-          La révolution industrielle et l'urbanisation massive détruisent les liens 
-          communautaires traditionnels. Émile Durkheim théorise l'isolement comme 
-          problème social et invente le concept d'« anomie ».
-        </p>
-        <div class="era-highlight">
-          Premier lien scientifique établi entre isolement social et suicide.
-        </div>
-      </div>
-
-      <div class="timeline-era animate-on-scroll animate-delay-2">
-        <div class="era-period">XXe siècle</div>
-        <h3>La médicalisation progressive</h3>
-        <p>
-          L'isolement devient un symptôme médical. La solitude est de plus en plus 
-          approchée par le « prisme du manque » et associée à un défaut d'intégration sociale.
-        </p>
-      </div>
-
-      <div class="timeline-era timeline-present animate-on-scroll animate-delay-3">
-        <div class="era-period">2011 — Aujourd'hui</div>
-        <h3>L'épidémie reconnue</h3>
-        <p>
-          2011 : La solitude devient « Grande Cause Nationale » en France.<br>
-          2023 : Le Surgeon General américain déclare officiellement une « épidémie de solitude ».
-        </p>
-        <div class="era-highlight">
-          L'impact sur la santé est comparable à fumer 15 cigarettes par jour.
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Perspectives culturelles -->
-    <div class="section-header" style="margin-top: 4rem;">
-      <h2>Regards culturels sur la solitude</h2>
-    </div>
-
-    <div class="culture-grid">
-      
-      <div class="culture-card animate-on-scroll">
-        <div class="culture-icon">🇯🇵</div>
-        <h3>Japon</h3>
-        <p>
-          Le concept de <em>hikikomori</em> (retrait social extrême) côtoie celui 
-          de <em>kodokushi</em> (mort solitaire). Mais aussi une culture profonde 
-          de l'introspection et du silence contemplatif.
-        </p>
-      </div>
-
-      <div class="culture-card animate-on-scroll animate-delay-1">
-        <div class="culture-icon">🇩🇰</div>
-        <h3>Scandinavie</h3>
-        <p>
-          Le <em>hygge</em> danois célèbre le confort solitaire. Les pays nordiques 
-          valorisent l'autonomie individuelle tout en maintenant des filets sociaux solides.
-        </p>
-      </div>
-
-      <div class="culture-card animate-on-scroll animate-delay-2">
-        <div class="culture-icon">🌍</div>
-        <h3>Cultures communautaires</h3>
-        <p>
-          En Afrique, Asie du Sud et Amérique latine, la solitude est souvent perçue 
-          comme anormale. La famille élargie et la communauté restent centrales.
-        </p>
-      </div>
-
-      <div class="culture-card animate-on-scroll animate-delay-3">
-        <div class="culture-icon">🇺🇸</div>
-        <h3>Occident moderne</h3>
-        <p>
-          Individualisme valorisé mais solitude stigmatisée. Le paradoxe d'une société 
-          qui célèbre l'indépendance tout en pathologisant le fait d'être seul.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
   <!-- ============================================================
-       SECTION : LES DÉFIS UNIVERSELS
+       SECTION D'ORIENTATION — POINT D'ENTRÉE CRITIQUE
        ============================================================ -->
-  <section class="section section-alt">
+  <section class="section orientation-section">
     <div class="container">
       <div class="section-header">
-        <h2>Les défis universels du vivre seul·e</h2>
-        <p>
-          Vivre seul·e comporte ses défis pratiques, émotionnels et sociaux. 
-          Les reconnaître, c'est déjà commencer à les apprivoiser.
-        </p>
+        <h2>Où en es-tu avec la solitude ?</h2>
+        <p>Choisis le parcours qui correspond à ton expérience</p>
       </div>
 
-      <div class="cards-grid">
+      <div class="path-selector">
         
-        <!-- Défi 1 : Le silence -->
-        <div class="theme-card animate-on-scroll">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 25C8 25 15 10 25 10C35 10 42 25 42 25C42 25 35 40 25 40C15 40 8 25 8 25Z" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="25" cy="25" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="25" cy="25" r="2" fill="currentColor"/>
-              <line x1="5" y1="45" x2="45" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        <!-- Parcours SOL_001 : Solitude choisie -->
+        <div class="path-card path-chosen" data-path="chosen">
+          <div class="path-image">
+            <img src="../images/vivre-solo/vivre_solo_02.jpg" 
+                 alt="Femme lisant paisiblement dans un salon lumineux" 
+                 title="Photo : IA générée">
           </div>
-          <h3>Le poids du silence</h3>
-          <p>
-            Les dimanches qui s'étirent, les soirées sans bruit, 
-            l'absence de voix familières. Le silence peut peser.
-          </p>
-          <p><strong>Pistes :</strong></p>
-          <ul>
-            <li>Créer des rituels sonores (podcasts, musique)</li>
-            <li>Apprivoiser le silence comme espace créatif</li>
-            <li>Pratiquer l'écriture ou le journal intime</li>
-          </ul>
+          <div class="path-content">
+            <div class="path-icon">🌟</div>
+            <h3>Solitude choisie</h3>
+            
+            <p class="path-description">
+             "La solitude choisie est l'art de vivre bien et heureux avec soi-même"
+            </p>
+            <ul class="path-features">
+              <li>✓ Créativité et introspection</li>
+              <li>✓ Pratiques philosophiques</li>
+              <li>✓ Art de vivre en solo</li>
+              <li>✓ Cultiver la plénitude</li>
+            </ul>
+            <button class="btn btn-path btn-chosen" onclick="selectPath('chosen')">
+              Explorer ce parcours
+            </button>
+          </div>
         </div>
 
-        <!-- Défi 2 : Le regard -->
-        <div class="theme-card animate-on-scroll animate-delay-1">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="20" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="32" cy="20" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="25" cy="38" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
-              <line x1="18" y1="28" x2="22" y2="33" stroke="currentColor" stroke-width="2"/>
-              <line x1="32" y1="28" x2="28" y2="33" stroke="currentColor" stroke-width="2"/>
-            </svg>
+        <!-- Parcours SOL_002 : Isolement subi -->
+        <div class="path-card path-suffered" data-path="suffered">
+          <div class="path-image">
+            <img src="../images/vivre-solo/vivre_solo_01.jpg" 
+                 alt="Petite figurine seule sous une lampe" 
+                 title="Photo : Pixabay">
           </div>
-          <h3>Le regard des autres</h3>
-          <p>
-            « Et toi, tu vis seul·e ? » La question anodine qui charrie son lot 
-            de jugements silencieux et de pitié maladroite.
-          </p>
-          <p><strong>Pistes :</strong></p>
-          <ul>
-            <li>Assumer son choix ou sa situation</li>
-            <li>Éduquer son entourage avec douceur</li>
-            <li>Trouver sa tribu de solitaires assumés</li>
-          </ul>
-        </div>
-
-        <!-- Défi 3 : L'autonomie -->
-        <div class="theme-card animate-on-scroll animate-delay-2">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M25 5L30 20H45L33 30L38 45L25 35L12 45L17 30L5 20H20L25 5Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
-            </svg>
+          <div class="path-content">
+            <div class="path-icon">💭</div>
+            <h3>Isolement subi</h3>
+          
+            <p class="path-description">
+              "La solitude subie est une solitude qui fait souffrir parce qu'elle n'a pas été choisie — mais qui peut, avec du soutien et du sens, évoluer vers une solitude mieux habitée"
+            </p>
+            <ul class="path-features">
+              <li>✓ Accompagnement bienveillant</li>
+              <li>✓ Ressources d'aide concrètes</li>
+              <li>✓ Stratégies de reconnexion</li>
+              <li>✓ Soutien et compassion</li>
+            </ul>
+            <button class="btn btn-path btn-suffered" onclick="selectPath('suffered')">
+              Explorer ce parcours
+            </button>
           </div>
-          <h3>L'autonomie totale</h3>
-          <p>
-            Tout gérer seul·e : les courses, le ménage, les décisions, 
-            les réparations. Ça peut être libérateur... ou épuisant.
-          </p>
-          <p><strong>Pistes :</strong></p>
-          <ul>
-            <li>Créer des routines efficaces</li>
-            <li>Accepter de demander de l'aide</li>
-            <li>Célébrer ses victoires quotidiennes</li>
-          </ul>
-        </div>
-
-        <!-- Défi 4 : Les creux -->
-        <div class="theme-card animate-on-scroll animate-delay-3">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 35C10 25 15 30 20 25C25 20 30 28 35 22C40 16 45 20 50 15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <circle cx="25" cy="25" r="20" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
-            </svg>
-          </div>
-          <h3>Les moments de creux</h3>
-          <p>
-            Les coups de blues, les questions existentielles à 3h du matin, 
-            le sentiment de passer à côté de quelque chose.
-          </p>
-          <p><strong>Pistes :</strong></p>
-          <ul>
-            <li>Construire son réseau de soutien</li>
-            <li>Tenir un journal (découvre Soli)</li>
-            <li>Avoir des ressources d'urgence à portée</li>
-          </ul>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ============================================================
-       CITATION
-       ============================================================ -->
-  <section class="section">
-    <div class="container-narrow">
-      <blockquote class="quote-block animate-on-scroll">
+      <!-- Note d'orientation -->
+      <div class="orientation-note animate-on-scroll">
         <p>
-          L'isolement n'est pas la destination naturelle de la solitude, 
-          c'est un égarement sur le chemin. Vivre seul·e, c'est apprendre 
-          l'art de sa propre compagnie.
+          💡 <strong>Tu peux naviguer entre les deux parcours à tout moment.</strong> 
+          La solitude n'est pas figée — elle évolue selon les moments de vie.
         </p>
-        <cite>— Philosophie Soloplugs</cite>
-      </blockquote>
+      </div>
+
     </div>
   </section>
 
   <!-- ============================================================
-       SECTION : RESSOURCES
+       CONTENU DYNAMIQUE PAR PARCOURS
        ============================================================ -->
-  <section class="section section-alt">
+  
+  <!-- PARCOURS SOLITUDE CHOISIE (SOL_001) -->
+  <div id="content-chosen" class="path-content-section" style="display: none;">
+    
+    <!-- Citation inspirante -->
+    <section class="section section-alt">
+      <div class="container-narrow">
+        <div class="quote-block animate-on-scroll">
+          <p>« On ne peut être vraiment soi qu'aussi longtemps qu'on est seul. 
+             Celui qui n'aime pas la solitude n'aime pas la liberté, 
+             car on n'est libre qu'étant seul. »</p>
+          <cite>— Arthur Schopenhauer</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophie de la solitude choisie -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>L'art de cultiver sa solitude</h2>
+          <p>
+            La solitude choisie est une pratique millénaire. 
+            Un temps pour soi, un espace de création, de réflexion, de ressourcement.
+          </p>
+        </div>
+
+        <div class="wisdom-grid">
+          
+          <div class="wisdom-card animate-on-scroll">
+            <div class="wisdom-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="20" stroke="currentColor" stroke-width="2"/>
+                <path d="M25 15V25L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Liberté intérieure</h3>
+            <p>
+              La solitude choisie est d'abord une liberté. 
+              Liberté de penser, d'être, de créer sans le regard de l'autre. 
+              C'est un espace préservé où tu peux explorer qui tu es vraiment.
+            </p>
+          </div>
+
+          <div class="wisdom-card animate-on-scroll animate-delay-1">
+            <div class="wisdom-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 40C10 40 15 25 25 25C35 25 40 40 40 40" stroke="currentColor" stroke-width="2"/>
+                <circle cx="25" cy="18" r="8" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Connaissance de soi</h3>
+            <p>
+              Dans le silence de la solitude, tu peux t'entendre penser. 
+              C'est là que se révèlent tes véritables désirs, tes valeurs profondes, 
+              ce qui fait vibrer ton être.
+            </p>
+          </div>
+
+          <div class="wisdom-card animate-on-scroll animate-delay-2">
+            <div class="wisdom-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 35L25 15L35 35H15Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="25" cy="25" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Créativité épanouie</h3>
+            <p>
+              La solitude est le terreau de la création. 
+              Les artistes, philosophes et penseurs l'ont toujours su : 
+              c'est dans le retrait que naissent les œuvres.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pratiques concrètes -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Pratiques pour enrichir ta solitude</h2>
+          <p>Des outils concrets pour transformer ton temps seul·e en source de plénitude</p>
+        </div>
+
+        <div class="theme-grid">
+          
+          <div class="theme-card animate-on-scroll">
+            <div class="card-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="15" width="30" height="25" stroke="currentColor" stroke-width="2" rx="2"/>
+                <path d="M15 22H35M15 28H30M15 34H25" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Journal intime & Soli</h3>
+            <ul>
+              <li>Découvre Soli, ton miroir intérieur</li>
+              <li>Écriture automatique matinale</li>
+              <li>Gratitude quotidienne</li>
+              <li>Dialogues avec soi-même</li>
+            </ul>
+          </div>
+
+          <div class="theme-card animate-on-scroll animate-delay-1">
+            <div class="card-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="15" stroke="currentColor" stroke-width="2"/>
+                <path d="M25 10V25L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Rituels contemplatifs</h3>
+            <ul>
+              <li>Méditation et pleine conscience</li>
+              <li>Marches solitaires en nature</li>
+              <li>Thé ou café cérémoniel</li>
+              <li>Observation du lever/coucher de soleil</li>
+            </ul>
+          </div>
+
+          <div class="theme-card animate-on-scroll animate-delay-2">
+            <div class="card-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 30L25 10L35 30H15Z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="25" cy="20" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Créativité libre</h3>
+            <ul>
+              <li>Photographie contemplative</li>
+              <li>Dessin, peinture, sculpture</li>
+              <li>Écriture créative</li>
+              <li>Musique, chant, danse</li>
+            </ul>
+          </div>
+
+          <div class="theme-card animate-on-scroll animate-delay-3">
+            <div class="card-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="26" height="26" stroke="currentColor" stroke-width="2" rx="2"/>
+                <path d="M12 20H38M20 12V38" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Slow living</h3>
+            <ul>
+              <li>Jardinage et plantes d'intérieur</li>
+              <li>Cuisine consciente et savoureuse</li>
+              <li>Lectures philosophiques</li>
+              <li>Minimalisme intentionnel</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Soli -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-section cta-chosen animate-on-scroll">
+          <h2>Dialogue avec ton univers intérieur</h2>
+          <p>
+            Soli est ton journal intime intelligent — un miroir de ta vie intérieure 
+            qui t'aide à explorer tes pensées, tes rêves, tes aspirations.
+          </p>
+          <a href="../soli.html" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 4H16V16H4V4Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M7 8H13M7 12H11" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Découvrir Soli
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PARCOURS ISOLEMENT SUBI (SOL_002) -->
+  <div id="content-suffered" class="path-content-section" style="display: none;">
+    
+    <!-- Message de soutien -->
+    <section class="section section-alt">
+      <div class="container-narrow">
+        <div class="support-message animate-on-scroll">
+          <div class="support-icon">💙</div>
+          <h2>Tu n'es pas seul·e dans cette épreuve</h2>
+          <p>
+            Se sentir seul·e est difficile et douloureux. Cette souffrance est réelle, 
+            et elle mérite d'être reconnue avec compassion. Soloplugs est là pour t'accompagner, 
+            sans jugement, à ton rythme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprendre l'isolement -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Comprendre ton expérience</h2>
+          <p>
+            L'isolement peut avoir de multiples visages. 
+            Le reconnaître est le premier pas vers le mieux-être.
+          </p>
+        </div>
+
+        <div class="understanding-grid">
+          
+          <div class="understanding-card animate-on-scroll">
+            <h3>🌊 Isolement circonstanciel</h3>
+            <p>
+              Déménagement, rupture, perte d'un être cher, changement de vie... 
+              Des événements qui bouleversent nos liens et nous laissent isolé·e.
+            </p>
+            <p class="card-note">
+              C'est temporaire, même si ça ne le semble pas maintenant.
+            </p>
+          </div>
+
+          <div class="understanding-card animate-on-scroll animate-delay-1">
+            <h3>🔇 Isolement social</h3>
+            <p>
+              Peu ou pas de contacts sociaux réguliers. Un réseau relationnel 
+              qui s'est effrité avec le temps, par la distance ou les circonstances.
+            </p>
+            <p class="card-note">
+              Des ponts peuvent être reconstruits, pas à pas.
+            </p>
+          </div>
+
+          <div class="understanding-card animate-on-scroll animate-delay-2">
+            <h3>💭 Isolement émotionnel</h3>
+            <p>
+              Se sentir seul·e même entouré·e. L'impression que personne ne te comprend, 
+              qu'aucun lien n'est vraiment profond ou authentique.
+            </p>
+            <p class="card-note">
+              La qualité des liens compte plus que la quantité.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ressources d'aide -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Ressources et soutien</h2>
+          <p>Des outils concrets pour alléger ta solitude et retrouver du lien</p>
+        </div>
+
+        <div class="help-grid">
+          
+          <div class="help-card animate-on-scroll">
+            <div class="help-icon">🆘</div>
+            <h3>Aide immédiate</h3>
+            <p>Si tu es en détresse ou as des pensées suicidaires :</p>
+            <ul class="help-contacts">
+              <li><strong>Canada :</strong> 1-833-456-4566 (24/7)</li>
+              <li><strong>France :</strong> 3114 (24/7)</li>
+              <li><strong>Belgique :</strong> 0800 32 123 (24/7)</li>
+              <li><strong>Suisse :</strong> 143 (24/7)</li>
+            </ul>
+            <a href="../urgences.html" class="help-link">→ Toutes les ressources d'urgence</a>
+          </div>
+
+          <div class="help-card animate-on-scroll animate-delay-1">
+            <div class="help-icon">🤝</div>
+            <h3>Accompagnement</h3>
+            <p>Trouve du soutien adapté à ta situation :</p>
+            <ul>
+              <li>Groupes de soutien en ligne et locaux</li>
+              <li>Associations d'écoute et d'entraide</li>
+              <li>Professionnels de la santé mentale</li>
+              <li>Communautés bienveillantes</li>
+            </ul>
+            <a href="../ressources.html" class="help-link">→ Annuaire des ressources</a>
+          </div>
+
+          <div class="help-card animate-on-scroll animate-delay-2">
+            <div class="help-icon">🌱</div>
+            <h3>Petits pas quotidiens</h3>
+            <p>Des actions simples pour créer du lien :</p>
+            <ul>
+              <li>Saluer un voisin, un commerçant</li>
+              <li>Rejoindre un groupe d'activité</li>
+              <li>Bénévolat dans ta communauté</li>
+              <li>Cours, ateliers, clubs de lecture</li>
+            </ul>
+            <a href="../activites.html" class="help-link">→ Idées d'activités</a>
+          </div>
+
+        </div>
+
+        <!-- Stratégies de reconnexion -->
+        <div class="strategies-section">
+          <h3>Stratégies de reconnexion progressive</h3>
+          
+          <div class="strategy-steps">
+            
+            <div class="step-card animate-on-scroll">
+              <div class="step-number">1</div>
+              <h4>Commence petit</h4>
+              <p>
+                Pas besoin de grands changements. Un sourire, un bonjour, 
+                un message à quelqu'un que tu n'as pas vu depuis longtemps.
+              </p>
+            </div>
+
+            <div class="step-card animate-on-scroll animate-delay-1">
+              <div class="step-number">2</div>
+              <h4>Sois régulier·ère</h4>
+              <p>
+                La constance crée le lien. Un café hebdomadaire, une activité mensuelle, 
+                un rendez-vous régulier — même modeste.
+              </p>
+            </div>
+
+            <div class="step-card animate-on-scroll animate-delay-2">
+              <div class="step-number">3</div>
+              <h4>Cherche l'authenticité</h4>
+              <p>
+                Privilégie la qualité à la quantité. Un vrai lien vaut mieux 
+                que dix connexions superficielles.
+              </p>
+            </div>
+
+            <div class="step-card animate-on-scroll animate-delay-3">
+              <div class="step-number">4</div>
+              <h4>Sois patient·e avec toi</h4>
+              <p>
+                Reconstruire des liens prend du temps. Les rechutes sont normales. 
+                Célèbre chaque petit progrès.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Solo -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-section cta-suffered animate-on-scroll">
+          <h2>Parle avec Solo, ton compagnon bienveillant</h2>
+          <p>
+            Solo est là pour t'écouter sans jugement, répondre à tes questions, 
+            et t'accompagner dans ta réflexion. Disponible 24/7, en toute confidentialité.
+          </p>
+          <div class="btn-group">
+            <a href="../solo.html" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Parler avec Solo
+            </a>
+            <a href="../urgences.html" class="btn btn-secondary">
+              Ressources d'urgence
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============================================================
+       SECTIONS COMMUNES (pour tous les parcours)
+       ============================================================ -->
+  
+  <!-- Statistiques mondiales -->
+  <section class="section stats-section">
     <div class="container">
       <div class="section-header">
-        <h2>Ressources pour bien vivre seul·e</h2>
+        <h2>L'épidémie silencieuse en chiffres</h2>
         <p>
-          Des guides pratiques, des outils et des inspirations pour transformer 
-          ton quotidien solo en expérience épanouissante.
+          La solitude est devenue un enjeu majeur de santé publique à l'échelle mondiale. 
+          Ces chiffres révèlent l'ampleur d'un phénomène trop longtemps ignoré.
         </p>
       </div>
 
-      <div class="cards-grid">
-        
-        <!-- Ressource 1 -->
-        <div class="theme-card animate-on-scroll">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 8V42H42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M8 8H12V35H8" stroke="currentColor" stroke-width="2"/>
-              <path d="M15 12H19V35H15" stroke="currentColor" stroke-width="2"/>
-              <path d="M22 8H26V35H22" stroke="currentColor" stroke-width="2"/>
-              <path d="M29 15H33V35H29" stroke="currentColor" stroke-width="2"/>
-              <path d="M36 10H40V35H36" stroke="currentColor" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Guides pratiques</h3>
-          <ul>
-            <li>Créer une routine quotidienne ressourçante</li>
-            <li>Aménager son espace pour se sentir bien</li>
-            <li>Gérer les finances en solo</li>
-            <li>Cuisiner pour soi avec plaisir</li>
-            <li>Organiser ses tâches domestiques</li>
-          </ul>
+      <div class="stats-grid">
+
+        <!-- USA -->
+        <div class="stat-card stat-highlight animate-on-scroll">
+          <div class="stat-flag">🇺🇸</div>
+          <div class="stat-number">1 sur 2</div>
+          <div class="stat-label">adulte américain souffrait de solitude avant même la pandémie</div>
+          <div class="stat-compare">US Surgeon General, 2023</div>
         </div>
 
-        <!-- Ressource 2 -->
-        <div class="theme-card animate-on-scroll animate-delay-1">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
-              <path d="M15 30C15 30 20 35 25 35C30 35 35 30 35 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="18" cy="20" r="2" fill="currentColor"/>
-              <circle cx="32" cy="20" r="2" fill="currentColor"/>
-              <path d="M25 5V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M25 40V45" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Pratiques créatives</h3>
-          <ul>
-            <li>Tenir un journal intime (découvre Soli)</li>
-            <li>Photographie contemplative</li>
-            <li>Écriture de soi</li>
-            <li>Créations manuelles</li>
-            <li>Jardinage en solo</li>
-          </ul>
+        <div class="stat-card animate-on-scroll animate-delay-1">
+          <div class="stat-flag">🇺🇸</div>
+          <div class="stat-number">52M</div>
+          <div class="stat-label">d'Américains vivent une solitude quotidienne</div>
+          <div class="stat-compare">Gallup, septembre 2024</div>
         </div>
 
-        <!-- Ressource 3 -->
-        <div class="theme-card animate-on-scroll animate-delay-2">
-          <div class="card-icon">
-            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M25 5C15 5 8 15 8 25C8 35 15 42 20 45L25 50L30 45C35 42 42 35 42 25C42 15 35 5 25 5Z" stroke="currentColor" stroke-width="2" fill="none"/>
-              <path d="M20 20V35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M20 20C20 17 22 15 25 15C28 15 30 17 30 20C30 23 28 25 25 25H20" stroke="currentColor" stroke-width="2" fill="none"/>
-              <path d="M30 25C30 25 33 25 33 28C33 31 30 33 27 33" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-          <h3>Développement personnel</h3>
-          <ul>
-            <li>Méditation et pleine conscience</li>
-            <li>Lectures philosophiques sur la solitude</li>
-            <li>Exercices d'introspection guidée</li>
-            <li>Rituels de gratitude</li>
-            <li>Slow living et minimalisme</li>
-          </ul>
+        <div class="stat-card animate-on-scroll animate-delay-2">
+          <div class="stat-flag">🇺🇸</div>
+          <div class="stat-number">30%</div>
+          <div class="stat-label">des 18-34 ans se sentent seuls plusieurs fois par semaine</div>
+          <div class="stat-compare">American Psychiatric Association, 2024</div>
+        </div>
+
+        <div class="stat-card stat-warning animate-on-scroll animate-delay-3">
+          <div class="stat-flag">🚬</div>
+          <div class="stat-number">15</div>
+          <div class="stat-label">cigarettes/jour — équivalent santé du manque de connexion</div>
+          <div class="stat-compare">US Surgeon General Advisory</div>
+        </div>
+
+        <div class="stat-card animate-on-scroll">
+          <div class="stat-flag">❤️</div>
+          <div class="stat-number">+29%</div>
+          <div class="stat-label">risque de maladie cardiaque lié à l'isolement</div>
+          <div class="stat-compare">+32% AVC, +50% démence</div>
+        </div>
+
+        <div class="stat-card animate-on-scroll animate-delay-1">
+          <div class="stat-flag">📉</div>
+          <div class="stat-number">-70%</div>
+          <div class="stat-label">de temps avec des amis pour les 15-24 ans</div>
+          <div class="stat-compare">en 20 ans — remplacé par les écrans</div>
+        </div>
+
+        <!-- France -->
+        <div class="stat-card animate-on-scroll animate-delay-2">
+          <div class="stat-flag">🇫🇷</div>
+          <div class="stat-number">31%</div>
+          <div class="stat-label">des Français expriment un sentiment de solitude en 2024</div>
+          <div class="stat-compare">contre 25% en 2018</div>
+        </div>
+
+        <div class="stat-card animate-on-scroll animate-delay-3">
+          <div class="stat-flag">🇫🇷</div>
+          <div class="stat-number">17%</div>
+          <div class="stat-label">souffrent de solitude chronique</div>
+          <div class="stat-compare">contre 13% avant la pandémie</div>
+        </div>
+
+        <!-- Canada -->
+        <div class="stat-card animate-on-scroll">
+          <div class="stat-flag">🇨🇦</div>
+          <div class="stat-number">24%</div>
+          <div class="stat-label">des personnes vivant seules souffrent de solitude</div>
+          <div class="stat-compare">Statistique Canada, 2021</div>
+        </div>
+
+        <!-- Jeunes -->
+        <div class="stat-card stat-highlight animate-on-scroll animate-delay-1">
+          <div class="stat-flag">👥</div>
+          <div class="stat-number">1 sur 3</div>
+          <div class="stat-label">jeune actif (25-39 ans) se sent particulièrement seul</div>
+          <div class="stat-compare">deux fois plus que les 60-69 ans</div>
+        </div>
+
+        <!-- Santé mentale -->
+        <div class="stat-card stat-warning animate-on-scroll animate-delay-2">
+          <div class="stat-flag">⚠️</div>
+          <div class="stat-label">Au Canada, en France comme aux États‑Unis, les personnes en situation d'isolement rapportent des idées suicidaires à un niveau environ deux fois plus élevé que la moyenne nationale.</div>
+        </div>
+
+        <!-- Paradoxe -->
+        <div class="stat-card animate-on-scroll animate-delay-3">
+          <div class="stat-flag">📱</div>
+          <div class="stat-number">Paradoxe</div>
+          <div class="stat-label">Plus connectés que jamais, plus seuls que jamais</div>
+          <div class="stat-compare">Le défilement passif augmente la solitude</div>
         </div>
 
       </div>
+
+      <div class="stats-source">
+        Sources : US Surgeon General's Advisory on Our Epidemic of Loneliness and Isolation (2023), 
+        Gallup World Poll (2024), Fondation de France (2024), Statistique Canada (2021)
+      </div>
+
     </div>
   </section>
 
-  <!-- ============================================================
-       SECTION : ARTICLES DU MAGAZINE
-       ============================================================ -->
+  <!-- Articles du magazine -->
   <section class="section">
     <div class="container">
       <div class="section-header">
@@ -678,43 +704,51 @@
   </section>
 
   <!-- ============================================================
-       CTA : SOLO & SOLI
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-section animate-on-scroll">
-        <h2>Besoin d'accompagnement ?</h2>
-        <p>
-          Que tu cherches des réponses ou un espace pour te retrouver, 
-          Solo et Soli sont là pour toi.
-        </p>
-        <div class="btn-group">
-          <a href="../solo.html" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
-              <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            Découvrir Solo
-          </a>
-          <a href="../soli.html" class="btn btn-secondary">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 4H16V16H4V4Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M7 8H13" stroke="currentColor" stroke-width="2"/>
-              <path d="M7 12H11" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Essayer Soli
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        FOOTER
        ============================================================ -->
 
   <?php include '../components/footer.php'; ?>
   <?php include '../components/scripts.php'; ?>
+
+  <!-- Script de gestion des parcours -->
+  <script>
+    // Gestion du système de parcours
+    function selectPath(pathType) {
+      // Masquer tous les contenus
+      document.querySelectorAll('.path-content-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Afficher le contenu du parcours sélectionné
+      if (pathType === 'chosen') {
+        document.getElementById('content-chosen').style.display = 'block';
+      } else if (pathType === 'suffered') {
+        document.getElementById('content-suffered').style.display = 'block';
+      }
+      
+      // Scroll smooth vers le contenu
+      setTimeout(() => {
+        const content = document.querySelector('.path-content-section[style*="display: block"]');
+        if (content) {
+          content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      
+      // Sauvegarder le choix dans localStorage
+      localStorage.setItem('soloplugs_vivre_solo_path', pathType);
+    }
+    
+    // Restaurer le parcours au chargement si déjà choisi
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedPath = localStorage.getItem('soloplugs_vivre_solo_path');
+      if (savedPath) {
+        // Note: On ne restaure PAS automatiquement pour forcer l'utilisateur 
+        // à faire un choix conscient à chaque visite
+        // Mais on pourrait décommenter cette ligne si souhaité:
+        // selectPath(savedPath);
+      }
+    });
+  </script>
 
 </body>
 </html>

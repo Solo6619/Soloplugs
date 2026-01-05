@@ -7,10 +7,13 @@
     $pageDescription = 'Le dimanche en solo peut être lourd. Comment transformer cette journée en temps choisi plutôt que subi.';
     $basePath = '../';
     $currentPage = 'magazine';
-    $additionalCSS = ['../magazine.css', '../articles.css'];
+    $additionalCSS = ['articles.css'];
     
     include '../components/head.php';
   ?>
+  
+
+  
 </head>
 <body>
 
@@ -43,7 +46,7 @@
       </p>
       
       <div class="article-image">
-        <img src="../images/Magazine/apprivoiser_silence.jpg" alt="Personne dans le silence" loading="lazy">
+        <img src="../images/Magazine/Solitude_silencieuse_02.jpg" alt="Personne dans le silence" loading="lazy">
       </div>
     </header>
 

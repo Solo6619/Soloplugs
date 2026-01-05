@@ -25,33 +25,7 @@
   <section class="hero-vieillir">
     <div class="hero-content">
       
-      <!-- Icône SVG : Arbre de vie -->
-      <div class="hero-icon">
-        <svg viewBox="0 0 110 110" width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Tronc -->
-          <path d="M55 95V60" stroke="#A88555" stroke-width="4" stroke-linecap="round"/>
-          <path d="M55 75L45 65" stroke="#A88555" stroke-width="3" stroke-linecap="round"/>
-          <path d="M55 70L65 62" stroke="#A88555" stroke-width="3" stroke-linecap="round"/>
-          <!-- Feuillage -->
-          <circle cx="55" cy="40" r="28" fill="url(#treeGradient)" opacity="0.9"/>
-          <circle cx="40" cy="45" r="18" fill="url(#treeGradient)" opacity="0.8"/>
-          <circle cx="70" cy="45" r="18" fill="url(#treeGradient)" opacity="0.8"/>
-          <circle cx="55" cy="25" r="15" fill="url(#treeGradient)" opacity="0.85"/>
-          <!-- Soleil couchant -->
-          <circle cx="90" cy="20" r="12" fill="#C9A26F" opacity="0.3"/>
-          <path d="M90 8V12" stroke="#C9A26F" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-          <path d="M102 20H98" stroke="#C9A26F" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-          <path d="M90 28V32" stroke="#C9A26F" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-          <!-- Sol -->
-          <path d="M25 95C35 93 45 94 55 95C65 94 75 93 85 95" stroke="#A88555" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-          <defs>
-            <linearGradient id="treeGradient" x1="30" y1="20" x2="80" y2="60" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#A3B18A"/>
-              <stop offset="100%" stop-color="#7D8B6A"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
+    
 
       <!-- Ornement -->
       <div class="hero-ornament">

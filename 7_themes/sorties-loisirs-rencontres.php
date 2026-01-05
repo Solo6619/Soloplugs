@@ -21,7 +21,7 @@
        ============================================================ -->
   <section class="choices-hero">
     <h1>Sorties, Loisirs & Rencontres</h1>
-    <p class="subtitle">Quand la solitude devient mouvement</p>
+   
   </section>
 
   <!-- ============================================================

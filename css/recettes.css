@@ -1,0 +1,477 @@
+/* ============================================================
+   🍽️ SOLOPLUGS - STYLES RECETTES
+   CSS réutilisable pour toutes les pages recettes
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES CSS (nécessaires si magazine.css n'est pas chargé)
+   ============================================================ */
+:root {
+  /* Couleurs principales */
+  --accent: #D4A574;
+  --text-primary: #2C3338;
+  --text-secondary: #6B7280;
+  --bg-primary: #FBF9F6;
+  --bg-secondary: #F5F1EB;
+  --warm-gold: #D4A574;
+  
+  /* Espacements */
+  --header-height: 130px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-smooth: 0.4s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* ============================================================
+   BODY - Style de base
+   ============================================================ */
+body {
+  background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   SECTION PAGE CONTAINER & HEADER
+   ============================================================ */
+.section-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem var(--spacing-sm);
+}
+
+.section-page-header {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  margin-bottom: 2rem;
+}
+
+.section-page-header .back-link {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.section-page-header .back-link:hover {
+  color: var(--accent);
+}
+
+.section-page-header .section-page-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-page-header h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.section-page-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   ARTICLE CONTAINER (pour les pages de recettes individuelles)
+   ============================================================ */
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem var(--spacing-sm);
+}
+
+/* ============================================================
+   CARTE RECETTE (pour grilles)
+   ============================================================ */
+.recette-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.recette-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15);
+}
+
+.recette-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.recette-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.recette-card:hover .recette-card-image img {
+  transform: scale(1.05);
+}
+
+.recette-card-content {
+  padding: 1.25rem;
+}
+
+.recette-card-content h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.recette-card-content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.recette-card-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.recette-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ============================================================
+   GRILLE DE RECETTES
+   ============================================================ */
+.recettes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+}
+
+@media (max-width: 900px) {
+  .recettes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .recettes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   BOÎTE RECETTE (dans les articles)
+   ============================================================ */
+.recipe-box {
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.08), rgba(212, 165, 116, 0.03));
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+}
+
+.recipe-box h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.recipe-box > p:first-of-type {
+  text-align: center;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.recipe-box h4 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* Ingrédients */
+.ingredients ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .ingredients ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ingredients li {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.ingredients li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Méthode / Préparation */
+.method p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.method p:last-child {
+  margin-bottom: 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.method strong {
+  color: var(--accent);
+}
+
+/* ============================================================
+   INFOS RAPIDES (temps, portions, difficulté)
+   ============================================================ */
+.recipe-quick-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+}
+
+.recipe-quick-info .info-item {
+  text-align: center;
+}
+
+.recipe-quick-info .info-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.recipe-quick-info .info-value {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ============================================================
+   HEADER DE PAGE RECETTE - Nouvelle structure
+   ============================================================ */
+.recette-header {
+  padding: 1rem 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Conteneur image + bouton retour */
+.recette-hero {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.recette-hero .recette-image {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.recette-hero .recette-image img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bouton retour stylisé - positionné sur l'image */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.4);
+}
+
+.back-button .back-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover .back-icon {
+  transform: translateX(-3px);
+}
+
+/* Titre et sous-titre centrés */
+.recette-header .recette-title-block {
+  text-align: center;
+}
+
+.recette-header h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.recette-header .recette-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Ancien style (fallback) */
+.recette-header .back-link {
+  display: none;
+}
+
+.recette-header .recette-image {
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.recette-header .recette-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   CONTENU DE RECETTE
+   ============================================================ */
+.recette-content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.recette-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+/* ============================================================
+   RECETTES SIMILAIRES
+   ============================================================ */
+.recettes-similaires {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--bg-secondary);
+}
+
+.recettes-similaires h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .recette-header h1 {
+    font-size: 1.875rem;
+  }
+
+  .recipe-box {
+    padding: 1.5rem;
+  }
+
+  .recipe-quick-info {
+    gap: 1rem;
+  }
+
+  .recipe-quick-info .info-value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recette-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .recipe-box {
+    padding: 1rem;
+  }
+
+  .recipe-quick-info {
+    flex-wrap: wrap;
+  }
+}

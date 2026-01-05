@@ -25,31 +25,7 @@
   <section class="hero-parent">
     <div class="hero-content">
       
-      <!-- Icône SVG : Parent et enfant / Cœur protecteur -->
-      <div class="hero-icon">
-        <svg viewBox="0 0 110 110" width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Grand cercle protecteur -->
-          <circle cx="55" cy="55" r="48" stroke="#6BA368" stroke-width="2" fill="url(#parentGradient)" opacity="0.15"/>
-          <!-- Parent (silhouette) -->
-          <circle cx="45" cy="35" r="12" fill="#6BA368"/>
-          <path d="M45 48C32 48 25 58 25 70V85" stroke="#6BA368" stroke-width="4" stroke-linecap="round"/>
-          <path d="M45 48C58 48 62 58 62 70" stroke="#6BA368" stroke-width="4" stroke-linecap="round"/>
-          <!-- Enfant (silhouette) -->
-          <circle cx="72" cy="55" r="8" fill="#8FBF8C"/>
-          <path d="M72 64C64 64 60 70 60 78V90" stroke="#8FBF8C" stroke-width="3" stroke-linecap="round"/>
-          <path d="M72 64C80 64 82 70 82 78" stroke="#8FBF8C" stroke-width="3" stroke-linecap="round"/>
-          <!-- Main tendue entre les deux -->
-          <path d="M55 70C58 68 62 67 65 68" stroke="#E8B4B8" stroke-width="2" stroke-linecap="round"/>
-          <!-- Petit cœur -->
-          <path d="M55 20C55 20 52 17 52 14C52 11 54 10 56 12C58 10 60 11 60 14C60 17 55 22 55 20Z" fill="#E8B4B8" opacity="0.8"/>
-          <defs>
-            <linearGradient id="parentGradient" x1="10" y1="10" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#6BA368"/>
-              <stop offset="100%" stop-color="#E8B4B8"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
+      
 
       <!-- Badge -->
       <div class="hero-badge">

@@ -986,3 +986,16 @@ body {
     border-radius: 8px;
   }
 }
+
+/* Centrer le contenu des cartes thèmes */
+.theme-content {
+    text-align: center;
+}
+
+.theme-meta {
+    justify-content: center;
+}
+
+.theme-link {
+    justify-content: center;
+}

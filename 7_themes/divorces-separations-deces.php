@@ -53,8 +53,8 @@
       
       <p class="hero-description">
         Tu traverses quelque chose de difficile. Une rupture, une perte, 
-        un vide qui s'est installé. On ne va pas te dire que ça va passer. 
-        On est juste là. Sans rien presser.
+        un vide qui s'est installé. Je n'vais pas te dire que ça va passer. 
+        Mais je suis là. Sans rien presser.
       </p>
     </div>
   </section>
@@ -70,11 +70,11 @@
           et que certains jours sont encore difficiles.
         </p>
         <p>
-          <span class="emphasis">Soloplugs ne cherche pas à expliquer.</span> 
-          On n'a pas de réponses toutes faites. Pas de "ça ira mieux demain".
+          <span class="emphasis">Je ne cherche pas à expliquer.</span> 
+          Et je n'ai pas de réponses toutes faites. Pas de "ça ira mieux demain".
         </p>
         <p>
-          On accompagne. C'est tout.
+          Juste t'accompagner. C'est tout.
         </p>
       </div>
     </div>

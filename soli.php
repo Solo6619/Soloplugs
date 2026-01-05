@@ -7,7 +7,7 @@
     $pageDescription = 'Soli est votre journal intime vivant. Un miroir bienveillant pour accueillir vos pensées, émotions et silences.';
     $basePath = '';
     $currentPage = 'soli';
-    $additionalCSS = ['magazine.css'];
+    $additionalCSS = ['articles.css'];
     
     include 'components/head.php';
   ?>
@@ -19,55 +19,63 @@
   <!-- ============================================================
        CONTENU PRINCIPAL
        ============================================================ -->
-  <main class="magazine-container">
+  <main class="article-container">
 
-    <!-- Section Hero -->
-    <section class="magazine-header" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
-      <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Soli — L'oreille intérieure</h1>
-      <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem;">
+    <!-- En-tête -->
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-category">Journal intime</span>
+        <span class="article-read">En développement</span>
+      </div>
+      
+      <h1 class="article-title">Soli — L'oreille intérieure</h1>
+      
+      <p class="article-subtitle">
         Soli est votre journal intime vivant. Un miroir bienveillant pour accueillir vos pensées, émotions et silences.
       </p>
       
-      <div style="background: #F5F1EB; padding: 2rem; border-radius: 1rem; max-width: 600px; margin: 0 auto;">
-        <p style="font-style: italic; color: #6B7280; font-size: 1.125rem; margin: 0;">
-          Cette page est en construction. Le contenu sera ajouté prochainement.
+      <div class="article-image">
+        <img src="images/soli_hero.jpg" alt="Soli - L'oreille intérieure" loading="lazy">
+      </div>
+    </header>
+
+    <!-- Contenu -->
+    <article class="article-content">
+      
+      <div class="article-highlight">
+        <p>
+          <em>Cette page est en construction. Le contenu sera ajouté prochainement.</em>
         </p>
       </div>
 
-      <!-- Aperçu des fonctionnalités à venir -->
-      <div style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
-        <h2 style="font-family: 'Lora', serif; font-size: 1.75rem; color: #D4A574; margin-bottom: 2rem; text-align: center;">
-          Ce que Soli vous offrira
-        </h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.08);">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">📓</div>
-            <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; margin-bottom: 0.75rem; color: #2C3338;">Journal intime intelligent</h3>
-            <p style="color: #6B7280; font-size: 0.95rem; line-height: 1.6;">
-              Un espace privé et sécurisé pour déposer vos pensées, émotions et réflexions quotidiennes.
-            </p>
-          </div>
+      <h2>Ce que Soli vous offrira</h2>
 
-          <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.08);">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🪞</div>
-            <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; margin-bottom: 0.75rem; color: #2C3338;">Miroir bienveillant</h3>
-            <p style="color: #6B7280; font-size: 0.95rem; line-height: 1.6;">
-              Reflet empathique de votre univers intérieur, sans jugement ni prescription.
-            </p>
-          </div>
+      <p>
+        <strong>📓 Journal intime intelligent</strong><br>
+        Un espace privé et sécurisé pour déposer vos pensées, émotions et réflexions quotidiennes.
+      </p>
 
-          <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.08);">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
-            <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; margin-bottom: 0.75rem; color: #2C3338;">Expression multimédia</h3>
-            <p style="color: #6B7280; font-size: 0.95rem; line-height: 1.6;">
-              Intégrez textes, photos, musiques et souvenirs pour créer votre journal unique.
-            </p>
-          </div>
-        </div>
+      <p>
+        <strong>🪞 Miroir bienveillant</strong><br>
+        Reflet empathique de votre univers intérieur, sans jugement ni prescription.
+      </p>
+
+      <p>
+        <strong>🎨 Expression multimédia</strong><br>
+        Intégrez textes, photos, musiques et souvenirs pour créer votre journal unique.
+      </p>
+
+      <div class="article-highlight">
+        <h3>La vision de Soli</h3>
+        <p>
+          Soli n'est pas un service médical. C'est un outil de réflexion personnelle — un journal intime qui répond, un miroir de votre univers intérieur.
+        </p>
+        <p>
+          <strong>Il vous écoute vraiment, sans jamais vous interrompre.</strong>
+        </p>
       </div>
 
-    </section>
+    </article>
 
   </main>
 

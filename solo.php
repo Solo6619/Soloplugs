@@ -7,7 +7,7 @@
     $pageDescription = 'Solo est la voix de la solitude. Il guide, éclaire et met des mots sur ce que chacun vit à sa manière.';
     $basePath = '';
     $currentPage = 'solo';
-    $additionalCSS = ['magazine.css'];
+    $additionalCSS = ['articles.css'];
     
     include 'components/head.php';
   ?>
@@ -19,55 +19,63 @@
   <!-- ============================================================
        CONTENU PRINCIPAL
        ============================================================ -->
-  <main class="magazine-container">
+  <main class="article-container">
 
-    <!-- Section Hero -->
-    <section class="magazine-header" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
-      <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Solo — La voix</h1>
-      <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem;">
+    <!-- En-tête -->
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-category">Intelligence artificielle</span>
+        <span class="article-read">En développement</span>
+      </div>
+      
+      <h1 class="article-title">Solo — La voix</h1>
+      
+      <p class="article-subtitle">
         Solo est la voix de la solitude. Il guide, éclaire et met des mots sur ce que chacun vit à sa manière.
       </p>
       
-      <div style="background: #F5F1EB; padding: 2rem; border-radius: 1rem; max-width: 600px; margin: 0 auto;">
-        <p style="font-style: italic; color: #6B7280; font-size: 1.125rem; margin: 0;">
-          Cette page est en construction. Le contenu sera ajouté prochainement.
+      <div class="article-image">
+        <img src="images/solo_hero.jpg" alt="Solo - La voix de la solitude" loading="lazy">
+      </div>
+    </header>
+
+    <!-- Contenu -->
+    <article class="article-content">
+      
+      <div class="article-highlight">
+        <p>
+          <em>Cette page est en construction. Le contenu sera ajouté prochainement.</em>
         </p>
       </div>
 
-      <!-- Aperçu des fonctionnalités à venir -->
-      <div style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
-        <h2 style="font-family: 'Lora', serif; font-size: 1.75rem; color: #D4A574; margin-bottom: 2rem; text-align: center;">
-          Ce que Solo vous offrira
-        </h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.08);">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧭</div>
-            <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; margin-bottom: 0.75rem; color: #2C3338;">Guidage personnalisé</h3>
-            <p style="color: #6B7280; font-size: 0.95rem; line-height: 1.6;">
-              Orientation vers les ressources adaptées selon votre situation et vos besoins.
-            </p>
-          </div>
+      <h2>Ce que Solo vous offrira</h2>
 
-          <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.08);">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
-            <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; margin-bottom: 0.75rem; color: #2C3338;">Bibliothèque intelligente</h3>
-            <p style="color: #6B7280; font-size: 0.95rem; line-height: 1.6;">
-              Accès à une base de connaissances complète sur la solitude et l'épanouissement.
-            </p>
-          </div>
+      <p>
+        <strong>🧭 Guidage personnalisé</strong><br>
+        Orientation vers les ressources adaptées selon votre situation et vos besoins.
+      </p>
 
-          <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.08);">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
-            <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; margin-bottom: 0.75rem; color: #2C3338;">Accompagnement bienveillant</h3>
-            <p style="color: #6B7280; font-size: 0.95rem; line-height: 1.6;">
-              Une présence chaleureuse disponible 24/7 pour échanger et vous soutenir.
-            </p>
-          </div>
-        </div>
+      <p>
+        <strong>📚 Bibliothèque intelligente</strong><br>
+        Accès à une base de connaissances complète sur la solitude et l'épanouissement.
+      </p>
+
+      <p>
+        <strong>💬 Accompagnement bienveillant</strong><br>
+        Une présence chaleureuse disponible 24/7 pour échanger et vous soutenir.
+      </p>
+
+      <div class="article-highlight">
+        <h3>La vision de Solo</h3>
+        <p>
+          Solo n'est pas un simple chatbot. C'est un compagnon qui comprend les nuances de la solitude — qu'elle soit choisie ou subie, passagère ou durable.
+        </p>
+        <p>
+          <strong>Il met des mots sur ce que vous ressentez, sans jamais vous juger.</strong>
+        </p>
       </div>
 
-    </section>
+    </article>
 
   </main>
 

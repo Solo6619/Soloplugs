@@ -110,7 +110,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=800&q=80" alt="Vivre Solo" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">🏡</span>
+      
             <span class="theme-badge">Vivre Solo</span>
           </div>
           <h3>L'art de vivre seul·e</h3>
@@ -127,7 +127,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80" alt="Ado Solo" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">🎧</span>
+           
             <span class="theme-badge">Ado Solo</span>
           </div>
           <h3>L'adolescence en solo</h3>
@@ -144,7 +144,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80" alt="Parent Solo" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">👨‍👧</span>
+           
             <span class="theme-badge">Parent Solo</span>
           </div>
           <h3>Élever seul·e</h3>
@@ -161,7 +161,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80" alt="Séparations" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">🍂</span>
+           
             <span class="theme-badge">Transitions</span>
           </div>
           <h3>Traverser la rupture</h3>
@@ -178,7 +178,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80" alt="Vieillir Solo" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">🌅</span>
+           
             <span class="theme-badge">Vieillir Solo</span>
           </div>
           <h3>La sagesse des années</h3>
@@ -195,7 +195,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80" alt="Voyager Solo" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">🌍</span>
+            
             <span class="theme-badge">Voyages Solo</span>
           </div>
           <h3>L'aventure solitaire</h3>
@@ -212,7 +212,7 @@ ini_set('display_errors', 1);
         <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="Sorties Loisirs" class="theme-image">
         <div class="theme-content">
           <div class="theme-meta">
-            <span class="theme-icon">☕</span>
+           
             <span class="theme-badge">Sorties & Loisirs</span>
           </div>
           <h3>Sortir en solo</h3>
@@ -276,9 +276,9 @@ ini_set('display_errors', 1);
     </div>
   </section>
 
-  <?php include 'components/footer.php'; ?>
-  <?php include 'components/emergency-banner.php'; ?>
-  <?php include 'components/scripts.php'; ?>
+<?php include 'components/footer.php'; ?>
+<?php include 'components/widget-solo-aide.php'; ?>  
+<?php include 'components/scripts.php'; ?>
 
 </body>
 </html>

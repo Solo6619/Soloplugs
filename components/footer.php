@@ -44,3 +44,8 @@
 
 <!-- Bouton retour en haut -->
 <a href="#" class="back-to-top" id="backToTop" title="Retour en haut">↑</a>
+
+<!-- ============================================================
+     WIDGET S♡LO - RESSOURCES D'AIDE
+     ============================================================ -->
+<?php include __DIR__ . '/widget-solo-aide.php'; ?>

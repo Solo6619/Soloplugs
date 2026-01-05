@@ -1,0 +1,348 @@
+/* ============================================================
+   🌿 HEADER-COMPACT.CSS — Header fixe pour pages secondaires
+   Utiliser avec header-compact.php
+   ============================================================ */
+
+/* ============================================================
+   HEADER COMPACT - Structure principale
+   ============================================================ */
+#header-compact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-compact-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+/* ============================================================
+   LOGO COMPACT
+   ============================================================ */
+.logo-compact {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logo-compact:hover {
+  transform: scale(1.05);
+}
+
+.logo-compact .solo-box {
+  background: #2c3e50;
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.logo-compact:hover .solo-box {
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.3);
+}
+
+.logo-compact .solo-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  line-height: 1;
+}
+
+.logo-compact .plugs-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+/* ============================================================
+   MENU COMPACT
+   ============================================================ */
+.menu-compact {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.menu-compact a {
+  text-decoration: none;
+  color: var(--text-primary, #2C3338);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.menu-compact a:hover {
+  color: var(--accent-gold, #D4A574);
+}
+
+.menu-compact a.active {
+  color: var(--accent-gold, #D4A574);
+  font-weight: 600;
+}
+
+.menu-compact a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-gold, #D4A574);
+}
+
+/* ============================================================
+   MENU THÈMES COMPACT
+   ============================================================ */
+.themes-menu-compact {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.themes-toggle-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.themes-toggle-compact:hover {
+  background: rgba(212, 165, 116, 0.1);
+}
+
+.themes-label-compact {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary, #2C3338);
+  transition: color 0.3s ease;
+}
+
+.themes-toggle-compact:hover .themes-label-compact {
+  color: var(--accent-gold, #D4A574);
+}
+
+/* Hamburger compact */
+.hamburger-compact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 16px;
+  height: 12px;
+}
+
+.hamburger-compact span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary, #2C3338);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Animation hamburger ouvert */
+.themes-menu-compact.open .hamburger-compact span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.themes-menu-compact.open .hamburger-compact span:nth-child(2) {
+  opacity: 0;
+}
+
+.themes-menu-compact.open .hamburger-compact span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Dropdown compact */
+.themes-dropdown-compact {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.themes-menu-compact.open .themes-dropdown-compact {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.themes-dropdown-compact a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: var(--text-primary, #2C3338);
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.themes-dropdown-compact a:hover {
+  background: rgba(212, 165, 116, 0.1);
+  color: var(--accent-gold, #D4A574);
+}
+
+.themes-dropdown-compact .theme-icon {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.themes-dropdown-compact .theme-name {
+  font-weight: 500;
+}
+
+/* ============================================================
+   BODY PADDING - Compenser le header fixe
+   ============================================================ */
+body.has-compact-header {
+  padding-top: 70px !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .header-compact-inner {
+    padding: 0 1.5rem;
+    gap: 1rem;
+  }
+  
+  .menu-compact {
+    gap: 1rem;
+  }
+  
+  .menu-compact a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body.has-compact-header {
+    padding-top: 50px !important;
+  }
+  
+  .header-compact-inner {
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+  
+  .logo-compact .solo-text {
+    font-size: 18px;
+  }
+  
+  .logo-compact .plugs-text {
+    font-size: 12px;
+  }
+  
+  .logo-compact .solo-box {
+    padding: 5px 8px;
+    border-radius: 6px;
+  }
+  
+  .menu-compact {
+    gap: 0.6rem;
+  }
+  
+  .menu-compact a {
+    font-size: 0.8rem;
+  }
+  
+  .themes-label-compact {
+    display: none;
+  }
+  
+  .themes-dropdown-compact {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-compact {
+    display: none;
+  }
+  
+  .header-compact-inner {
+    justify-content: space-between;
+  }
+  
+  /* Sur mobile, afficher un menu hamburger général */
+  .themes-label-compact {
+    display: inline;
+  }
+}
+
+@media (max-width: 480px) {
+  body.has-compact-header {
+    padding-top: 55px !important;
+  }
+  
+  #header-compact {
+    padding: 0.4rem 0;
+  }
+  
+  .themes-dropdown-compact {
+    position: fixed;
+    top: 55px;
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
+  }
+}
+/* ============================================================
+   RÉDUCTION ESPACE HEADER-CONTENU (pages hobbies)
+   ============================================================ */
+body.has-compact-header .hobby-page-container {
+  padding-top: 0.5rem !important;
+}
+
+body.has-compact-header .hobby-page-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.has-compact-header .hobby-page-header h1 {
+  margin-top: 0 !important;
+}

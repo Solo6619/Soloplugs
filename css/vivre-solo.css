@@ -1,0 +1,1137 @@
+/* ============================================================
+   🏠 VIVRE-SOLO V2 — CSS AVEC SYSTÈME D'ORIENTATION
+   Atmosphère : Chaleur contemplative, sagesse, refuge intérieur
+   Couleurs : Or chaleureux (#D4A574), terres douces
+   Ton visuel : Magazine littéraire, editorial sophistiqué
+   NOUVEAU : Système de parcours SOL_001 / SOL_002
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES DU THÈME VIVRE-SOLO
+   ============================================================ */
+:root {
+  /* Palette principale */
+  --vs-gold: #D4A574;
+  --vs-gold-light: #E8D4B8;
+  --vs-gold-dark: #B8956A;
+  --vs-gold-pale: #F5EBD9;
+  
+  /* Palette secondaire - terres et naturels */
+  --vs-earth: #8B7355;
+  --vs-earth-light: #A69076;
+  --vs-cream: #FBF9F6;
+  --vs-cream-warm: #F5EDD9;
+  --vs-linen: #FAF6F1;
+  
+  /* Couleurs pour parcours SOL_002 */
+  --vs-blue-soft: #7BA7BC;
+  --vs-blue-pale: #E8F2F7;
+  
+  /* Textes */
+  --vs-text: #2C3338;
+  --vs-text-soft: #5A5A5A;
+  --vs-text-muted: #7A7A7A;
+  
+  /* Effets */
+  --vs-shadow-soft: 0 4px 20px rgba(139, 115, 85, 0.08);
+  --vs-shadow-hover: 0 12px 40px rgba(139, 115, 85, 0.15);
+  --vs-shadow-glow: 0 0 60px rgba(212, 165, 116, 0.2);
+  
+  /* Transitions */
+  --vs-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --vs-transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Typographie */
+  --font-display: 'Cormorant Garamond', 'Lora', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--vs-cream);
+  color: var(--vs-text);
+  font-family: var(--font-body);
+  line-height: 1.8;
+  padding-top: 130px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Texture de fond subtile */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.highlight {
+  color: var(--vs-gold);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero-vivre-solo {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--vs-linen) 0%,
+    var(--vs-cream-warm) 50%,
+    var(--vs-cream) 100%
+  );
+}
+
+/* Cercles décoratifs */
+.hero-vivre-solo::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+/* Ornement */
+.hero-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  animation: fade-in 1s ease-out 0.2s backwards;
+}
+
+.hero-ornament-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vs-gold), transparent);
+}
+
+.hero-ornament-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--vs-gold);
+  transform: rotate(45deg);
+}
+
+/* Titre */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 600;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  animation: title-reveal 1s ease-out 0.3s backwards;
+}
+
+@keyframes title-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--vs-gold-dark);
+  margin-bottom: 1.5rem;
+  animation: fade-in 1s ease-out 0.5s backwards;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--vs-text-soft);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.9;
+  animation: fade-in 1s ease-out 0.7s backwards;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ============================================================
+   SECTION D'ORIENTATION - POINT D'ENTRÉE CRITIQUE
+   ============================================================ */
+.orientation-section {
+  background: white;
+  padding: 5rem 2rem;
+}
+
+.path-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* Cartes de parcours */
+.path-card {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all var(--vs-transition);
+  border: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.path-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.path-card.path-chosen {
+  border-color: var(--vs-gold-light);
+}
+
+.path-card.path-chosen:hover {
+  border-color: var(--vs-gold);
+  box-shadow: 0 12px 40px rgba(212, 165, 116, 0.25);
+}
+
+.path-card.path-suffered {
+  border-color: var(--vs-blue-pale);
+}
+
+.path-card.path-suffered:hover {
+  border-color: var(--vs-blue-soft);
+  box-shadow: 0 12px 40px rgba(123, 167, 188, 0.25);
+}
+
+/* Image du parcours */
+.path-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.path-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--vs-transition-slow);
+}
+
+.path-card:hover .path-image img {
+  transform: scale(1.05);
+}
+
+/* Contenu du parcours */
+.path-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.path-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.path-content h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--vs-text);
+  margin-bottom: 0.5rem;
+}
+
+.path-tagline {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.path-chosen .path-tagline {
+  color: var(--vs-gold);
+}
+
+.path-suffered .path-tagline {
+  color: var(--vs-blue-soft);
+}
+
+
+.path-description {
+  font-size: 1.05rem;
+  color: var(--vs-text-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;  
+}
+/* Features du parcours */
+.path-features {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.path-features li {
+  padding: 0.5rem 0;
+  color: var(--vs-text-soft);
+  font-size: 0.95rem;
+}
+
+/* Boutons de parcours */
+.btn-path {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--vs-transition);
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-chosen {
+  background: var(--vs-gold);
+  color: white;
+}
+
+.btn-chosen:hover {
+  background: var(--vs-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+}
+
+.btn-suffered {
+  background: var(--vs-blue-soft);
+  color: white;
+}
+
+.btn-suffered:hover {
+  background: #6A95AA;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(123, 167, 188, 0.3);
+}
+
+/* Note d'orientation */
+.orientation-note {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--vs-gold-pale);
+  border-left: 4px solid var(--vs-gold);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.orientation-note p {
+  margin: 0;
+  color: var(--vs-text-soft);
+  font-size: 1rem;
+}
+
+.orientation-note strong {
+  color: var(--vs-text);
+}
+
+/* ============================================================
+   CONTENU DYNAMIQUE - PARCOURS SOLITUDE CHOISIE (SOL_001)
+   ============================================================ */
+
+/* Citation inspirante */
+.quote-block {
+  background: white;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  position: relative;
+  margin: 2rem 0;
+}
+
+.quote-block::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 5rem;
+  font-family: Georgia, serif;
+  color: var(--vs-gold-light);
+  line-height: 1;
+}
+
+.quote-block p {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-block cite {
+  font-style: normal;
+  color: var(--vs-gold-dark);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Grille de sagesse */
+.wisdom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.wisdom-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all var(--vs-transition);
+  text-align: center;
+}
+
+.wisdom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.wisdom-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  color: var(--vs-gold);
+}
+
+.wisdom-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wisdom-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.wisdom-card p {
+  color: var(--vs-text-soft);
+  line-height: 1.7;
+}
+
+/* Grille de thèmes/pratiques */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.theme-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all var(--vs-transition);
+}
+
+.theme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  color: var(--vs-gold);
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.theme-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.theme-card ul {
+  list-style: none;
+}
+
+.theme-card ul li {
+  padding: 0.4rem 0;
+  color: var(--vs-text-soft);
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.theme-card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--vs-gold);
+}
+
+/* CTA parcours choisi */
+.cta-chosen {
+  background: linear-gradient(135deg, var(--vs-gold-pale) 0%, var(--vs-linen) 100%);
+  border: 2px solid var(--vs-gold-light);
+}
+
+/* ============================================================
+   CONTENU DYNAMIQUE - PARCOURS ISOLEMENT SUBI (SOL_002)
+   ============================================================ */
+
+/* Message de soutien */
+.support-message {
+  background: white;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  text-align: center;
+  border: 3px solid var(--vs-blue-pale);
+}
+
+.support-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.support-message h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.support-message p {
+  font-size: 1.125rem;
+  color: var(--vs-text-soft);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grille de compréhension */
+.understanding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.understanding-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all var(--vs-transition);
+  border-left: 4px solid var(--vs-blue-soft);
+}
+
+.understanding-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vs-shadow-hover);
+  border-left-color: var(--vs-blue-soft);
+}
+
+.understanding-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.understanding-card p {
+  color: var(--vs-text-soft);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.card-note {
+  font-style: italic;
+  color: var(--vs-blue-soft);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Grille d'aide */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.help-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all var(--vs-transition);
+  border-top: 4px solid var(--vs-blue-soft);
+}
+
+.help-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.help-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.help-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.help-card p {
+  color: var(--vs-text-soft);
+  margin-bottom: 1rem;
+}
+
+.help-card ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.help-card ul li {
+  padding: 0.5rem 0;
+  color: var(--vs-text-soft);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.help-card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--vs-blue-soft);
+  font-weight: bold;
+}
+
+.help-contacts {
+  background: var(--vs-blue-pale);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.help-contacts li {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.help-contacts strong {
+  color: var(--vs-text);
+}
+
+.help-link {
+  color: var(--vs-blue-soft);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--vs-transition);
+}
+
+.help-link:hover {
+  color: #5A8099;
+}
+
+/* Stratégies de reconnexion */
+.strategies-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--vs-blue-pale);
+}
+
+.strategies-section h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--vs-text);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.strategy-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 2rem;
+}
+
+.step-card {
+  background: var(--vs-blue-pale);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all var(--vs-transition);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  background: white;
+  box-shadow: var(--vs-shadow-soft);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--vs-blue-soft);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+
+.step-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--vs-text);
+  margin-bottom: 0.75rem;
+}
+
+.step-card p {
+  color: var(--vs-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* CTA parcours subi */
+.cta-suffered {
+  background: linear-gradient(135deg, var(--vs-blue-pale) 0%, #F0F7FA 100%);
+  border: 2px solid var(--vs-blue-soft);
+}
+
+/* ============================================================
+   SECTIONS COMMUNES
+   ============================================================ */
+.section {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--vs-linen);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: var(--vs-text-soft);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SECTION STATISTIQUES
+   ============================================================ */
+.stats-section {
+  background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+  color: white;
+}
+
+.stats-section .section-header h2 {
+  color: var(--vs-gold);
+}
+
+.stats-section .section-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.stat-flag {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--vs-gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.stat-compare {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.stat-card.stat-highlight {
+  background: rgba(212, 165, 116, 0.2);
+  border-color: var(--vs-gold);
+}
+
+.stat-card.stat-warning {
+  background: rgba(200, 80, 80, 0.15);
+  border-color: rgba(200, 80, 80, 0.5);
+}
+
+.stat-card.stat-warning .stat-number {
+  color: #E57373;
+}
+
+.stats-source {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+}
+
+/* ============================================================
+   ARTICLES
+   ============================================================ */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.article-card {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--vs-shadow-soft);
+  transition: all var(--vs-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.article-image {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vs-linen);
+}
+
+.article-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.article-content p {
+  color: var(--vs-text-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.article-link {
+  color: var(--vs-gold);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--vs-transition);
+}
+
+.article-link:hover {
+  gap: 0.75rem;
+}
+
+.article-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   CTA SECTIONS
+   ============================================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--vs-gold-pale) 0%, var(--vs-linen) 100%);
+  padding: 4rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: var(--vs-shadow-soft);
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--vs-text);
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.125rem;
+  color: var(--vs-text-soft);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+/* Boutons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--vs-transition);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--vs-gold);
+  color: white;
+  border-color: var(--vs-gold);
+}
+
+.btn-primary:hover {
+  background: var(--vs-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--vs-text);
+  border-color: var(--vs-text-soft);
+}
+
+.btn-secondary:hover {
+  background: var(--vs-text);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   ANIMATIONS AU SCROLL
+   ============================================================ */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+  
+  .hero-vivre-solo {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+  
+  .path-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .wisdom-grid,
+  .theme-grid,
+  .understanding-grid,
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quote-block,
+  .support-message {
+    padding: 2rem;
+  }
+  
+  .quote-block p {
+    font-size: 1.25rem;
+  }
+  
+  .cta-section {
+    padding: 3rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 4rem 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .path-content,
+  .theme-card,
+  .wisdom-card,
+  .understanding-card,
+  .help-card {
+    padding: 1.5rem;
+  }
+}

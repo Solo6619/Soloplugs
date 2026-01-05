@@ -1,0 +1,638 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "date_creation": "2025-12-31",
+    "projet": "SOLOPLUGS - Ado Solo",
+    "description": "Répertoire des ressources d'aide pour adolescents au Québec",
+    "couverture_geographique": "Québec (provincial)",
+    "public_cible": "Adolescents 12-17 ans",
+    "priorite_contact": ["texto", "clavardage", "telephone"]
+  },
+
+  "ressources_urgence": {
+    "description": "Ressources disponibles 24/7 pour situations de crise",
+    "liste": [
+      {
+        "nom": "988 - Ligne de crise en santé mentale",
+        "telephone": "988",
+        "disponibilite": "24/7",
+        "description": "Ligne nationale de prévention du suicide et de crise en santé mentale",
+        "langues": ["français", "anglais"],
+        "gratuit": true
+      },
+      {
+        "nom": "1-866-APPELLE",
+        "telephone": "1-866-277-3553",
+        "disponibilite": "24/7",
+        "description": "Centre de prévention du suicide - dirige vers la ressource de ta région",
+        "langues": ["français", "anglais"],
+        "gratuit": true
+      },
+      {
+        "nom": "Tel-jeunes",
+        "telephone": "1-800-263-2266",
+        "texto": "514-600-1002",
+        "clavardage": "https://www.teljeunes.com",
+        "disponibilite": {
+          "telephone": "6h à 2h",
+          "texto_clavardage": "8h à 22h30"
+        },
+        "age": "12-17 ans",
+        "description": "Service professionnel, confidentiel et gratuit pour tous les sujets qui touchent les jeunes",
+        "langues": ["français"],
+        "gratuit": true
+      },
+      {
+        "nom": "Jeunesse, J'écoute",
+        "telephone": "1-800-668-6868",
+        "texto": "PARLER au 686868",
+        "clavardage": "https://jeunessejecoute.ca",
+        "application": "Toujours à l'écoute",
+        "disponibilite": "24/7",
+        "description": "Service pancanadien d'écoute pour les jeunes",
+        "langues": ["français", "anglais"],
+        "gratuit": true
+      },
+      {
+        "nom": "Info-Social 811",
+        "telephone": "811 (option 2)",
+        "disponibilite": "24/7",
+        "description": "Consultation téléphonique avec un professionnel en intervention psychosociale",
+        "langues": ["français", "anglais"],
+        "gratuit": true
+      }
+    ]
+  },
+
+  "sections_thematiques": {
+    "harcelement_intimidation": {
+      "titre": "Harcèlement & Intimidation",
+      "description": "Ressources pour les victimes d'intimidation, de cyberintimidation et de harcèlement",
+      "ressources": [
+        {
+          "nom": "Application +Fort",
+          "type": "application_mobile",
+          "plateformes": ["iOS", "Android"],
+          "url": "https://apps.apple.com/ca/app/fort/id1501232460",
+          "description": "Application validée scientifiquement pour aider les jeunes victimes d'intimidation à comprendre ce qu'ils vivent et essayer des stratégies",
+          "age": "12-16 ans",
+          "developpeur": "Université de Montréal / Institut universitaire en santé mentale de Montréal",
+          "gratuit": true,
+          "fonctionnalites": [
+            "Vidéos explicatives sur l'intimidation",
+            "Journal de bord confidentiel",
+            "Stratégies personnalisées",
+            "Graphiques pour comprendre ses expériences"
+          ]
+        },
+        {
+          "nom": "CAVAC - Centres d'aide aux victimes d'actes criminels",
+          "telephone": "1-866-532-2822",
+          "url": "https://cavac.qc.ca",
+          "description": "Accompagnement pour jeunes victimes d'intimidation criminelle",
+          "services": ["Écoute", "Accompagnement", "Information juridique"],
+          "regions": "Présent dans toutes les régions du Québec",
+          "age": "Tous âges, incluant adolescents",
+          "gratuit": true
+        },
+        {
+          "nom": "Sport'Aide",
+          "telephone": "1-833-211-2433",
+          "url": "https://sportaide.ca",
+          "description": "Aide pour l'intimidation et la violence en contexte sportif",
+          "public": "Jeunes sportifs, parents, entraîneurs",
+          "gratuit": true
+        },
+        {
+          "nom": "AidezmoiSVP.ca",
+          "url": "https://www.aidezmoisvp.ca",
+          "description": "Aide pour bloquer la propagation d'une photo, sexto ou vidéo sur Internet",
+          "gratuit": true
+        },
+        {
+          "nom": "Cyberaide.ca",
+          "url": "https://cyberaide.ca",
+          "telephone": "1-866-658-9022",
+          "description": "Signalement de l'exploitation sexuelle d'enfants en ligne",
+          "gratuit": true
+        }
+      ],
+      "conseils_premiers_pas": [
+        "Garde des preuves (captures d'écran)",
+        "Parle à un adulte de confiance",
+        "Tu n'es pas responsable de ce qui t'arrive",
+        "L'intimidation n'est jamais acceptable"
+      ]
+    },
+
+    "reseaux_sociaux_ecrans": {
+      "titre": "Réseaux sociaux & Cyberdépendance",
+      "description": "Ressources pour une utilisation saine des écrans et aide en cas de dépendance",
+      "ressources": [
+        {
+          "nom": "PAUSE",
+          "url": "https://pausetonecran.com",
+          "description": "Plateforme gouvernementale pour une utilisation équilibrée des écrans",
+          "contenu": [
+            "Outils pour parents et jeunes",
+            "Ressources d'aide",
+            "Information sur la cyberdépendance"
+          ],
+          "gratuit": true
+        },
+        {
+          "nom": "Le Grand Chemin",
+          "telephone": "Variable selon région",
+          "url": "https://legrandchemin.qc.ca",
+          "description": "Traitement gratuit de la cyberdépendance pour adolescents",
+          "age": "12-17 ans",
+          "services": [
+            "Programme de 8-10 semaines en hébergement",
+            "4 mois de suivi en réinsertion",
+            "Séjours en nature avec la SÉPAQ"
+          ],
+          "gratuit": true
+        },
+        {
+          "nom": "Jeu : aide et référence",
+          "telephone": "1-800-461-0140",
+          "disponibilite": "24/7",
+          "description": "Aide pour problèmes de jeu de hasard et d'argent (certaines informations peuvent aussi aider pour les jeux vidéo excessifs)",
+          "regions": "Tout le Québec",
+          "gratuit": true
+        },
+        {
+          "nom": "Trousse Anti-Troll",
+          "url": "Via le site québec.ca",
+          "description": "Solutions pratiques pour reprendre le contrôle face à la cyberintimidation",
+          "age": "13-17 ans",
+          "gratuit": true
+        }
+      ],
+      "signes_probleme": [
+        "Abandon d'activités qu'on aimait",
+        "Conflits fréquents à propos des écrans",
+        "Mensonges sur l'utilisation",
+        "Problèmes de sommeil",
+        "Isolement des amis en personne"
+      ]
+    },
+
+    "famille_separation": {
+      "titre": "Famille & Séparation des parents",
+      "description": "Ressources pour les ados vivant des difficultés familiales ou la séparation de leurs parents",
+      "ressources": [
+        {
+          "nom": "LigneParents (pour tes parents, mais tu peux leur suggérer)",
+          "telephone": "1-800-361-5085",
+          "clavardage": "https://ligneparents.com",
+          "disponibilite": {
+            "telephone": "6h à minuit",
+            "clavardage": "8h à 22h30"
+          },
+          "description": "Service pour les parents - peut aider à améliorer la communication familiale",
+          "gratuit": true
+        },
+        {
+          "nom": "Médiation familiale Québec",
+          "url": "https://www.quebec.ca/famille-et-soutien-aux-personnes/separation-divorce/mediation-familiale",
+          "description": "Service gratuit pour aider tes parents à s'entendre et considérer tes besoins",
+          "note": "5 heures gratuites subventionnées par le gouvernement"
+        },
+        {
+          "nom": "Fédération des associations de familles monoparentales et recomposées du Québec",
+          "url": "https://fafmrq.org",
+          "description": "Information et soutien pour familles monoparentales"
+        },
+        {
+          "nom": "DPJ - Direction de la protection de la jeunesse",
+          "telephone": "Variable selon région",
+          "url": "https://www.quebec.ca/famille-et-soutien-aux-personnes/enfance/services-jeunes-difficulte-famille/protection-de-la-jeunesse",
+          "description": "Si ta sécurité ou ton développement est compromis - négligence, violence, abus",
+          "disponibilite": "24/7",
+          "gratuit": true
+        }
+      ],
+      "messages_cles": [
+        "La séparation de tes parents n'est pas ta faute",
+        "Tu as le droit d'avoir des émotions difficiles",
+        "Tu peux aimer tes deux parents",
+        "Tu n'as pas à choisir un camp"
+      ]
+    },
+
+    "sexualite_identite_lgbtq": {
+      "titre": "Sexualité & Identité LGBTQ+",
+      "description": "Ressources pour les questions sur la sexualité, l'orientation sexuelle et l'identité de genre",
+      "ressources": [
+        {
+          "nom": "Interligne",
+          "telephone": "1-888-505-1010",
+          "texto": "1-888-505-1010",
+          "clavardage": "https://interligne.co/clavardage",
+          "courriel": "aide@interligne.co",
+          "disponibilite": "24/7",
+          "description": "Écoute et aide pour les personnes LGBTQ+ et celles qui se questionnent",
+          "services": [
+            "Écoute téléphonique",
+            "Clavardage",
+            "Texto",
+            "Clinique juridique (weekends 9h-17h)",
+            "Groupes de discussion"
+          ],
+          "regions": "Tout le Québec",
+          "age": "Tous âges, section jeunes 12-20 ans",
+          "gratuit": true
+        },
+        {
+          "nom": "Projet 10",
+          "telephone": "514-989-4585",
+          "url": "https://p10.qc.ca",
+          "adresse": "L'Astérisk, 1575 rue Atateken, Montréal",
+          "description": "Ligne d'écoute, interventions individuelles et groupes pour jeunes LGBTQ+",
+          "regions": "Montréal (en personne), ligne d'écoute accessible ailleurs",
+          "age": "14-25 ans",
+          "langues": ["français", "anglais"],
+          "gratuit": true
+        },
+        {
+          "nom": "AlterHéros",
+          "url": "https://www.alterheros.com",
+          "service_principal": "Parlez-en aux experts",
+          "description": "Questions-réponses en ligne avec sexologues, psychologues et travailleurs sociaux",
+          "contenu": "Plus de 4000 questions-réponses sur la sexualité et l'identité",
+          "gratuit": true
+        },
+        {
+          "nom": "L'Astérisk",
+          "adresse": "1575 rue Atateken, Montréal",
+          "url": "https://coalitionjeunesse.org",
+          "description": "Espace sécuritaire pour jeunes LGBTQ+ - abrite Projet 10, Jeunesse Lambda et AlterHéros",
+          "regions": "Montréal (espace physique)",
+          "age": "14-25 ans",
+          "gratuit": true
+        },
+        {
+          "nom": "Aide aux Trans du Québec (ATQ)",
+          "url": "https://aideauxtrans.com",
+          "description": "Soutien et information pour personnes trans et en questionnement",
+          "services": [
+            "Rencontres de groupe hebdomadaires",
+            "Interventions individuelles",
+            "Groupes Facebook",
+            "Lignes d'intervention"
+          ],
+          "regions": "Tout le Québec (en ligne et téléphone), rencontres en personne principalement à Montréal",
+          "age": "Tous âges",
+          "gratuit": true
+        },
+        {
+          "nom": "Jeunes Identités Créatives",
+          "url": "https://jfrq.ca",
+          "description": "Soutien pour jeunes trans, non-binaires et en questionnement"
+        },
+        {
+          "nom": "GRIS (Groupe de recherche et d'intervention sociale)",
+          "url_montreal": "https://www.gris.ca",
+          "description": "Ateliers de démystification en milieu scolaire (Montréal, Québec, etc.), certaines possibilités d'écoute et de soutien individuel selon la région",
+          "regions": "Plusieurs régions du Québec (ateliers scolaires)",
+          "age": "14-25 ans pour services d'écoute quand disponibles"
+        },
+        {
+          "nom": "Enfants transgenres Canada",
+          "url": "https://enfantstransgenres.ca",
+          "description": "Ressources et soutien pour familles d'enfants et adolescents trans"
+        },
+        {
+          "nom": "Seggs* - Balado d'éducation à la sexualité",
+          "url": "https://les3sex.com/fr/seggs",
+          "description": "Balado inclusif pour jeunes LGBTQ+ avec fiches pédagogiques",
+          "gratuit": true
+        }
+      ],
+      "messages_cles": [
+        "Tu n'es pas seul·e",
+        "Ton identité est valide",
+        "Tu as le droit de te questionner",
+        "Prends ton temps pour te découvrir"
+      ]
+    },
+
+    "deuil": {
+      "titre": "Deuil & Perte",
+      "description": "Ressources pour les jeunes qui vivent la perte d'un proche",
+      "ressources": [
+        {
+          "nom": "Deuil-Jeunesse",
+          "telephone": "1-855-889-3666",
+          "url": "https://www.dfrq.ca",
+          "description": "Soutien spécialisé pour jeunes vivant un deuil, une maladie grave d'un proche, un abandon ou l'adoption",
+          "services": [
+            "Ligne d'écoute",
+            "Groupes de soutien",
+            "Accompagnement individuel",
+            "Ateliers"
+          ],
+          "regions": "Tout le Québec (ligne d'écoute), services en personne dans certaines régions",
+          "age": "Enfants et adolescents (3-18 ans)",
+          "gratuit": true
+        },
+        {
+          "nom": "Maison Monbourquette",
+          "url": "https://www.maisonmonbourquette.com",
+          "description": "Accompagnement au deuil pour enfants, adolescents et adultes",
+          "regions": "Services offerts à Montréal et en ligne pour d'autres régions",
+          "age": "Enfants, adolescents et adultes"
+        }
+      ],
+      "types_de_deuil": [
+        "Décès d'un parent",
+        "Décès d'un ami",
+        "Maladie grave d'un proche",
+        "Abandon",
+        "Séparation significative"
+      ]
+    },
+
+    "sante_mentale_anxiete": {
+      "titre": "Santé mentale & Anxiété",
+      "description": "Ressources pour l'anxiété, la dépression et le bien-être mental",
+      "ressources": [
+        {
+          "nom": "Phobies-Zéro",
+          "telephone": "1-866-922-0002",
+          "url": "https://phobies-zero.qc.ca",
+          "description": "Groupes d'entraide pour troubles anxieux et TOC",
+          "public": "Jeunes et adultes",
+          "regions": "Tout le Québec (ligne d'écoute), groupes dans plusieurs régions",
+          "age": "Adolescents et adultes",
+          "gratuit": true
+        },
+        {
+          "nom": "Relief",
+          "url": "https://monrelief.ca",
+          "description": "Aide pour vivre avec l'anxiété, la dépression ou la bipolarité",
+          "services": ["Information", "Outils", "Soutien"],
+          "regions": "Tout le Québec (ressources en ligne)",
+          "age": "Adolescents et adultes",
+          "gratuit": true
+        },
+        {
+          "nom": "ANEB - Anorexie et Boulimie Québec",
+          "telephone": "1-800-630-0907",
+          "url": "https://anebquebec.com",
+          "description": "Soutien pour troubles alimentaires",
+          "regions": "Tout le Québec",
+          "age": "Adolescents et adultes (les ados peuvent appeler)",
+          "gratuit": true
+        },
+        {
+          "nom": "Écoute Entraide",
+          "telephone_montreal": "514-278-2130",
+          "telephone_ailleurs": "1-855-365-4463",
+          "disponibilite": "7 jours, 8h à 22h",
+          "description": "Écoute téléphonique pour souffrance émotionnelle",
+          "gratuit": true
+        }
+      ]
+    },
+
+    "personne_a_qui_parler": {
+      "titre": "Personne à qui parler",
+      "description": "Quand tu te sens seul·e et que tu as besoin de parler à quelqu'un",
+      "ressources": [
+        {
+          "nom": "Maisons des jeunes du Québec",
+          "url": "https://rmjq.org/liste-des-maisons-de-jeunes/",
+          "description": "Lieux de rencontre animés pour ados avec adultes significatifs",
+          "nombre": "249 maisons dans plus de 330 milieux de vie au Québec",
+          "services": [
+            "Lieu d'appartenance",
+            "Activités variées",
+            "Discussions",
+            "Aide aux devoirs",
+            "Soutien par les pairs"
+          ],
+          "regions": "Toutes les 17 régions administratives du Québec",
+          "age": "12-17 ans",
+          "gratuit": true,
+          "note": "Consulte le fichier maisons_jeunes_quebec_regions.json pour les détails par région",
+          "regroupements_regionaux": {
+            "Capitale-Nationale": {"nom": "MDJCN", "url": "https://mdjcn.ca", "tel": "418-635-1026"},
+            "Saguenay-Lac-Saint-Jean": {"nom": "RMJQ-02", "url": "https://www.rmjq02.org"},
+            "Laurentides": {"nom": "RMJL", "nombre_mdj": 13},
+            "Montérégie": {"nom": "RMJM"},
+            "Estrie": {"nom": "RMJCE"}
+          }
+        },
+        {
+          "nom": "Tel-jeunes",
+          "telephone": "1-800-263-2266",
+          "texto": "514-600-1002",
+          "clavardage": "https://www.teljeunes.com",
+          "description": "Pour parler de tout ce qui te préoccupe, sans jugement",
+          "gratuit": true
+        },
+        {
+          "nom": "Jeunesse, J'écoute",
+          "telephone": "1-800-668-6868",
+          "texto": "PARLER au 686868",
+          "description": "Quelqu'un pour t'écouter, 24/7",
+          "gratuit": true
+        },
+        {
+          "nom": "Centres d'écoute ACETDQ",
+          "url": "https://acetdq.org",
+          "description": "23 centres d'écoute partout au Québec",
+          "gratuit": true
+        }
+      ],
+      "message": "Tu mérites d'être écouté·e. Tu n'as pas à traverser ça seul·e."
+    },
+
+    "education_sexuelle": {
+      "titre": "Questions sur la sexualité",
+      "description": "Ressources fiables pour tes questions sur la sexualité",
+      "ressources": [
+        {
+          "nom": "On SEXplique ça",
+          "url": "https://www.onsexpliqueca.com",
+          "description": "Vidéos et ateliers d'éducation sexuelle par des sexologues",
+          "contenu": "Vidéos éducatives, information fiable et inclusive",
+          "gratuit": true
+        },
+        {
+          "nom": "Sexplique",
+          "url": "https://sexplique.org",
+          "description": "Organisme d'éducation à la sexualité depuis 1963",
+          "approche": "Sans jargon ni tabous",
+          "gratuit": true
+        },
+        {
+          "nom": "SEXOclic",
+          "url": "https://www.sexoclic.com",
+          "description": "Ressources pédagogiques sur la sexualité saine",
+          "gratuit": true
+        },
+        {
+          "nom": "Ordre des sexologues du Québec",
+          "telephone": "1-855-386-6777",
+          "url": "https://opsq.org",
+          "description": "Pour trouver un·e sexologue professionnel·le dans ta région"
+        }
+      ]
+    },
+
+    "a_lecole": {
+      "titre": "À l'école",
+      "description": "Ressources disponibles dans ton établissement scolaire",
+      "ressources": [
+        {
+          "nom": "Services psychosociaux de ton école",
+          "type": "Service scolaire",
+          "description": "Psychoéducateur·trice, travailleur·se social·e, psychologue scolaire - demande à la direction ou au secrétariat",
+          "acces": "Demande à ton enseignant·e, à la direction ou au secrétariat de ton école",
+          "regions": "Toutes les écoles du Québec",
+          "gratuit": true,
+          "confidentiel": true
+        },
+        {
+          "nom": "Conseiller·ère d'orientation",
+          "type": "Service scolaire",
+          "description": "Aide pour le stress scolaire, choix de carrière, orientation",
+          "acces": "Disponible dans les écoles secondaires",
+          "regions": "Toutes les écoles secondaires du Québec",
+          "gratuit": true
+        },
+        {
+          "nom": "Alloprof",
+          "telephone": "1-888-776-4455",
+          "url": "https://www.alloprof.qc.ca",
+          "clavardage": "Via le site web",
+          "description": "Aide aux devoirs gratuite - enseignants disponibles pour t'aider",
+          "services": [
+            "Aide téléphonique",
+            "Clavardage avec enseignants",
+            "Forums de discussion",
+            "Bibliothèque virtuelle",
+            "Vidéos explicatives"
+          ],
+          "regions": "Tout le Québec",
+          "age": "Primaire et secondaire",
+          "gratuit": true
+        },
+        {
+          "nom": "Protecteur régional de l'élève",
+          "url": "https://www.quebec.ca/education/prescolaire-primaire-et-secondaire/droits-eleve/porter-plainte",
+          "description": "Pour porter plainte si tes droits ne sont pas respectés à l'école",
+          "regions": "Chaque région a son protecteur",
+          "gratuit": true
+        }
+      ],
+      "conseils": [
+        "Tu peux demander à voir le psychoéducateur ou le travailleur social de ton école - c'est confidentiel",
+        "Si tu vis de l'intimidation, l'école a l'obligation d'agir selon son plan d'action",
+        "Tu n'as pas besoin de la permission de tes parents pour consulter les services psychosociaux de l'école"
+      ]
+    },
+
+    "violence_abus": {
+      "titre": "Violence & Abus",
+      "description": "Ressources si tu vis ou as vécu de la violence ou des abus",
+      "ressources": [
+        {
+          "nom": "CALACS - Centres d'aide et de lutte contre les agressions à caractère sexuel",
+          "telephone_montreal": "514-933-9007",
+          "telephone_ailleurs": "1-888-933-9007",
+          "disponibilite": "24/7",
+          "description": "Aide pour victimes d'agression sexuelle - tous âges",
+          "regions": "Présent dans toutes les régions du Québec",
+          "age": "Adolescents et adultes (les ados peuvent appeler)",
+          "gratuit": true,
+          "confidentiel": true
+        },
+        {
+          "nom": "SOS Violence conjugale",
+          "telephone": "1-800-363-9010",
+          "texto": "438-601-1211",
+          "disponibilite": "24/7",
+          "description": "Aide si tu vis ou es témoin de violence dans ta famille ou ta relation",
+          "regions": "Tout le Québec",
+          "age": "Adolescents et adultes (les ados peuvent appeler)",
+          "gratuit": true
+        },
+        {
+          "nom": "DPJ - Direction de la protection de la jeunesse",
+          "telephone": "Variable selon région - voir quebec.ca",
+          "disponibilite": "24/7",
+          "description": "Si ta sécurité est menacée - abus, négligence, violence",
+          "gratuit": true
+        },
+        {
+          "nom": "CAVAC - Centres d'aide aux victimes d'actes criminels",
+          "telephone": "1-866-532-2822",
+          "url": "https://cavac.qc.ca",
+          "description": "Accompagnement gratuit pour toute victime d'acte criminel",
+          "gratuit": true
+        },
+        {
+          "nom": "Info-Crime Montréal",
+          "telephone": "514-393-1133",
+          "description": "Signalement anonyme d'informations criminelles",
+          "confidentiel": true
+        }
+      ],
+      "message_important": "Ce n'est JAMAIS ta faute. Tu mérites d'être en sécurité."
+    }
+  },
+
+  "ressources_par_region": {
+    "note": "Les ressources ci-dessus sont provinciales. Pour des ressources locales spécifiques:",
+    "outils": [
+      {
+        "nom": "211",
+        "telephone": "211",
+        "url": "https://www.211qc.ca",
+        "description": "Répertoire de toutes les ressources communautaires par région"
+      },
+      {
+        "nom": "Info-Social 811",
+        "telephone": "811",
+        "description": "Référence vers les ressources de ta région"
+      },
+      {
+        "nom": "CLSC de ta région",
+        "description": "Services sociaux et de santé gratuits - trouve le tien via le 811"
+      }
+    ]
+  },
+
+  "applications_recommandees": [
+    {
+      "nom": "+Fort",
+      "usage": "Intimidation",
+      "plateformes": ["iOS", "Android"],
+      "gratuit": true
+    },
+    {
+      "nom": "Toujours là pour toi",
+      "usage": "Soutien général (Jeunesse J'écoute)",
+      "plateformes": ["iOS", "Android"],
+      "gratuit": true
+    },
+    {
+      "nom": "Respirelax",
+      "usage": "Gestion du stress et anxiété",
+      "plateformes": ["iOS", "Android"],
+      "gratuit": true
+    }
+  ],
+
+  "note_confidentialite": {
+    "message": "Tous ces services sont CONFIDENTIELS. Personne ne saura que tu as appelé ou écrit, sauf si tu décides d'en parler.",
+    "exceptions": [
+      "Si ta vie ou celle de quelqu'un d'autre est en danger immédiat",
+      "Si un enfant est en danger"
+    ]
+  }
+}
