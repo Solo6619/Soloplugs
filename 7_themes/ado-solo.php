@@ -11,6 +11,160 @@
     
     include '../components/head.php';
   ?>
+  
+  <style>
+    /* ========================================
+       BLOC PROMO RESSOURCES
+       ======================================== */
+    .section-ressources-promo {
+      padding: 3rem 0;
+      background: linear-gradient(180deg, #FEF0F2 0%, #FFFBFC 100%);
+    }
+    
+    .ressources-promo {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(232, 93, 117, 0.1);
+      border: 2px solid #F5E6E9;
+    }
+    
+    .ressources-promo-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .ressources-promo h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.75rem;
+      color: #4A4A4A;
+      margin-bottom: 0.75rem;
+    }
+    
+    .ressources-promo > p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: #6B6B6B;
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .ressources-promo-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .ressources-promo-features span {
+      background: #FEF0F2;
+      color: #D14D65;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .ressources-promo .btn-ressources {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #E85D75 0%, #D14D65 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(232, 93, 117, 0.3);
+    }
+    
+    .ressources-promo .btn-ressources:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(232, 93, 117, 0.4);
+    }
+    
+    .ressources-promo .btn-ressources svg {
+      transition: transform 0.3s ease;
+    }
+    
+    .ressources-promo .btn-ressources:hover svg {
+      transform: translateX(4px);
+    }
+    
+    /* Urgence rapide sous le CTA */
+    .urgence-rapide {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #F5E6E9;
+    }
+    
+    .urgence-rapide p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #6B6B6B;
+      margin-bottom: 0.75rem;
+    }
+    
+    .urgence-rapide-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .urgence-rapide-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF5F5;
+      color: #D32F2F;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #FFD4D4;
+      transition: all 0.2s ease;
+    }
+    
+    .urgence-rapide-links a:hover {
+      background: #FFEBEE;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 600px) {
+      .ressources-promo {
+        padding: 1.75rem;
+      }
+      
+      .ressources-promo h2 {
+        font-size: 1.5rem;
+      }
+      
+      .ressources-promo-features {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .ressources-promo .btn-ressources {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .urgence-rapide-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -92,15 +246,43 @@
   </section>
 
   <!-- ============================================================
-       SECTION RESSOURCES (composant centralisé)
-       Affiche uniquement les ressources pour adolescents
+       SECTION RESSOURCES - CTA VERS PAGE COMPLÈTE
        ============================================================ -->
-  <?php 
-    $theme = 'ado';
-    $titre = 'Des ressources pour toi';
-    $showLocalisation = true;
-    include '../components/ressources-section.php'; 
-  ?>
+  <section class="section section-ressources-promo">
+    <div class="container-narrow">
+      <div class="ressources-promo">
+        <div class="ressources-promo-icon">🆘</div>
+        <h2>Des ressources pour toi</h2>
+        <p>
+          Intimidation, anxiété, famille, LGBTQ+, deuil... 
+          On a rassemblé toutes les lignes d'écoute et ressources du Québec pour les ados.
+        </p>
+        
+        <div class="ressources-promo-features">
+          <span>💬 Texto & clavardage</span>
+          <span>🔒 Gratuit & confidentiel</span>
+          <span>🏠 Maisons des jeunes</span>
+        </div>
+        
+        <a href="<?php echo $basePath; ?>ressources-ado.php" class="btn-ressources">
+          Voir toutes les ressources
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        
+        <!-- Accès rapide urgence -->
+        <div class="urgence-rapide">
+          <p>Besoin d'aide maintenant ?</p>
+          <div class="urgence-rapide-links">
+            <a href="tel:988">🆘 988 (crise 24/7)</a>
+            <a href="tel:18002632266">📞 Tel-jeunes</a>
+            <a href="sms:5146001002">💬 Texto: 514-600-1002</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================================================
        CTA FINAL

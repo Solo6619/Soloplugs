@@ -33,7 +33,7 @@
        ADO-SOLO RESSOURCES - COULEURS THÈME
        ======================================== */
     :root {
-      --ado-primary: #E85D75;      /* Rose/corail Ado-Solo */
+      --ado-primary: #E85D75;
       --ado-primary-light: #FEF0F2;
       --ado-primary-dark: #D14D65;
       --ado-text: #4A4A4A;
@@ -62,7 +62,7 @@
     .ado-header {
       text-align: center;
       margin-bottom: 2rem;
-      padding: 1rem 1.5rem;
+      padding: 1.5rem;
       background: linear-gradient(135deg, var(--ado-primary) 0%, var(--ado-primary-dark) 100%);
       border-radius: 16px;
       color: white;
@@ -70,13 +70,13 @@
     
     .ado-header h1 {
       font-family: 'Lora', Georgia, serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.25rem;
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
     }
     
     .ado-header p {
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 1rem;
       opacity: 0.95;
     }
     
@@ -104,7 +104,7 @@
     
     .urgence-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
     }
     
@@ -113,12 +113,17 @@
       border-radius: 12px;
       padding: 1rem;
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+    
+    .urgence-item:hover {
+      transform: translateY(-2px);
     }
     
     .urgence-item .nom {
       font-family: 'Inter', sans-serif;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--ado-text);
       margin-bottom: 0.5rem;
     }
@@ -128,6 +133,11 @@
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--ado-primary);
+    }
+    
+    .urgence-item .numero a {
+      color: inherit;
+      text-decoration: none;
     }
     
     .urgence-item .dispo {
@@ -324,6 +334,176 @@
     }
     
     /* ========================================
+       SECTION MAISONS DES JEUNES
+       ======================================== */
+    .mdj-section {
+      background: white;
+      border: 2px solid var(--ado-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    
+    .mdj-section h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--ado-text);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .mdj-section > p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ado-text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    /* Dropdown régions */
+    .mdj-search {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mdj-search label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ado-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .mdj-search select {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      border: 2px solid var(--ado-border);
+      border-radius: 12px;
+      background: white;
+      color: var(--ado-text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .mdj-search select:focus {
+      outline: none;
+      border-color: var(--ado-primary);
+    }
+    
+    /* Résultat MDJ */
+    .mdj-result {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .mdj-result.active {
+      display: block;
+    }
+    
+    .mdj-result-card {
+      background: var(--ado-primary-light);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .mdj-result-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ado-primary-dark);
+      margin-bottom: 0.75rem;
+    }
+    
+    .mdj-result-card .villes {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--ado-text);
+      margin-bottom: 1rem;
+    }
+    
+    .mdj-result-card .exemples {
+      margin-bottom: 1rem;
+    }
+    
+    .mdj-result-card .exemples strong {
+      font-size: 0.85rem;
+      color: var(--ado-text-light);
+    }
+    
+    .mdj-result-card .exemples ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.25rem;
+    }
+    
+    .mdj-result-card .exemples li {
+      font-size: 0.9rem;
+      color: var(--ado-text);
+      margin-bottom: 0.25rem;
+    }
+    
+    .mdj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ado-primary);
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 25px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .mdj-link:hover {
+      background: var(--ado-primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    /* Info MDJ */
+    .mdj-info {
+      background: #F8F9FA;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    
+    .mdj-info h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ado-text);
+      margin-bottom: 0.75rem;
+    }
+    
+    .mdj-info ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+    
+    .mdj-info li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--ado-text-light);
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+    
+    .mdj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    /* ========================================
        RESPONSIVE
        ======================================== */
     @media (max-width: 600px) {
@@ -336,6 +516,7 @@
         overflow-x: auto;
         flex-wrap: nowrap;
         padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
       }
       
       .theme-btn {
@@ -343,7 +524,11 @@
       }
       
       .urgence-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .mdj-search select {
+        max-width: 100%;
       }
     }
   </style>
@@ -366,7 +551,6 @@
       <h2>🆘 Besoin d'aide maintenant?</h2>
       <div class="urgence-grid">
         <?php 
-        // Afficher les 4 premières ressources d'urgence
         $urgences = array_slice($ressourcesData['ressources_urgence']['liste'], 0, 4);
         foreach ($urgences as $urgence): 
         ?>
@@ -374,7 +558,7 @@
           <div class="nom"><?= htmlspecialchars($urgence['nom']) ?></div>
           <div class="numero">
             <?php if (!empty($urgence['telephone'])): ?>
-              <a href="tel:<?= preg_replace('/[^0-9]/', '', $urgence['telephone']) ?>" style="color: inherit; text-decoration: none;">
+              <a href="tel:<?= preg_replace('/[^0-9]/', '', $urgence['telephone']) ?>">
                 <?= htmlspecialchars($urgence['telephone']) ?>
               </a>
             <?php endif; ?>
@@ -383,8 +567,7 @@
             <?php 
             $dispo = $urgence['disponibilite'] ?? '24/7';
             if (is_array($dispo)) {
-              // Si c'est un tableau, afficher la première valeur ou concaténer
-              echo htmlspecialchars(is_array($dispo) ? implode(' | ', array_values($dispo)) : $dispo);
+              echo htmlspecialchars(implode(' | ', array_values($dispo)));
             } else {
               echo htmlspecialchars($dispo);
             }
@@ -508,6 +691,95 @@
       $first = false;
     endforeach; 
     ?>
+    
+    <!-- ========================================
+         SECTION MAISONS DES JEUNES
+         ======================================== -->
+    <?php if (!empty($mdjData['regions'])): ?>
+    <div class="mdj-section">
+      <h2>🏠 Maisons des jeunes</h2>
+      <p>
+        Un endroit safe pour toi, près de chez toi. Les MDJ sont des lieux gratuits où tu peux 
+        rencontrer d'autres jeunes, participer à des activités et parler à des adultes de confiance.
+      </p>
+      
+      <div class="mdj-search">
+        <label for="mdj-region">Trouve une MDJ dans ta région :</label>
+        <select id="mdj-region" onchange="afficherMDJ(this.value)">
+          <option value="">-- Choisis ta région --</option>
+          <?php foreach ($mdjData['regions'] as $key => $region): ?>
+          <option value="<?= htmlspecialchars($key) ?>">
+            <?= htmlspecialchars($region['nom_region']) ?>
+          </option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+      
+      <!-- Résultats MDJ -->
+      <div id="mdj-results">
+        <?php foreach ($mdjData['regions'] as $key => $region): ?>
+        <div class="mdj-result" id="mdj-<?= htmlspecialchars($key) ?>">
+          <div class="mdj-result-card">
+            <h3>📍 <?= htmlspecialchars($region['nom_region']) ?></h3>
+            
+            <?php if (!empty($region['villes_principales'])): ?>
+            <div class="villes">
+              <strong>Villes couvertes :</strong> 
+              <?= htmlspecialchars(implode(', ', array_slice($region['villes_principales'], 0, 6))) ?>
+              <?= count($region['villes_principales']) > 6 ? '...' : '' ?>
+            </div>
+            <?php endif; ?>
+            
+            <?php if (!empty($region['exemples_mdj'])): ?>
+            <div class="exemples">
+              <strong>Exemples de MDJ :</strong>
+              <ul>
+                <?php foreach (array_slice($region['exemples_mdj'], 0, 3) as $mdj): ?>
+                <li><?= htmlspecialchars($mdj['nom']) ?> (<?= htmlspecialchars($mdj['ville']) ?>)</li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
+            <?php endif; ?>
+            
+            <?php if (!empty($region['lien_recherche'])): ?>
+            <a href="<?= htmlspecialchars($region['lien_recherche']) ?>" target="_blank" class="mdj-link">
+              🔍 Trouver une MDJ dans <?= htmlspecialchars($region['nom_region']) ?>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+            <?php endif; ?>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+      
+      <!-- Info générale MDJ -->
+      <div class="mdj-info">
+        <h4>C'est quoi une maison des jeunes?</h4>
+        <ul>
+          <li>Un lieu d'appartenance où tu peux être toi-même</li>
+          <li>Des activités le fun (jeux, sports, arts, cuisine...)</li>
+          <li>Des adultes de confiance qui t'écoutent sans juger</li>
+          <li>De l'aide aux devoirs si t'en as besoin</li>
+          <li>Un endroit safe après l'école</li>
+        </ul>
+        <div class="mdj-tags">
+          <span class="tag gratuit">Gratuit</span>
+          <span class="tag confidentiel">Confidentiel</span>
+          <span class="tag">12-17 ans</span>
+          <span class="tag">Sans rendez-vous</span>
+        </div>
+      </div>
+      
+      <!-- Accès rapide -->
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <a href="https://rmjq.org/liste-des-maisons-de-jeunes/" target="_blank" class="mdj-link">
+          🗺️ Voir toutes les MDJ du Québec
+        </a>
+      </div>
+    </div>
+    <?php endif; ?>
 
   </main>
 
@@ -539,6 +811,25 @@
       // Scroll vers le haut de la section (mobile)
       if (window.innerWidth < 600) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    
+    // Afficher MDJ par région
+    function afficherMDJ(regionKey) {
+      // Masquer tous les résultats
+      document.querySelectorAll('.mdj-result').forEach(result => {
+        result.classList.remove('active');
+      });
+      
+      // Afficher le résultat sélectionné
+      if (regionKey) {
+        const result = document.getElementById('mdj-' + regionKey);
+        if (result) {
+          result.classList.add('active');
+          
+          // Scroll vers le résultat
+          result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }
     }
   </script>
