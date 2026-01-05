@@ -7,7 +7,7 @@
     $pageDescription = 'Accompagnement pour voyager seul·e. Liberté, découverte et confiance à ton rythme.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['voyages-solo-enhanced.css'];
+    $additionalCSS = ['theme-base.css','voyages-solo-enhanced.css'];
     
     include '../components/head.php';
   ?>

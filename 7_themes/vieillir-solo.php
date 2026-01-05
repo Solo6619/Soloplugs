@@ -7,7 +7,7 @@
     $pageDescription = 'Accompagnement pour les personnes qui vieillissent seules. Dignité, autonomie et liberté.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['vieillir-solo-enhanced.css'];
+    $additionalCSS = ['theme-base.css','vieillir-solo-enhanced.css'];
     
     include '../components/head.php';
   ?>

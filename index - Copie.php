@@ -40,7 +40,54 @@ ini_set('display_errors', 1);
     </div>
   </section>
 
-  
+  <!-- ============================================================
+       SECTION DUALITÉ
+       ============================================================ -->
+  <section class="duality-section">
+    <div class="duality-intro">
+      <h2>Deux visages de la solitude</h2>
+      <p>
+        La solitude peut être choisie ou subie, source de sagesse ou de souffrance. 
+        SOLOPLUGS accueille les deux expériences avec la même attention.
+      </p>
+    </div>
+
+    <div class="duality-cards">
+      <!-- SOLITUDE CHOISIE -->
+      <div class="duality-card chosen">
+        <div class="duality-icon">☀️</div>
+        <h3>Tu as choisi d'être seul·e</h3>
+        <p>
+          La solitude peut être un refuge, un atelier, un jardin secret.
+          Un espace pour créer, contempler, devenir.
+        </p>
+        <p>
+          Si tu es ici parce que tu célèbres ta solitude, 
+          explore nos thèmes sur l'art de vivre solo.
+        </p>
+        <a href="#themes" class="duality-link">
+          Explorer la solitude choisie →
+        </a>
+      </div>
+
+      <!-- ISOLEMENT SUBI -->
+      <div class="duality-card suffered">
+        <div class="duality-icon">💚</div>
+        <h3>La solitude te pèse</h3>
+        <p>
+          Rupture, deuil, déménagement, éloignement...
+          Parfois la solitude s'impose et fait mal.
+        </p>
+        <p>
+          Tu n'es pas seul·e à te sentir seul·e.
+          Trouve ici du soutien et des chemins possibles.
+        </p>
+        <a href="ressources.php" class="duality-link">
+          Trouver du soutien →
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================================================
        SECTION 7 THÈMES

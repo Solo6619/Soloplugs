@@ -1,37 +1,13 @@
 /* ============================================================
-   🌿 SOLOPLUGS - CSS THÉMATIQUES
-   Styles pour les pages des 7 thèmes avec univers distincts
+   🌿 THEMES.CSS — Variables et layouts des 7 thèmes
+   Header, Footer, Reset, Animations → voir global.css
    ============================================================ */
 
 /* ============================================================
-   VARIABLES GLOBALES (communes à tous les thèmes)
+   VARIABLES DES 7 THÈMES
    ============================================================ */
-:root {
-  /* Couleurs de base Soloplugs */
-  --soloplugs-gold: #D4A574;
-  --soloplugs-dark: #2C3338;
-  --soloplugs-gray: #6B7280;
-  --soloplugs-bg: #FBF9F6;
-  --soloplugs-bg-light: #F5F1EB;
-  
-  /* Espacements */
-  --header-height: 130px;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 3rem;
-  --spacing-xl: 4rem;
-  
-  /* Transitions */
-  --transition-fast: 0.3s ease;
-  --transition-smooth: 0.4s ease;
-  --transition-slow: 0.6s ease;
-}
 
-/* ============================================================
-   THÈME : VIVRE-SOLO
-   Philosophique, valorisant, or chaleureux
-   ============================================================ */
+/* VIVRE-SOLO — Philosophique, valorisant, or chaleureux */
 .theme-vivre-solo {
   --theme-primary: #D4A574;
   --theme-primary-light: #E8C9A3;
@@ -41,10 +17,7 @@
   --theme-text: #2C3338;
 }
 
-/* ============================================================
-   THÈME : DIVORCES-SÉPARATIONS-DÉCÈS
-   Empathique, doux, bleu apaisant
-   ============================================================ */
+/* DIVORCES-SÉPARATIONS-DÉCÈS — Empathique, doux, bleu apaisant */
 .theme-separations {
   --theme-primary: #7BA5C1;
   --theme-primary-light: #A5C7DC;
@@ -54,10 +27,7 @@
   --theme-text: #2C3338;
 }
 
-/* ============================================================
-   THÈME : VOYAGES-SOLO
-   Aventureux, inspirant, bleu dynamique
-   ============================================================ */
+/* VOYAGES-SOLO — Aventureux, inspirant, bleu dynamique */
 .theme-voyages {
   --theme-primary: #3498DB;
   --theme-primary-light: #5DADE2;
@@ -67,10 +37,7 @@
   --theme-text: #2C3338;
 }
 
-/* ============================================================
-   THÈME : SORTIES-LOISIRS-RENCONTRES
-   Énergique, motivant, magenta dynamique
-   ============================================================ */
+/* SORTIES-LOISIRS-RENCONTRES — Énergique, motivant, magenta dynamique */
 .theme-sorties {
   --theme-primary: #E91E63;
   --theme-primary-light: #F06292;
@@ -80,10 +47,7 @@
   --theme-text: #2C3338;
 }
 
-/* ============================================================
-   THÈME : PARENT-SOLO
-   Empathique, pratique, vert tendre
-   ============================================================ */
+/* PARENT-SOLO — Empathique, pratique, vert tendre */
 .theme-parent {
   --theme-primary: #6BA368;
   --theme-primary-light: #8FBC8F;
@@ -93,10 +57,7 @@
   --theme-text: #2C3338;
 }
 
-/* ============================================================
-   THÈME : VIEILLIR-SOLO
-   Respectueux, valorisant, or/terre
-   ============================================================ */
+/* VIEILLIR-SOLO — Respectueux, valorisant, or/terre */
 .theme-vieillir {
   --theme-primary: #C9A26F;
   --theme-primary-light: #D4B896;
@@ -106,10 +67,7 @@
   --theme-text: #2C3338;
 }
 
-/* ============================================================
-   THÈME : ADO-SOLO
-   Complice, direct, violet dynamique
-   ============================================================ */
+/* ADO-SOLO — Complice, direct, violet dynamique */
 .theme-ado {
   --theme-primary: #9B59B6;
   --theme-primary-light: #BB8FCE;
@@ -120,133 +78,16 @@
 }
 
 /* ============================================================
-   RESET & GLOBAL
-   ============================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background-color: var(--soloplugs-bg);
-  color: var(--soloplugs-dark);
-  font-family: 'Inter', sans-serif;
-  padding-top: var(--header-height);
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ============================================================
-   HEADER (identique à magazine.html)
-   ============================================================ */
-#header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(251, 249, 246, 0.95);
-  border-bottom: 1px solid rgba(212, 165, 116, 0.3);
-  backdrop-filter: blur(10px);
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-  transition: all var(--transition-slow);
-  padding: 1.5rem 0;
-}
-
-#header-inner {
-  position: relative;
-}
-
-.logo-soloplugs {
-  display: inline-block;
-  cursor: pointer;
-  transition: transform var(--transition-fast);
-  position: relative;
-}
-
-.ogo-soloplugs img {
-  height: 80px;
-  width: auto;
-  display: block;
-  transition: all var(--transition-fast);
-}
-
-.logo-soloplugs:hover {
-  transform: scale(1.05);
-}
-
-#menu-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.4rem;
-  margin-top: var(--spacing-sm);
-}
-
-#menu-main a {
-  text-decoration: none;
-  color: var(--soloplugs-dark);
-  font-weight: 500;
-  position: relative;
-  transition: color var(--transition-fast);
-  font-size: 0.95rem;
-}
-
-#menu-main a:hover {
-  color: var(--soloplugs-gold);
-}
-
-#menu-main a.active-link {
-  color: var(--soloplugs-gold);
-  font-weight: 600;
-}
-
-#menu-main a.active-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--soloplugs-gold);
-}
-
-#header.header-scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 0.6rem 0;
-}
-
-#header.header-scrolled .logo-soloplugs {
-  position: absolute;
-  left: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#header.header-scrolled .logo-soloplugs img {
-  height: 40px;
-}
-
-#header.header-scrolled .logo-soloplugs:hover {
-  transform: translateY(-50%) scale(1.05);
-}
-
-/* ============================================================
    CONTAINER
    ============================================================ */
 .theme-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-sm);
+  padding: 0 1rem;
 }
 
 /* ============================================================
-   HERO SECTION
+   HERO SECTION THÉMATIQUE
    ============================================================ */
 .theme-hero {
   min-height: 70vh;
@@ -255,14 +96,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-xl) var(--spacing-sm);
+  padding: 4rem 1rem;
   position: relative;
-  background: linear-gradient(135deg, var(--theme-bg-section) 0%, var(--soloplugs-bg) 100%);
+  background: linear-gradient(135deg, var(--theme-bg-section) 0%, var(--bg-primary, #FBF9F6) 100%);
 }
 
 .theme-hero-icon {
   font-size: 4rem;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 2rem;
   animation: fadeInDown 1s ease;
 }
 
@@ -271,7 +112,7 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--theme-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   animation: fadeIn 1s ease 0.2s backwards;
 }
 
@@ -279,48 +120,59 @@ body {
   font-size: 1.5rem;
   color: var(--theme-text);
   max-width: 700px;
-  margin: 0 auto var(--spacing-md);
+  margin: 0 auto 2rem;
   line-height: 1.6;
   animation: fadeIn 1s ease 0.4s backwards;
 }
 
 .theme-hero-description {
   font-size: 1.125rem;
-  color: var(--soloplugs-gray);
+  color: var(--text-secondary, #6B7280);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.8;
   animation: fadeIn 1s ease 0.6s backwards;
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ============================================================
    SECTIONS COMMUNES
    ============================================================ */
 .theme-section {
-  padding: var(--spacing-xl) var(--spacing-sm);
+  padding: 4rem 1rem;
 }
 
 .theme-section-alt {
   background: var(--theme-bg-section);
-  padding: var(--spacing-xl) var(--spacing-sm);
+  padding: 4rem 1rem;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 3rem;
 }
 
 .section-header h2 {
   font-family: 'Lora', serif;
   font-size: 2.5rem;
   color: var(--theme-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .section-header p {
   font-size: 1.125rem;
-  color: var(--soloplugs-gray);
+  color: var(--text-secondary, #6B7280);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.8;
@@ -333,7 +185,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: var(--spacing-lg);
+  margin-top: 3rem;
 }
 
 .theme-card {
@@ -341,7 +193,7 @@ body {
   border-radius: 1.25rem;
   padding: 2.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all var(--transition-smooth);
+  transition: all 0.4s ease;
   border-top: 4px solid var(--theme-primary);
 }
 
@@ -352,7 +204,7 @@ body {
 
 .theme-card-icon {
   font-size: 3rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   display: block;
 }
 
@@ -360,26 +212,26 @@ body {
   font-family: 'Lora', serif;
   font-size: 1.5rem;
   color: var(--theme-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .theme-card p {
-  color: var(--soloplugs-gray);
+  color: var(--text-secondary, #6B7280);
   line-height: 1.8;
   font-size: 1rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
 }
 
 .theme-card ul {
   list-style: none;
   padding: 0;
-  margin: var(--spacing-sm) 0;
+  margin: 1rem 0;
 }
 
 .theme-card li {
   padding: 0.5rem 0;
-  color: var(--soloplugs-gray);
+  color: var(--text-secondary, #6B7280);
   position: relative;
   padding-left: 1.5rem;
 }
@@ -393,13 +245,13 @@ body {
 }
 
 /* ============================================================
-   DUALITY SECTION (pour vivre-solo)
+   DUALITY SECTION
    ============================================================ */
 .duality-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin-top: var(--spacing-lg);
+  margin-top: 3rem;
 }
 
 .duality-card {
@@ -407,7 +259,7 @@ body {
   border-radius: 1.25rem;
   padding: 3rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all var(--transition-smooth);
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
@@ -429,7 +281,7 @@ body {
 
 .duality-icon {
   font-size: 3.5rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   display: block;
 }
 
@@ -437,15 +289,15 @@ body {
   font-family: 'Lora', serif;
   font-size: 1.75rem;
   color: var(--theme-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .duality-card p {
-  color: var(--soloplugs-gray);
+  color: var(--text-secondary, #6B7280);
   line-height: 1.8;
   font-size: 1.05rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
 }
 
 /* ============================================================
@@ -455,12 +307,12 @@ body {
   background: var(--theme-bg-section);
   border-left: 6px solid var(--theme-primary);
   padding: 2rem 2.5rem;
-  margin: var(--spacing-lg) 0;
+  margin: 3rem 0;
   border-radius: 0 1rem 1rem 0;
   font-style: italic;
   font-family: 'Lora', serif;
   font-size: 1.25rem;
-  color: var(--soloplugs-gray);
+  color: var(--text-secondary, #6B7280);
   line-height: 1.8;
 }
 
@@ -469,30 +321,30 @@ body {
    ============================================================ */
 .theme-cta {
   text-align: center;
-  padding: var(--spacing-xl) var(--spacing-sm);
+  padding: 4rem 1rem;
   background: linear-gradient(135deg, var(--theme-primary-light) 0%, var(--theme-primary) 100%);
   border-radius: 1.5rem;
   color: white;
-  margin: var(--spacing-xl) 0;
+  margin: 4rem 0;
 }
 
 .theme-cta h2 {
   font-family: 'Lora', serif;
   font-size: 2.25rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   color: white;
   font-weight: 700;
 }
 
 .theme-cta p {
   font-size: 1.125rem;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 2rem;
   opacity: 0.95;
 }
 
 .btn-group {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -504,7 +356,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
-  transition: all var(--transition-fast);
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
 }
@@ -532,165 +384,9 @@ body {
 }
 
 /* ============================================================
-   FOOTER (identique à magazine.html)
-   ============================================================ */
-#footer {
-  background: linear-gradient(135deg, #2C3338 0%, #1a2027 100%);
-  color: #F5F1EB;
-  padding: var(--spacing-lg) var(--spacing-sm);
-  margin-top: var(--spacing-xl);
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-logo {
-  display: inline-block;
-  margin-bottom: var(--spacing-md);
-  cursor: pointer;
-  transition: transform var(--transition-fast);
-}
-
-.footer-logo img {
-  height: 40px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
-  transition: opacity var(--transition-fast);
-}
-
-.footer-logo:hover {
-  transform: scale(1.05);
-}
-
-.footer-logo:hover img {
-  opacity: 1;
-}
-
-.footer-quote {
-  font-family: 'Lora', serif;
-  font-style: italic;
-  font-size: 1.125rem;
-  color: var(--soloplugs-gold);
-  margin-bottom: var(--spacing-md);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-}
-
-.footer-links a {
-  color: #F5F1EB;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color var(--transition-fast);
-}
-
-.footer-links a:hover {
-  color: var(--soloplugs-gold);
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
-}
-
-.footer-social a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: transform var(--transition-fast);
-}
-
-.footer-social a:hover {
-  transform: scale(1.2);
-}
-
-.footer-copy {
-  font-size: 0.85rem;
-  color: rgba(245, 241, 235, 0.6);
-  margin-top: var(--spacing-md);
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: var(--theme-primary, var(--soloplugs-gold));
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-fast);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* ============================================================
-   ANIMATIONS
-   ============================================================ */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
-  :root {
-    --header-height: 160px;
-  }
-
-  body {
-    padding-top: 160px;
-  }
-
   .theme-hero h1 {
     font-size: 2.5rem;
   }
@@ -711,19 +407,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  #header.header-scrolled .logo-soloplugs {
-    left: 1rem;
-  }
-
   .btn-group {
     flex-direction: column;
-  }
-
-  .back-to-top {
-    bottom: 1rem;
-    right: 1rem;
-    width: 45px;
-    height: 45px;
   }
 }
 
@@ -742,6 +427,6 @@ body {
   }
 
   .theme-cta {
-    padding: var(--spacing-md) var(--spacing-sm);
+    padding: 2rem 1rem;
   }
 }

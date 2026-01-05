@@ -1,8 +1,7 @@
 /* ============================================================
-   ✈️ VOYAGES-SOLO — CSS ENRICHI
+   ✈️ VOYAGES-SOLO — CSS ENRICHI (Version nettoyée)
+   Requiert: theme-base.css chargé AVANT ce fichier
    Atmosphère : Liberté, horizon, découverte, calme
-   Couleurs : Bleu horizon (#3498DB), Turquoise, Sable
-   Ton visuel : Vaste, aérien, rassurant
    Message : "Le monde t'attend. À ton rythme."
    ============================================================ */
 
@@ -11,35 +10,29 @@
    ============================================================ */
 :root {
   /* Palette principale - Bleu horizon */
-  --vs-blue: #3498DB;
-  --vs-blue-light: #7EC8E3;
-  --vs-blue-dark: #2472A4;
-  --vs-blue-pale: #E8F4FC;
-  --vs-blue-glow: rgba(52, 152, 219, 0.12);
+  --voy-blue: #3498DB;
+  --voy-blue-light: #7EC8E3;
+  --voy-blue-dark: #2472A4;
+  --voy-blue-pale: #E8F4FC;
+  --voy-blue-glow: rgba(52, 152, 219, 0.12);
   
   /* Palette secondaire - Turquoise et sable */
-  --vs-turquoise: #1ABC9C;
-  --vs-turquoise-light: #76D7C4;
-  --vs-sand: #F5E6D3;
-  --vs-sand-light: #FDF8F3;
+  --voy-turquoise: #1ABC9C;
+  --voy-turquoise-light: #76D7C4;
+  --voy-sand: #F5E6D3;
+  --voy-sand-light: #FDF8F3;
   
   /* Fonds lumineux - ciel */
-  --vs-sky: #F7FBFE;
-  --vs-sky-warm: #F0F7FC;
-  --vs-cloud: #FFFFFF;
+  --voy-sky: #F7FBFE;
+  --voy-sky-warm: #F0F7FC;
   
   /* Textes */
-  --vs-text: #1E3A5F;
-  --vs-text-soft: #3D5A80;
-  --vs-text-muted: rgb(107, 130, 153);
+  --voy-text: #1E3A5F;
+  --voy-text-soft: #3D5A80;
   
   /* Effets */
-  --vs-shadow-soft: 0 4px 20px rgba(52, 152, 219, 0.1);
-  --vs-shadow-hover: 0 12px 35px rgba(52, 152, 219, 0.18);
-  
-  /* Transitions */
-  --vs-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --vs-transition-float: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --voy-shadow-soft: 0 4px 20px rgba(52, 152, 219, 0.1);
+  --voy-shadow-hover: 0 12px 35px rgba(52, 152, 219, 0.18);
   
   /* Typographie */
   --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
@@ -47,25 +40,13 @@
 }
 
 /* ============================================================
-   RESET & BASE
+   BODY SPÉCIFIQUE
    ============================================================ */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  background-color: var(--vs-sky);
-  color: var(--vs-text);
+  background-color: var(--voy-sky);
+  color: var(--voy-text);
   font-family: var(--font-body);
-  line-height: 1.8;
   padding-top: 130px;
-  -webkit-font-smoothing: antialiased;
   font-size: 1.0625rem;
 }
 
@@ -85,16 +66,14 @@ body::before {
 }
 
 /* ============================================================
-   HEADER - Bordure en bas
+   HEADER - Bordure bleue
    ============================================================ */
 #header {
   border-bottom: 5px solid rgba(129, 164, 199, 0.5);
 }
+
 /* ============================================================
-   HERO SECTION — Horizon et liberté
-   ============================================================ */
-/* ============================================================
-   HERO SECTION — Horizon et liberté
+   HERO SECTION — Image de fond
    ============================================================ */
 .hero-voyages {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
@@ -137,165 +116,37 @@ body::before {
   display: none;
 }
 
-/* Horizon décoratif */
-.hero-voyages::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(180deg, transparent 0%, rgba(245, 230, 211, 0.4) 100%);
-}
-
-/* Nuages subtils */
-.hero-voyages::after {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 5%;
-  width: 200px;
-  height: 60px;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: cloud-drift 30s linear infinite;
-}
-
-@keyframes cloud-drift {
-  0% { transform: translateX(0); opacity: 0.7; }
-  50% { opacity: 0.4; }
-  100% { transform: translateX(calc(100vw - 200px)); opacity: 0.7; }
-}
-
-/* Contenu hero */
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-/* Icône hero */
-.hero-icon {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: gentle-float 5s ease-in-out infinite;
-}
-
-@keyframes gentle-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-.hero-icon svg {
-  width: 120px;
-  height: 120px;
-  max-width: 120px;
-  max-height: 120px;
-}
-
-/* Badge */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: white;
-  color: var(--vs-blue-dark);
-  padding: 0.6rem 1.5rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--vs-shadow-soft);
-  border: 2px solid var(--vs-blue-pale);
-}
-
-.hero-badge svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--vs-blue);
-}
-
-/* Titre */
-.hero-title {
+.hero-voyages .hero-title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 7vw, 4rem);
   font-weight: 700;
-  color: var(--vs-text);
-  margin-bottom: 1rem;
   line-height: 1.15;
 }
 
-.hero-title .highlight {
-  background: linear-gradient(135deg, var(--vs-blue), var(--vs-turquoise));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Sous-titre */
-.hero-subtitle {
+.hero-voyages .hero-subtitle {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2.5vw, 1.4rem);
   font-weight: 500;
-  color: var(--vs-blue);
-  margin-bottom: 2rem;
-}
-
-/* Description */
-.hero-description {
-  font-size: 1.15rem;
-  color: var(--vs-text-soft);
-  max-width: 620px;
-  margin: 0 auto;
-  line-height: 1.9;
 }
 
 /* ============================================================
-   SECTIONS
+   SECTION ALT BACKGROUND
    ============================================================ */
-.section {
-  padding: 5rem 2rem;
-  position: relative;
-}
-
 .section-alt {
-  background: var(--vs-sand-light);
+  background: var(--voy-sand-light);
 }
 
-.container {
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-.container-narrow {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* En-tête de section */
-.section-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
+/* ============================================================
+   SECTION HEADER — Couleurs thème
+   ============================================================ */
 .section-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
   font-weight: 700;
-  color: var(--vs-text);
-  margin-bottom: 1rem;
+  color: var(--voy-text);
 }
 
 .section-header p {
-  font-size: 1.1rem;
-  color: var(--vs-text-soft);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.8;
+  color: var(--voy-text-soft);
 }
 
 /* ============================================================
@@ -311,17 +162,17 @@ body::before {
   background: white;
   border-radius: 1.5rem;
   padding: 2.5rem;
-  box-shadow: var(--vs-shadow-soft);
+  box-shadow: var(--voy-shadow-soft);
   position: relative;
   overflow: hidden;
 }
 
 .column-card.positive {
-  border-top: 4px solid var(--vs-turquoise);
+  border-top: 4px solid var(--voy-turquoise);
 }
 
 .column-card.fragile {
-  border-top: 4px solid var(--vs-blue);
+  border-top: 4px solid var(--voy-blue);
 }
 
 .column-card h3 {
@@ -335,11 +186,11 @@ body::before {
 }
 
 .column-card.positive h3 {
-  color: var(--vs-turquoise);
+  color: var(--voy-turquoise);
 }
 
 .column-card.fragile h3 {
-  color: var(--vs-blue);
+  color: var(--voy-blue);
 }
 
 .column-card ul {
@@ -353,7 +204,7 @@ body::before {
   padding-left: 1.75rem;
   margin-bottom: 0.9rem;
   font-size: 1rem;
-  color: var(--vs-text-soft);
+  color: var(--voy-text-soft);
   line-height: 1.7;
 }
 
@@ -361,7 +212,7 @@ body::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--vs-turquoise);
+  color: var(--voy-turquoise);
   font-weight: 700;
 }
 
@@ -369,29 +220,17 @@ body::before {
   content: '~';
   position: absolute;
   left: 0;
-  color: var(--vs-blue);
+  color: var(--voy-blue);
   font-weight: 700;
   font-size: 1.2rem;
 }
 
 /* ============================================================
-   CARTES STANDARD
+   CARTES — Style Voyages
    ============================================================ */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.75rem;
-}
-
 .theme-card {
-  background: white;
-  border-radius: 1.25rem;
-  padding: 2.25rem;
-  box-shadow: var(--vs-shadow-soft);
-  transition: all var(--vs-transition);
+  box-shadow: var(--voy-shadow-soft);
   border: 1px solid rgba(52, 152, 219, 0.08);
-  position: relative;
-  overflow: hidden;
 }
 
 .theme-card::before {
@@ -401,32 +240,22 @@ body::before {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--vs-blue), var(--vs-turquoise));
+  background: linear-gradient(90deg, var(--voy-blue), var(--voy-turquoise));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform var(--vs-transition);
+  transition: transform 0.4s ease;
 }
 
 .theme-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--vs-shadow-hover);
+  box-shadow: var(--voy-shadow-hover);
 }
 
 .theme-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Icône de carte */
 .card-icon {
-  width: 58px;
-  height: 58px;
-  margin-bottom: 1.25rem;
-  background: linear-gradient(135deg, var(--vs-blue-pale), var(--vs-turquoise-light));
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--vs-transition);
+  background: linear-gradient(135deg, var(--voy-blue-pale), var(--voy-turquoise-light));
 }
 
 .theme-card:hover .card-icon {
@@ -434,65 +263,40 @@ body::before {
 }
 
 .card-icon svg {
-  width: 28px;
-  height: 28px;
-  stroke: var(--vs-blue);
-  stroke-width: 2;
-  fill: none;
+  stroke: var(--voy-blue);
 }
 
-/* Titre de carte */
 .theme-card h3 {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--vs-text);
-  margin-bottom: 0.75rem;
+  color: var(--voy-text);
 }
 
-/* Texte de carte */
 .theme-card p {
-  font-size: 1rem;
-  color: var(--vs-text-soft);
-  line-height: 1.8;
-  margin-bottom: 0.75rem;
+  color: var(--voy-text-soft);
 }
 
 /* ============================================================
-   CITATION
+   CITATION — Couleurs thème
    ============================================================ */
 .quote-block {
-  background: white;
-  border-radius: 1.5rem;
-  padding: 3rem;
-  position: relative;
-  box-shadow: var(--vs-shadow-soft);
+  border-left: 4px solid var(--voy-blue);
   text-align: center;
-  border-left: 4px solid var(--vs-blue);
 }
 
 .quote-block::before {
-  content: '"';
-  position: absolute;
-  top: 1rem;
-  left: 2rem;
-  font-family: Georgia, serif;
-  font-size: 5rem;
-  color: var(--vs-blue-pale);
-  line-height: 1;
+  color: var(--voy-blue-pale);
 }
 
 .quote-block p {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  font-style: italic;
-  color: var(--vs-text);
-  line-height: 1.7;
-  margin: 0;
+  color: var(--voy-text);
 }
 
 /* ============================================================
-   CONSEILS PRATIQUES - Mise en avant
+   CONSEILS PRATIQUES
    ============================================================ */
 .tips-grid {
   display: grid;
@@ -501,23 +305,23 @@ body::before {
 }
 
 .tip-card {
-  background: linear-gradient(135deg, var(--vs-blue-pale), white);
+  background: linear-gradient(135deg, var(--voy-blue-pale), white);
   border-radius: 1.25rem;
   padding: 1.75rem;
-  box-shadow: var(--vs-shadow-soft);
-  transition: all var(--vs-transition);
+  box-shadow: var(--voy-shadow-soft);
+  transition: all 0.4s ease;
   border: 1px solid rgba(52, 152, 219, 0.15);
 }
 
 .tip-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--vs-shadow-hover);
+  box-shadow: var(--voy-shadow-hover);
 }
 
 .tip-number {
   width: 40px;
   height: 40px;
-  background: var(--vs-blue);
+  background: var(--voy-blue);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -533,13 +337,13 @@ body::before {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--vs-text);
+  color: var(--voy-text);
   margin-bottom: 0.5rem;
 }
 
 .tip-card p {
   font-size: 0.95rem;
-  color: var(--vs-text-soft);
+  color: var(--voy-text-soft);
   line-height: 1.7;
 }
 
@@ -550,7 +354,7 @@ body::before {
   background: white;
   border-radius: 1.25rem;
   padding: 2rem;
-  box-shadow: var(--vs-shadow-soft);
+  box-shadow: var(--voy-shadow-soft);
   border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
@@ -558,7 +362,7 @@ body::before {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--vs-text);
+  color: var(--voy-text);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -568,7 +372,7 @@ body::before {
 .resource-card h3 svg {
   width: 24px;
   height: 24px;
-  stroke: var(--vs-blue);
+  stroke: var(--voy-blue);
 }
 
 .resource-card ul {
@@ -579,9 +383,9 @@ body::before {
 
 .resource-card li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--vs-blue-pale);
+  border-bottom: 1px solid var(--voy-blue-pale);
   font-size: 0.95rem;
-  color: var(--vs-text-soft);
+  color: var(--voy-text-soft);
 }
 
 .resource-card li:last-child {
@@ -589,50 +393,23 @@ body::before {
 }
 
 .resource-highlight {
-  background: var(--vs-blue-pale);
-  border: 2px solid var(--vs-blue-light);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  margin-top: 1rem;
-  text-align: center;
+  background: var(--voy-blue-pale);
+  border: 2px solid var(--voy-blue-light);
 }
 
 .resource-highlight .label {
-  font-weight: 600;
-  color: var(--vs-blue-dark);
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.9rem;
+  color: var(--voy-blue-dark);
 }
 
 .resource-highlight .info {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--vs-text);
+  color: var(--voy-text);
 }
 
 /* ============================================================
-   CTA SECTION
+   CTA SECTION — Style bleu
    ============================================================ */
 .cta-section {
-  background: linear-gradient(135deg, var(--vs-blue) 0%, var(--vs-blue-dark) 100%);
-  border-radius: 1.5rem;
-  padding: 4rem 3rem;
-  text-align: center;
-  margin: 3rem 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: -80px;
-  right: -80px;
-  width: 250px;
-  height: 250px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
+  background: linear-gradient(135deg, var(--voy-blue) 0%, var(--voy-blue-dark) 100%);
 }
 
 .cta-section::after {
@@ -646,219 +423,52 @@ body::before {
   border-radius: 50%;
 }
 
-.cta-section h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.cta-section p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  position: relative;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn-group {
-  display: flex;
-  gap: 1.25rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 1.1rem 2.25rem;
-  border-radius: 50px;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all var(--vs-transition-float);
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
 .btn-primary {
-  background: white;
-  color: var(--vs-blue-dark);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border-color: white;
+  color: var(--voy-blue-dark);
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: var(--vs-blue-dark);
-  transform: translateY(-3px);
+  color: var(--voy-blue-dark);
 }
 
 /* ============================================================
-   FOOTER
+   FOOTER — Couleurs thème
    ============================================================ */
 #footer {
-  background: linear-gradient(180deg, var(--vs-text) 0%, #152238 100%);
-  color: var(--vs-sky);
-  padding: 4rem 2rem 2rem;
-  margin-top: 4rem;
-}
-
-.footer-inner {
-  max-width: 1150px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-logo {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  cursor: pointer;
-  transition: transform var(--vs-transition);
-}
-
-.footer-logo:hover {
-  transform: scale(1.03);
-}
-
-.footer-logo img {
-  height: 42px;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  background: linear-gradient(180deg, var(--voy-text) 0%, #152238 100%);
 }
 
 .footer-quote {
-  font-size: 1rem;
-  color: var(--vs-blue-light);
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.25rem;
-  margin-bottom: 2rem;
-}
-
-.footer-links a {
-  color: var(--vs-sky);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color var(--vs-transition);
+  color: var(--voy-blue-light);
 }
 
 .footer-links a:hover {
-  color: var(--vs-blue-light);
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.footer-social a {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--vs-sky);
-  transition: all var(--vs-transition);
+  color: var(--voy-blue-light);
 }
 
 .footer-social a:hover {
-  background: var(--vs-blue);
-  color: white;
-  transform: translateY(-3px);
-}
-
-.footer-social svg {
-  width: 20px;
-  height: 20px;
-}
-
-.footer-copy {
-  font-size: 0.9rem;
-  color: rgba(247, 251, 254, 0.5);
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Back to top */
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 52px;
-  height: 52px;
-  background: var(--vs-blue);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--vs-transition);
-  box-shadow: var(--vs-shadow-soft);
-  z-index: 999;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  background: var(--vs-blue-dark);
-  transform: translateY(-4px);
-}
-
-.back-to-top svg {
-  width: 24px;
-  height: 24px;
+  background: var(--voy-blue);
 }
 
 /* ============================================================
-   ANIMATIONS
+   BACK TO TOP — Couleur thème
    ============================================================ */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease;
+.back-to-top {
+  background: var(--voy-blue);
 }
 
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+.back-to-top:hover {
+  background: var(--voy-blue-dark);
 }
 
-.animate-delay-1 { transition-delay: 0.1s; }
-.animate-delay-2 { transition-delay: 0.2s; }
-.animate-delay-3 { transition-delay: 0.3s; }
+/* ============================================================
+   ANIMATION NUAGE (optionnelle)
+   ============================================================ */
+@keyframes cloud-drift {
+  0% { transform: translateX(0); opacity: 0.7; }
+  50% { opacity: 0.4; }
+  100% { transform: translateX(calc(100vw - 200px)); opacity: 0.7; }
+}
 
 /* ============================================================
    RESPONSIVE
@@ -868,72 +478,44 @@ body::before {
     padding-top: 120px;
   }
   
-  #header {
-    padding: 1rem 0;
-  }
-  
   .hero-voyages {
     min-height: 80vh;
     padding: 4rem 1.5rem;
   }
   
-  .hero-icon {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .hero-icon svg {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-  }
-  
-  .section {
-    padding: 4rem 1.5rem;
-  }
-  
-  .cards-grid,
   .two-columns,
   .tips-grid {
     grid-template-columns: 1fr;
   }
-  
-  .quote-block {
-    padding: 2rem;
-  }
-  
-  .quote-block p {
-    font-size: 1.15rem;
-  }
-  
-  .cta-section {
-    padding: 3rem 1.5rem;
-    border-radius: 1.25rem;
-  }
-  
-  .btn-group {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
+  .hero-voyages .hero-title {
     font-size: 2.25rem;
   }
   
-  .section-header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .theme-card,
   .column-card,
   .tip-card {
     padding: 1.75rem;
   }
+}
+/* ============================================================
+   BOUTON THÈMES — Couleur thème
+   ============================================================ */
+.themes-toggle {
+  border: 2px solid var(--voy-blue) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.themes-label {
+  color: var(--voy-blue) !important;
+}
+
+.hamburger-icon span {
+  background: var(--voy-blue) !important;
+}
+
+.themes-toggle:hover {
+  background: var(--voy-blue-pale) !important;
 }

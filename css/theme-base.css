@@ -1,0 +1,685 @@
+/* ============================================================
+   🌿 THEME-BASE.CSS — Styles communs à toutes les pages thèmes
+   Inclure ce fichier AVANT le fichier -enhanced.css spécifique
+   ============================================================ */
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   SECTIONS COMMUNES
+   ============================================================ */
+.section {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* En-tête de section */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   HERO CONTENT (structure commune)
+   ============================================================ */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-icon {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-icon svg {
+  width: 110px;
+  height: 110px;
+  max-width: 110px;
+  max-height: 110px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ============================================================
+   GRILLE DE CARTES
+   ============================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ============================================================
+   CARTE THÉMATIQUE DE BASE
+   ============================================================ */
+.theme-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 1.25rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+  fill: none;
+}
+
+.theme-card h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.theme-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.theme-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.theme-card li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.theme-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+}
+
+/* ============================================================
+   CITATION / BLOCKQUOTE
+   ============================================================ */
+.quote-block {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid currentColor;
+}
+
+.quote-block::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  opacity: 0.2;
+}
+
+.quote-block p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 2rem;
+}
+
+.quote-block cite {
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  padding-left: 2rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   TÉMOIGNAGES
+   ============================================================ */
+.testimonial-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.15;
+}
+
+.testimonial-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2;
+  fill: none;
+}
+
+.testimonial-card h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+.btn-group {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 2.25rem;
+  border-radius: 50px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  border-radius: 1.5rem;
+  padding: 4rem 3rem;
+  text-align: center;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.cta-section h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   RESSOURCES HIGHLIGHT
+   ============================================================ */
+.resource-highlight {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.resource-highlight .label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.resource-highlight .phone,
+.resource-highlight .info {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+#footer {
+  color: #F5F1EB;
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.03);
+}
+
+.footer-logo img {
+  height: 42px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.footer-quote {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.footer-social a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  transition: all 0.4s ease;
+}
+
+.footer-social a:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 52px;
+  height: 52px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+.animate-delay-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   RESPONSIVE COMMUN
+   ============================================================ */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quote-block {
+    padding: 2rem;
+  }
+  
+  .quote-block p {
+    font-size: 1.15rem;
+    padding-left: 1rem;
+  }
+  
+  .cta-section {
+    padding: 3rem 1.5rem;
+    border-radius: 1.25rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-icon {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .hero-icon svg {
+    width: 90px;
+    height: 90px;
+    max-width: 90px;
+    max-height: 90px;
+  }
+  
+  .back-to-top {
+    width: 48px;
+    height: 48px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .footer-links {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .theme-card,
+  .testimonial-card {
+    padding: 1.75rem;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITÉ
+   ============================================================ */
+a:focus,
+button:focus {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   HEADER COMPACT PERMANENT (pages thèmes)
+   ============================================================ */
+#header {
+  padding: 0.6rem 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+#header .logo-soloplugs {
+  transform: scale(0.65) !important;
+  transform-origin: left center !important;
+  margin-bottom: 0 !important;
+}
+
+#header #header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#header #menu-main {
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+/* Ajuster le padding-top du body */
+body {
+  padding-top: 80px !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px !important;
+  }
+}

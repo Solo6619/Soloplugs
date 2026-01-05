@@ -1,7 +1,7 @@
 /* ============================================================
-   🕊️ DIVORCES-SEPARATIONS-DECES — CSS Enhanced
+   🕊️ DIVORCES-SEPARATIONS-DECES — CSS Enhanced (Version nettoyée)
+   Requiert: theme-base.css chargé AVANT ce fichier
    Thème : Deuil, rupture, perte
-   Palette : Bleu-gris (#7BA5C1) + Lavande (#B8A9C9)
    Ton : Sobre, enveloppant, réconfortant
    ============================================================ */
 
@@ -10,66 +10,51 @@
    ============================================================ */
 :root {
   /* Couleurs principales */
-  --blue-main: #7BA5C1;
-  --blue-light: #A8C5D9;
-  --blue-dark: #5A8AAD;
-  --blue-pale: #EEF4F8;
+  --dsd-blue: #7BA5C1;
+  --dsd-blue-light: #A8C5D9;
+  --dsd-blue-dark: #5A8AAD;
+  --dsd-blue-pale: #EEF4F8;
   
-  --lavender-main: #B8A9C9;
-  --lavender-light: #D4CAE0;
-  --lavender-pale: #F5F2F8;
+  --dsd-lavender: #B8A9C9;
+  --dsd-lavender-light: #D4CAE0;
+  --dsd-lavender-pale: #F5F2F8;
   
   /* Fonds */
-  --bg-cream: #FDFCFA;
-  --bg-warm: #FAF8F5;
-  --bg-soft: #F5F3F0;
+  --dsd-cream: #FDFCFA;
+  --dsd-warm: #FAF8F5;
+  --dsd-soft: #F5F3F0;
   
   /* Textes */
-  --text-primary: #2C3338;
-  --text-secondary: #5A6068;
-  --text-muted: #8A9199;
+  --dsd-text: #2C3338;
+  --dsd-text-soft: #5A6068;
+  --dsd-text-muted: #8A9199;
   
   /* Accent */
-  --accent-gold: #D4A574;
+  --dsd-gold: #D4A574;
   
-  /* Typographies */
+  /* Typographie */
   --font-display: 'Crimson Pro', Georgia, serif;
   --font-body: 'Source Sans 3', 'Inter', sans-serif;
-  
-  /* Transitions */
-  --transition-gentle: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================================
-   BASE & RESET
+   BODY SPÉCIFIQUE
    ============================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: var(--font-body);
-  background: var(--bg-cream);
-  color: var(--text-primary);
-  line-height: 1.8;
+  background: var(--dsd-cream);
+  color: var(--dsd-text);
   padding-top: 130px;
-  
-  /* Fond subtil */
   background-image: radial-gradient(ellipse at 50% 0%, rgba(123, 165, 193, 0.04) 0%, transparent 70%);
 }
 
 /* ============================================================
-   HEADER - Bordure en bas
+   HEADER - Bordure bleue douce
    ============================================================ */
 #header {
   border-bottom: 5px solid rgba(123, 165, 193, 0.6);
 }
+
 /* ============================================================
    HERO SECTION
    ============================================================ */
@@ -81,9 +66,9 @@ body {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(180deg, 
-    var(--blue-pale) 0%, 
-    var(--bg-cream) 50%, 
-    var(--lavender-pale) 100%);
+    var(--dsd-blue-pale) 0%, 
+    var(--dsd-cream) 50%, 
+    var(--dsd-lavender-pale) 100%);
   position: relative;
 }
 
@@ -99,34 +84,26 @@ body {
   pointer-events: none;
 }
 
-.hero-content {
+.hero-deuil .hero-content {
   max-width: 700px;
-  position: relative;
-  z-index: 1;
 }
 
-.hero-icon {
-  margin-bottom: 2rem;
+.hero-deuil .hero-icon {
   animation: gentle-float 5s ease-in-out infinite;
 }
 
-@keyframes gentle-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.hero-title {
+.hero-deuil .hero-title {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 
-.hero-description {
+.hero-deuil .hero-description {
   font-size: 1.25rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   line-height: 1.9;
   max-width: 600px;
   margin: 0 auto;
@@ -137,7 +114,7 @@ body {
    ============================================================ */
 .welcome-section {
   padding: 4rem 2rem;
-  background: var(--bg-cream);
+  background: var(--dsd-cream);
 }
 
 .welcome-content {
@@ -149,13 +126,13 @@ body {
   background: white;
   padding: 3rem;
   border-radius: 1rem;
-  border-left: 4px solid var(--blue-main);
+  border-left: 4px solid var(--dsd-blue);
   box-shadow: 0 4px 20px rgba(123, 165, 193, 0.1);
 }
 
 .welcome-box p {
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   margin-bottom: 1.5rem;
   line-height: 1.9;
 }
@@ -163,15 +140,15 @@ body {
 .welcome-box p:last-child {
   margin-bottom: 0;
   font-size: 1.25rem;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   font-weight: 500;
 }
 
 .emphasis {
-  background: var(--blue-pale);
+  background: var(--dsd-blue-pale);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  color: var(--blue-dark);
+  color: var(--dsd-blue-dark);
 }
 
 /* ============================================================
@@ -179,7 +156,7 @@ body {
    ============================================================ */
 .feelings-section {
   padding: 5rem 2rem;
-  background: var(--bg-warm);
+  background: var(--dsd-warm);
 }
 
 .section-content {
@@ -194,14 +171,14 @@ body {
   font-family: var(--font-display);
   font-size: 2.25rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .section-intro {
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   text-align: center;
   max-width: 600px;
   margin: 0 auto 3rem;
@@ -217,13 +194,13 @@ body {
   background: white;
   padding: 2rem;
   border-radius: 1rem;
-  transition: all var(--transition-gentle);
+  transition: all 0.5s ease;
   border: 1px solid transparent;
 }
 
 .feeling-card:hover {
   transform: translateY(-3px);
-  border-color: var(--blue-light);
+  border-color: var(--dsd-blue-light);
   box-shadow: 0 8px 30px rgba(123, 165, 193, 0.15);
 }
 
@@ -231,7 +208,7 @@ body {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background: var(--blue-pale);
+  background: var(--dsd-blue-pale);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,20 +216,20 @@ body {
 }
 
 .feeling-card:nth-child(even) .feeling-icon {
-  background: var(--lavender-pale);
+  background: var(--dsd-lavender-pale);
 }
 
 .feeling-card h3 {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   margin-bottom: 0.75rem;
 }
 
 .feeling-card p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   line-height: 1.7;
 }
 
@@ -261,7 +238,7 @@ body {
    ============================================================ */
 .quote-section {
   padding: 4rem 2rem;
-  background: var(--bg-cream);
+  background: var(--dsd-cream);
   text-align: center;
 }
 
@@ -279,7 +256,7 @@ body {
   transform: translateX(-50%);
   font-family: var(--font-display);
   font-size: 5rem;
-  color: var(--lavender-light);
+  color: var(--dsd-lavender-light);
   line-height: 1;
 }
 
@@ -287,7 +264,7 @@ body {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-style: italic;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   line-height: 1.6;
   padding-top: 2rem;
 }
@@ -297,7 +274,7 @@ body {
    ============================================================ */
 .implications-section {
   padding: 5rem 2rem;
-  background: var(--lavender-pale);
+  background: var(--dsd-lavender-pale);
 }
 
 .implications-grid {
@@ -312,7 +289,7 @@ body {
   padding: 2.5rem;
   border-radius: 1rem;
   text-align: center;
-  transition: all var(--transition-gentle);
+  transition: all 0.5s ease;
 }
 
 .implication-card:hover {
@@ -333,13 +310,13 @@ body {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   margin-bottom: 1rem;
 }
 
 .implication-card p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   line-height: 1.7;
 }
 
@@ -348,7 +325,7 @@ body {
    ============================================================ */
 .duality-section {
   padding: 5rem 2rem;
-  background: var(--bg-cream);
+  background: var(--dsd-cream);
 }
 
 .duality-cards {
@@ -368,13 +345,13 @@ body {
 }
 
 .duality-card.suffered {
-  background: linear-gradient(135deg, var(--blue-pale) 0%, white 100%);
-  border: 1px solid var(--blue-light);
+  background: linear-gradient(135deg, var(--dsd-blue-pale) 0%, white 100%);
+  border: 1px solid var(--dsd-blue-light);
 }
 
 .duality-card.chosen {
-  background: linear-gradient(135deg, var(--lavender-pale) 0%, white 100%);
-  border: 1px solid var(--lavender-light);
+  background: linear-gradient(135deg, var(--dsd-lavender-pale) 0%, white 100%);
+  border: 1px solid var(--dsd-lavender-light);
 }
 
 .duality-icon {
@@ -386,20 +363,20 @@ body {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   margin-bottom: 1rem;
 }
 
 .duality-card p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   line-height: 1.8;
   margin-bottom: 1rem;
 }
 
 .duality-note {
   font-style: italic;
-  color: var(--text-muted);
+  color: var(--dsd-text-muted);
   font-size: 0.95rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(0,0,0,0.05);
@@ -410,7 +387,7 @@ body {
    ============================================================ */
 .resources-section {
   padding: 5rem 2rem;
-  background: var(--bg-warm);
+  background: var(--dsd-warm);
 }
 
 .resources-grid {
@@ -424,8 +401,8 @@ body {
   background: white;
   padding: 2.5rem;
   border-radius: 1rem;
-  border-left: 4px solid var(--blue-main);
-  transition: all var(--transition-gentle);
+  border-left: 4px solid var(--dsd-blue);
+  transition: all 0.5s ease;
 }
 
 .resource-card:hover {
@@ -434,11 +411,11 @@ body {
 }
 
 .resource-card:nth-child(2) {
-  border-left-color: var(--lavender-main);
+  border-left-color: var(--dsd-lavender);
 }
 
 .resource-card:nth-child(3) {
-  border-left-color: var(--accent-gold);
+  border-left-color: var(--dsd-gold);
 }
 
 .resource-icon {
@@ -451,28 +428,28 @@ body {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   margin-bottom: 1rem;
 }
 
 .resource-card p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }
 
 .resource-card strong {
-  color: var(--text-primary);
+  color: var(--dsd-text);
 }
 
 .resource-note {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--dsd-text-muted);
   font-style: italic;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--bg-soft);
+  border-top: 1px solid var(--dsd-soft);
 }
 
 /* ============================================================
@@ -480,7 +457,7 @@ body {
    ============================================================ */
 .closing-section {
   padding: 5rem 2rem;
-  background: linear-gradient(180deg, var(--bg-cream) 0%, var(--blue-pale) 100%);
+  background: linear-gradient(180deg, var(--dsd-cream) 0%, var(--dsd-blue-pale) 100%);
   text-align: center;
 }
 
@@ -491,7 +468,7 @@ body {
 
 .closing-message {
   font-size: 1.25rem;
-  color: var(--text-secondary);
+  color: var(--dsd-text-soft);
   margin-bottom: 1.5rem;
   line-height: 1.8;
 }
@@ -500,124 +477,43 @@ body {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--dsd-text);
   line-height: 1.5;
 }
 
 /* ============================================================
-   RESPONSIVE
+   FOOTER — Couleurs thème
    ============================================================ */
-@media (max-width: 768px) {
-  body {
-    padding-top: 120px;
-  }
-  
-  .hero-deuil {
-    min-height: 60vh;
-    padding: 3rem 1.5rem;
-  }
-  
-  .hero-title {
-    font-size: 2.25rem;
-  }
-  
-  .hero-description {
-    font-size: 1.1rem;
-  }
-  
-  .welcome-box {
-    padding: 2rem;
-  }
-  
-  .feelings-section,
-  .implications-section,
-  .duality-section,
-  .resources-section {
-    padding: 3rem 1.5rem;
-  }
-  
-  .feelings-section h2,
-  .implications-section h2,
-  .duality-section h2,
-  .resources-section h2 {
-    font-size: 1.75rem;
-  }
-  
-  .feelings-grid,
-  .implications-grid,
-  .resources-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .duality-cards {
-    grid-template-columns: 1fr;
-  }
-  
-  .main-quote p {
-    font-size: 1.35rem;
-  }
-  
-  .main-quote::before {
-    font-size: 4rem;
-    top: -20px;
-  }
-  
-  .closing-emphasis {
-    font-size: 1.4rem;
-  }
+#footer {
+  background: linear-gradient(180deg, var(--dsd-text) 0%, #1f2225 100%);
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.85rem;
-  }
-  
-  .hero-icon svg {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .welcome-box {
-    padding: 1.5rem;
-  }
-  
-  .feeling-card,
-  .implication-card,
-  .resource-card,
-  .duality-card {
-    padding: 1.5rem;
-  }
-  
-  .feelings-section h2,
-  .implications-section h2,
-  .duality-section h2,
-  .resources-section h2 {
-    font-size: 1.5rem;
-  }
-  
-  .main-quote p {
-    font-size: 1.15rem;
-  }
+.footer-quote {
+  color: var(--dsd-blue-light);
+}
+
+.footer-links a:hover {
+  color: var(--dsd-blue-light);
+}
+
+.footer-social a:hover {
+  background: var(--dsd-blue);
 }
 
 /* ============================================================
-   ANIMATIONS
+   BACK TO TOP — Couleur thème
    ============================================================ */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.back-to-top {
+  background: var(--dsd-blue);
 }
 
-.hero-content {
-  animation: fadeInUp 1s ease-out;
+.back-to-top:hover {
+  background: var(--dsd-blue-dark);
 }
 
+/* ============================================================
+   ANIMATIONS — Cartes avec délai
+   ============================================================ */
 .feeling-card,
 .implication-card,
 .resource-card,
@@ -646,3 +542,148 @@ body {
 
 .duality-card:nth-child(1) { animation-delay: 0.1s; }
 .duality-card:nth-child(2) { animation-delay: 0.25s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+  
+  .hero-deuil {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero-deuil .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .hero-deuil .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .welcome-box {
+    padding: 2rem;
+  }
+  
+  .feelings-section,
+  .implications-section,
+  .duality-section,
+  .resources-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .feelings-section h2,
+  .implications-section h2,
+  .duality-section h2,
+  .resources-section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .feelings-grid,
+  .implications-grid,
+  .resources-grid,
+  .duality-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-quote p {
+    font-size: 1.35rem;
+  }
+  
+  .closing-emphasis {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-deuil .hero-title {
+    font-size: 1.85rem;
+  }
+  
+  .hero-deuil .hero-icon svg {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .welcome-box {
+    padding: 1.5rem;
+  }
+  
+  .feeling-card,
+  .implication-card,
+  .resource-card,
+  .duality-card {
+    padding: 1.5rem;
+  }
+  
+  .feelings-section h2,
+  .implications-section h2,
+  .duality-section h2,
+  .resources-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .main-quote p {
+    font-size: 1.15rem;
+  }
+}
+/* ============================================================
+   HEADER COMPACT PERMANENT (page vivre-solo)
+   ============================================================ */
+#header {
+  padding: 0.6rem 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+#header .logo-soloplugs {
+  transform: scale(0.65) !important;
+  transform-origin: left center !important;
+  margin-bottom: 0 !important;
+}
+
+#header #header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#header #menu-main {
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+body {
+  padding-top: 80px !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px !important;
+  }
+}
+/* ============================================================
+   BOUTON THÈMES — Couleur thème
+   ============================================================ */
+.themes-toggle {
+  border: 2px solid var(--dsd-blue) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.themes-label {
+  color: var(--dsd-blue) !important;
+}
+
+.hamburger-icon span {
+  background: var(--dsd-blue) !important;
+}
+
+.themes-toggle:hover {
+  background: var(--dsd-blue-pale) !important;
+}

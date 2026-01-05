@@ -11,23 +11,35 @@
     include '../components/head.php';
   ?>
 </head>
-<body>
+<body class="theme-loisirs">
 
   <?php include '../components/header.php'; ?>
 
   <!-- ============================================================
        HERO
        ============================================================ -->
-  <section class="page-hero hero-loisirs">
-    <div class="hero-content">
-      <span class="hero-tag">Loisirs solo</span>
-      <h1>Ton temps t'appartient</h1>
-      <p class="hero-lead">
-        Pas besoin d'attendre quelqu'un pour apprendre, créer, bouger ou explorer. 
-        Les meilleures passions naissent souvent dans la solitude.
-      </p>
-    </div>
-  </section>
+  <!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="page-hero hero-sorties">
+  <div class="hero-content">
+    
+    <!-- 👇 AJOUTE CETTE LIGNE ICI (avant hero-tag) -->
+    <a href="sorties-loisirs-rencontres.php" class="back-to-choices">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Retour aux choix
+    </a>
+    
+    <span class="hero-tag">Loisirs</span>
+    <h1>Et si tu osais sortir seul·e ?</h1>
+    <p class="hero-lead">
+      Un resto, un film, un concert, une expo... Ces moments n'attendent pas 
+      que quelqu'un soit disponible. Ils t'attendent, toi.
+    </p>
+  </div>
+</section>
 
   <!-- ============================================================
        CATÉGORIES DE LOISIRS

@@ -1,178 +1,7 @@
 /* ============================================================
-   🌿 STYLES GLOBAUX
+   🌿 SOLOPLUGS.CSS — Page d'accueil uniquement
+   Header, Footer, Variables, Animations → voir global.css
    ============================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg-primary: #FBF9F6;
-  --bg-secondary: #F5F1EB;
-  --bg-warm: #F5EDD9;
-  --accent-gold: #D4A574;
-  --accent-brown: #8B6F47;
-  --text-primary: #2C3338;
-  --text-secondary: #6B7280;
-  --logo-dark: #2c3e50;
-  --logo-red: #e74c3c;
-}
-
-body {
-  margin: 0;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
-  padding-top: 130px;
-  line-height: 1.8;
-}
-
-/* ============================================================
-   🌿 HEADER SOLOPLUGS
-   ============================================================ */
-#header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(251, 249, 246, 0.95);
-  border-bottom: 1px solid rgba(212,165,116,0.3);
-  backdrop-filter: blur(10px);
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-  transition: all 0.5s ease;
-  padding: 1.5rem 0;
-}
-
-#header-inner {
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* === LOGO === */
-.logo-soloplugs {
-  position: relative;
-  display: inline-block;
-  width: fit-content;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 1rem;
-}
-
-.solo-container {
-  position: relative;
-  z-index: 1;
-}
-
-.solo-bg {
-  background: #2c3e50;
-  border-radius: 14px;
-  padding: 14px 21px 14px 24px;
-  display: inline-block;
-}
-
-.solo-text {
-  font-size: 46px;
-  font-weight: bold;
-  color: white;
-  font-family: Georgia, 'Times New Roman', serif;
-  line-height: 1;
-  margin: 0;
-}
-
-.plugs-container {
-  position: absolute;
-  top: 52px;
-  left: 108px;
-  z-index: 2;
-}
-
-.plugs-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #e74c3c;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  line-height: 1;
-  margin: 0;
-}
-
-.logo-soloplugs:hover {
-  transform: scale(1.05);
-}
-
-.logo-soloplugs:hover .solo-bg {
-  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
-}
-
-/* === MENUS === */
-#menu-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.4rem;
-}
-
-#menu-main a {
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
-  font-size: 0.95rem;
-}
-
-#menu-main a:hover {
-  color: var(--accent-gold);
-}
-
-#menu-main a.active-link {
-  color: var(--accent-gold);
-  font-weight: 600;
-}
-
-#menu-main a.active-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--accent-gold);
-}
-
-/* === EFFET AU SCROLL === */
-#header.header-scrolled {
-  padding: 0.6rem 0;
-  background: #ffffff !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
-}
-
-#header.header-scrolled #header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-}
-
-#header.header-scrolled .logo-soloplugs {
-  transform: scale(0.65);
-  margin-bottom: 0;
-  transition: all 0.4s ease;
-}
-
-#header.header-scrolled #menu-main {
-  margin-top: 0;
-  flex: 1;
-  justify-content: flex-end;
-  padding-right: 1rem;
-  gap: 1rem;
-}
 
 /* ============================================================
    🌟 HERO SECTION
@@ -263,6 +92,9 @@ body {
   flex-wrap: wrap;
 }
 
+/* ============================================================
+   🔘 BOUTONS
+   ============================================================ */
 .btn {
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -470,6 +302,7 @@ body {
 
 .theme-content {
   padding: 2rem;
+  text-align: center;
 }
 
 .theme-meta {
@@ -477,6 +310,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  justify-content: center;
 }
 
 .theme-icon {
@@ -513,6 +347,7 @@ body {
   color: var(--accent-gold);
   font-weight: 600;
   transition: all 0.3s ease;
+  justify-content: center;
 }
 
 .theme-card:hover .theme-link {
@@ -711,205 +546,131 @@ body {
 }
 
 /* ============================================================
-   🦶 FOOTER
+   🎯 MENU THÈMES - BOUTON VISIBLE
    ============================================================ */
-#footer {
-  background: var(--text-primary);
-  color: #E5E5E0;
-  padding: 3rem 2rem 2rem;
-  font-family: 'Inter', sans-serif;
-  margin-top: 4rem;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-logo {
+.themes-menu {
   position: relative;
-  display: inline-block;
-  width: fit-content;
-  margin-bottom: 1.5rem;
-  cursor: pointer;
 }
 
-.footer-logo .solo-container {
-  position: relative;
-  z-index: 1;
-}
-
-.footer-logo .solo-bg {
-  background: white;
-  border-radius: 11px;
-  padding: 11px 16px 11px 19px;
-}
-
-.footer-logo .solo-text {
-  font-size: 37px;
-  color: #2c3e50;
-}
-
-.footer-logo .plugs-container {
-  position: absolute;
-  top: 42px;
-  left: 86px;
-  z-index: 2;
-}
-
-.footer-logo .plugs-text {
-  font-size: 19px;
-}
-
-.footer-quote {
-  font-style: italic;
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  color: var(--accent-gold);
-}
-
-.footer-links {
+.themes-toggle {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 165, 116, 0.15);
+  border: 2px solid #D4A574;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
-.footer-links a {
-  color: #E5E5E0;
-  text-decoration: none;
+.themes-toggle:hover {
+  background: #D4A574;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+}
+
+.themes-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #D4A574;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: var(--accent-gold);
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
-}
-
-.footer-social a {
-  transition: transform 0.3s ease;
-  text-decoration: none;
-}
-
-.footer-social a:hover {
-  transform: scale(1.2);
-}
-
-.footer-copy {
-  font-size: 0.875rem;
-  color: #999;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 100px;
-  right: 2rem;
-  background: var(--accent-gold);
+.themes-toggle:hover .themes-label {
   color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+}
+
+/* Hamburger icon */
+.hamburger-icon {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 14px;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #D4A574;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.themes-toggle:hover .hamburger-icon span {
+  background: white;
+}
+
+/* Animation hamburger ouvert */
+.themes-menu.open .hamburger-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.themes-menu.open .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.themes-menu.open .hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Dropdown */
+.themes-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 0.75rem 0;
   opacity: 0;
   visibility: hidden;
+  transform: translateY(-10px);
   transition: all 0.3s ease;
-  z-index: 998;
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  z-index: 1001;
 }
 
-.back-to-top.visible {
+.themes-menu.open .themes-dropdown {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
-.back-to-top:hover {
-  background: var(--accent-brown);
-  transform: translateY(-5px);
+.themes-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
 }
 
-/* ============================================================
-   📱 ANIMATIONS
-   ============================================================ */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.themes-dropdown a:hover {
+  background: rgba(212, 165, 116, 0.1);
+  color: #D4A574;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.themes-dropdown .theme-icon {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.themes-dropdown .theme-name {
+  font-weight: 500;
 }
 
 /* ============================================================
    📱 RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
-  body {
-    padding-top: 120px;
-  }
-
-  #header {
-    padding: 1rem 0;
-  }
-
-  /* Logo responsive - réduit de 20% */
-  .logo-soloplugs .solo-text {
-    font-size: 38px;
-  }
-
-  .logo-soloplugs .plugs-text {
-    font-size: 24px;
-  }
-
-  .logo-soloplugs .plugs-container {
-    top: 38px;
-    left: 96px;
-  }
-
-  .logo-soloplugs .solo-bg {
-    padding: 11px 22px 11px 18px;
-    border-radius: 11px;
-  }
-
-  .footer-logo .solo-text {
-    font-size: 32px;
-  }
-
-  .footer-logo .plugs-text {
-    font-size: 19px;
-  }
-
-  .footer-logo .plugs-container {
-    top: 32px;
-    left: 80px;
-  }
-
-  .footer-logo .solo-bg {
-    padding: 10px 18px 10px 14px;
-    border-radius: 10px;
-  }
-
   .hero {
     min-height: 70vh;
     padding: 3rem 1.5rem;
@@ -939,63 +700,26 @@ body {
   .emergency-numbers {
     font-size: 0.85rem;
   }
-
-  .back-to-top {
-    bottom: 90px;
+  
+  .themes-toggle {
+    padding: 0.5rem 1rem;
+  }
+  
+  .themes-label {
+    font-size: 0.85rem;
+  }
+  
+  .themes-dropdown {
+    position: fixed;
+    top: 120px;
+    left: 1rem;
     right: 1rem;
-    width: 45px;
-    height: 45px;
+    min-width: auto;
   }
 }
 
 @media (max-width: 480px) {
-  /* Logo très petits écrans - réduit de 20% */
-  .logo-soloplugs .solo-text {
-    font-size: 32px;
+  .themes-label {
+    display: none;
   }
-
-  .logo-soloplugs .plugs-text {
-    font-size: 18px;
-  }
-
-  .logo-soloplugs .plugs-container {
-    top: 34px;
-    left: 76px;
-  }
-
-  .logo-soloplugs .solo-bg {
-    padding: 10px 10px 10px 14px;
-    border-radius: 10px;
-  }
-
-  .footer-logo .solo-text {
-    font-size: 27px;
-  }
-
-  .footer-logo .plugs-text {
-    font-size: 16px;
-  }
-
-  .footer-logo .plugs-container {
-    top: 29px;
-    left: 66px;
-  }
-
-  .footer-logo .solo-bg {
-    padding: 8px 8px 8px 12px;
-    border-radius: 8px;
-  }
-}
-
-/* Centrer le contenu des cartes thèmes */
-.theme-content {
-    text-align: center;
-}
-
-.theme-meta {
-    justify-content: center;
-}
-
-.theme-link {
-    justify-content: center;
 }

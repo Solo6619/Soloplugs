@@ -7,7 +7,7 @@
     $pageDescription = 'Ressources et soutien pour les parents solos. Tu fais un travail extraordinaire.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['parent-solo-enhanced.css'];
+    $additionalCSS = ['theme-base.css','parent-solo-enhanced.css'];
     
     include '../components/head.php';
   ?>

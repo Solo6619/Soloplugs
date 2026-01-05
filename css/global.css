@@ -1,6 +1,7 @@
 /* ============================================================
    🌿 GLOBAL.CSS — Styles communs Soloplugs
-   Contient : Variables, Reset, Header, Footer, Back-to-top
+   Contient : Variables, Reset, Header, Footer, Back-to-top, 
+   Menu Thèmes, Animations
    ============================================================ */
 
 /* ============================================================
@@ -43,7 +44,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
-  padding-top: 5px;
+  padding-top: 130px;
   line-height: 1.8;
 }
 
@@ -57,7 +58,7 @@ body {
   width: 100%;
   z-index: 1000;
   background: rgba(251, 249, 246, 0.95);
-  border-bottom: 5px solid rgba(212, 166, 116, 0.119);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.3);
   backdrop-filter: blur(10px);
   font-family: 'Inter', sans-serif;
   text-align: center;
@@ -66,10 +67,13 @@ body {
 }
 
 #header-inner {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 }
 
 /* === LOGO === */
@@ -128,12 +132,13 @@ body {
   box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
 }
 
-/* === MENU === */
+/* === MENU PRINCIPAL === */
 #menu-main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.4rem;
+  flex: 1;
 }
 
 #menu-main a {
@@ -169,22 +174,162 @@ body {
   padding: 0.6rem 0;
   background: #ffffff !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
 }
 
+#header.header-scrolled #header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
 
 #header.header-scrolled .logo-soloplugs {
-  transform: scale(0.65);
-  margin-bottom: 0;
-  transition: all 0.4s ease;
+  transform: scale(0.65) !important;
+  transform-origin: left center !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
 }
 
 #header.header-scrolled #menu-main {
   margin-top: 0;
-  flex: 1;
-  justify-content: flex-end;
-  padding-right: 1rem;
-  gap: 1rem;
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+}
+
+#header.header-scrolled .themes-menu {
+  flex-shrink: 0 !important;
+}
+
+/* ============================================================
+   🎯 MENU THÈMES
+   ============================================================ */
+.themes-menu {
+  position: relative;
+  z-index: 1001;
+}
+
+.themes-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 165, 116, 0.15);
+  border: 2px solid #D4A574;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.themes-toggle:hover {
+  background: #D4A574;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+}
+
+.themes-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #D4A574;
+  transition: color 0.3s ease;
+}
+
+.themes-toggle:hover .themes-label {
+  color: white;
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 14px;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #D4A574;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.themes-toggle:hover .hamburger-icon span {
+  background: white;
+}
+
+/* Animation hamburger ouvert */
+.themes-menu.open .hamburger-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.themes-menu.open .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.themes-menu.open .hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Dropdown */
+.themes-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 0.75rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.themes-menu:not(.open) .themes-dropdown {
+  display: none;
+}
+
+.themes-menu.open .themes-dropdown {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.themes-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.themes-dropdown a:hover {
+  background: rgba(212, 165, 116, 0.1);
+  color: var(--accent-gold);
+}
+
+.themes-dropdown .theme-icon {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.themes-dropdown .theme-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 /* ============================================================
@@ -368,7 +513,11 @@ body {
     padding: 1rem 0;
   }
 
-  /* Logo responsive - réduit de 20% */
+  #header-inner {
+    padding: 0 1.5rem;
+  }
+
+  /* Logo responsive */
   .logo-soloplugs .solo-text {
     font-size: 38px;
   }
@@ -396,7 +545,7 @@ body {
 
   /* Header scrolled mobile */
   #header.header-scrolled .logo-soloplugs {
-    transform: scale(0.55);
+    transform: scale(0.55) !important;
   }
 
   #header.header-scrolled #menu-main {
@@ -434,6 +583,23 @@ body {
     right: 1rem;
     width: 45px;
     height: 45px;
+  }
+
+  /* Menu thèmes mobile */
+  .themes-toggle {
+    padding: 0.5rem 1rem;
+  }
+
+  .themes-label {
+    font-size: 0.85rem;
+  }
+
+  .themes-dropdown {
+    position: fixed;
+    top: 120px;
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
   }
 }
 
@@ -490,236 +656,9 @@ body {
     flex-direction: column;
     gap: 0.75rem;
   }
-}
-/* ============================================================
-   MENU THÈMES - À ajouter à global.css
-   ============================================================ */
 
-/* Container du menu thèmes */
-.themes-menu {
-  position: relative;
-  z-index: 1001;
-}
-
-/* Bouton toggle */
-.themes-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.themes-toggle:hover {
-  background: rgba(212, 165, 116, 0.1);
-}
-
-/* Icône hamburger */
-.hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 20px;
-  height: 16px;
-}
-
-.hamburger-icon span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: var(--text-primary, #2C3338);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Animation hamburger quand ouvert */
-.themes-menu.open .hamburger-icon span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.themes-menu.open .hamburger-icon span:nth-child(2) {
-  opacity: 0;
-}
-
-.themes-menu.open .hamburger-icon span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Label "Thèmes" */
-.themes-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-primary, #2C3338);
-  transition: color 0.3s ease;
-}
-
-.themes-toggle:hover .themes-label {
-  color: var(--accent-gold, #D4A574);
-}
-
-/* Menu déroulant */
-.themes-dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  min-width: 220px;
-  padding: 0.75rem 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Menu ouvert */
-.themes-menu.open .themes-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Liens du menu */
-.themes-dropdown a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1.25rem;
-  text-decoration: none;
-  color: var(--text-primary, #2C3338);
-  transition: all 0.2s ease;
-}
-
-.themes-dropdown a:hover {
-  background: rgba(212, 165, 116, 0.1);
-  color: var(--accent-gold, #D4A574);
-}
-
-/* Icône emoji */
-.theme-icon {
-  font-size: 1.1rem;
-  width: 24px;
-  text-align: center;
-}
-
-/* Nom du thème */
-.theme-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-/* Séparateur subtil entre items */
-.themes-dropdown a:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-/* ============================================================
-   AJUSTEMENT DU HEADER INNER
-   ============================================================ */
-
-#header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
-@media (max-width: 768px) {
+  /* Menu thèmes - cacher label */
   .themes-label {
     display: none;
   }
-  
-  .themes-dropdown {
-    min-width: 200px;
-  }
-  
-  .themes-dropdown a {
-    padding: 0.65rem 1rem;
-  }
-  
-  .theme-name {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .themes-menu {
-    position: static;
-  }
-  
-  .themes-dropdown {
-    position: fixed;
-    top: 120px;
-    left: 1rem;
-    right: 1rem;
-    min-width: auto;
-  }
-}
-/* ============================================================
-   FIX MENU THÈMES - Force le dropdown à être caché
-   ============================================================ */
-.themes-dropdown {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-.themes-menu:not(.open) .themes-dropdown {
-  display: none !important;
-}
-
-.themes-menu.open .themes-dropdown {
-  display: flex !important;
-  flex-direction: column !important;
-}
-/* Dropdown aligné à droite */
-.themes-dropdown {
-  left: auto;
-  right: 0;
-}
-/* ============================================================
-   FIX HEADER SCROLLED
-   ============================================================ */
-#header.header-scrolled .logo-soloplugs {
-  transform: scale(0.65) !important;
-  margin-bottom: 0 !important;
-}
-/* ============================================================
-   FIX HEADER SCROLLED - Alignement complet
-   ============================================================ */
-#header.header-scrolled #header-inner {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-#header.header-scrolled .logo-soloplugs {
-  transform: scale(0.65) !important;
-  transform-origin: left center !important;
-  margin-bottom: 0 !important;
-  flex-shrink: 0 !important;
-}
-
-#header.header-scrolled #menu-main {
-  flex: 1 !important;
-  justify-content: center !important;
-  gap: 1.5rem !important;
-}
-
-#header.header-scrolled .themes-menu {
-  flex-shrink: 0 !important;
 }

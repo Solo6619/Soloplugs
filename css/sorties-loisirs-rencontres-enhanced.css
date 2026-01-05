@@ -1,5 +1,6 @@
 /* ============================================================
-   SORTIES-LOISIRS-RENCONTRES - PAGE DE CHOIX
+   SORTIES-LOISIRS-RENCONTRES - PAGE DE CHOIX (Version nettoyée)
+   Requiert: theme-base.css chargé AVANT ce fichier
    Styles spécifiques pour la page d'aiguillage vers les 3 thèmes
    ============================================================ */
 
@@ -7,9 +8,9 @@
    VARIABLES
    ============================================================ */
 :root {
-  --magenta: #C24B8B;
-  --magenta-dark: #9A3A6E;
-  --magenta-light: #E891B9;
+  --slr-magenta: #C24B8B;
+  --slr-magenta-dark: #9A3A6E;
+  --slr-magenta-light: #E891B9;
 }
 
 /* ============================================================
@@ -18,7 +19,7 @@
 .choices-hero {
   text-align: center;
   padding: 4rem 1.5rem 2rem;
-  background: linear-gradient(180deg, #fff 0%, var(--bg-primary, #FBF9F6) 100%);
+  background: linear-gradient(180deg, #fff 0%, #FBF9F6 100%);
 }
 
 .choices-hero h1 {
@@ -26,14 +27,14 @@
   font-size: 2.5rem;
   font-weight: 500;
   color: #2C3338;
-   margin-top: 120px;
+  margin-top: 120px;
 }
 
 .choices-hero .subtitle {
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 1.15rem;
-  color: var(--text-secondary, #6B7280);
+  color: #6B7280;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -54,7 +55,7 @@
 
 .choices-intro p {
   font-size: 1.1rem;
-  color: var(--text-secondary, #6B7280);
+  color: #6B7280;
   line-height: 1.7;
 }
 
@@ -87,7 +88,6 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* IMAGE - PAS DE DÉGRADÉ */
 .choice-card img {
   width: 100%;
   height: 100%;
@@ -138,7 +138,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--magenta);
+  color: var(--slr-magenta);
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -153,7 +153,7 @@
   width: 18px;
   height: 18px;
   transition: transform 0.3s ease;
-  stroke: var(--magenta);
+  stroke: var(--slr-magenta);
 }
 
 .choice-card:hover .choice-cta svg {
@@ -166,7 +166,7 @@
 .page-quote {
   text-align: center;
   padding: 3rem 1.5rem;
-  background: linear-gradient(180deg, var(--bg-primary, #FBF9F6) 0%, #fff 100%);
+  background: linear-gradient(180deg, #FBF9F6 0%, #fff 100%);
 }
 
 .page-quote blockquote {
@@ -235,4 +235,61 @@
   .page-quote blockquote {
     font-size: 1.1rem;
   }
+}
+/* ============================================================
+   HEADER COMPACT PERMANENT (page vivre-solo)
+   ============================================================ */
+#header {
+  padding: 0.6rem 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+#header .logo-soloplugs {
+  transform: scale(0.65) !important;
+  transform-origin: left center !important;
+  margin-bottom: 0 !important;
+}
+
+#header #header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#header #menu-main {
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+body {
+  padding-top: 0px !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 35px !important;
+  }
+}
+/* ============================================================
+   BOUTON THÈMES — Couleur thème magenta
+   ============================================================ */
+.themes-toggle {
+  border: 2px solid var(--slr-magenta) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.themes-label {
+  color: var(--slr-magenta) !important;
+}
+
+.hamburger-icon span {
+  background: var(--slr-magenta) !important;
+}
+
+.themes-toggle:hover {
+  background: rgba(194, 75, 139, 0.1) !important;
 }

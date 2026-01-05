@@ -1,8 +1,7 @@
 /* ============================================================
-   🌅 VIEILLIR-SOLO — CSS ENRICHI
+   🌅 VIEILLIR-SOLO — CSS ENRICHI (Version nettoyée)
+   Requiert: theme-base.css chargé AVANT ce fichier
    Atmosphère : Dignité, chaleur, sérénité, respect
-   Couleurs : Or/Terre (#C9A26F), Vert sage, Crème chaud
-   Ton visuel : Magazine classique, éditorial raffiné
    Priorité : LISIBILITÉ et ACCESSIBILITÉ
    ============================================================ */
 
@@ -16,7 +15,7 @@
   --vs-gold-dark: #A88555;
   --vs-gold-pale: #F7F2EA;
   
-  /* Palette secondaire - Vert sage et naturels */
+  /* Palette secondaire - Vert sage */
   --vs-sage: #7D8B6A;
   --vs-sage-light: #A3B18A;
   --vs-earth: #8B7355;
@@ -29,52 +28,36 @@
   /* Textes - Contrastes forts pour lisibilité */
   --vs-text: #2C2416;
   --vs-text-soft: #4A4035;
-  --vs-text-muted: #6B5D4D;
   
   /* Effets doux */
   --vs-shadow-soft: 0 4px 20px rgba(139, 115, 85, 0.1);
   --vs-shadow-hover: 0 8px 30px rgba(139, 115, 85, 0.15);
   
-  /* Transitions douces */
-  --vs-transition: 0.4s ease;
-  --vs-transition-slow: 0.6s ease;
-  
   /* Typographie - Plus grande, plus lisible */
   --font-display: 'Libre Baskerville', 'Georgia', serif;
   --font-body: 'Source Serif 4', 'Georgia', serif;
-  
-  /* Tailles de base plus grandes */
   --text-base: 1.125rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
 }
 
 /* ============================================================
-   RESET & BASE
+   BODY SPÉCIFIQUE — Taille plus grande pour accessibilité
    ============================================================ */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
-  scroll-behavior: smooth;
-  font-size: 18px; /* Base plus grande pour accessibilité */
+  font-size: 18px;
 }
 
 body {
   background-color: var(--vs-cream);
   color: var(--vs-text);
   font-family: var(--font-body);
-  line-height: 1.9;
   padding-top: 140px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-size: var(--text-base);
+  line-height: 1.9;
 }
 
-/* Texture de fond très subtile - lin naturel */
+/* Texture de fond - lin naturel */
 body::before {
   content: '';
   position: fixed;
@@ -88,11 +71,12 @@ body::before {
 }
 
 /* ============================================================
-   HEADER - Bordure en bas
+   HEADER - Bordure dorée
    ============================================================ */
 #header {
   border-bottom: 5px solid rgba(139, 115, 85, 0.3);
 }
+
 /* ============================================================
    HERO SECTION — Élégant et apaisant
    ============================================================ */
@@ -114,7 +98,6 @@ body::before {
   );
 }
 
-/* Décoration subtile - cercles dorés */
 .hero-vieillir::before {
   content: '';
   position: absolute;
@@ -137,30 +120,6 @@ body::before {
   border-radius: 50%;
 }
 
-/* Contenu hero */
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-/* Icône hero */
-.hero-icon {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-icon svg {
-  width: 110px;
-  height: 110px;
-  max-width: 110px;
-  max-height: 110px;
-}
-
 /* Ornement décoratif */
 .hero-ornament {
   display: flex;
@@ -181,75 +140,56 @@ body::before {
   font-size: 1.25rem;
 }
 
-/* Titre */
-.hero-title {
+.hero-vieillir .hero-title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 400;
   color: var(--vs-text);
-  margin-bottom: 1rem;
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
 
-/* Sous-titre */
-.hero-subtitle {
+.hero-vieillir .hero-subtitle {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 400;
   font-style: italic;
   color: var(--vs-gold-dark);
-  margin-bottom: 2.5rem;
 }
 
-/* Description */
-.hero-description {
+.hero-vieillir .hero-description {
   font-size: var(--text-lg);
   color: var(--vs-text-soft);
   max-width: 650px;
-  margin: 0 auto;
   line-height: 2;
 }
 
 /* ============================================================
-   SECTIONS - Plus d'espace, plus de respiration
+   SECTIONS — Plus d'espace, plus de respiration
    ============================================================ */
 .section {
   padding: 6rem 2rem;
-  position: relative;
 }
 
 .section-alt {
   background: var(--vs-linen);
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.container-narrow {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* En-tête de section */
+/* ============================================================
+   SECTION HEADER — Avec soulignement décoratif
+   ============================================================ */
 .section-header {
-  text-align: center;
   margin-bottom: 4rem;
 }
 
 .section-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 400;
   color: var(--vs-text);
-  margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
 }
 
-/* Soulignement décoratif */
 .section-header h2::after {
   content: '';
   position: absolute;
@@ -264,28 +204,21 @@ body::before {
 .section-header p {
   font-size: var(--text-lg);
   color: var(--vs-text-soft);
-  max-width: 600px;
-  margin: 1.5rem auto 0;
-  line-height: 1.9;
+  margin-top: 1.5rem;
 }
 
 /* ============================================================
-   CARTES - Plus grandes, plus lisibles
+   CARTES — Plus grandes, plus lisibles
    ============================================================ */
 .cards-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
 .theme-card {
-  background: white;
-  border-radius: 1rem;
   padding: 2.5rem;
   box-shadow: var(--vs-shadow-soft);
-  transition: all var(--vs-transition);
   border: 1px solid rgba(201, 162, 111, 0.2);
-  position: relative;
 }
 
 .theme-card::before {
@@ -298,11 +231,10 @@ body::before {
   background: linear-gradient(90deg, var(--vs-gold), var(--vs-gold-light));
   border-radius: 1rem 1rem 0 0;
   opacity: 0;
-  transition: opacity var(--vs-transition);
+  transition: opacity 0.4s ease;
 }
 
 .theme-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--vs-shadow-hover);
 }
 
@@ -310,17 +242,11 @@ body::before {
   opacity: 1;
 }
 
-/* Icône de carte */
 .card-icon {
   width: 65px;
   height: 65px;
-  margin-bottom: 1.5rem;
   background: var(--vs-gold-pale);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--vs-transition);
 }
 
 .theme-card:hover .card-icon {
@@ -332,134 +258,78 @@ body::before {
   height: 32px;
   stroke: var(--vs-gold-dark);
   stroke-width: 1.5;
-  fill: none;
 }
 
-/* Titre de carte */
 .theme-card h3 {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--vs-text);
-  margin-bottom: 1rem;
 }
 
-/* Texte de carte */
 .theme-card p {
   font-size: var(--text-base);
   color: var(--vs-text-soft);
   line-height: 1.9;
-  margin-bottom: 1rem;
 }
 
-/* Texte en emphase */
 .theme-card .emphasis {
   color: var(--vs-gold-dark);
   font-weight: 600;
   font-style: italic;
 }
 
-/* Liste dans la carte */
-.theme-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0 0;
-}
-
 .theme-card li {
-  position: relative;
-  padding-left: 1.75rem;
-  margin-bottom: 0.75rem;
   font-size: var(--text-base);
-  color: var(--vs-text-soft);
   line-height: 1.7;
 }
 
 .theme-card li::before {
   content: '•';
-  position: absolute;
   left: 0.5rem;
   color: var(--vs-gold);
   font-size: 1.25rem;
 }
 
 /* ============================================================
-   CITATION / BLOCKQUOTE
+   CITATION — Style classique
    ============================================================ */
 .quote-block {
-  background: white;
   border-left: 4px solid var(--vs-gold);
   border-radius: 0 1rem 1rem 0;
-  padding: 3rem 3.5rem;
-  margin: 3rem 0;
-  position: relative;
-  box-shadow: var(--vs-shadow-soft);
 }
 
 .quote-block::before {
-  content: '"';
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  font-family: Georgia, serif;
-  font-size: 4rem;
   color: var(--vs-gold-light);
-  line-height: 1;
 }
 
 .quote-block p {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-style: italic;
   color: var(--vs-text);
   line-height: 1.8;
-  margin: 0;
-  padding-left: 2rem;
 }
 
 .quote-block cite {
-  display: block;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 1rem;
   color: var(--vs-gold-dark);
-  margin-top: 1.5rem;
-  padding-left: 2rem;
-  font-weight: 500;
 }
 
 /* ============================================================
-   TÉMOIGNAGES
+   TÉMOIGNAGES — Couleurs thème
    ============================================================ */
 .testimonial-card {
-  background: white;
-  border-radius: 1rem;
   padding: 2.5rem;
-  box-shadow: var(--vs-shadow-soft);
-  position: relative;
   border: 1px solid rgba(201, 162, 111, 0.15);
 }
 
 .testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-family: Georgia, serif;
-  font-size: 4rem;
   color: var(--vs-gold-pale);
-  line-height: 1;
 }
 
 .testimonial-icon {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--vs-gold-pale), var(--vs-gold-light));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
 }
 
 .testimonial-icon svg {
@@ -467,7 +337,6 @@ body::before {
   height: 30px;
   stroke: var(--vs-gold-dark);
   stroke-width: 1.5;
-  fill: none;
 }
 
 .testimonial-card h3 {
@@ -475,205 +344,89 @@ body::before {
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--vs-gold-dark);
-  margin-bottom: 1rem;
 }
 
 .testimonial-card p {
   font-size: var(--text-base);
-  color: var(--vs-text-soft);
-  line-height: 1.9;
-  font-style: italic;
 }
 
 /* ============================================================
-   CTA SECTION
-   ============================================================ */
-.cta-section {
-  background: linear-gradient(135deg, var(--vs-gold) 0%, var(--vs-gold-dark) 100%);
-  border-radius: 1.5rem;
-  padding: 4rem 3rem;
-  text-align: center;
-  margin: 3rem 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-}
-
-.cta-section h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 400;
-  color: white;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.cta-section p {
-  font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2.5rem;
-  position: relative;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn-group {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1.25rem 2.5rem;
-  border-radius: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all var(--vs-transition);
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.btn-primary {
-  background: white;
-  color: var(--vs-gold-dark);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border-color: white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: var(--vs-gold-dark);
-  transform: translateY(-3px);
-}
-
-/* ============================================================
-   RESSOURCES - Numéros importants bien visibles
+   RESSOURCES
    ============================================================ */
 .resource-highlight {
   background: var(--vs-gold-pale);
   border: 2px solid var(--vs-gold-light);
-  border-radius: 1rem;
   padding: 2rem;
-  margin-top: 1.5rem;
 }
 
 .resource-highlight .phone {
   font-size: 1.3rem;
-  font-weight: 600;
   color: var(--vs-gold-dark);
-  display: block;
-  margin-top: 0.5rem;
 }
 
 /* ============================================================
-   FOOTER
+   CTA SECTION — Style doré
+   ============================================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--vs-gold) 0%, var(--vs-gold-dark) 100%);
+}
+
+.cta-section p {
+  font-size: var(--text-lg);
+}
+
+.btn {
+  padding: 1.25rem 2.5rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  color: var(--vs-gold-dark);
+}
+
+.btn-secondary:hover {
+  color: var(--vs-gold-dark);
+}
+
+/* ============================================================
+   FOOTER — Couleurs thème
    ============================================================ */
 #footer {
   background: linear-gradient(180deg, var(--vs-text) 0%, #1f1a14 100%);
-  color: var(--vs-cream);
-  padding: 4rem 2rem 2rem;
   margin-top: 5rem;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-logo {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  cursor: pointer;
-  transition: transform var(--vs-transition);
-}
-
-.footer-logo:hover {
-  transform: scale(1.03);
 }
 
 .footer-logo img {
   height: 45px;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
 }
 
 .footer-quote {
   font-family: var(--font-display);
   font-size: 1.1rem;
   color: var(--vs-gold);
-  margin-bottom: 2rem;
-  font-style: italic;
 }
 
 .footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 2.5rem;
-  margin-bottom: 2rem;
 }
 
 .footer-links a {
-  color: var(--vs-cream);
-  text-decoration: none;
   font-size: 1rem;
-  transition: color var(--vs-transition);
 }
 
 .footer-links a:hover {
   color: var(--vs-gold);
 }
 
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
 .footer-social a {
   width: 48px;
   height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--vs-cream);
-  transition: all var(--vs-transition);
 }
 
 .footer-social a:hover {
   background: var(--vs-gold);
-  color: white;
 }
 
 .footer-social svg {
@@ -683,64 +436,25 @@ body::before {
 
 .footer-copy {
   font-size: 0.95rem;
-  color: rgba(255, 252, 247, 0.5);
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Back to top - Plus grand pour accessibilité */
+/* ============================================================
+   BACK TO TOP — Plus grand pour accessibilité
+   ============================================================ */
 .back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
   width: 55px;
   height: 55px;
   background: var(--vs-gold);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--vs-transition);
-  box-shadow: var(--vs-shadow-soft);
-  z-index: 999;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
 }
 
 .back-to-top:hover {
   background: var(--vs-gold-dark);
-  transform: translateY(-4px);
 }
 
 .back-to-top svg {
   width: 26px;
   height: 26px;
 }
-
-/* ============================================================
-   ANIMATIONS - Très subtiles
-   ============================================================ */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.animate-delay-1 { transition-delay: 0.15s; }
-.animate-delay-2 { transition-delay: 0.3s; }
-.animate-delay-3 { transition-delay: 0.45s; }
 
 /* ============================================================
    RESPONSIVE
@@ -754,71 +468,22 @@ body::before {
     padding-top: 130px;
   }
   
-  #header {
-    padding: 1rem 0;
-  }
-  
-  #menu-main {
-    gap: 1.5rem;
-  }
-  
-  #menu-main a {
-    font-size: 0.95rem;
-  }
-  
   .hero-vieillir {
     min-height: 70vh;
     padding: 4rem 1.5rem;
-  }
-  
-  .hero-icon {
-    width: 90px;
-    height: 90px;
-  }
-  
-  .hero-icon svg {
-    width: 90px;
-    height: 90px;
-    max-width: 90px;
-    max-height: 90px;
   }
   
   .section {
     padding: 4rem 1.5rem;
   }
   
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .quote-block {
-    padding: 2rem;
-  }
-  
   .quote-block p {
     font-size: var(--text-lg);
-    padding-left: 1rem;
-  }
-  
-  .cta-section {
-    padding: 3rem 1.5rem;
-    border-radius: 1rem;
-  }
-  
-  .btn-group {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
   }
   
   .back-to-top {
     width: 50px;
     height: 50px;
-    bottom: 1.5rem;
-    right: 1.5rem;
   }
 }
 
@@ -827,36 +492,12 @@ body::before {
     font-size: 16px;
   }
   
-  .hero-title {
+  .hero-vieillir .hero-title {
     font-size: 2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 1.5rem;
   }
   
   .theme-card,
   .testimonial-card {
     padding: 2rem;
-  }
-}
-
-/* ============================================================
-   ACCESSIBILITÉ - Focus visible
-   ============================================================ */
-a:focus,
-button:focus {
-  outline: 3px solid var(--vs-gold);
-  outline-offset: 3px;
-}
-
-/* Réduire les animations si préférence utilisateur */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }

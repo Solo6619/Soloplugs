@@ -7,7 +7,7 @@
     $pageDescription = 'Ressources et soutien pour les adolescents qui vivent la solitude. Lignes d\'écoute 24/7, conseils et accompagnement.';
     $basePath = '../';
     $currentPage = 'ado-solo';
-    $additionalCSS = ['ado-solo-enhanced.css'];
+    $additionalCSS = ['theme-base.css', 'ado-solo-enhanced.css'];
     
     include '../components/head.php';
   ?>
