@@ -305,6 +305,137 @@
   </section>
 
   <?php include '../components/footer.php'; ?>
+
+  <!-- ============================================================
+       BOUTON FLOTTANT "COMMENT TU TE SENS?"
+       ============================================================ -->
+  <button class="feeling-btn" id="feelingBtn" aria-label="Comment tu te sens?" aria-expanded="false">
+    <span class="feeling-btn-icon">💭</span>
+    <span class="feeling-btn-text">Comment tu te sens?</span>
+  </button>
+
+  <!-- ============================================================
+       MODAL ÉCHELLE DE SOLITUDE
+       ============================================================ -->
+  <div class="feeling-overlay" id="feelingOverlay"></div>
+  
+  <div class="feeling-modal" id="feelingModal" role="dialog" aria-labelledby="feelingTitle" aria-modal="true">
+    <button class="feeling-modal-close" id="feelingClose" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    
+    <div class="feeling-modal-content">
+      <!-- Header -->
+      <div class="echelle-header">
+        <h2 id="feelingTitle">Comment je vis ma<br>solitude en ce moment</h2>
+        <p>Choisis le visage qui te ressemble le plus en ce moment.</p>
+      </div>
+
+      <!-- Échelle verticale -->
+      <div class="echelle-scale">
+        
+        <div class="echelle-item" data-level="1">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">😊</span>
+          </div>
+          <span class="echelle-text">Je me sens bien avec moi.</span>
+        </div>
+
+        <div class="echelle-item" data-level="2">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">🙂</span>
+          </div>
+          <span class="echelle-text">J'aime être seul parfois</span>
+        </div>
+
+        <div class="echelle-item" data-level="3">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">😐</span>
+          </div>
+          <span class="echelle-text">J'aime bien être seul mais parfois je me sens un peu à part</span>
+        </div>
+
+        <div class="echelle-item" data-level="4">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">😕</span>
+          </div>
+          <span class="echelle-text">Je me sens souvent seul</span>
+        </div>
+
+        <div class="echelle-item" data-level="5">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">😢</span>
+          </div>
+          <span class="echelle-text">J'ai l'impression d'être invisible</span>
+        </div>
+
+        <div class="echelle-item" data-level="6">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">😭</span>
+          </div>
+          <span class="echelle-text">Je n'ai personne à qui parler</span>
+        </div>
+
+        <div class="echelle-item" data-level="7">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">😰</span>
+          </div>
+          <span class="echelle-text">Je me sens vraiment seul</span>
+        </div>
+
+        <div class="echelle-item" data-level="8">
+          <div class="echelle-emoji-wrap">
+            <span class="echelle-emoji">💔</span>
+          </div>
+          <span class="echelle-text">Je déteste être seul</span>
+        </div>
+
+      </div>
+
+      <!-- Message dynamique -->
+      <div class="echelle-message" id="echelleMessage">
+        <p class="message-text" id="messageText"></p>
+        <p class="message-question">Est-ce qu'on peut en parler?</p>
+        <div class="response-buttons">
+          <button class="btn-response" data-response="oui">Oui</button>
+          <button class="btn-response" data-response="non">Non</button>
+          <button class="btn-response" data-response="pas-vraiment">Pas vraiment</button>
+          <button class="btn-response" data-response="pas-maintenant">Pas maintenant</button>
+        </div>
+      </div>
+
+      <!-- Message urgence -->
+      <div class="echelle-urgence" id="echelleUrgence">
+        <div class="urgence-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span>Tu n'es pas seul·e</span>
+        </div>
+        <p class="urgence-text">Si tu traverses un moment vraiment difficile, il y a des gens qui peuvent t'écouter, 24h/24 :</p>
+        <ul class="urgence-contacts">
+          <li><strong>Tel-Jeunes :</strong> 1-800-263-2266</li>
+          <li><strong>Fil Santé Jeunes :</strong> 0 800 235 236</li>
+          <li><strong>Texto :</strong> 514-600-1002</li>
+        </ul>
+      </div>
+
+      <!-- Bouton Continuer -->
+      <div class="echelle-cta" id="echelleCta">
+        <button class="btn-continuer" id="btnContinuer">
+          <span id="btnText">Continuer</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <?php include '../components/scripts.php'; ?>
 
   <!-- Script pour animations au scroll -->
@@ -326,6 +457,255 @@
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
       observer.observe(el);
     });
+
+    // ============================================================
+    // LOGIQUE DE L'ÉCHELLE DE SOLITUDE
+    // ============================================================
+    (function() {
+      'use strict';
+
+      // Messages personnalisés par zone
+      const messages = {
+        verte: "C'est beau de savoir apprécier ta propre compagnie. La solitude choisie, c'est une force. Continue à cultiver ces moments avec toi-même.",
+        jaune: "C'est normal de se sentir un peu entre deux. La solitude, ça se vit différemment selon les jours. Tu veux qu'on explore ça ensemble?",
+        orange: "Ce que tu ressens est réel, et ça compte. Se sentir invisible ou sans personne à qui parler, c'est douloureux. Tu n'as pas à traverser ça seul·e.",
+        rouge: "Ce que tu vis est difficile, et c'est courageux d'être ici. Ta solitude te pèse, et c'est normal de vouloir que ça change. On est là."
+      };
+
+      // Données des 8 niveaux
+      const niveaux = {
+        1: { zone: 'verte', parcours: 'chosen' },
+        2: { zone: 'verte', parcours: 'chosen' },
+        3: { zone: 'jaune', parcours: 'both' },
+        4: { zone: 'jaune', parcours: 'both' },
+        5: { zone: 'orange', parcours: 'suffered' },
+        6: { zone: 'orange', parcours: 'suffered' },
+        7: { zone: 'rouge', parcours: 'urgence' },
+        8: { zone: 'rouge', parcours: 'urgence' }
+      };
+
+      // Éléments DOM - Bouton et Modal
+      const feelingBtn = document.getElementById('feelingBtn');
+      const feelingModal = document.getElementById('feelingModal');
+      const feelingOverlay = document.getElementById('feelingOverlay');
+      const feelingClose = document.getElementById('feelingClose');
+
+      // Éléments DOM - Échelle
+      const items = document.querySelectorAll('.echelle-item');
+      const messageBox = document.getElementById('echelleMessage');
+      const messageText = document.getElementById('messageText');
+      const urgence = document.getElementById('echelleUrgence');
+      const cta = document.getElementById('echelleCta');
+      const btnText = document.getElementById('btnText');
+      const btnContinuer = document.getElementById('btnContinuer');
+      const responseButtons = document.querySelectorAll('.btn-response');
+
+      let selectedLevel = null;
+      let selectedResponse = null;
+      let isModalOpen = false;
+
+      // ============================================================
+      // MODAL OPEN/CLOSE
+      // ============================================================
+      function openModal() {
+        isModalOpen = true;
+        feelingModal.classList.add('active');
+        feelingOverlay.classList.add('active');
+        feelingBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => feelingClose.focus(), 100);
+      }
+
+      function closeModal() {
+        isModalOpen = false;
+        feelingModal.classList.remove('active');
+        feelingOverlay.classList.remove('active');
+        feelingBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        feelingBtn.focus();
+        
+        // Reset de l'échelle
+        resetEchelle();
+      }
+
+      function resetEchelle() {
+        selectedLevel = null;
+        selectedResponse = null;
+        items.forEach(item => item.classList.remove('selected'));
+        responseButtons.forEach(btn => btn.classList.remove('selected'));
+        messageBox.className = 'echelle-message';
+        urgence.classList.remove('visible');
+        cta.classList.remove('visible');
+        
+        // Réafficher les éléments cachés par "Pas maintenant"
+        const questionEl = messageBox.querySelector('.message-question');
+        const buttonsEl = messageBox.querySelector('.response-buttons');
+        if (questionEl) questionEl.style.display = '';
+        if (buttonsEl) buttonsEl.style.display = '';
+      }
+
+      // ============================================================
+      // SÉLECTION D'UN NIVEAU
+      // ============================================================
+      function selectLevel(level) {
+        selectedLevel = level;
+        selectedResponse = null;
+        const data = niveaux[level];
+
+        // Reset des boutons de réponse
+        responseButtons.forEach(btn => btn.classList.remove('selected'));
+
+        // Mettre à jour la sélection visuelle
+        items.forEach(item => item.classList.remove('selected'));
+        document.querySelector(`[data-level="${level}"]`).classList.add('selected');
+
+        // Mettre à jour le message selon la zone
+        messageText.textContent = messages[data.zone];
+        
+        // Réafficher les éléments (au cas où "Pas maintenant" les avait cachés)
+        const questionEl = messageBox.querySelector('.message-question');
+        const buttonsEl = messageBox.querySelector('.response-buttons');
+        if (questionEl) questionEl.style.display = '';
+        if (buttonsEl) buttonsEl.style.display = '';
+        
+        // Appliquer la classe de couleur
+        messageBox.className = 'echelle-message visible zone-' + data.zone;
+
+        // Gérer le message d'urgence
+        if (level >= 7) {
+          urgence.classList.add('visible');
+        } else {
+          urgence.classList.remove('visible');
+        }
+
+        // Cacher le bouton Continuer jusqu'à ce qu'une réponse soit choisie
+        cta.classList.remove('visible');
+      }
+
+      // ============================================================
+      // SÉLECTION D'UNE RÉPONSE
+      // ============================================================
+      function selectResponse(response) {
+        selectedResponse = response;
+
+        // Mettre à jour la sélection visuelle
+        responseButtons.forEach(btn => btn.classList.remove('selected'));
+        document.querySelector(`[data-response="${response}"]`).classList.add('selected');
+
+        // Adapter le texte du bouton selon la réponse et le niveau
+        const zone = niveaux[selectedLevel].zone;
+        
+        if (response === 'oui') {
+          if (zone === 'rouge') {
+            btnText.textContent = 'Voir les ressources d\'aide';
+          } else if (zone === 'orange') {
+            btnText.textContent = 'Trouver du soutien';
+          } else if (zone === 'jaune') {
+            btnText.textContent = 'Explorer ensemble';
+          } else {
+            btnText.textContent = 'Découvrir mon espace';
+          }
+        } else if (response === 'non') {
+          btnText.textContent = 'Juste explorer';
+        } else if (response === 'pas-vraiment') {
+          btnText.textContent = 'Voir quand même';
+        } else if (response === 'pas-maintenant') {
+          btnText.textContent = 'Revenir plus tard';
+        }
+
+        // Afficher le bouton
+        cta.classList.add('visible');
+      }
+
+      // ============================================================
+      // REDIRECTION / ACTION
+      // ============================================================
+      function handleContinue() {
+        if (!selectedLevel || !selectedResponse) return;
+
+        const data = niveaux[selectedLevel];
+        
+        // Si "Pas maintenant", afficher message d'au revoir
+        if (selectedResponse === 'pas-maintenant') {
+          messageText.textContent = "Pas de souci. Cet espace sera toujours là quand tu en auras besoin. Prends soin de toi. 💛";
+          messageBox.querySelector('.message-question').style.display = 'none';
+          messageBox.querySelector('.response-buttons').style.display = 'none';
+          cta.classList.remove('visible');
+          return;
+        }
+
+        // Construire l'URL avec les paramètres
+        let url = 'ado-solo.php?';
+        
+        // Parcours selon le niveau
+        switch(data.parcours) {
+          case 'chosen':
+            url += 'parcours=epanoui';
+            break;
+          case 'both':
+            url += 'parcours=exploration';
+            break;
+          case 'suffered':
+            url += 'parcours=soutien';
+            break;
+          case 'urgence':
+            url += 'parcours=aide';
+            break;
+        }
+
+        // Ajouter la réponse et le niveau comme paramètres
+        url += '&dialogue=' + selectedResponse;
+        url += '&niveau=' + selectedLevel;
+
+        // Sauvegarder dans localStorage
+        localStorage.setItem('soloplugs_ado_solitude_level', selectedLevel);
+        localStorage.setItem('soloplugs_ado_response', selectedResponse);
+
+        // Fermer la modal et rediriger (ou scroll vers section appropriée)
+        closeModal();
+        
+        // Pour l'instant, on peut afficher un message ou rediriger
+        // window.location.href = url;
+        console.log('Redirection vers:', url);
+      }
+
+      // ============================================================
+      // ÉVÉNEMENTS
+      // ============================================================
+      
+      // Bouton flottant
+      feelingBtn.addEventListener('click', openModal);
+      
+      // Fermeture
+      feelingClose.addEventListener('click', closeModal);
+      feelingOverlay.addEventListener('click', closeModal);
+      
+      // Échap pour fermer
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isModalOpen) closeModal();
+      });
+      
+      // Items de l'échelle
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          const level = parseInt(item.dataset.level);
+          selectLevel(level);
+        });
+      });
+
+      // Boutons de réponse
+      responseButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const response = btn.dataset.response;
+          selectResponse(response);
+        });
+      });
+
+      // Bouton continuer
+      btnContinuer.addEventListener('click', handleContinue);
+
+      console.log('✓ Échelle de solitude ado chargée — Soloplugs');
+    })();
   </script>
 
 </body>

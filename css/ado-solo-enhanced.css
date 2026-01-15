@@ -1,5 +1,5 @@
 /* ============================================================
-   💜 ADO-SOLO — CSS ENRICHI (Version nettoyée)
+   💜 ADO-SOLO — CSS ENRICHI (Version avec échelle)
    Requiert: theme-base.css chargé AVANT ce fichier
    Atmosphère : Dynamique, complice, moderne, safe space
    ============================================================ */
@@ -91,7 +91,7 @@ body::before {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-   margin-top: -8rem;  /* Ajouté - remonte le contenu */
+   margin-top: -8rem;
 }
 
 .hero-ado .hero-title,
@@ -418,6 +418,506 @@ body::before {
 }
 
 /* ============================================================
+   BOUTON THÈMES — Couleur thème
+   ============================================================ */
+.themes-toggle {
+  border: 2px solid var(--ado-purple) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.themes-label {
+  color: var(--ado-purple) !important;
+}
+
+.hamburger-icon span {
+  background: var(--ado-purple) !important;
+}
+
+.themes-toggle:hover {
+  background: var(--ado-purple-pale) !important;
+}
+
+/* ============================================================
+   💭 BOUTON FLOTTANT "COMMENT TU TE SENS?"
+   ============================================================ */
+.feeling-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--ado-purple) 0%, var(--ado-purple-dark) 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(155, 89, 182, 0.35),
+              0 2px 8px rgba(155, 89, 182, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.feeling-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(155, 89, 182, 0.45),
+              0 4px 12px rgba(155, 89, 182, 0.25);
+}
+
+.feeling-btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.feeling-btn-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.feeling-btn-text {
+  font-family: 'Nunito', 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Pulsation douce */
+.feeling-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: feeling-pulse 3s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes feeling-pulse {
+  0%, 100% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+}
+
+/* ============================================================
+   MODAL OVERLAY
+   ============================================================ */
+.feeling-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.feeling-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================
+   MODAL ÉCHELLE
+   ============================================================ */
+.feeling-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  background: #FDF8F3;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10001;
+  overflow: hidden;
+}
+
+.feeling-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.feeling-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.feeling-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.feeling-modal-close svg {
+  width: 18px;
+  height: 18px;
+  stroke: #666;
+  stroke-width: 2;
+}
+
+.feeling-modal-content {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* ============================================================
+   ÉCHELLE - HEADER
+   ============================================================ */
+.echelle-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.echelle-header h2 {
+  font-family: 'Quicksand', 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #3D3D3D;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.echelle-header p {
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 400;
+}
+
+/* ============================================================
+   ÉCHELLE - VERTICALE
+   ============================================================ */
+.echelle-scale {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+/* Ligne de gradient verticale */
+.echelle-scale::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    #7CB342 0%,
+    #9CCC65 15%,
+    #CDDC39 28%,
+    #FFEB3B 42%,
+    #FFC107 56%,
+    #FF9800 70%,
+    #F44336 85%,
+    #D32F2F 100%
+  );
+  border-radius: 2px;
+}
+
+/* Items */
+.echelle-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.echelle-item:hover {
+  background: rgba(155, 89, 182, 0.08);
+}
+
+.echelle-item.selected {
+  background: rgba(155, 89, 182, 0.12);
+}
+
+/* Emoji container */
+.echelle-emoji-wrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.echelle-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.echelle-item:hover .echelle-emoji {
+  transform: scale(1.1);
+}
+
+.echelle-item.selected .echelle-emoji {
+  transform: scale(1.15);
+}
+
+/* Texte */
+.echelle-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4A4A4A;
+  line-height: 1.35;
+}
+
+.echelle-item.selected .echelle-text {
+  color: #2C3338;
+}
+
+/* ============================================================
+   ÉCHELLE - MESSAGE DYNAMIQUE
+   ============================================================ */
+.echelle-message {
+  padding: 1.2rem;
+  border-radius: 16px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-bottom: 0;
+}
+
+.echelle-message.visible {
+  opacity: 1;
+  max-height: 400px;
+  margin-bottom: 1rem;
+}
+
+/* Couleurs par zone */
+.echelle-message.zone-verte {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border-left: 4px solid #7CB342;
+}
+
+.echelle-message.zone-jaune {
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+  border-left: 4px solid #FFC107;
+}
+
+.echelle-message.zone-orange {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  border-left: 4px solid #FF9800;
+}
+
+.echelle-message.zone-rouge {
+  background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+  border-left: 4px solid #EF5350;
+}
+
+.message-text {
+  font-size: 0.92rem;
+  color: #3D3D3D;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.message-question {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2C3338;
+  margin-bottom: 0.8rem;
+}
+
+/* ============================================================
+   ÉCHELLE - BOUTONS DE RÉPONSE
+   ============================================================ */
+.response-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.btn-response {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(100, 100, 100, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5C554E;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-response:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--ado-purple);
+  color: #3D3D3D;
+  transform: translateY(-2px);
+}
+
+.btn-response.selected {
+  background: var(--ado-purple);
+  border-color: var(--ado-purple);
+  color: #FFF;
+}
+
+/* Variantes par zone */
+.zone-verte .btn-response:hover { border-color: #7CB342; }
+.zone-verte .btn-response.selected { background: #7CB342; border-color: #7CB342; }
+
+.zone-jaune .btn-response:hover { border-color: #F9A825; }
+.zone-jaune .btn-response.selected { background: #F9A825; border-color: #F9A825; }
+
+.zone-orange .btn-response:hover { border-color: #FF9800; }
+.zone-orange .btn-response.selected { background: #FF9800; border-color: #FF9800; }
+
+.zone-rouge .btn-response:hover { border-color: #EF5350; }
+.zone-rouge .btn-response.selected { background: #EF5350; border-color: #EF5350; }
+
+/* ============================================================
+   ÉCHELLE - MESSAGE URGENCE
+   ============================================================ */
+.echelle-urgence {
+  padding: 1rem;
+  background: rgba(239, 83, 80, 0.08);
+  border: 1px solid rgba(239, 83, 80, 0.2);
+  border-radius: 12px;
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.echelle-urgence.visible {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+.echelle-urgence .urgence-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.echelle-urgence .urgence-header svg {
+  width: 16px;
+  height: 16px;
+  stroke: #E53935;
+}
+
+.echelle-urgence .urgence-header span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #E53935;
+}
+
+.echelle-urgence .urgence-text {
+  font-size: 0.8rem;
+  color: #5C554E;
+  margin-bottom: 0.6rem;
+}
+
+.echelle-urgence .urgence-contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.echelle-urgence .urgence-contacts li {
+  padding: 0.2rem 0;
+  color: #4A4A4A;
+}
+
+.echelle-urgence .urgence-contacts strong {
+  color: #2C3338;
+}
+
+/* ============================================================
+   ÉCHELLE - BOUTON CONTINUER
+   ============================================================ */
+.echelle-cta {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.echelle-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.btn-continuer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(135deg, var(--ado-purple) 0%, var(--ado-purple-dark) 100%);
+  color: #FFF;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.btn-continuer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4);
+}
+
+.btn-continuer svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-continuer:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
@@ -440,6 +940,44 @@ body::before {
     min-width: auto;
     font-size: 0.9rem;
   }
+  
+  /* Bouton flottant mobile */
+  .feeling-btn {
+    bottom: 16px;
+    left: 16px;
+    padding: 12px 16px;
+  }
+  
+  .feeling-btn-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Modal mobile */
+  .feeling-modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .feeling-modal-content {
+    padding: 1.5rem;
+  }
+  
+  .echelle-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .echelle-emoji {
+    font-size: 2rem;
+  }
+  
+  .echelle-emoji-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .echelle-text {
+    font-size: 0.82rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -451,24 +989,64 @@ body::before {
   .emergency-box {
     padding: 1.5rem;
   }
+  
+  /* Bouton flottant très petit écran */
+  .feeling-btn {
+    bottom: 12px;
+    left: 12px;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  
+  .feeling-btn-icon {
+    font-size: 1.2rem;
+  }
+  
+  .feeling-btn-text {
+    font-size: 0.8rem;
+  }
+  
+  /* Modal très petit écran */
+  .feeling-modal-content {
+    padding: 1.25rem;
+  }
+  
+  .echelle-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .response-buttons {
+    gap: 0.4rem;
+  }
+  
+  .btn-response {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.78rem;
+  }
 }
+
 /* ============================================================
-   BOUTON THÈMES — Couleur thème
+   ACCESSIBILITÉ
    ============================================================ */
-.themes-toggle {
-  border: 2px solid var(--ado-purple) !important;
-  border-radius: 50px !important;
-  padding: 0.5rem 1rem !important;
+.feeling-btn:focus-visible,
+.feeling-modal-close:focus-visible,
+.echelle-item:focus-visible,
+.btn-response:focus-visible,
+.btn-continuer:focus-visible {
+  outline: 3px solid var(--ado-purple);
+  outline-offset: 2px;
 }
 
-.themes-label {
-  color: var(--ado-purple) !important;
-}
-
-.hamburger-icon span {
-  background: var(--ado-purple) !important;
-}
-
-.themes-toggle:hover {
-  background: var(--ado-purple-pale) !important;
+@media (prefers-reduced-motion: reduce) {
+  .feeling-btn::after {
+    animation: none;
+  }
+  
+  .feeling-modal,
+  .feeling-overlay,
+  .feeling-btn,
+  .echelle-message,
+  .echelle-cta {
+    transition: none;
+  }
 }

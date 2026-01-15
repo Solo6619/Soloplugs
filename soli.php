@@ -74,7 +74,15 @@
           <strong>Il vous écoute vraiment, sans jamais vous interrompre.</strong>
         </p>
       </div>
-
+   
+    <div class="article-highlight">
+    <h3>Prêt à entrer ?</h3>
+     <p>
+    <a href="soli-espace.php" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">
+      Entrer dans mon espace Soli
+      </a>
+     </p>
+    </div>
     </article>
 
   </main>
