@@ -1,0 +1,23 @@
+<?php
+/**
+ * Configuration de Soli - TEMPLATE
+ * 
+ * ⚠️  INSTRUCTIONS D'INSTALLATION:
+ * 1. Copier ce fichier en "soli-config.php"
+ * 2. Remplacer les valeurs ci-dessous par vos vraies clés
+ * 3. NE JAMAIS commiter le fichier soli-config.php sur GitHub
+ * 
+ * Le fichier soli-config.php est déjà dans .gitignore
+ */
+
+// Ta clé API OpenAI (commence par sk-)
+define('OPENAI_API_KEY', 'sk-VOTRE-CLE-API-ICI');
+
+// Modèle à utiliser
+define('OPENAI_MODEL', 'gpt-4o-mini');  // Rapide et économique
+
+// Température (créativité des réponses: 0.0 = précis, 1.0 = créatif)
+define('OPENAI_TEMPERATURE', 0.8);
+
+// Nombre maximum de tokens par réponse
+define('OPENAI_MAX_TOKENS', 500);

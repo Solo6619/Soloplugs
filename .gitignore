@@ -1,7 +1,17 @@
 #############################################
-#   SOLPLUGS + SOLOTECH — FICHIER GITIGNORE
+#   SOLOPLUGS + SOLOTECH — FICHIER GITIGNORE
 #   Empêche Git d'ajouter les fichiers inutiles
 #############################################
+
+#############
+# ⚠️ SECURITE - FICHIERS CONFIDENTIELS
+#############
+config/soli-config.php
+config/*-config.php
+*.key
+*.pem
+.env
+.env.local
 
 #############
 # ENV PYTHON
@@ -20,19 +30,26 @@ venv/
 pip-wheel-metadata/
 
 #############
-# LOGS
+# LOGS ET DONNÉES UTILISATEUR
 #############
 *.log
 logs/
 debug.log
+donnees/memory/journal.txt
+donnees/analytics/
+donnees/corpus/
+donnees/logs/
 
 #############
-# FICHIERS TEMPORAIRES
+# FICHIERS TEMPORAIRES ET COPIES
 #############
 *.tmp
 *.temp
 *.swp
 *.swo
+*- Copie.*
+*(1).*
+*(01).*
 
 #############
 # SYSTEME WINDOWS / MAC
@@ -60,12 +77,12 @@ Desktop.ini
 *.sublime-project
 
 #############
-# NODE (si un jour tu l'utilises)
+# NODE
 #############
 node_modules/
 
 #############
-# COMPOSER / PHP (optionnel)
+# COMPOSER / PHP
 #############
 vendor/
 
@@ -90,6 +107,6 @@ vendor/
 *.thumbnail
 
 #############
-# BACKUPS WORDPRESS (si présents dans tes archives)
+# BACKUPS WORDPRESS
 #############
 wp-content/debug.log
