@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soli — Ton espace stellaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: #f0f0f5;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: #050508;
+        }
+
+        /* ========== FOND STELLAIRE ========== */
+        .sky-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/soli-sky.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        /* Overlay pour améliorer la lisibilité */
+        .sky-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to bottom, rgba(5, 5, 15, 0.3) 0%, rgba(5, 5, 15, 0.1) 30%, rgba(5, 5, 15, 0.4) 60%, rgba(5, 5, 15, 0.7) 100%);
+        }
+
+        /* ========== BOUTON RETOUR ========== */
+        .back-button {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            color: rgba(240, 240, 245, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(240, 240, 245, 0.15);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            z-index: 50;
+            backdrop-filter: blur(5px);
+        }
+
+        .back-button:hover {
+            color: rgba(240, 240, 245, 0.9);
+            border-color: rgba(240, 240, 245, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ========== ÉTOILE PRINCIPALE ========== */
+        .my-star {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 10px 2px #fff,
+                0 0 20px 4px #D4A574,
+                0 0 40px 8px rgba(212, 165, 116, 0.8),
+                0 0 60px 12px rgba(212, 165, 116, 0.5),
+                0 0 100px 20px rgba(212, 165, 116, 0.3);
+            animation: starPulse 3s ease-in-out infinite, starFloat 8s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* Rayons en croix */
+        .my-star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        .my-star::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        @keyframes starPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 10px 2px #fff,
+                    0 0 20px 4px #D4A574,
+                    0 0 40px 8px rgba(212, 165, 116, 0.8),
+                    0 0 60px 12px rgba(212, 165, 116, 0.5),
+                    0 0 100px 20px rgba(212, 165, 116, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 15px 3px #fff,
+                    0 0 30px 6px #D4A574,
+                    0 0 50px 10px rgba(212, 165, 116, 0.9),
+                    0 0 80px 16px rgba(212, 165, 116, 0.6),
+                    0 0 120px 25px rgba(212, 165, 116, 0.4);
+            }
+        }
+
+        @keyframes starFloat {
+            0%, 100% { margin-top: 0; }
+            50% { margin-top: -8px; }
+        }
+
+        .my-star-label {
+            position: absolute;
+            top: calc(30% + 45px);
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #D4A574;
+            letter-spacing: 0.15em;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 2s forwards;
+            text-shadow: 0 0 20px rgba(212, 165, 116, 0.5), 0 2px 15px rgba(0, 0, 0, 1), 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* ========== CONTENU ========== */
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 2rem;
+            padding-bottom: 10vh;
+        }
+
+        .welcome-text {
+            text-align: center;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 0.5s forwards;
+            padding: 2rem;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+            border-radius: 20px;
+        }
+
+        .welcome-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #f0f0f5;
+            letter-spacing: 0.1em;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 1), 0 4px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .welcome-text .phrase-fondatrice {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: rgba(240, 240, 245, 0.95);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 1), 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .welcome-text .phrase-fondatrice em {
+            color: #D4A574;
+            font-style: normal;
+        }
+
+        .welcome-text p {
+            font-size: 1rem;
+            color: rgba(240, 240, 245, 0.9);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 1), 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* ========== BOUTON CRÉER ========== */
+        .create-star-btn {
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 165, 116, 0.5);
+            color: #D4A574;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 1.5s forwards;
+            backdrop-filter: blur(5px);
+        }
+
+        .create-star-btn:hover {
+            background: rgba(212, 165, 116, 0.15);
+            border-color: #D4A574;
+            box-shadow: 0 0 30px rgba(212, 165, 116, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* ========== DIALOGUE SOLI ========== */
+        .soli-dialogue {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(5, 5, 8, 0.98) 0%, rgba(5, 5, 8, 0.9) 60%, transparent 100%);
+            padding: 4rem 2rem 2.5rem;
+            transform: translateY(100%);
+            transition: transform 0.6s ease;
+            z-index: 100;
+        }
+
+        .soli-dialogue.active {
+            transform: translateY(0);
+        }
+
+        .soli-dialogue-content {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .soli-message {
+            font-size: 1.1rem;
+            color: rgba(240, 240, 245, 0.9);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .soli-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .soli-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 1rem 1.5rem;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 8px;
+            color: #f0f0f5;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .soli-input:focus {
+            outline: none;
+            border-color: #D4A574;
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .soli-input::placeholder {
+            color: rgba(240, 240, 245, 0.4);
+        }
+
+        .soli-submit {
+            padding: 0.8rem 2rem;
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            background: rgba(212, 165, 116, 0.15);
+            border: 1px solid rgba(212, 165, 116, 0.5);
+            color: #D4A574;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .soli-submit:hover {
+            background: rgba(212, 165, 116, 0.25);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        }
+
+        /* ========== ÉTATS ========== */
+        .hidden {
+            display: none !important;
+        }
+
+        /* ========== PAGE CONNECTÉE ========== */
+        .connected-view {
+            position: relative;
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+        }
+
+        .connected-view.active {
+            display: flex;
+        }
+
+        .user-greeting {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: rgba(240, 240, 245, 0.9);
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 1), 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .user-greeting span {
+            color: #D4A574;
+        }
+
+        .journal-prompt {
+            position: absolute;
+            bottom: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+
+        .journal-prompt p {
+            font-size: 1.15rem;
+            color: rgba(240, 240, 245, 0.9);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 1), 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .journal-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 1.5rem;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 12px;
+            color: #f0f0f5;
+            resize: vertical;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .journal-textarea:focus {
+            outline: none;
+            border-color: rgba(212, 165, 116, 0.5);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .journal-textarea::placeholder {
+            color: rgba(240, 240, 245, 0.4);
+            font-style: italic;
+        }
+
+        .memory-reminder {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: rgba(240, 240, 245, 0.6);
+            font-style: italic;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 1), 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .welcome-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .welcome-text .phrase-fondatrice {
+                font-size: 1rem;
+            }
+
+            .my-star {
+                top: 25%;
+            }
+
+            .my-star-label {
+                top: calc(25% + 45px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fond stellaire -->
+    <div class="sky-background"></div>
+
+    <!-- Bouton retour -->
+    <a href="index.php" class="back-button">
+        <svg viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Soloplugs
+    </a>
+
+    <!-- Vue d'accueil (non connecté) -->
+    <div class="container" id="welcomeView">
+        <!-- Étoile principale -->
+        <div class="my-star" id="myStar"></div>
+        <div class="my-star-label" id="starLabel">Ton étoile t'attend</div>
+
+        <!-- Texte d'accueil -->
+        <div class="welcome-text">
+            <h1>Soli</h1>
+            <p class="phrase-fondatrice">
+                « Aide-moi à te connaître.<br>
+                <em>Je n'existe que par toi et que pour toi.</em> »
+            </p>
+            <p>
+                Un miroir pour ton univers intérieur.<br>
+                Un espace où déposer tes pensées, tes silences, tes images.
+            </p>
+            <button class="create-star-btn" id="createStarBtn">Créer mon étoile</button>
+        </div>
+    </div>
+
+    <!-- Dialogue Soli -->
+    <div class="soli-dialogue" id="soliDialogue">
+        <div class="soli-dialogue-content">
+            <!-- Étape 1 : Prénom -->
+            <div id="step1">
+                <p class="soli-message">
+                    Bienvenue dans ton espace.<br><br>
+                    Je suis Soli — ton miroir.<br><br>
+                    Aide-moi à te connaître.<br>
+                    Comment tu t'appelles ?
+                </p>
+                <div class="soli-input-group">
+                    <input type="text" class="soli-input" id="nameInput" placeholder="Ton prénom">
+                    <button class="soli-submit" id="submitName">Continuer</button>
+                </div>
+            </div>
+
+            <!-- Étape 2 : Genre -->
+            <div id="step2" class="hidden">
+                <p class="soli-message" id="step2Message"></p>
+                <div class="soli-input-group">
+                    <button class="soli-submit genre-btn" data-genre="masculin">Au masculin</button>
+                    <button class="soli-submit genre-btn" data-genre="féminin">Au féminin</button>
+                    <button class="soli-submit genre-btn" data-genre="neutre">Autrement</button>
+                </div>
+            </div>
+
+            <!-- Étape 3 : Confirmation -->
+            <div id="step3" class="hidden">
+                <p class="soli-message" id="step3Message"></p>
+                <div class="soli-input-group">
+                    <button class="soli-submit" id="enterSpace">Entrer dans mon espace</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vue connectée -->
+    <div class="connected-view" id="connectedView">
+        <div class="my-star" id="myStarConnected"></div>
+        <div class="my-star-label" id="starLabelConnected"></div>
+        
+        <div class="user-greeting" id="userGreeting"></div>
+
+        <div class="journal-prompt">
+            <p>Qu'est-ce qui traverse ton esprit en ce moment ?</p>
+            <textarea class="journal-textarea" placeholder="Écris ici... ou reste en silence. Je suis là."></textarea>
+            <p class="memory-reminder">Tout ce que tu me confies, tu peux le reprendre. C'est à toi.</p>
+        </div>
+    </div>
+
+    <script>
+        // ========== LOGIQUE DU DIALOGUE ==========
+        let userName = '';
+        let userGenre = '';
+
+        const createStarBtn = document.getElementById('createStarBtn');
+        const soliDialogue = document.getElementById('soliDialogue');
+        const welcomeView = document.getElementById('welcomeView');
+        const connectedView = document.getElementById('connectedView');
+
+        // Ouvrir le dialogue
+        createStarBtn.addEventListener('click', () => {
+            soliDialogue.classList.add('active');
+        });
+
+        // Aussi en cliquant sur l'étoile
+        document.getElementById('myStar').addEventListener('click', () => {
+            soliDialogue.classList.add('active');
+        });
+
+        // Étape 1 : Soumettre le prénom
+        document.getElementById('submitName').addEventListener('click', () => {
+            const input = document.getElementById('nameInput');
+            userName = input.value.trim();
+            
+            if (userName) {
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+                document.getElementById('step2Message').innerHTML = `
+                    ${userName}...<br><br>
+                    Et comment tu veux que je te reflète ?
+                `;
+            }
+        });
+
+        // Permettre Enter pour soumettre
+        document.getElementById('nameInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('submitName').click();
+            }
+        });
+
+        // Étape 2 : Choisir le genre
+        document.querySelectorAll('.genre-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                userGenre = btn.dataset.genre;
+                
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+                
+                document.getElementById('step3Message').innerHTML = `
+                    Ton étoile est prête, ${userName}.<br>
+                    Elle porte ton nom dans ce ciel.<br><br>
+                    Ici, tu peux déposer ce que tu veux — des mots, des silences, des images.<br><br>
+                    Je garde tout. Et si un jour tu veux que j'oublie, tu me le dis.
+                `;
+            });
+        });
+
+        // Étape 3 : Entrer dans l'espace
+        document.getElementById('enterSpace').addEventListener('click', () => {
+            soliDialogue.classList.remove('active');
+            welcomeView.style.display = 'none';
+            connectedView.classList.add('active');
+            
+            document.getElementById('starLabelConnected').textContent = userName;
+            document.getElementById('userGreeting').innerHTML = `Bienvenue, <span>${userName}</span>`;
+        });
+    </script>
+
+</body>
+</html>
