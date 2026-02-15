@@ -11,6 +11,7 @@
     
     include 'components/head.php';
   ?>
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body class="has-compact-header">
 
@@ -171,8 +172,7 @@
 
   </main>
 
-  <?php include 'components/footer.php'; ?>
-  <?php include 'components/scripts.php'; ?>
+  <?php $basePath = ''; include 'components/footer.php'; ?>
 
 </body>
 </html>

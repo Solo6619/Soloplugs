@@ -1,0 +1,973 @@
+/* ============================================================
+   SORTIES-LOISIRS-RENCONTRES — CSS UNIFIÉ
+   Styles pour : page d'aiguillage (choix) + sous-pages (sorties, loisirs, rencontres)
+   Requiert: global.css chargé AVANT ce fichier
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  /* Palette principale - Turquoise */
+  --slr-magenta: #2A9D8F;
+  --slr-magenta-dark: #1E7268;
+  --slr-magenta-light: #5FBFB3;
+  --slr-magenta-pale: #E8F6F4;
+  
+  /* Palette secondaire */
+--slr-coral: #81C3B8;
+--slr-peach: #D4EFEB;
+
+/* Fonds */
+--slr-cream: #F8FDFC;
+--slr-warm: #F5FBFA;
+--slr-alt: #EEF8F6;
+  
+  /* Textes */
+  --slr-text: #2C3338;
+  --slr-text-soft: #5A5A5A;
+  --slr-text-muted: #8A8A8A;
+  
+  /* Effets */
+  --slr-shadow-soft: 0 4px 20px rgba(194, 75, 139, 0.1);
+  --slr-shadow-hover: 0 12px 40px rgba(194, 75, 139, 0.2);
+  
+  /* Typographie */
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+/* ============================================================
+   COULEURS PAR THÈME
+   ============================================================ */
+
+/* SORTIES — Orange corail (énergie, action) */
+body.theme-sorties {
+  --slr-magenta: #E07A5F;
+  --slr-magenta-dark: #C25D42;
+  --slr-magenta-light: #F4A68E;
+  --slr-magenta-pale: #FDF5F2;
+  --slr-coral: #F4A68E;
+  --slr-peach: #FFE8E0;
+  --slr-cream: #FFFAF8;
+  --slr-alt: #FDF5F2;
+}
+
+/* LOISIRS — Turquoise (créativité, calme actif) */
+body.theme-loisirs {
+  --slr-magenta: #2A9D8F;
+  --slr-magenta-dark: #1E7268;
+  --slr-magenta-light: #5FBFB3;
+  --slr-magenta-pale: #E8F6F4;
+  --slr-coral: #81C3B8;
+  --slr-peach: #D4EFEB;
+  --slr-cream: #F8FDFC;
+  --slr-alt: #EEF8F6;
+}
+
+/* RENCONTRES — Indigo (connexion, profondeur) */
+body.theme-rencontres {
+  --slr-magenta: #6366F1;
+  --slr-magenta-dark: #4F46E5;
+  --slr-magenta-light: #A5B4FC;
+  --slr-magenta-pale: #EEF2FF;
+  --slr-coral: #A5B4FC;
+  --slr-peach: #E0E7FF;
+  --slr-cream: #FAFAFF;
+  --slr-alt: #F0F2FF;
+}
+
+/* ============================================================
+   HEADER COMPACT PERMANENT
+   ============================================================ */
+#header {
+  padding: 0.6rem 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+  border-bottom: 3px solid var(--slr-magenta-pale) !important;
+}
+
+#header .logo-soloplugs {
+  transform: scale(0.65) !important;
+  transform-origin: left center !important;
+  margin-bottom: 0 !important;
+}
+
+#header #header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#header #menu-main {
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+/* ============================================================
+   BOUTON THÈMES — Couleur magenta
+   ============================================================ */
+.themes-toggle {
+  border: 2px solid var(--slr-magenta) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.themes-label {
+  color: var(--slr-magenta) !important;
+}
+
+.hamburger-icon span {
+  background: var(--slr-magenta) !important;
+}
+
+.themes-toggle:hover {
+  background: var(--slr-magenta-pale) !important;
+}
+
+/* ============================================================
+   BODY
+   ============================================================ */
+body {
+  background-color: var(--slr-cream);
+  color: var(--slr-text);
+  font-family: var(--font-body);
+  padding-top: 70px;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   HERO SECTION — Pages individuelles
+   ============================================================ */
+.page-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--slr-cream) 0%,
+    var(--slr-magenta-pale) 50%,
+    var(--slr-peach) 100%
+  );
+}
+.hero-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: white;
+  color: var(--slr-magenta);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--slr-shadow-soft);
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 500;
+  color: var(--slr-text);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--slr-text-soft);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  padding: 5rem 2rem;
+}
+
+.section-alt {
+  background: var(--slr-alt);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: var(--slr-text);
+  margin-bottom: 0.75rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--slr-text-soft);
+}
+
+/* ============================================================
+   GRILLE D'IDÉES (Sorties)
+   ============================================================ */
+.ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.idea-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  position: relative;
+  box-shadow: var(--slr-shadow-soft);
+  transition: all 0.4s ease;
+  border-left: 4px solid transparent;
+}
+
+.idea-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--slr-shadow-hover);
+}
+
+.difficulty-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.difficulty-easy {
+  border-left-color: #6BA368;
+}
+.difficulty-easy .difficulty-badge {
+  background: #EFF6EE;
+  color: #4A8046;
+}
+
+.difficulty-medium {
+  border-left-color: #D4A574;
+}
+.difficulty-medium .difficulty-badge {
+  background: #FDF5ED;
+  color: #A67C4A;
+}
+
+.difficulty-bold {
+  border-left-color: var(--slr-magenta);
+}
+.difficulty-bold .difficulty-badge {
+  background: var(--slr-magenta-pale);
+  color: var(--slr-magenta-dark);
+}
+
+.idea-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--slr-text);
+  margin-bottom: 0.75rem;
+}
+
+.idea-card p {
+  font-size: 1rem;
+  color: var(--slr-text-soft);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   GRILLE CATÉGORIES (Loisirs)
+   ============================================================ */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--slr-shadow-soft);
+  transition: all 0.4s ease;
+  border-top: 4px solid var(--slr-magenta-light);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--slr-shadow-hover);
+  border-top-color: var(--slr-magenta);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--slr-text);
+  margin-bottom: 1rem;
+}
+
+.category-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.category-card li {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--slr-text-soft);
+}
+
+.category-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--slr-magenta-light);
+}
+
+/* ============================================================
+   LISTE DE CONSEILS (Tips)
+   ============================================================ */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tip-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: white;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  box-shadow: var(--slr-shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.tip-item:hover {
+  box-shadow: var(--slr-shadow-hover);
+}
+
+.tip-number {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  background: linear-gradient(135deg, var(--slr-magenta), var(--slr-magenta-dark));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.tip-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--slr-text);
+  margin-bottom: 0.5rem;
+}
+
+.tip-content p {
+  font-size: 1rem;
+  color: var(--slr-text-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================================
+   GRILLE DES PEURS / FREINS
+   ============================================================ */
+.fears-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.fear-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--slr-shadow-soft);
+  transition: all 0.4s ease;
+}
+
+.fear-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--slr-shadow-hover);
+}
+
+.fear-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.fear-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--slr-text);
+  margin-bottom: 0.75rem;
+}
+
+.fear-card p {
+  font-size: 0.95rem;
+  color: var(--slr-text-soft);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SECTION CITATION
+   ============================================================ */
+.section-quote {
+  background: linear-gradient(135deg, var(--slr-magenta-pale) 0%, #D4EFEB 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-quote blockquote {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--slr-text);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  position: relative;
+}
+
+.section-quote blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: var(--slr-magenta-light);
+  opacity: 0.5;
+  font-family: Georgia, serif;
+}
+
+/* ============================================================
+   SECTION CTA
+   ============================================================ */
+.section-cta {
+  background: linear-gradient(135deg, var(--slr-magenta) 0%, var(--slr-magenta-dark) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.section-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.section-cta p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--slr-magenta);
+}
+
+.btn-primary:hover {
+  background: var(--slr-magenta-pale);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* ============================================================
+   FOOTER — Couleurs thème
+   ============================================================ */
+#footer {
+  background: linear-gradient(180deg, var(--slr-text) 0%, #1f2225 100%);
+}
+
+.footer-quote {
+  color: var(--slr-magenta-light);
+}
+
+.footer-links a:hover {
+  color: var(--slr-magenta-light);
+}
+
+.footer-social a:hover {
+  background: var(--slr-magenta);
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.back-to-top {
+  background: var(--slr-magenta);
+}
+
+.back-to-top:hover {
+  background: var(--slr-magenta-dark);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+.idea-card,
+.category-card,
+.tip-item,
+.fear-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.idea-card:nth-child(1), .category-card:nth-child(1), .fear-card:nth-child(1) { animation-delay: 0.1s; }
+.idea-card:nth-child(2), .category-card:nth-child(2), .fear-card:nth-child(2) { animation-delay: 0.2s; }
+.idea-card:nth-child(3), .category-card:nth-child(3), .fear-card:nth-child(3) { animation-delay: 0.3s; }
+.idea-card:nth-child(4), .category-card:nth-child(4) { animation-delay: 0.4s; }
+.idea-card:nth-child(5), .category-card:nth-child(5) { animation-delay: 0.5s; }
+.idea-card:nth-child(6), .category-card:nth-child(6) { animation-delay: 0.6s; }
+
+.tip-item:nth-child(1) { animation-delay: 0.1s; }
+.tip-item:nth-child(2) { animation-delay: 0.15s; }
+.tip-item:nth-child(3) { animation-delay: 0.2s; }
+.tip-item:nth-child(4) { animation-delay: 0.25s; }
+.tip-item:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Carte avec image plein format */
+.category-card-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.category-image {
+  width: 100%;
+  line-height: 0;
+}
+
+.category-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .page-hero {
+    min-height: 40vh;
+    padding: 3rem 1.5rem;
+  }
+  
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+  
+  .section {
+    padding: 3.5rem 1.5rem;
+  }
+  
+  .ideas-grid,
+  .category-grid,
+  .fears-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tip-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .tip-number {
+    margin: 0 auto;
+  }
+  
+  .section-quote blockquote {
+    font-size: 1.25rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .idea-card,
+  .category-card,
+  .fear-card {
+    padding: 1.5rem;
+  }
+  
+  .tip-item {
+    padding: 1.25rem;
+  }
+}
+
+/* ============================================================
+   BOUTON RETOUR AUX CHOIX — Position absolue
+   ============================================================ */
+.back-to-choices {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--slr-magenta-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.back-to-choices:hover {
+  background: var(--slr-magenta);
+  color: white;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-choices svg {
+  transition: transform 0.3s ease;
+}
+
+.back-to-choices:hover svg {
+  transform: translateX(-3px);
+}
+
+@media (max-width: 768px) {
+  .back-to-choices {
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ============================================================
+   PAGE D'AIGUILLAGE — Choix Sorties / Loisirs / Rencontres
+   ============================================================ */
+
+/* HERO — Page de choix */
+.choices-hero {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  background: linear-gradient(180deg, #fff 0%, #FBF9F6 100%);
+}
+
+.choices-hero h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #2C3338;
+  margin-top: 120px;
+}
+
+.choices-hero .subtitle {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* SECTION DES CHOIX */
+.choices-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.choices-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.choices-intro p {
+  font-size: 1.1rem;
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+/* GRILLE DES 3 CARTES */
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* CARTE INDIVIDUELLE */
+.choice-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.choice-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.choice-card:hover img {
+  transform: scale(1.05);
+}
+
+/* CONTENU DE LA CARTE — Bandeau en bas */
+.choice-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2C3338;
+}
+
+.choice-content h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  color: #2C3338;
+}
+
+.choice-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  color: #2C3338;
+}
+
+/* BOUTON CTA */
+.choice-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--slr-magenta);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.choice-card:hover .choice-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.choice-cta svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+  stroke: var(--slr-magenta);
+}
+
+.choice-card:hover .choice-cta svg {
+  transform: translateX(4px);
+}
+
+/* CITATION — Page de choix */
+.page-quote {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #FBF9F6 0%, #fff 100%);
+}
+
+.page-quote blockquote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #2C3338;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  border: none;
+  padding: 0;
+}
+
+.page-quote blockquote::before {
+  content: none;
+}
+
+/* RESPONSIVE — Page de choix */
+@media (max-width: 900px) {
+  .choices-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .choices-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .choices-hero {
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .choices-section {
+    padding: 1.5rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .choice-content {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .choice-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .choice-content p {
+    font-size: 0.9rem;
+  }
+  
+  .choices-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .page-quote blockquote {
+    font-size: 1.1rem;
+  }
+}

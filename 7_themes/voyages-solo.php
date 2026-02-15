@@ -7,12 +7,14 @@
     $pageDescription = 'Accompagnement pour voyager seul·e. Liberté, découverte et confiance à ton rythme.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['theme-base.css','voyages-solo-enhanced.css'];
+    $additionalCSS = ['theme-base.css', 'voyages-solo.css', 'components.css'];
+    $themeRessources = 'ressources/ressources.php?theme=voyages-solo';
     
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS chargés via $additionalCSS : theme-base.css, voyages-solo-enhanced.css, components.css -->
 </head>
 <body>
 
@@ -399,8 +401,8 @@
        FOOTER
        ============================================================ -->
 
-  <?php include '../components/footer.php'; ?>
-  <?php include '../components/scripts.php'; ?>
+<?php $basePath = '../'; include '../components/footer.php'; ?>
+<?php include '../components/scripts.php'; ?>
 
 </body>
 </html>

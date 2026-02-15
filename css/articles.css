@@ -1,10 +1,25 @@
 /* ============================================================
-   🌿 ARTICLES SOLOPLUGS - STYLES
-   Styles pour les pages d'articles individuels
+   🌿 ARTICLES SOLOPLUGS - STYLES COMPLETS
+   Styles partagés pour toutes les pages d'articles
    ============================================================ */
 
-/* Variables héritées du site principal */
+/* ============================================================
+   VARIABLES
+   ============================================================ */
 :root {
+  --color-cream-deep: #F5EDE4;
+  --color-cream: #FBF9F6;
+  --color-white: #FFFFFF;
+  --color-gold: #D4A574;
+  --color-gold-light: #E8C9A8;
+  --color-text-dark: #2C3338;
+  --color-text-dark-soft: #5C554E;
+  --color-text-dark-muted: #7A726A;
+  --color-transition: #3D352D;
+  --shadow-soft: 0 4px 20px rgba(44, 51, 56, 0.08);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  /* Legacy (compatibilité anciens articles) */
   --accent: #D4A574;
   --text-primary: #2C3338;
   --text-secondary: #6B7280;
@@ -18,162 +33,263 @@
 }
 
 /* ============================================================
-   CONTAINER & LAYOUT
+   RESET
    ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
 
-.article-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-sm);
-  background: var(--bg-primary);
+/* ============================================================
+   BOUTON RETOUR FIXE (cercle en haut à gauche)
+   ============================================================ */
+.back-fixed {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-gold-light);
+  border-radius: 50%;
+  color: var(--color-gold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.back-fixed:hover {
+  background: var(--color-gold);
+  color: var(--color-white);
+  border-color: var(--color-gold);
+}
+.back-fixed svg { width: 20px; height: 20px; }
+
+/* ============================================================
+   NAVIGATION ARTICLE
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.25rem 4rem;
+  padding-left: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.25);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text-dark);
+}
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-dark-soft);
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--color-gold); }
+
+/* Dropdown navigation */
+.nav-dropdown { position: relative; }
+.dropdown-toggle { cursor: pointer; }
+.dropdown-menu {
+  position: absolute;
+  top: 100%; left: 0;
+  background: var(--color-white);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 0.75rem 0;
+  min-width: 200px;
+  opacity: 0; visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  list-style: none;
+}
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.dropdown-menu li a:hover {
+  background: var(--color-cream-deep);
+  color: var(--color-gold);
 }
 
 /* ============================================================
-   NAVIGATION RETOUR
+   HERO IMAGE ARTICLE
    ============================================================ */
-
-.article-breadcrumb {
-  margin-bottom: var(--spacing-lg);
+.article-hero {
+  padding-top: 100px;
+  background: var(--color-cream);
 }
-
-.back-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-smooth);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.article-hero-image {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4rem;
 }
-
-.back-link:hover {
-  color: var(--accent);
+.article-hero-image img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
 }
 
 /* ============================================================
    EN-TÊTE ARTICLE
    ============================================================ */
-
 .article-header {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
   text-align: center;
-  padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
-  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
-  margin-bottom: var(--spacing-xl);
 }
-
-.article-meta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-}
-
 .article-category {
-  color: var(--accent);
-  font-weight: 600;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-gold-light);
+  border-radius: 20px;
 }
-
-.article-meta::before,
-.article-meta::after {
-  content: '';
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-}
-
 .article-title {
-  font-family: 'Lora', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.1;
-  margin-bottom: var(--spacing-md);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
 }
-
 .article-subtitle {
-  font-family: 'Lora', serif;
-  font-style: italic;
+  font-family: var(--font-display);
   font-size: 1.25rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: var(--spacing-lg);
-}
-
-.article-image {
-  margin: var(--spacing-lg) 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15);
-}
-
-.article-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-dark-muted);
+  line-height: 1.6;
 }
 
 /* ============================================================
    CONTENU ARTICLE
    ============================================================ */
-
 .article-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
+}
+.article-content p {
   font-size: 1.125rem;
-  line-height: 1.8;
+  font-weight: 300;
+  color: var(--color-text-dark-soft);
+  line-height: 1.95;
+  margin-bottom: 1.75rem;
 }
-
-.article-intro {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  margin-bottom: var(--spacing-lg);
-  position: relative;
+.article-content p:first-of-type {
+  font-size: 1.2rem;
+  color: var(--color-text-dark);
 }
-
-.article-intro::first-letter {
-  font-family: 'Lora', serif;
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 0.8;
-  color: var(--accent);
+.article-content p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.75rem;
+  font-weight: 400;
   float: left;
-  margin: 0.1em 0.1em 0 0;
+  line-height: 1;
+  margin-right: 0.75rem;
+  margin-top: 0.1rem;
+  color: var(--color-gold);
 }
+.article-content strong { font-weight: 500; color: var(--color-text-dark); }
+.article-content em { font-style: italic; color: var(--color-gold); }
 
 .article-content h2 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-dark);
   margin: var(--spacing-xl) 0 var(--spacing-md) 0;
 }
-
 .article-content h3 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-dark);
   margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
 }
 
-.article-content p {
-  margin-bottom: var(--spacing-md);
-  text-align: justify;
-}
-
-.article-content strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
 /* ============================================================
-   ENCADRÉ SPÉCIAL
+   ÉLÉMENTS SPÉCIAUX
    ============================================================ */
 
+/* Citation mise en avant */
+.highlight {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-dark);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--color-gold-light);
+  border-bottom: 1px solid var(--color-gold-light);
+}
+
+/* Séparateur décoratif */
+.separator {
+  text-align: center;
+  margin: 2.5rem 0;
+  color: var(--color-gold-light);
+  font-size: 1.25rem;
+  letter-spacing: 0.75rem;
+}
+
+/* Phrase de clôture */
+.closing {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gold-light);
+  line-height: 1.7;
+}
+
+/* Encadré spécial */
 .article-highlight {
   background: linear-gradient(135deg, rgba(212, 165, 116, 0.08), rgba(212, 165, 116, 0.03));
   border: 1px solid rgba(212, 165, 116, 0.2);
@@ -181,47 +297,94 @@
   padding: var(--spacing-lg);
   margin: var(--spacing-xl) 0;
 }
-
 .article-highlight h3 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-display);
   font-size: 1.3rem;
-  color: var(--accent);
+  color: var(--color-gold);
   margin-bottom: var(--spacing-sm);
   text-align: center;
 }
+.article-highlight p { margin-bottom: var(--spacing-sm); }
+.article-highlight p:last-child { margin-bottom: 0; }
 
-.article-highlight p {
-  margin-bottom: var(--spacing-sm);
+/* Image dans article */
+.article-image {
+  margin: var(--spacing-lg) 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15);
+}
+.article-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.article-highlight p:last-child {
-  margin-bottom: 0;
+/* ============================================================
+   BOUTON RETOUR BAS DE PAGE
+   ============================================================ */
+.back-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem 5rem;
+  background: var(--color-cream-deep);
+}
+.back-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.back-bottom a:hover {
+  background: var(--color-gold);
+  color: var(--color-white);
+}
+
+/* Legacy btn-retour */
+.btn-retour {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: #F5F1EB;
+  color: #2C3338;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+}
+.btn-retour:hover {
+  background: #D4A574;
+  color: white;
+  transform: translateX(-4px);
 }
 
 /* ============================================================
    ARTICLES SIMILAIRES
    ============================================================ */
-
 .related-articles {
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-xl);
   border-top: 1px solid rgba(212, 165, 116, 0.2);
 }
-
 .related-articles h3 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: var(--color-text-dark);
   text-align: center;
   margin-bottom: var(--spacing-lg);
 }
-
 .related-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-md);
 }
-
 .related-card {
   display: flex;
   background: white;
@@ -232,22 +395,12 @@
   text-decoration: none;
   color: inherit;
 }
-
 .related-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(212, 165, 116, 0.2);
 }
-
-.related-image {
-  flex: 0 0 120px;
-}
-
-.related-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+.related-image { flex: 0 0 120px; }
+.related-image img { width: 100%; height: 100%; object-fit: cover; }
 .related-content {
   padding: var(--spacing-sm);
   flex: 1;
@@ -255,16 +408,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 .related-content h4 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-dark);
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
-
 .related-content p {
   font-size: 0.85rem;
   color: var(--text-secondary);
@@ -272,84 +423,51 @@
   line-height: 1.4;
   text-align: left;
 }
-
 .related-meta {
   font-size: 0.75rem;
-  color: var(--accent);
+  color: var(--color-gold);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 /* ============================================================
-   RESPONSIVE
+   FOOTER
    ============================================================ */
-
-@media (max-width: 768px) {
-  .article-container {
-    padding: var(--spacing-md) var(--spacing-sm);
-  }
-
-  .article-title {
-    font-size: 2rem;
-  }
-
-  .article-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .article-content {
-    font-size: 1rem;
-  }
-
-  .article-intro {
-    font-size: 1.125rem;
-  }
-
-  .article-intro::first-letter {
-    font-size: 2.5rem;
-  }
-
-  .related-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .related-card {
-    flex-direction: column;
-  }
-
-  .related-image {
-    flex: none;
-    height: 150px;
-  }
+.footer {
+  padding: 2rem 4rem;
+  background: var(--color-transition);
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-cream);
+}
+.footer-center {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.footer-center a {
+  font-size: 0.85rem;
+  color: rgba(245, 237, 228, 0.7);
+  transition: color 0.3s;
+}
+.footer-center a:hover { color: var(--color-gold); }
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(245, 237, 228, 0.5);
 }
 
-@media (max-width: 480px) {
-  .article-title {
-    font-size: 1.8rem;
-  }
-
-  .article-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .article-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .article-meta::before,
-  .article-meta::after {
-    display: none;
-  }
-}
 /* ============================================================
-   🎴 SOLOPLUGS - STYLES POUR ARTICLES AVEC JEUX
-   Intégration de jeux en ligne dans les articles
-   ============================================================ */
-
-/* ============================================================
-   SECTION JEU INTÉGRÉ
+   🎴 SECTION JEU INTÉGRÉ
    ============================================================ */
 .jeu-section {
   background: linear-gradient(135deg, #F5F1EB 0%, #FBF9F6 100%) !important;
@@ -359,12 +477,10 @@
   border-bottom: 3px solid #D4A574 !important;
   display: block !important;
 }
-
 .jeu-container {
   max-width: 900px !important;
   margin: 0 auto !important;
 }
-
 .jeu-titre {
   font-family: 'Lora', serif !important;
   font-size: 2rem !important;
@@ -372,7 +488,6 @@
   text-align: center !important;
   margin-bottom: 1rem !important;
 }
-
 .jeu-intro {
   text-align: center !important;
   color: #6B7280 !important;
@@ -383,13 +498,8 @@
   margin-right: auto !important;
 }
 
-/* ============================================================
-   JEU INTÉGRÉ (IFRAME)
-   ============================================================ */
-.jeu-integre {
-  margin-bottom: 2rem !important;
-}
-
+/* Jeu intégré (iframe) */
+.jeu-integre { margin-bottom: 2rem !important; }
 .jeu-wrapper {
   background: white !important;
   border-radius: 1rem !important;
@@ -397,7 +507,6 @@
   box-shadow: 0 8px 32px rgba(212, 165, 116, 0.15) !important;
   overflow: hidden !important;
 }
-
 .jeu-wrapper iframe {
   display: block !important;
   border: none !important;
@@ -405,7 +514,6 @@
   width: 100% !important;
   min-height: 600px !important;
 }
-
 .jeu-credit {
   text-align: center !important;
   font-size: 0.875rem !important;
@@ -413,22 +521,18 @@
   margin-top: 1rem !important;
   font-style: italic !important;
 }
-
 .jeu-credit a {
   color: #D4A574 !important;
   text-decoration: none !important;
   font-weight: 500 !important;
   transition: color 0.3s ease !important;
 }
-
 .jeu-credit a:hover {
   color: #2C3338 !important;
   text-decoration: underline !important;
 }
 
-/* ============================================================
-   BOUTONS DE JEU
-   ============================================================ */
+/* Boutons de jeu */
 .jeu-boutons {
   display: flex !important;
   gap: 1rem !important;
@@ -436,7 +540,6 @@
   flex-wrap: wrap !important;
   margin-top: 1.5rem !important;
 }
-
 .btn-jeu {
   display: inline-flex !important;
   align-items: center !important;
@@ -451,24 +554,20 @@
   cursor: pointer !important;
   font-family: 'Inter', sans-serif !important;
 }
-
 .btn-jeu-primaire {
   background: linear-gradient(135deg, #D4A574 0%, #C4956A 100%) !important;
   color: white !important;
   box-shadow: 0 4px 16px rgba(212, 165, 116, 0.3) !important;
 }
-
 .btn-jeu-primaire:hover {
   transform: translateY(-3px) !important;
   box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4) !important;
 }
-
 .btn-jeu-secondaire {
   background: white !important;
   color: #D4A574 !important;
   border: 2px solid #D4A574 !important;
 }
-
 .btn-jeu-secondaire:hover {
   background: #D4A574 !important;
   color: white !important;
@@ -476,16 +575,13 @@
   box-shadow: 0 4px 16px rgba(212, 165, 116, 0.2) !important;
 }
 
-/* ============================================================
-   CARTES JEUX SIMILAIRES
-   ============================================================ */
+/* Cartes jeux similaires */
 .jeux-similaires {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
 }
-
 .jeu-card {
   background: white;
   padding: 1.5rem;
@@ -495,20 +591,17 @@
   transition: all 0.3s ease;
   display: block;
 }
-
 .jeu-card:hover {
   border-color: #D4A574;
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15);
 }
-
 .jeu-card h4 {
   font-family: 'Lora', serif;
   font-size: 1.5rem;
   color: #2C3338;
   margin-bottom: 0.5rem;
 }
-
 .jeu-card p {
   color: #6B7280;
   font-size: 0.95rem;
@@ -516,9 +609,7 @@
   margin: 0;
 }
 
-/* ============================================================
-   TIPS & WARNINGS DANS ARTICLES
-   ============================================================ */
+/* Tips & Warnings */
 .article-tip {
   background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
   border-left: 4px solid #4CAF50;
@@ -526,11 +617,7 @@
   border-radius: 0.5rem;
   margin: 1.5rem 0;
 }
-
-.article-tip strong {
-  color: #2E7D32;
-}
-
+.article-tip strong { color: #2E7D32; }
 .article-warning {
   background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
   border-left: 4px solid #FF9800;
@@ -538,114 +625,55 @@
   border-radius: 0.5rem;
   margin: 1.5rem 0;
 }
-
-.article-warning strong {
-  color: #E65100;
-}
+.article-warning strong { color: #E65100; }
 
 /* ============================================================
-   BOUTON RETOUR
+   UTILITAIRES
    ============================================================ */
-.btn-retour {
-  display: inline-block;
-  padding: 0.875rem 2rem;
-  background: #F5F1EB;
-  color: #2C3338;
-  text-decoration: none;
-  border-radius: 2rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-top: 2rem;
-}
-
-.btn-retour:hover {
-  background: #D4A574;
-  color: white;
-  transform: translateX(-4px);
-}
+.text-center { text-align: center; }
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
-  .jeu-section {
-    padding: 2rem 1rem;
-    margin: 2rem -1rem;
+  .back-fixed { top: 1rem; left: 1rem; width: 40px; height: 40px; }
+  .nav { padding: 1rem 1.5rem; padding-left: 4rem; }
+  .nav-links { display: none; }
+  .article-hero { padding-top: 80px; }
+  .article-hero-image { padding: 0 1.5rem; }
+  .article-hero-image img {
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
   }
-
-  .jeu-titre {
-    font-size: 1.5rem;
-  }
-
-  .jeu-intro {
-    font-size: 1rem;
-  }
-
-  .jeu-wrapper {
-    padding: 0.5rem;
-  }
-
-  .jeu-wrapper iframe {
-    min-height: 500px;
-  }
-
-  .btn-jeu {
-    font-size: 1rem;
-    padding: 0.875rem 1.5rem;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .jeu-boutons {
-    flex-direction: column;
-  }
-
-  .jeux-similaires {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+  .article-header { padding: 3rem 1.5rem 2rem; }
+  .article-title { font-size: 2rem; }
+  .article-subtitle { font-size: 1.1rem; }
+  .article-content { padding: 1rem 1.5rem 4rem; font-size: 1rem; }
+  .article-content p { font-size: 1.05rem; }
+  .article-content p:first-of-type::first-letter { font-size: 3rem; }
+  .highlight { font-size: 1.2rem; padding: 2rem 0.5rem; }
+  .footer { padding: 1.5rem; }
+  .footer-content { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  .footer-logo { display: none; }
+  .related-grid { grid-template-columns: 1fr; }
+  .related-card { flex-direction: column; }
+  .related-image { flex: none; height: 150px; }
+  .jeu-section { padding: 2rem 1rem; margin: 2rem -1rem; }
+  .jeu-titre { font-size: 1.5rem; }
+  .jeu-intro { font-size: 1rem; }
+  .jeu-wrapper { padding: 0.5rem; }
+  .jeu-wrapper iframe { min-height: 500px; }
+  .btn-jeu { font-size: 1rem; padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
+  .jeu-boutons { flex-direction: column; }
+  .jeux-similaires { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 @media (max-width: 480px) {
-  .jeu-section {
-    padding: 1.5rem 0.5rem;
-  }
-
-  .jeu-wrapper iframe {
-    min-height: 400px;
-  }
-
-  .btn-jeu {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.25rem;
-  }
-}
-
-/* ============================================================
-   UTILITAIRES
-   ============================================================ */
-.text-center {
-  text-align: center;
-}
-
-/* Masquer le jeu intégré sur petits écrans si nécessaire */
-@media (max-width: 480px) {
-  .jeu-integre {
-    display: none; /* Cacher iframe sur très petits écrans */
-  }
-  
-  /* Montrer uniquement les boutons externes sur mobile */
-  .jeu-boutons {
-    display: flex !important;
-  }
-  
-  /* Message pour mobile */
-  .jeu-integre::after {
-    content: "Pour une meilleure expérience, utilisez les boutons ci-dessous.";
-    display: block;
-    text-align: center;
-    color: #6B7280;
-    font-style: italic;
-    padding: 1rem;
-  }
+  .article-title { font-size: 1.8rem; }
+  .article-content h2 { font-size: 1.5rem; }
+  .jeu-section { padding: 1.5rem 0.5rem; }
+  .jeu-wrapper iframe { min-height: 400px; }
+  .btn-jeu { font-size: 0.95rem; padding: 0.75rem 1.25rem; }
+  .jeu-integre { display: none; }
+  .jeu-boutons { display: flex !important; }
 }

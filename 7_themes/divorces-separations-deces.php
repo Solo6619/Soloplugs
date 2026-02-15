@@ -7,12 +7,14 @@
     $pageDescription = 'Accompagnement doux pour traverser une rupture, une séparation ou un deuil. Sans rien presser. À ton rythme.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['divorces-separations-deces-enhanced.css'];
+    $additionalCSS = ['divorces-separations-deces.css', 'components.css'];
+    $themeRessources = 'ressources/ressources.php?theme=separation-deuil';
     
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques à ce thème -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS chargés via $additionalCSS : divorces-separations-deces-enhanced.css, components.css -->
 </head>
 <body>
 
@@ -361,7 +363,7 @@
     </div>
   </section>
 
-  <?php include '../components/footer.php'; ?>
+  <?php $basePath = '../'; include '../components/footer.php'; ?>
   <?php include '../components/scripts.php'; ?>
 
 </body>

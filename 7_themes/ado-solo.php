@@ -7,164 +7,12 @@
     $pageDescription = 'Ressources et soutien pour les adolescents qui vivent la solitude. Lignes d\'écoute 24/7, conseils et accompagnement.';
     $basePath = '../';
     $currentPage = 'ado-solo';
-    $additionalCSS = ['theme-base.css', 'ado-solo-enhanced.css'];
+    $additionalCSS = ['components.css', 'theme-base.css', 'ado-solo.css'];
+    $themeRessources = 'ressources/ressources.php?theme=ado-solo';
     
     include '../components/head.php';
   ?>
-  
-  <style>
-    /* ========================================
-       BLOC PROMO RESSOURCES
-       ======================================== */
-    .section-ressources-promo {
-      padding: 3rem 0;
-      background: linear-gradient(180deg, #FEF0F2 0%, #FFFBFC 100%);
-    }
-    
-    .ressources-promo {
-      background: white;
-      border-radius: 20px;
-      padding: 2.5rem;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(232, 93, 117, 0.1);
-      border: 2px solid #F5E6E9;
-    }
-    
-    .ressources-promo-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    
-    .ressources-promo h2 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.75rem;
-      color: #4A4A4A;
-      margin-bottom: 0.75rem;
-    }
-    
-    .ressources-promo > p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      color: #6B6B6B;
-      line-height: 1.6;
-      max-width: 500px;
-      margin: 0 auto 1.5rem;
-    }
-    
-    .ressources-promo-features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    
-    .ressources-promo-features span {
-      background: #FEF0F2;
-      color: #D14D65;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    
-    .ressources-promo .btn-ressources {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #E85D75 0%, #D14D65 100%);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 30px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(232, 93, 117, 0.3);
-    }
-    
-    .ressources-promo .btn-ressources:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(232, 93, 117, 0.4);
-    }
-    
-    .ressources-promo .btn-ressources svg {
-      transition: transform 0.3s ease;
-    }
-    
-    .ressources-promo .btn-ressources:hover svg {
-      transform: translateX(4px);
-    }
-    
-    /* Urgence rapide sous le CTA */
-    .urgence-rapide {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #F5E6E9;
-    }
-    
-    .urgence-rapide p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: #6B6B6B;
-      margin-bottom: 0.75rem;
-    }
-    
-    .urgence-rapide-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    
-    .urgence-rapide-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #FFF5F5;
-      color: #D32F2F;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid #FFD4D4;
-      transition: all 0.2s ease;
-    }
-    
-    .urgence-rapide-links a:hover {
-      background: #FFEBEE;
-      transform: translateY(-2px);
-    }
-    
-    @media (max-width: 600px) {
-      .ressources-promo {
-        padding: 1.75rem;
-      }
-      
-      .ressources-promo h2 {
-        font-size: 1.5rem;
-      }
-      
-      .ressources-promo-features {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .ressources-promo .btn-ressources {
-        width: 100%;
-        justify-content: center;
-      }
-      
-      .urgence-rapide-links {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <!-- CSS chargés via $additionalCSS : components.css, theme-base.css, ado-solo-enhanced.css -->
 </head>
 <body>
 
@@ -185,7 +33,61 @@
       <p class="hero-subtitle">La solitude à l'adolescence peut être lourde. Tu n'as pas à la porter seul·e.</p>
     </div>
   </section>
+<!-- ============================================================
+       ARTICLE : SOLITUDE ET HARCÈLEMENT
+       ============================================================ -->
+  <section class="section section-temoignage">
+    <div class="container-narrow">
+      
+      <!-- Titre -->
+      <header class="temoignage-header animate-on-scroll">
+        <span class="temoignage-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Témoignage
+        </span>
+        <h2 class="temoignage-title">« J'ai l'impression d'être seul avec ce que je vis »</h2>
+      </header>
 
+      <!-- Témoignage au JE -->
+      <article class="temoignage-content animate-on-scroll">
+        <div class="temoignage-texte">
+          <p>« Il y a d'abord eu ce moment où tout a basculé sans que je sache vraiment pourquoi.</p>
+          <p>Avant, j'allais à l'école comme tout le monde. Puis un jour, ça a commencé par une blague sur moi, un surnom, un commentaire sur mon corps, mes vêtements, ma façon de parler.</p>
+          <p>Au début j'ai souri, j'ai fait comme si ça ne me touchait pas. Je me suis dit : « Si je montre que ça ne me fait rien, ça va passer. »</p>
+          <p>Mais ça n'a pas passé. C'est resté. Et c'est revenu le lendemain.</p>
+          <p>Petit à petit, ça a commencé à s'installer.</p>
+          <p>Des regards ont changé, des chuchotements ont commencé quand j'entrais dans la classe. Des messages privés ont commencé. Des stories me visaient sans dire mon nom. Mais tout le monde savait que c'était moi.</p>
+          <p>J'ai commencé à réfléchir à chaque mouvement : où je m'assoyais, à qui je parlais, ce que je postais, comment je m'habillais. Comme si le simple fait d'exister devenait une erreur.</p>
+          <p>Alors, la solitude est arrivée.</p>
+          <p>Pas seulement parce que les autres m'évitaient, mais parce que je commençais moi-même à m'éviter. Je n'osais plus dire ce que je pensais, je me retenais de rire, je faisais semblant d'être d'accord juste pour « avoir la paix ».</p>
+          <p>Je pouvais être entouré en classe et me sentir comme si j'étais derrière une vitre : je voyais les autres vivre, mais je n'en faisais plus vraiment partie. »</p>
+        </div>
+
+        <!-- Transition -->
+        <div class="temoignage-transition">
+          <p>Tu n'es pas ce que les autres disent de toi.</p>
+          <p>Tu es plus grand que ce qu'ils essaient de réduire.</p>
+          <p>Et même si aujourd'hui tu marches courbé sous le poids de ce que tu subis, chaque fois que tu parles, que tu cherches un appui, que tu poses une limite, tu fais déjà quelque chose de courageux : <strong>tu refuses que ton histoire s'arrête là.</strong></p>
+        </div>
+
+        <!-- Bouton déroulant -->
+        <button class="temoignage-toggle" id="temoignageToggle" aria-expanded="false">
+          <span class="toggle-text">Comprendre et s'en sortir</span>
+          <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <!-- Contenu déroulant -->
+        <div class="temoignage-suite" id="temoignageSuite">
+         <?php include '../articles/ado-solo/harcelement-suite.php'; ?>
+        </div>
+
+      </article>
+    </div>
+  </section>
   <!-- ============================================================
        INTRODUCTION
        ============================================================ -->
@@ -242,6 +144,126 @@
           <p>Ton identité, ton orientation, ton avenir... C'est normal de se questionner. Tu n'as pas à avoir toutes les réponses.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ARTICLE : LA SOLITUDE QUI CONSTRUIT
+       ============================================================ -->
+  <section class="section section-article-featured">
+    <div class="container-narrow">
+      <article class="article-featured animate-on-scroll">
+        
+        <!-- En-tête de l'article -->
+        <header class="article-header">
+          <span class="article-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            Article
+          </span>
+          <h2 class="article-title">La solitude qui construit</h2>
+          <p class="article-intro">Et si ta solitude n'était pas un problème à résoudre ?</p>
+        </header>
+
+        <!-- Contenu de l'article (version courte visible) -->
+        <div class="article-content">
+          <div class="article-excerpt">
+            <p>
+              Il y a un moment que beaucoup d'ados comme toi vivent, même s'ils n'en parlent pas. 
+              Un moment où tu as envie d'être seul. Pas parce que tu n'aimes plus les autres. 
+              Pas parce que tu vas mal. Juste parce que tu en as besoin.
+            </p>
+            <p>
+              Et souvent, à ce moment-là, une question arrive : <em>est-ce que c'est normal ?</em>
+            </p>
+            <p>
+              On t'a tellement répété que rester seul, c'était triste. Que ça voulait dire être rejeté, 
+              exclu, à part. Alors forcément, quand tu ressens ce besoin-là, tu peux douter. 
+              Te demander s'il y a quelque chose qui cloche chez toi.
+            </p>
+            <p class="article-answer"><strong>Mais non. Pas forcément.</strong></p>
+          </div>
+
+          <!-- Contenu complet (caché par défaut) -->
+          <div class="article-full" id="articleFull">
+            <p>
+              Grandir, ça fait ça. À un moment, le bruit devient trop fort. Les attentes aussi. 
+              Les regards. Les comparaisons. Les avis. Et ton corps, ta tête, ton cœur demandent un peu d'air.
+            </p>
+            
+            <blockquote class="article-quote">
+              Être seul, parfois, c'est juste respirer.
+            </blockquote>
+
+            <p>
+              Au début, ce n'est pas toujours confortable. Le silence peut faire bizarre. 
+              Tes pensées prennent plus de place. Tu peux t'ennuyer. Te sentir un peu vide. 
+              Ou juste ne pas trop savoir quoi faire de toi.
+            </p>
+            <p>
+              Mais il arrive aussi autre chose. Parfois, après un moment seul, tu te sens un peu plus calme. 
+              Un peu plus clair. Comme si quelque chose s'était remis en place à l'intérieur.
+            </p>
+            <p>
+              Pas à chaque fois. Pas de façon magique. Mais assez pour que tu sentes que ces moments-là 
+              ne sont pas inutiles.
+            </p>
+
+            <blockquote class="article-quote accent">
+              Être seul, ce n'est pas disparaître. C'est te retrouver.
+            </blockquote>
+
+            <h3>La différence qui compte</h3>
+            <p>
+              Il y a une différence importante entre être seul et être isolé. Quand tu choisis d'être seul, 
+              même si ce n'est pas parfait, tu sais que les autres existent toujours. Tu peux revenir vers eux. 
+              Tu n'es pas coupé du monde. Tu fais juste une pause.
+            </p>
+            <p>
+              L'isolement, lui, fait mal. Tu n'as pas l'impression d'avoir le choix. Tu te sens rejeté, 
+              invisible, à côté. Et ça, ce n'est pas la même chose. Si tu ressens ça, en parler peut vraiment aider.
+            </p>
+            <p>
+              Mais si ta solitude te fait du bien… Si elle t'aide à te calmer, à penser, à sentir ce que 
+              tu ressens vraiment… Alors elle mérite d'être respectée.
+            </p>
+
+            <h3>Quand personne ne regarde</h3>
+            <p>
+              Quand personne ne te regarde, tu peux enfin arrêter de jouer un rôle. Tu peux aimer ce que 
+              tu aimes sans te justifier. Être fatigué sans devoir faire semblant. Rire de trucs stupides. 
+              Ne rien faire du tout.
+            </p>
+            <p>
+              Et dans ces moments-là, tu apprends quelque chose d'important : <strong>qui tu es quand 
+              personne n'attend rien de toi.</strong>
+            </p>
+            <p>
+              Ce n'est pas spectaculaire. Ce n'est pas toujours agréable. Mais c'est réel.
+            </p>
+
+            <div class="article-conclusion">
+              <p>
+                <strong>Soloplugs Ado-solo</strong> est là pour te dire une chose simple : ta solitude n'est pas un défaut. 
+                Ce n'est pas un vide à remplir à toute vitesse.
+              </p>
+              <p>
+                C'est un espace. Et parfois, c'est exactement là que tu construis quelque chose de solide.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bouton Lire la suite -->
+        <button class="article-toggle" id="articleToggle" aria-expanded="false">
+          <span class="toggle-text">Lire la suite</span>
+          <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+      </article>
     </div>
   </section>
 
@@ -304,7 +326,11 @@
     </div>
   </section>
 
-  <?php include '../components/footer.php'; ?>
+<!-- ============================================================
+       Footer
+       ============================================================ -->
+
+<?php $basePath = '../'; include '../components/footer.php'; ?>
 
   <!-- ============================================================
        BOUTON FLOTTANT "COMMENT TU TE SENS?"
@@ -706,6 +732,71 @@
 
       console.log('✓ Échelle de solitude ado chargée — Soloplugs');
     })();
+
+    // ============================================================
+    // TOGGLE ARTICLE "LA SOLITUDE QUI CONSTRUIT"
+    // ============================================================
+    (function() {
+      const toggleBtn = document.getElementById('articleToggle');
+      const articleFull = document.getElementById('articleFull');
+      
+      if (toggleBtn && articleFull) {
+        toggleBtn.addEventListener('click', function() {
+          const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+          
+          if (isExpanded) {
+            // Fermer
+            articleFull.classList.remove('expanded');
+            toggleBtn.classList.remove('expanded');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.querySelector('.toggle-text').textContent = 'Lire la suite';
+          } else {
+            // Ouvrir
+            articleFull.classList.add('expanded');
+            toggleBtn.classList.add('expanded');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.querySelector('.toggle-text').textContent = 'Réduire';
+          }
+        });
+      }
+    })();
+
+    // ============================================================
+// TOGGLE ARTICLE TÉMOIGNAGE (Solitude et harcèlement)
+// À ajouter dans la section <script> de ado-solo.php
+// ============================================================
+(function() {
+  const toggleBtn = document.getElementById('temoignageToggle');
+  const temoignageSuite = document.getElementById('temoignageSuite');
+  
+  if (toggleBtn && temoignageSuite) {
+    toggleBtn.addEventListener('click', function() {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        // Fermer
+        temoignageSuite.classList.remove('expanded');
+        toggleBtn.classList.remove('expanded');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.querySelector('.toggle-text').textContent = 'Comprendre et s\'en sortir';
+        
+        // Scroll vers le haut de l'article
+        document.querySelector('.section-temoignage').scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      } else {
+        // Ouvrir
+        temoignageSuite.classList.add('expanded');
+        toggleBtn.classList.add('expanded');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.querySelector('.toggle-text').textContent = 'Réduire';
+      }
+    });
+  }
+  
+  console.log('✓ Article Témoignage (harcèlement) chargé — Soloplugs');
+})();
   </script>
 
 </body>

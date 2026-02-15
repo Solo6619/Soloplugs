@@ -6,7 +6,7 @@
     $pageDescription = 'Cultiver ses passions. Sport, créativité, apprentissage — s\'épanouir dans le plaisir de faire pour soi.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['sorties-loisirs-pages.css'];
+$additionalCSS = ['sorties-loisirs-rencontres.css'];
     
     include '../components/head.php';
   ?>
@@ -33,10 +33,10 @@
     </a>
     
     <span class="hero-tag">Loisirs</span>
-    <h1>Et si tu osais sortir seul·e ?</h1>
+    <h1>Et si la solitude devenait un terrain de jeu ?</h1>
     <p class="hero-lead">
-      Un resto, un film, un concert, une expo... Ces moments n'attendent pas 
-      que quelqu'un soit disponible. Ils t'attendent, toi.
+      Peindre, courir, apprendre, créer… Les loisirs en solo ne comblent pas 
+      un vide — ils révèlent une liberté.
     </p>
   </div>
 </section>
@@ -53,76 +53,40 @@
 
       <div class="category-grid">
         
-        <div class="category-card">
-          <div class="category-icon">🎨</div>
-          <h3>Créativité</h3>
-          <ul>
-            <li>Dessin, peinture, aquarelle</li>
-            <li>Écriture, journaling</li>
-            <li>Photographie</li>
-            <li>Poterie, bricolage</li>
-            <li>Musique, chant</li>
-          </ul>
+        <div class="category-card category-card-image">
+          <div class="category-image">
+            <img src="<?php echo $basePath; ?>images/sorties-loisirs-rencontres/loisirs-creativite_01.png" alt="Créativité — loisirs solo">
+          </div>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🏃</div>
-          <h3>Mouvement</h3>
-          <ul>
-            <li>Marche, randonnée</li>
-            <li>Yoga, pilates</li>
-            <li>Natation</li>
-            <li>Vélo</li>
-            <li>Danse (même seul·e chez toi)</li>
-          </ul>
+        <div class="category-card category-card-image">
+          <div class="category-image">
+            <img src="<?php echo $basePath; ?>images/sorties-loisirs-rencontres/loisirs-mouvement_01.png" alt="Mouvement — loisirs solo">
+          </div>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🧠</div>
-          <h3>Apprentissage</h3>
-          <ul>
-            <li>Langues étrangères</li>
-            <li>Cours en ligne (tout sujet)</li>
-            <li>Lecture</li>
-            <li>Podcasts, documentaires</li>
-            <li>Cuisine, pâtisserie</li>
-          </ul>
+        <div class="category-card category-card-image">
+          <div class="category-image">
+            <img src="<?php echo $basePath; ?>images/sorties-loisirs-rencontres/loisirs-apprentissage_01.png" alt="Apprentissage — loisirs solo">
+          </div>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🌿</div>
-          <h3>Bien-être</h3>
-          <ul>
-            <li>Méditation</li>
-            <li>Jardinage</li>
-            <li>Bains de forêt</li>
-            <li>Aromathérapie</li>
-            <li>Soins personnels</li>
-          </ul>
+        <div class="category-card category-card-image">
+          <div class="category-image">
+            <img src="<?php echo $basePath; ?>images/sorties-loisirs-rencontres/loisirs-bien-etre_01.png" alt="Bien-être — loisirs solo">
+          </div>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🎮</div>
-          <h3>Divertissement</h3>
-          <ul>
-            <li>Jeux vidéo solo</li>
-            <li>Puzzles, casse-têtes</li>
-            <li>Mots croisés, sudoku</li>
-            <li>Modélisme</li>
-            <li>Collections</li>
-          </ul>
+         <div class="category-card category-card-image">
+          <div class="category-image">
+            <img src="<?php echo $basePath; ?>images/sorties-loisirs-rencontres/loisirs-divertissement_01.png" alt="Bien-être — loisirs solo">
+          </div>
         </div>
 
-        <div class="category-card">
-          <div class="category-icon">🌍</div>
-          <h3>Exploration</h3>
-          <ul>
-            <li>Visites urbaines</li>
-            <li>Géocaching</li>
-            <li>Astronomie</li>
-            <li>Ornithologie</li>
-            <li>Photographie de rue</li>
-          </ul>
+         <div class="category-card category-card-image">
+          <div class="category-image">
+            <img src="<?php echo $basePath; ?>images/sorties-loisirs-rencontres/loisirs-exploration_01.png" alt="Bien-être — loisirs solo">
+          </div>
         </div>
 
       </div>

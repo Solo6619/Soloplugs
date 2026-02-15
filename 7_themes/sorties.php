@@ -6,7 +6,7 @@
     $pageDescription = 'Oser sortir seul. Restaurant, cinéma, concert, expo — conquérir l\'espace public en toute liberté.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['sorties-loisirs-pages.css'];
+   $additionalCSS = ['sorties-loisirs-rencontres.css'];
     
     include '../components/head.php';
   ?>

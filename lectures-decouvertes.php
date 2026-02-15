@@ -279,6 +279,7 @@ $podcasts = [
             line-height: 1.6;
         }
     </style>
+    <link rel="stylesheet" href="css/components.css">
 </head>
 
 <body>
@@ -604,5 +605,6 @@ $podcasts = [
         });
     });
     </script>
+    <?php $basePath = ''; include 'components/footer.php'; ?>
 </body>
 </html>

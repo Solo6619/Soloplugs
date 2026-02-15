@@ -17,7 +17,8 @@ if (themesToggle && themesMenu) {
     // Accessibilité
     const isOpen = themesMenu.classList.contains('open');
     themesToggle.setAttribute('aria-expanded', isOpen);
-    document.querySelector('.themes-dropdown').setAttribute('aria-hidden', !isOpen);
+    const dropdown = document.querySelector('.themes-dropdown');
+    if (dropdown) dropdown.setAttribute('aria-hidden', !isOpen);
   });
   
   // Fermer en cliquant ailleurs
@@ -25,7 +26,8 @@ if (themesToggle && themesMenu) {
     if (!themesMenu.contains(e.target)) {
       themesMenu.classList.remove('open');
       themesToggle.setAttribute('aria-expanded', 'false');
-      document.querySelector('.themes-dropdown').setAttribute('aria-hidden', 'true');
+      const dropdown = document.querySelector('.themes-dropdown');
+      if (dropdown) dropdown.setAttribute('aria-hidden', 'true');
     }
   });
   
@@ -39,8 +41,8 @@ if (themesToggle && themesMenu) {
   });
 }
 
-  // Éléments
-  const header = document.getElementById('header');
+  // Éléments - Chercher soit #header soit .nav
+  const header = document.getElementById('header') || document.querySelector('.nav');
   const backToTop = document.getElementById('backToTop');
   
   // Écouteur de scroll optimisé - combine header et backToTop
@@ -51,18 +53,22 @@ if (themesToggle && themesMenu) {
       scrollTimeout = setTimeout(() => {
         const scrollY = window.scrollY;
         
-        // Effet header scrollé
-        if (scrollY > 100) {
-          header.classList.add('header-scrolled');
-        } else {
-          header.classList.remove('header-scrolled');
+        // Effet header scrollé (seulement si header existe)
+        if (header) {
+          if (scrollY > 100) {
+            header.classList.add('header-scrolled');
+          } else {
+            header.classList.remove('header-scrolled');
+          }
         }
         
-        // Bouton retour en haut
-        if (scrollY > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
+        // Bouton retour en haut (seulement si backToTop existe)
+        if (backToTop) {
+          if (scrollY > 300) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
         }
         
         scrollTimeout = null;

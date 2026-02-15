@@ -7,140 +7,15 @@
     $pageDescription = 'La solitude est une réalité. La manière de la traverser peut devenir un art. Explorez votre chemin sur Soloplugs.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['vivre-solo.css'];
+    $additionalCSS = ['components.css', 'vivre-solo.css'];
+    $themeRessources = 'ressources/ressources.php?theme=vivre-solo';
     
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <style>
-    /* ============================================================
-       HERO IMAGE PLEINE LARGEUR
-       ============================================================ */
-    .hero-vivre-solo {
-      width: 100%;
-      max-height: 65vh;
-      overflow: hidden;
-      margin-top: 70px;
-      position: relative;
-    }
-
-    .hero-vivre-solo .hero-image {
-      width: 100%;
-      height: 65vh;
-    }
-
-    .hero-vivre-solo .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* Dégradé en bas de l'image pour transition douce */
-    .hero-vivre-solo::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 150px;
-      background: linear-gradient(to top, #FFFDF9 0%, transparent 100%);
-      pointer-events: none;
-    }
-
-    /* ============================================================
-       INTRODUCTION PHILOSOPHIQUE
-       ============================================================ */
-    .vivre-solo-intro {
-      background: #FFFDF9;
-      padding: 4rem 2rem 2rem;
-    }
-
-    .vivre-solo-intro .intro-content {
-      max-width: 750px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .vivre-solo-intro .intro-badge {
-      display: inline-block;
-      padding: 0.5rem 1.5rem;
-      background: rgba(212, 165, 116, 0.15);
-      border-radius: 30px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #D4A574;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .vivre-solo-intro .intro-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 400;
-      color: #2C3338;
-      margin-bottom: 2.5rem;
-      line-height: 1.2;
-    }
-
-    .vivre-solo-intro .intro-title .highlight {
-      color: #D4A574;
-      font-style: italic;
-    }
-
-    .vivre-solo-intro .intro-text {
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      line-height: 1.95;
-      color: #2C3338;
-    }
-
-    .vivre-solo-intro .intro-text p {
-      margin-bottom: 1.8rem;
-    }
-
-    .vivre-solo-intro .intro-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .vivre-solo-intro .intro-text strong {
-      color: #D4A574;
-      font-weight: 500;
-    }
-
-    .vivre-solo-intro .ligne-decorative {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #D4A574, #E8C9A8);
-      margin: 3rem auto 0;
-      border-radius: 2px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-vivre-solo {
-        max-height: 50vh;
-        margin-top: 60px;
-      }
-
-      .hero-vivre-solo .hero-image {
-        height: 50vh;
-      }
-
-      .vivre-solo-intro {
-        padding: 3rem 1.5rem 4rem;
-      }
-
-      .vivre-solo-intro .intro-text {
-        font-size: 1.05rem;
-        line-height: 1.85;
-      }
-    }
-  </style>
+  <!-- CSS chargés via $additionalCSS : components.css, vivre-solo.css -->
 </head>
 <body>
 
@@ -151,6 +26,32 @@
        INTRODUCTION PHILOSOPHIQUE
        ============================================================ -->
   <section class="vivre-solo-intro">
+    
+    <!-- Oiseaux en vol — groupe principal (haut-droite) -->
+    <svg class="intro-birds intro-birds-main" viewBox="0 0 280 200" aria-hidden="true">
+      <g fill="none" stroke="#D4A574" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Oiseau 1 (principal) -->
+        <path d="M140 100 Q120 70 80 60 Q120 80 140 100 Q160 80 200 60 Q160 70 140 100"/>
+        <!-- Oiseau 2 -->
+        <path d="M80 130 Q65 110 40 105 Q65 115 80 130 Q95 115 120 105 Q95 110 80 130" opacity="0.7"/>
+        <!-- Oiseau 3 -->
+        <path d="M200 80 Q185 60 160 55 Q185 65 200 80 Q215 65 240 55 Q215 60 200 80" opacity="0.6"/>
+        <!-- Oiseau 4 (petit, loin) -->
+        <path d="M250 130 Q240 120 225 118 Q240 122 250 130 Q260 122 275 118 Q260 120 250 130" opacity="0.4"/>
+        <!-- Oiseau 5 -->
+        <path d="M30 80 Q20 65 5 62 Q20 70 30 80 Q40 70 55 62 Q40 65 30 80" opacity="0.5"/>
+      </g>
+    </svg>
+    
+    <!-- Oiseaux en vol — groupe secondaire (bas-gauche) -->
+    <svg class="intro-birds intro-birds-secondary" viewBox="0 0 150 100" aria-hidden="true">
+      <g fill="none" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round">
+        <path d="M50 50 Q40 35 20 30 Q40 40 50 50 Q60 40 80 30 Q60 35 50 50"/>
+        <path d="M100 70 Q92 60 78 58 Q92 62 100 70 Q108 62 122 58 Q108 60 100 70" opacity="0.6"/>
+        <path d="M30 80 Q24 72 14 70 Q24 74 30 80 Q36 74 46 70 Q36 72 30 80" opacity="0.4"/>
+      </g>
+    </svg>
+    
     <div class="intro-content">
       <span class="intro-badge">Vivre Solo</span>
       <h1 class="intro-title">L'art de la <span class="highlight">solitude</span></h1>
@@ -338,90 +239,109 @@
   </section>
 
   <!-- ============================================================
-       STATISTIQUES SUR LA SOLITUDE
+       STATISTIQUES SUR LA SOLITUDE — ACCORDÉON
        ============================================================ -->
   <section class="section stats-section">
     <div class="container">
-      <div class="section-header">
-        <h2>La solitude en chiffres</h2>
-        <p>
-          Un phénomène mondial qui touche toutes les générations
-        </p>
-      </div>
+      
+      <!-- Bouton accordéon -->
+      <button class="stats-accordion-trigger" id="statsAccordion" aria-expanded="false" aria-controls="statsContent">
+        <div class="stats-accordion-header">
+          <div class="stats-accordion-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </div>
+          <div class="stats-accordion-text">
+            <h2>La solitude en chiffres</h2>
+            <p>Un phénomène mondial qui touche toutes les générations</p>
+          </div>
+          <div class="stats-accordion-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+      </button>
 
-      <div class="stats-grid">
-        
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-flag">🌍</div>
-          <div class="stat-number">1 sur 4</div>
-          <div class="stat-label">personne dans le monde se sent seule ou très seule</div>
-          <div class="stat-compare">Gallup World Poll, 2024</div>
+      <!-- Contenu accordéon (caché par défaut) -->
+      <div class="stats-accordion-content" id="statsContent" aria-hidden="true">
+        <div class="stats-grid">
+          
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-flag">🌍</div>
+            <div class="stat-number">1 sur 4</div>
+            <div class="stat-label">personne dans le monde se sent seule ou très seule</div>
+            <div class="stat-compare">Gallup World Poll, 2024</div>
+          </div>
+
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-flag">❤️</div>
+            <div class="stat-number">+29%</div>
+            <div class="stat-label">risque de maladie cardiaque lié à l'isolement</div>
+            <div class="stat-compare">+32% AVC, +50% démence</div>
+          </div>
+
+          <div class="stat-card animate-on-scroll animate-delay-1">
+            <div class="stat-flag">📉</div>
+            <div class="stat-number">-70%</div>
+            <div class="stat-label">de temps avec des amis pour les 15-24 ans</div>
+            <div class="stat-compare">en 20 ans — remplacé par les écrans</div>
+          </div>
+
+          <!-- France -->
+          <div class="stat-card animate-on-scroll animate-delay-2">
+            <div class="stat-flag">🇫🇷</div>
+            <div class="stat-number">31%</div>
+            <div class="stat-label">des Français expriment un sentiment de solitude en 2024</div>
+            <div class="stat-compare">contre 25% en 2018</div>
+          </div>
+
+          <div class="stat-card animate-on-scroll animate-delay-3">
+            <div class="stat-flag">🇫🇷</div>
+            <div class="stat-number">17%</div>
+            <div class="stat-label">souffrent de solitude chronique</div>
+            <div class="stat-compare">contre 13% avant la pandémie</div>
+          </div>
+
+          <!-- Canada -->
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-flag">🇨🇦</div>
+            <div class="stat-number">24%</div>
+            <div class="stat-label">des personnes vivant seules souffrent de solitude</div>
+            <div class="stat-compare">Statistique Canada, 2021</div>
+          </div>
+
+          <!-- Jeunes -->
+          <div class="stat-card stat-highlight animate-on-scroll animate-delay-1">
+            <div class="stat-flag">👥</div>
+            <div class="stat-number">1 sur 3</div>
+            <div class="stat-label">jeune actif (25-39 ans) se sent particulièrement seul</div>
+            <div class="stat-compare">deux fois plus que les 60-69 ans</div>
+          </div>
+
+          <!-- Santé mentale -->
+          <div class="stat-card stat-warning animate-on-scroll animate-delay-2">
+            <div class="stat-flag">⚠️</div>
+            <div class="stat-label">Au Canada, en France comme aux États‑Unis, les personnes en situation d'isolement rapportent des idées suicidaires à un niveau environ deux fois plus élevé que la moyenne nationale.</div>
+          </div>
+
+          <!-- Paradoxe -->
+          <div class="stat-card animate-on-scroll animate-delay-3">
+            <div class="stat-flag">📱</div>
+            <div class="stat-number">Paradoxe</div>
+            <div class="stat-label">Plus connectés que jamais, plus seuls que jamais</div>
+            <div class="stat-compare">Le défilement passif augmente la solitude</div>
+          </div>
+
         </div>
 
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-flag">❤️</div>
-          <div class="stat-number">+29%</div>
-          <div class="stat-label">risque de maladie cardiaque lié à l'isolement</div>
-          <div class="stat-compare">+32% AVC, +50% démence</div>
+        <div class="stats-source">
+          Sources : US Surgeon General's Advisory on Our Epidemic of Loneliness and Isolation (2023), 
+          Gallup World Poll (2024), Fondation de France (2024), Statistique Canada (2021)
         </div>
-
-        <div class="stat-card animate-on-scroll animate-delay-1">
-          <div class="stat-flag">📉</div>
-          <div class="stat-number">-70%</div>
-          <div class="stat-label">de temps avec des amis pour les 15-24 ans</div>
-          <div class="stat-compare">en 20 ans — remplacé par les écrans</div>
-        </div>
-
-        <!-- France -->
-        <div class="stat-card animate-on-scroll animate-delay-2">
-          <div class="stat-flag">🇫🇷</div>
-          <div class="stat-number">31%</div>
-          <div class="stat-label">des Français expriment un sentiment de solitude en 2024</div>
-          <div class="stat-compare">contre 25% en 2018</div>
-        </div>
-
-        <div class="stat-card animate-on-scroll animate-delay-3">
-          <div class="stat-flag">🇫🇷</div>
-          <div class="stat-number">17%</div>
-          <div class="stat-label">souffrent de solitude chronique</div>
-          <div class="stat-compare">contre 13% avant la pandémie</div>
-        </div>
-
-        <!-- Canada -->
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-flag">🇨🇦</div>
-          <div class="stat-number">24%</div>
-          <div class="stat-label">des personnes vivant seules souffrent de solitude</div>
-          <div class="stat-compare">Statistique Canada, 2021</div>
-        </div>
-
-        <!-- Jeunes -->
-        <div class="stat-card stat-highlight animate-on-scroll animate-delay-1">
-          <div class="stat-flag">👥</div>
-          <div class="stat-number">1 sur 3</div>
-          <div class="stat-label">jeune actif (25-39 ans) se sent particulièrement seul</div>
-          <div class="stat-compare">deux fois plus que les 60-69 ans</div>
-        </div>
-
-        <!-- Santé mentale -->
-        <div class="stat-card stat-warning animate-on-scroll animate-delay-2">
-          <div class="stat-flag">⚠️</div>
-          <div class="stat-label">Au Canada, en France comme aux États‑Unis, les personnes en situation d'isolement rapportent des idées suicidaires à un niveau environ deux fois plus élevé que la moyenne nationale.</div>
-        </div>
-
-        <!-- Paradoxe -->
-        <div class="stat-card animate-on-scroll animate-delay-3">
-          <div class="stat-flag">📱</div>
-          <div class="stat-number">Paradoxe</div>
-          <div class="stat-label">Plus connectés que jamais, plus seuls que jamais</div>
-          <div class="stat-compare">Le défilement passif augmente la solitude</div>
-        </div>
-
-      </div>
-
-      <div class="stats-source">
-        Sources : US Surgeon General's Advisory on Our Epidemic of Loneliness and Isolation (2023), 
-        Gallup World Poll (2024), Fondation de France (2024), Statistique Canada (2021)
       </div>
 
     </div>
@@ -530,7 +450,7 @@
        FOOTER
        ============================================================ -->
 
-  <?php include '../components/footer.php'; ?>
+ <?php $basePath = '../'; include '../components/footer.php'; ?>
 
   <!-- ============================================================
        BOUTON FLOTTANT "OÙ EN ES-TU?"
@@ -946,6 +866,30 @@
       marker.style.opacity = '0.5';
 
       console.log('✓ Échelle Spectre 12 niveaux chargée — Soloplugs');
+    })();
+
+    // ============================================================
+    // ACCORDÉON STATISTIQUES
+    // ============================================================
+    (function() {
+      const trigger = document.getElementById('statsAccordion');
+      const content = document.getElementById('statsContent');
+      
+      if (!trigger || !content) return;
+
+      trigger.addEventListener('click', function() {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle état
+        trigger.setAttribute('aria-expanded', !isExpanded);
+        content.setAttribute('aria-hidden', isExpanded);
+        
+        // Toggle classes
+        trigger.classList.toggle('active');
+        content.classList.toggle('open');
+      });
+
+      console.log('✓ Accordéon statistiques chargé — Soloplugs');
     })();
   </script>
 

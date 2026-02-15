@@ -1,4 +1,0 @@
-[2025-11-12 07:09:29] Question: je me sens vraiment mal, je ne vois plus de solution. j'habite à montréal.
-[2025-11-12 20:15:33] Q: quelles sont les ressources d'urgence disponibles au québec?
-[2025-11-12 20:17:32] Q: quelle est la mission de solotech selon la note interne?
-[2025-11-12 20:18:31] Q: explique-moi les thèmes de soloplugs

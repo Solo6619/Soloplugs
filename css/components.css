@@ -1,0 +1,163 @@
+/* ============================================================
+   SOLOPLUGS - COMPOSANTS CSS PARTAGÉS
+   Fichier : css/components.css
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES GLOBALES
+   ============================================================ */
+:root {
+  --sp-color-cream: #FBF9F6;
+  --sp-color-cream-deep: #F5EDE4;
+  --sp-color-gold: #D4A574;
+  --sp-color-gold-light: #E8C9A8;
+  --sp-color-gold-dark: #B8956A;
+  --sp-color-dark: #2C2620;
+  --sp-color-darker: #1A1714;
+  --sp-color-text: #2C3338;
+  --sp-color-text-soft: #5C554E;
+  --sp-font-display: 'Lora', Georgia, serif;
+  --sp-font-body: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: linear-gradient(180deg, var(--sp-color-dark) 0%, var(--sp-color-darker) 100%);
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.site-footer .footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.site-footer .footer-logo {
+  margin-bottom: 1rem;
+}
+
+.site-footer .logo-solo {
+  font-family: var(--sp-font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--sp-color-dark);
+  background: var(--sp-color-cream);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 2px solid var(--sp-color-gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.site-footer .logo-plugs {
+  font-family: var(--sp-font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--sp-color-gold);
+  margin-left: 0.25rem;
+}
+
+/* Slogan */
+.site-footer .footer-slogan {
+  font-size: 1rem;
+  color: var(--sp-color-gold);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* Navigation */
+.site-footer .footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.site-footer .footer-nav a {
+  font-size: 0.95rem;
+  color: rgba(251, 249, 246, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer .footer-nav a:hover {
+  color: var(--sp-color-gold);
+}
+
+/* Icônes sociales */
+.site-footer .footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.site-footer .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(251, 249, 246, 0.15);
+  border-radius: 50%;
+  color: rgba(251, 249, 246, 0.8);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.site-footer .social-icon:hover {
+  background: var(--sp-color-gold);
+  color: var(--sp-color-darker);
+  transform: translateY(-3px);
+}
+
+.site-footer .social-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* Copyright */
+.site-footer .footer-copy {
+  font-size: 0.85rem;
+  color: rgba(251, 249, 246, 0.5);
+}
+
+/* ============================================================
+   FOOTER - RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .site-footer .logo-solo,
+  .site-footer .logo-plugs {
+    font-size: 1.6rem;
+  }
+  
+  .site-footer .footer-slogan {
+    font-size: 0.9rem;
+  }
+  
+  .site-footer .footer-nav {
+    gap: 1rem 1.5rem;
+  }
+  
+  .site-footer .footer-nav a {
+    font-size: 0.85rem;
+  }
+  
+  .site-footer .social-icon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .site-footer .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,386 @@
+/* ============================================================
+   CONTACT.CSS - Styles pour la page Contact Soloplugs
+   ============================================================ */
+
+:root {
+  --color-cream-deep: #F5EDE4;
+  --color-cream: #FBF9F6;
+  --color-white: #FFFFFF;
+  --color-gold: #D4A574;
+  --color-gold-light: #E8C9A8;
+  --color-gold-dark: #B8956A;
+  --color-text-dark: #2C3338;
+  --color-text-dark-soft: #5C554E;
+  --color-text-dark-muted: #7A726A;
+  --color-transition: #3D352D;
+  --color-success: #5C8A5C;
+  --color-error: #A65D5D;
+  --shadow-soft: 0 4px 20px rgba(44, 51, 56, 0.08);
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   BOUTON RETOUR FIXE
+   ============================================================ */
+.back-fixed {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-gold-light);
+  border-radius: 50%;
+  color: var(--color-gold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.back-fixed:hover {
+  background: var(--color-gold);
+  color: var(--color-white);
+  border-color: var(--color-gold);
+}
+.back-fixed svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.25rem 4rem;
+  padding-left: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.25);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text-dark);
+}
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-dark-soft);
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--color-gold); }
+
+/* Dropdown Thèmes */
+.nav-dropdown { position: relative; }
+.dropdown-toggle { cursor: pointer; }
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-white);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 0.75rem 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  list-style: none;
+}
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.dropdown-menu li a:hover {
+  background: var(--color-cream-deep);
+  color: var(--color-gold);
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+.page-header {
+  padding-top: 120px;
+  padding-bottom: 2rem;
+  text-align: center;
+  background: var(--color-cream);
+}
+.page-header-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.page-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-gold-light);
+  border-radius: 20px;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+}
+.page-intro {
+  font-size: 1.1rem;
+  color: var(--color-text-dark-soft);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   CONTACT CONTENT
+   ============================================================ */
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+/* ============================================================
+   FORMULAIRE
+   ============================================================ */
+.contact-form {
+  background: var(--color-white);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  background: var(--color-cream);
+  border: 1px solid var(--color-gold-light);
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-dark-muted);
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D4A574' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+/* Honeypot - caché pour les bots */
+.form-honey {
+  position: absolute;
+  left: -9999px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
+  background: var(--color-gold);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-submit:hover {
+  background: var(--color-gold-dark);
+}
+
+.form-submit:active {
+  transform: scale(0.98);
+}
+
+/* Messages de statut */
+.form-message {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.form-message.success {
+  background: rgba(92, 138, 92, 0.1);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.form-message.error {
+  background: rgba(166, 93, 93, 0.1);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+/* ============================================================
+   INFO CONTACT
+   ============================================================ */
+.contact-info {
+  margin-top: 2.5rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gold-light);
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  color: var(--color-text-dark-soft);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+  color: var(--color-gold);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--color-text-dark);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  padding: 2rem 4rem;
+  background: var(--color-transition);
+  margin-top: 4rem;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-cream);
+}
+.footer-center {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.footer-center a {
+  font-size: 0.85rem;
+  color: rgba(245, 237, 228, 0.7);
+  transition: color 0.3s;
+}
+.footer-center a:hover { color: var(--color-gold); }
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(245, 237, 228, 0.5);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .back-fixed {
+    top: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  .nav { 
+    padding: 1rem 1.5rem;
+    padding-left: 4rem;
+  }
+  .nav-links { display: none; }
+  .page-header { padding-top: 100px; }
+  .contact-content { padding: 1.5rem 1.5rem 3rem; }
+  .contact-form { padding: 1.5rem; }
+  .footer { padding: 1.5rem; }
+  .footer-content { 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-logo { display: none; }
+  .footer-center { gap: 1.5rem; }
+}

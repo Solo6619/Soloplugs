@@ -6,7 +6,7 @@
     $pageDescription = 'Aller vers l\'autre. Créer des liens authentiques depuis sa solitude, non pour la fuir, mais pour l\'enrichir.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['sorties-loisirs-pages.css'];
+   $additionalCSS = ['sorties-loisirs-rencontres.css'];
     
     include '../components/head.php';
   ?>

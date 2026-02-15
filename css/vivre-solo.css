@@ -1097,6 +1097,108 @@ body::before {
   color: white;
 }
 
+/* ============================================================
+   ACCORDÉON STATISTIQUES
+   ============================================================ */
+.stats-accordion-trigger {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stats-accordion-trigger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--vs-gold);
+}
+
+.stats-accordion-trigger.active {
+  background: rgba(212, 165, 116, 0.1);
+  border-color: var(--vs-gold);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.stats-accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stats-accordion-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--vs-gold);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-accordion-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #1a1a1a;
+}
+
+.stats-accordion-text {
+  flex: 1;
+  text-align: left;
+}
+
+.stats-accordion-text h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--vs-gold);
+  margin: 0 0 0.25rem 0;
+}
+
+.stats-accordion-text p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.stats-accordion-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.stats-accordion-arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--vs-gold);
+}
+
+.stats-accordion-trigger.active .stats-accordion-arrow {
+  transform: rotate(180deg);
+}
+
+/* Contenu accordéon */
+.stats-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: none;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.stats-accordion-content.open {
+  max-height: 2000px;
+  padding: 2rem;
+}
+
 .stats-section .section-header h2 {
   color: var(--vs-gold);
 }
@@ -1109,7 +1211,7 @@ body::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .stat-card {
@@ -1544,5 +1646,215 @@ body {
   .spectre-btn,
   .spectre-marker {
     transition: none;
+  }
+}
+
+/* ============================================================
+   HERO IMAGE PLEINE LARGEUR (override v2)
+   Extrait depuis le <style> inline — 2025-02-01
+   ============================================================ */
+.hero-vivre-solo {
+  width: 100%;
+  max-height: 65vh;
+  overflow: hidden;
+  margin-top: 70px;
+  position: relative;
+  min-height: auto;
+  display: block;
+  padding: 0;
+  background: none;
+}
+
+.hero-vivre-solo::before {
+  display: none;
+}
+
+.hero-vivre-solo .hero-image {
+  width: 100%;
+  height: 65vh;
+}
+
+.hero-vivre-solo .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-vivre-solo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, #FFFDF9 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   INTRODUCTION PHILOSOPHIQUE
+   Extrait depuis le <style> inline — 2025-02-01
+   ============================================================ */
+.vivre-solo-intro {
+  background: #FFFDF9;
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Oiseaux en vol — arrière-plan */
+.intro-birds {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.intro-birds-main {
+  top: 10%;
+  right: 8%;
+  width: 280px;
+  height: 200px;
+  opacity: 0.25;
+}
+
+.intro-birds-secondary {
+  bottom: 15%;
+  left: 5%;
+  width: 150px;
+  height: 100px;
+  opacity: 0.15;
+}
+
+.vivre-solo-intro .intro-content {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.vivre-solo-intro .intro-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(212, 165, 116, 0.15);
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #D4A574;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.vivre-solo-intro .intro-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: #2C3338;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.vivre-solo-intro .intro-title .highlight {
+  color: #D4A574;
+  font-style: italic;
+}
+
+.vivre-solo-intro .intro-text {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  line-height: 1.95;
+  color: #2C3338;
+}
+
+.vivre-solo-intro .intro-text p {
+  margin-bottom: 1.8rem;
+}
+
+.vivre-solo-intro .intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.vivre-solo-intro .intro-text strong {
+  color: #D4A574;
+  font-weight: 500;
+}
+
+.vivre-solo-intro .ligne-decorative {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #D4A574, #E8C9A8);
+  margin: 3rem auto 0;
+  border-radius: 2px;
+}
+
+/* Responsive — Hero image + intro */
+@media (max-width: 768px) {
+  .hero-vivre-solo {
+    max-height: 50vh;
+    margin-top: 60px;
+  }
+
+  .hero-vivre-solo .hero-image {
+    height: 50vh;
+  }
+
+  .vivre-solo-intro {
+    padding: 3rem 1.5rem 4rem;
+  }
+  
+  /* Oiseaux responsive */
+  .intro-birds-main {
+    width: 180px;
+    height: 130px;
+    top: 5%;
+    right: 3%;
+    opacity: 0.18;
+  }
+  
+  .intro-birds-secondary {
+    width: 100px;
+    height: 70px;
+    bottom: 10%;
+    left: 2%;
+    opacity: 0.1;
+  }
+
+  .vivre-solo-intro .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+  
+  /* Accordéon responsive */
+  .stats-accordion-trigger {
+    padding: 1rem 1.25rem;
+  }
+  
+  .stats-accordion-header {
+    gap: 1rem;
+  }
+  
+  .stats-accordion-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .stats-accordion-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .stats-accordion-text h2 {
+    font-size: 1.2rem;
+  }
+  
+  .stats-accordion-text p {
+    font-size: 0.85rem;
+  }
+  
+  .stats-accordion-content.open {
+    padding: 1.5rem 1rem;
   }
 }

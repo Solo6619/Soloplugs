@@ -7,12 +7,14 @@
     $pageDescription = 'Ressources et soutien pour les parents solos. Tu fais un travail extraordinaire.';
     $basePath = '../';
     $currentPage = '';
-    $additionalCSS = ['theme-base.css','parent-solo-enhanced.css'];
+    $additionalCSS = ['theme-base.css', 'parent-solo.css', 'components.css'];
+    $themeRessources = 'ressources/ressources.php?theme=parent-solo';
     
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS chargés via $additionalCSS : theme-base.css, parent-solo-enhanced.css, components.css -->
 </head>
 <body>
 
@@ -53,32 +55,111 @@
   </section>
 
   <!-- ============================================================
-       SECTION : MESSAGE DE SOUTIEN
+       SECTION : ARTICLE - ÊTRE PARENT SOLO
        ============================================================ -->
   <section class="section">
     <div class="container container-narrow">
-      <div class="section-header">
-        <h2><span class="icon">💚</span> On te voit. On te comprend.</h2>
+      
+
+      <!-- Image d'illustration -->
+      <div class="article-image animate-on-scroll">
+        <img src="../images/parent-solo/parent-solo-02.jpg" alt="Parent solo devant son ordinateur avec son enfant">
       </div>
 
-      <div class="support-box animate-on-scroll">
+      <div class="article-box animate-on-scroll">
+        
         <p>
-          Peut-être que tu t'es retrouvé·e parent solo après une séparation, un divorce, 
-          un décès. Peut-être que c'était un choix. Quelle que soit ton histoire, 
-          le quotidien reste le même : <strong>tout repose sur toi</strong>.
+          Quand on est parent solo, on porte déjà beaucoup.
+          Et pourtant, en ouvrant les réseaux sociaux, on a parfois l'impression que ce n'est jamais assez.
         </p>
+
         <p>
-          Les matins pressés. Les soirs épuisés. La charge mentale constante. 
-          Les décisions à prendre seul·e. Le sentiment parfois de ne pas y arriver. 
-          La culpabilité quand tu prends du temps pour toi.
+          Je te vois faire défiler ces images. Des anniversaires parfaits. Des enfants toujours souriants. 
+          Des parents calmes, disponibles, créatifs, patients. Des maisons rangées. Des repas équilibrés. 
+          Des moments « complices » capturés au bon angle. Et quelque chose s'installe, doucement, 
+          presque sans bruit : le doute.
         </p>
+
+        <p><em>Est-ce que je fais assez ? Est-ce que je fais bien ? Est-ce que je fais comme il faut ?</em></p>
+
         <p>
-          Et pourtant, tu continues. Tu te lèves chaque matin. Tu fais tourner la maison. 
-          Tu donnes de l'amour. Tu construis un foyer.
+          Sur les réseaux, la parentalité se met en scène. Elle devient une vitrine. Ce qu'on n'y voit pas, 
+          ce sont les soirs de fatigue, les nerfs à vif, les disputes, les moments où tout dérape. 
+          Ce qui disparaît, c'est la vraie vie. Et quand on élève un enfant seul, cette absence de vérité 
+          pèse lourd. Parce qu'on n'a personne à qui passer le relais. Parce que la comparaison devient 
+          permanente. Parce qu'on finit par croire que les autres « y arrivent mieux ».
         </p>
-        <p class="highlight-text">
-          Ce que tu fais est héroïque. Même les jours où tu n'en peux plus.
+
+        <p class="highlight-text">Peu à peu, la pression s'installe.</p>
+
+        <p>
+          Les réseaux sociaux ne montrent pas seulement des images. Ils diffusent aussi des normes. 
+          Des opinions tranchées. Des injonctions. Sur l'éducation, le sommeil, l'alimentation, les écrans, 
+          la façon de parler à son enfant. Tout devient sujet à débat, à jugement. Beaucoup de parents 
+          y vont pour se rassurer, pour trouver du soutien. Et repartent avec l'impression inverse : 
+          celle d'être insuffisants.
         </p>
+
+        <p>
+          Pour un parent solo, cette pression se transforme vite en culpabilité permanente.
+          Dès que la patience lâche. Dès qu'on est trop fatigué. Dès qu'on n'a plus l'énergie de « bien faire ». 
+          On se compare à une image qui n'existe pas. Et on se reproche de ne pas y ressembler.
+        </p>
+
+        <p>
+          Être parent solo, c'est déjà cumuler plusieurs rôles en une seule personne. Parent, bien sûr. 
+          Mais aussi soutien émotionnel, organisateur du quotidien, repère affectif, parfois seul pilier 
+          financier. La charge mentale est constante. Elle ne s'éteint jamais vraiment. Les réseaux sociaux 
+          ajoutent à cela une autre couche : celle de l'auto-surveillance. Non seulement il faut faire 
+          de son mieux, mais il faudrait aussi prouver — à soi-même ou aux autres — qu'on le fait bien.
+        </p>
+
+        <p class="highlight-text">Cette parentalité de performance épuise.</p>
+
+        <p>
+          À force de vouloir être partout, tout le temps, de répondre à toutes les attentes, certains 
+          parents solos se vident. Ils deviennent irritables, fatigués, absents malgré eux. Non pas 
+          par manque d'amour, mais par excès de pression. Et parfois, ce trop-plein crée une distance 
+          avec l'enfant, exactement à l'opposé de ce qu'ils cherchaient.
+        </p>
+
+        <p>
+          Vouloir trop bien faire peut aussi isoler. Parce qu'on n'ose plus demander de l'aide. 
+          Parce qu'on a peur de montrer ses limites. Parce qu'on craint de confirmer cette idée 
+          insupportable : je n'y arrive pas. Alors on se tait. On encaisse. On compare encore. 
+          Et la solitude du parent solo, déjà bien réelle, se transforme en sentiment d'échec intérieur.
+        </p>
+
+        <p class="highlight-text">Pourtant, il n'a jamais été question d'être parfait.</p>
+
+        <p>
+          Il existe une autre voie, plus discrète, mais plus vivable : celle du parent suffisamment bon. 
+          Pas héroïque. Pas irréprochable. Juste humain. Un parent qui accepte ses limites. 
+          Qui reconnaît sa fatigue. Qui sait qu'il peut se tromper sans que cela efface l'amour 
+          qu'il porte à son enfant.
+        </p>
+
+        <p>
+          Être un parent suffisamment bon, quand on est solo, c'est parfois renoncer à la mise en scène 
+          pour préserver son énergie. C'est choisir des routines simples plutôt que des exploits quotidiens. 
+          C'est privilégier le lien plutôt que l'image. C'est accepter que tout ne soit pas optimal, 
+          mais que l'essentiel soit là : une présence, une attention, une stabilité.
+        </p>
+
+        <p>
+          Débrancher régulièrement des réseaux sociaux n'est pas un abandon. C'est une protection. 
+          Partager ses doutes avec des personnes de confiance n'est pas un aveu de faiblesse. 
+          C'est une respiration. Se rappeler que ton enfant n'a pas besoin d'un parent parfait, 
+          mais d'un adulte réel, présent, capable d'aimer même dans l'imperfection, 
+          c'est déjà une forme de résistance.
+        </p>
+
+        <p class="closing-text">
+          Tu n'as pas à être un super-parent.<br>
+          Tu as juste à être là.<br>
+          Et c'est déjà immense.
+        </p>
+
       </div>
     </div>
   </section>
@@ -285,7 +366,7 @@
       <div class="section-header">
         <h2>Ils·elles vivent ça aussi</h2>
         <p>
-          Des parents solos qui partagent leur réalité — sans filtre, avec cœur.
+          Des parents solos qui partagent leur réalité — sans filtre, avec coeur.
         </p>
       </div>
 
@@ -445,7 +526,7 @@
   <section class="section">
     <div class="container">
       <div class="cta-section animate-on-scroll">
-        <h2>Tu mérites du soutien 💚</h2>
+        <h2>Tu mérites du soutien</h2>
         <p>
           Solo peut t'orienter vers les ressources adaptées à ta situation. 
           Soli peut devenir ton espace pour déposer ce que tu vis, sans jugement.

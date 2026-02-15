@@ -1,0 +1,1045 @@
+/* ============================================================
+   🌅 VIEILLIR-SOLO — CSS ENRICHI (Version complète)
+   Requiert: theme-base.css chargé AVANT ce fichier
+   Atmosphère : Dignité, chaleur, sérénité, respect
+   Priorité : LISIBILITÉ et ACCESSIBILITÉ
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES DU THÈME VIEILLIR-SOLO
+   ============================================================ */
+:root {
+  /* Palette principale - Or et Terre */
+  --vs-gold: #C9A26F;
+  --vs-gold-light: #D4B896;
+  --vs-gold-dark: #A88555;
+  --vs-gold-pale: #F7F2EA;
+  
+  /* Palette secondaire - Vert sage */
+  --vs-sage: #7D8B6A;
+  --vs-sage-light: #A3B18A;
+  --vs-earth: #8B7355;
+  
+  /* Fonds chaleureux */
+  --vs-cream: #FFFCF7;
+  --vs-cream-warm: #FAF6EE;
+  --vs-linen: #F5EFE6;
+  
+  /* Textes - Contrastes forts pour lisibilité */
+  --vs-text: #2C2416;
+  --vs-text-soft: #4A4035;
+  
+  /* Effets doux */
+  --vs-shadow-soft: 0 4px 20px rgba(139, 115, 85, 0.1);
+  --vs-shadow-hover: 0 8px 30px rgba(139, 115, 85, 0.15);
+  
+  /* Typographie - Plus grande, plus lisible */
+  --font-display: 'Libre Baskerville', 'Georgia', serif;
+  --font-body: 'Source Serif 4', 'Georgia', serif;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+}
+
+/* ============================================================
+   BODY SPÉCIFIQUE — Taille plus grande pour accessibilité
+   ============================================================ */
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--vs-cream);
+  color: var(--vs-text);
+  font-family: var(--font-body);
+  padding-top: 140px;
+  font-size: var(--text-base);
+  line-height: 1.9;
+}
+
+/* Texture de fond - lin naturel */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A26F' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ============================================================
+   HEADER - Bordure dorée
+   ============================================================ */
+#header {
+  border-bottom: 5px solid rgba(139, 115, 85, 0.3);
+}
+
+/* ============================================================
+   HERO SECTION — Élégant et apaisant
+   ============================================================ */
+.hero-vieillir {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem 6rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--vs-linen) 0%,
+    var(--vs-cream-warm) 50%,
+    var(--vs-cream) 100%
+  );
+}
+
+.hero-vieillir::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 162, 111, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-vieillir::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(125, 139, 106, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Ornement décoratif */
+.hero-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-ornament-line {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vs-gold), transparent);
+}
+
+.hero-ornament-symbol {
+  color: var(--vs-gold);
+  font-size: 1.25rem;
+}
+
+.hero-vieillir .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  color: var(--vs-text);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.hero-vieillir .hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--vs-gold-dark);
+}
+
+.hero-vieillir .hero-description {
+  font-size: var(--text-lg);
+  color: var(--vs-text-soft);
+  max-width: 650px;
+  line-height: 2;
+}
+
+/* Arbre de vie en arrière-plan */
+.hero-tree {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 600px;
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.hero-vieillir .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   SECTIONS — Plus d'espace, plus de respiration
+   ============================================================ */
+.section {
+  padding: 6rem 2rem;
+}
+
+.section-alt {
+  background: var(--vs-linen);
+}
+
+/* ============================================================
+   SECTION HEADER — Avec soulignement décoratif
+   ============================================================ */
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--vs-text);
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--vs-gold);
+}
+
+.section-header p {
+  font-size: var(--text-lg);
+  color: var(--vs-text-soft);
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   CARTES — Plus grandes, plus lisibles
+   ============================================================ */
+.cards-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.theme-card {
+  padding: 2.5rem;
+  box-shadow: var(--vs-shadow-soft);
+  border: 1px solid rgba(201, 162, 111, 0.2);
+}
+
+.theme-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vs-gold), var(--vs-gold-light));
+  border-radius: 1rem 1rem 0 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.theme-card:hover {
+  box-shadow: var(--vs-shadow-hover);
+}
+
+.theme-card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  width: 65px;
+  height: 65px;
+  background: var(--vs-gold-pale);
+  border-radius: 50%;
+}
+
+.theme-card:hover .card-icon {
+  background: var(--vs-gold-light);
+}
+
+.card-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--vs-gold-dark);
+  stroke-width: 1.5;
+}
+
+.theme-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--vs-text);
+}
+
+.theme-card p {
+  font-size: var(--text-base);
+  color: var(--vs-text-soft);
+  line-height: 1.9;
+}
+
+.theme-card .emphasis {
+  color: var(--vs-gold-dark);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.theme-card li {
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.theme-card li::before {
+  content: '•';
+  left: 0.5rem;
+  color: var(--vs-gold);
+  font-size: 1.25rem;
+}
+
+/* ============================================================
+   CITATION — Style classique
+   ============================================================ */
+.quote-block {
+  border-left: 4px solid var(--vs-gold);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.quote-block::before {
+  color: var(--vs-gold-light);
+}
+
+.quote-block p {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--vs-text);
+  line-height: 1.8;
+}
+
+.quote-block cite {
+  color: var(--vs-gold-dark);
+}
+
+/* ============================================================
+   DOSSIERS — CARTES ARTICLES
+   ============================================================ */
+
+/* Grille 3 colonnes */
+.dossiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Carte Dossier */
+.dossier-card {
+  background: var(--vs-cream);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--vs-shadow-soft);
+  border: 1px solid rgba(201, 162, 111, 0.15);
+  transition: all 0.4s ease;
+}
+
+.dossier-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+/* Lien englobant */
+.dossier-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Image */
+.dossier-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.dossier-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dossier-card:hover .dossier-image img {
+  transform: scale(1.05);
+}
+
+/* Overlay subtil au survol */
+.dossier-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(44, 36, 22, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Contenu texte */
+.dossier-content {
+  padding: 1.5rem;
+}
+
+.dossier-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--vs-text);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.dossier-card:hover .dossier-content h3 {
+  color: var(--vs-gold-dark);
+}
+
+.dossier-content p {
+  font-size: 0.95rem;
+  color: var(--vs-text-soft);
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+}
+
+/* CTA "Lire l'article" */
+.dossier-cta {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--vs-gold-dark);
+  transition: all 0.3s ease;
+}
+
+.dossier-card:hover .dossier-cta {
+  color: var(--vs-gold);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   TÉMOIGNAGES — Couleurs thème
+   ============================================================ */
+.testimonial-card {
+  padding: 2.5rem;
+  border: 1px solid rgba(201, 162, 111, 0.15);
+}
+
+.testimonial-card::before {
+  color: var(--vs-gold-pale);
+}
+
+.testimonial-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--vs-gold-pale), var(--vs-gold-light));
+}
+
+.testimonial-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--vs-gold-dark);
+  stroke-width: 1.5;
+}
+
+.testimonial-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--vs-gold-dark);
+}
+
+.testimonial-card p {
+  font-size: var(--text-base);
+}
+
+/* ============================================================
+   RESSOURCES
+   ============================================================ */
+.resource-highlight {
+  background: var(--vs-gold-pale);
+  border: 2px solid var(--vs-gold-light);
+  padding: 2rem;
+}
+
+.resource-highlight .phone {
+  font-size: 1.3rem;
+  color: var(--vs-gold-dark);
+}
+
+/* ============================================================
+   VIDÉOS — SECTION EXPLORER EN VIDÉO
+   ============================================================ */
+
+/* Grille 2 colonnes */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Carte vidéo */
+.video-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--vs-cream);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--vs-shadow-soft);
+  border: 1px solid rgba(201, 162, 111, 0.15);
+  transition: all 0.4s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--vs-shadow-hover);
+}
+
+/* Miniature vidéo */
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--vs-linen);
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* Durée de la vidéo */
+.video-duration {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Bouton play */
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(201, 162, 111, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.video-card:hover .video-play {
+  background: var(--vs-gold);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  margin-left: 3px;
+}
+
+/* Infos vidéo */
+.video-info {
+  padding: 1.25rem;
+}
+
+.video-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--vs-text);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.video-card:hover .video-info h3 {
+  color: var(--vs-gold-dark);
+}
+
+.video-source {
+  font-size: 0.85rem;
+  color: var(--vs-text-soft);
+}
+
+/* Lien "Explorer plus" */
+.videos-more {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.videos-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--vs-gold-dark);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--vs-gold);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.videos-more-link:hover {
+  background: var(--vs-gold);
+  color: #fff;
+}
+
+.videos-more-link svg {
+  transition: transform 0.3s ease;
+}
+
+.videos-more-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* ============================================================
+   CTA SECTION — Style doré
+   ============================================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--vs-gold) 0%, var(--vs-gold-dark) 100%);
+}
+
+.cta-section p {
+  font-size: var(--text-lg);
+}
+
+.btn {
+  padding: 1.25rem 2.5rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  color: var(--vs-gold-dark);
+}
+
+.btn-secondary:hover {
+  color: var(--vs-gold-dark);
+}
+
+/* ============================================================
+   PAGE ARTICLE — Styles spécifiques
+   ============================================================ */
+
+/* Page article */
+.article-page {
+  padding-top: 140px;
+}
+
+/* Hero de l'article */
+.article-hero {
+  padding: 3rem 2rem 2rem;
+  background: var(--vs-linen);
+}
+
+/* Fil d'Ariane */
+.article-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--vs-text-soft);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.article-breadcrumb a {
+  color: var(--vs-text-soft);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.article-breadcrumb a:hover {
+  color: var(--vs-gold-dark);
+}
+
+.article-breadcrumb .current {
+  color: var(--vs-gold-dark);
+  font-weight: 500;
+}
+
+/* Titre article */
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  color: var(--vs-text);
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Meta (date, auteur) */
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--vs-text-soft);
+}
+
+.article-meta .separator {
+  color: var(--vs-gold);
+}
+
+.article-meta .author {
+  font-weight: 500;
+  color: var(--vs-gold-dark);
+}
+
+/* Image principale */
+.article-featured-image {
+  margin: 0;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.article-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenu de l'article */
+.article-content {
+  padding: 4rem 2rem;
+  background: var(--vs-cream);
+}
+
+.article-content .container-narrow {
+  max-width: 750px;
+}
+
+/* Intro (premier paragraphe) */
+.article-intro {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--vs-text);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(201, 162, 111, 0.2);
+}
+
+/* Titres dans l'article */
+.article-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--vs-text);
+  margin: 3rem 0 1.5rem 0;
+  padding-top: 1rem;
+}
+
+.article-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--vs-gold-dark);
+  margin: 2rem 0 1rem 0;
+}
+
+/* Paragraphes article */
+.article-content p {
+  font-size: var(--text-base);
+  line-height: 2;
+  color: var(--vs-text-soft);
+  margin-bottom: 1.5rem;
+}
+
+/* Citations dans article */
+.article-content blockquote {
+  margin: 2.5rem 0;
+  padding: 2rem 2.5rem;
+  background: var(--vs-gold-pale);
+  border-left: 4px solid var(--vs-gold);
+  border-radius: 0 1rem 1rem 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--vs-text);
+  line-height: 1.8;
+}
+
+/* Listes dans article */
+.article-content ul,
+.article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--vs-text-soft);
+  margin-bottom: 0.75rem;
+}
+
+/* Images dans l'article */
+.article-content figure {
+  margin: 2.5rem 0;
+}
+
+.article-content figure img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.article-content figcaption {
+  font-size: 0.875rem;
+  color: var(--vs-text-soft);
+  text-align: center;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Navigation article */
+.article-nav {
+  padding: 2rem;
+  background: var(--vs-linen);
+  border-top: 1px solid rgba(201, 162, 111, 0.15);
+}
+
+.back-to-theme {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--vs-gold-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-to-theme:hover {
+  color: var(--vs-gold);
+  gap: 0.75rem;
+}
+
+.back-to-theme svg {
+  transition: transform 0.3s ease;
+}
+
+.back-to-theme:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ============================================================
+   FOOTER — Couleurs thème
+   ============================================================ */
+#footer {
+  background: linear-gradient(180deg, var(--vs-text) 0%, #1f1a14 100%);
+  margin-top: 5rem;
+}
+
+.footer-logo img {
+  height: 45px;
+}
+
+.footer-quote {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--vs-gold);
+}
+
+.footer-links {
+  gap: 2.5rem;
+}
+
+.footer-links a {
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  color: var(--vs-gold);
+}
+
+.footer-social a {
+  width: 48px;
+  height: 48px;
+}
+
+.footer-social a:hover {
+  background: var(--vs-gold);
+}
+
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-copy {
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   BACK TO TOP — Plus grand pour accessibilité
+   ============================================================ */
+.back-to-top {
+  width: 55px;
+  height: 55px;
+  background: var(--vs-gold);
+}
+
+.back-to-top:hover {
+  background: var(--vs-gold-dark);
+}
+
+.back-to-top svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .dossiers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  
+  body {
+    padding-top: 130px;
+  }
+  
+  .hero-vieillir {
+    min-height: 70vh;
+    padding: 4rem 1.5rem;
+  }
+  
+  .hero-tree {
+    width: 350px;
+    height: 420px;
+    opacity: 0.1;
+  }
+  
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .quote-block p {
+    font-size: var(--text-lg);
+  }
+  
+  .back-to-top {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Vidéos responsive */
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .video-play {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .video-play svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Article responsive */
+  .article-page {
+    padding-top: 130px;
+  }
+  
+  .article-hero {
+    padding: 2rem 1.5rem;
+  }
+  
+  .article-content {
+    padding: 3rem 1.5rem;
+  }
+  
+  .article-intro {
+    font-size: 1.1rem;
+  }
+  
+  .article-content blockquote {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dossiers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .dossier-content {
+    padding: 1.25rem;
+  }
+  
+  .dossier-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .hero-vieillir .hero-title {
+    font-size: 2rem;
+  }
+  
+  .theme-card,
+  .testimonial-card {
+    padding: 2rem;
+  }
+}

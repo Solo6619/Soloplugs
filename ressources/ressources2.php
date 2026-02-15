@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ressources Québec — Vivre Solo | SOLOPLUGS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --warm-bg: #FBF8F4;
+  --warm-bg-alt: #F5F0E8;
+  --card-bg: #FFFFFF;
+  --text-primary: #2D2A26;
+  --text-secondary: #6B6560;
+  --text-muted: #9B9590;
+
+  --accent-amber: #D4943A;
+  --accent-amber-light: #F0DFC4;
+  --accent-amber-glow: rgba(212,148,58,0.12);
+  --accent-green: #5A8F6E;
+  --accent-green-light: #E2F0E8;
+  --accent-blue: #4A7FA5;
+  --accent-blue-light: #DDE9F2;
+  --accent-rose: #B06B78;
+  --accent-rose-light: #F2E0E3;
+  --accent-purple: #7B6B9E;
+  --accent-purple-light: #EBE4F4;
+  --accent-teal: #4A8F8F;
+  --accent-teal-light: #DDF0F0;
+  --accent-coral: #C47A5A;
+  --accent-coral-light: #F5E4DB;
+  --accent-slate: #5E7080;
+  --accent-slate-light: #E0E8EE;
+  --accent-olive: #7A8B5A;
+  --accent-olive-light: #E8EFD8;
+  --accent-warm: #A07850;
+  --accent-warm-light: #F0E4D4;
+
+  --border-subtle: rgba(45,42,38,0.08);
+  --shadow-soft: 0 2px 12px rgba(45,42,38,0.06);
+  --shadow-hover: 0 6px 24px rgba(45,42,38,0.10);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --hero-bg: #1C1A17;
+  --hero-text: #F5F0E8;
+  --hero-muted: #A09A90;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', 'DM Sans', sans-serif;
+  background: var(--warm-bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════ */
+.hero {
+  background: var(--hero-bg);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,148,58,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(90,143,110,0.06) 0%, transparent 50%);
+  padding: 60px 24px 50px;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--hero-bg), var(--warm-bg));
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(212,148,58,0.15);
+  border: 1px solid rgba(212,148,58,0.25);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 13px; font-weight: 500; color: var(--accent-amber);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400; color: var(--hero-text);
+  line-height: 1.2; margin-bottom: 6px;
+}
+.hero h1 em { color: var(--accent-amber); font-style: italic; }
+.hero .subtitle {
+  font-size: 17px; color: var(--hero-muted);
+  font-weight: 300; line-height: 1.6;
+  max-width: 500px; margin: 16px auto 0;
+}
+.hero .location-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 20px; font-size: 14px; color: var(--hero-muted);
+}
+.hero .location-tag .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent-green); display: inline-block;
+}
+
+/* ═══════════════════════════════════════
+   NAV BAR
+   ═══════════════════════════════════════ */
+.nav-bar {
+  max-width: 960px; margin: 0 auto;
+  padding: 20px 24px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  position: relative; z-index: 2;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  text-decoration: none; transition: color 0.2s;
+}
+.back-link:hover { color: var(--text-primary); }
+.back-link svg { width: 16px; height: 16px; }
+.region-select {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--card-bg); border: 1px solid var(--border-subtle);
+  padding: 8px 14px; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 500; color: var(--text-secondary);
+  cursor: pointer; transition: all 0.2s;
+}
+.region-select:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+
+/* ═══════════════════════════════════════
+   MAIN WRAP
+   ═══════════════════════════════════════ */
+.main-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 24px 100px;
+}
+
+/* ═══════════════════════════════════════
+   AIDE IMMÉDIATE
+   ═══════════════════════════════════════ */
+.urgent-banner {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF5F5 100%);
+  border: 1px solid rgba(176,107,120,0.2);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-top: 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.urgent-indicator {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--accent-rose), var(--accent-coral));
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.urgent-indicator svg { width: 24px; height: 24px; color: white; }
+.urgent-body h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px; font-weight: 600; color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.urgent-body p {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;
+}
+.urgent-numbers { display: flex; flex-wrap: wrap; gap: 10px; }
+.urgent-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: white; border: 1px solid rgba(176,107,120,0.15);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 13px; font-weight: 600; color: var(--accent-rose);
+  text-decoration: none; transition: all 0.2s;
+}
+.urgent-pill:hover { background: var(--accent-rose); color: white; border-color: var(--accent-rose); }
+.urgent-pill .pill-label { font-weight: 400; color: var(--text-secondary); }
+.urgent-pill:hover .pill-label { color: rgba(255,255,255,0.8); }
+
+/* ═══════════════════════════════════════
+   THEME NAV GRID
+   ═══════════════════════════════════════ */
+.theme-nav {
+  margin-top: 32px;
+}
+.theme-nav-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 600; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.theme-box {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.theme-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0; width: 3px;
+  border-radius: 3px 0 0 3px;
+  transition: width 0.25s ease;
+}
+.theme-box:hover {
+  border-color: rgba(45,42,38,0.12);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+.theme-box:hover::before { width: 4px; }
+
+.theme-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.theme-box-text {
+  flex: 1; min-width: 0;
+}
+.theme-box-text span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 600;
+  line-height: 1.3;
+}
+.theme-box-text small {
+  font-size: 12px; color: var(--text-muted); font-weight: 400;
+}
+.theme-box svg {
+  width: 16px; height: 16px; color: var(--text-muted);
+  flex-shrink: 0; transition: transform 0.2s, color 0.2s;
+}
+.theme-box:hover svg { transform: translateX(2px); color: var(--text-primary); }
+
+/* Theme colors */
+.theme-box[data-theme="logement"]::before { background: var(--accent-green); }
+.theme-box[data-theme="logement"] .theme-dot { background: var(--accent-green); }
+.theme-box[data-theme="finances"]::before { background: var(--accent-amber); }
+.theme-box[data-theme="finances"] .theme-dot { background: var(--accent-amber); }
+.theme-box[data-theme="alimentation"]::before { background: var(--accent-coral); }
+.theme-box[data-theme="alimentation"] .theme-dot { background: var(--accent-coral); }
+.theme-box[data-theme="securite"]::before { background: var(--accent-slate); }
+.theme-box[data-theme="securite"] .theme-dot { background: var(--accent-slate); }
+.theme-box[data-theme="sante"]::before { background: var(--accent-rose); }
+.theme-box[data-theme="sante"] .theme-dot { background: var(--accent-rose); }
+.theme-box[data-theme="sociale"]::before { background: var(--accent-blue); }
+.theme-box[data-theme="sociale"] .theme-dot { background: var(--accent-blue); }
+.theme-box[data-theme="entraide"]::before { background: var(--accent-purple); }
+.theme-box[data-theme="entraide"] .theme-dot { background: var(--accent-purple); }
+.theme-box[data-theme="animaux"]::before { background: var(--accent-warm); }
+.theme-box[data-theme="animaux"] .theme-dot { background: var(--accent-warm); }
+.theme-box[data-theme="droits"]::before { background: var(--accent-teal); }
+.theme-box[data-theme="droits"] .theme-dot { background: var(--accent-teal); }
+.theme-box[data-theme="transport"]::before { background: var(--accent-olive); }
+.theme-box[data-theme="transport"] .theme-dot { background: var(--accent-olive); }
+
+/* ═══════════════════════════════════════
+   CATEGORY SECTIONS
+   ═══════════════════════════════════════ */
+.category-section {
+  margin-top: 48px;
+  scroll-margin-top: 24px;
+}
+.category-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.category-indicator {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.category-indicator svg { width: 22px; height: 22px; }
+.category-header h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.category-header .count {
+  font-size: 12px; font-weight: 500;
+  color: var(--text-muted);
+  background: var(--warm-bg-alt);
+  padding: 3px 10px; border-radius: 100px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════
+   RESOURCE CARDS
+   ═══════════════════════════════════════ */
+.card-grid { display: flex; flex-direction: column; gap: 10px; }
+
+.resource-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+}
+.resource-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 3px; border-radius: 3px 0 0 3px;
+  opacity: 0; transition: opacity 0.25s ease;
+}
+.resource-card:hover {
+  border-color: rgba(45,42,38,0.12);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+.resource-card:hover::before { opacity: 1; }
+
+.resource-card[data-cat="logement"]::before { background: var(--accent-green); }
+.resource-card[data-cat="finances"]::before { background: var(--accent-amber); }
+.resource-card[data-cat="alimentation"]::before { background: var(--accent-coral); }
+.resource-card[data-cat="securite"]::before { background: var(--accent-slate); }
+.resource-card[data-cat="sante"]::before { background: var(--accent-rose); }
+.resource-card[data-cat="sociale"]::before { background: var(--accent-blue); }
+.resource-card[data-cat="entraide"]::before { background: var(--accent-purple); }
+.resource-card[data-cat="animaux"]::before { background: var(--accent-warm); }
+.resource-card[data-cat="droits"]::before { background: var(--accent-teal); }
+.resource-card[data-cat="transport"]::before { background: var(--accent-olive); }
+
+.card-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.card-body { flex: 1; min-width: 0; }
+.card-body h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 3px; line-height: 1.3;
+}
+.card-body .card-desc {
+  font-size: 13.5px; color: var(--text-secondary); line-height: 1.5;
+}
+.card-meta {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;
+}
+.card-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 500;
+  padding: 3px 10px; border-radius: 100px;
+  background: var(--warm-bg-alt); color: var(--text-secondary);
+}
+.card-tag.phone { background: var(--accent-amber-glow); color: var(--accent-amber); font-weight: 600; }
+.card-tag.scope { background: var(--accent-green-light); color: var(--accent-green); }
+.card-tag.scope.regional { background: var(--accent-blue-light); color: var(--accent-blue); }
+.card-tag.scope.montreal { background: var(--accent-purple-light); color: var(--accent-purple); }
+
+.card-arrow {
+  color: var(--text-muted); flex-shrink: 0; align-self: center;
+  transition: transform 0.2s, color 0.2s;
+}
+.resource-card:hover .card-arrow { transform: translateX(3px); color: var(--accent-amber); }
+
+/* ═══════════════════════════════════════
+   211 BANNER
+   ═══════════════════════════════════════ */
+.universal-banner {
+  background: linear-gradient(135deg, #F0F7F2 0%, #E8F4EC 100%);
+  border: 1px solid rgba(90,143,110,0.2);
+  border-radius: var(--radius-lg);
+  padding: 22px 28px;
+  margin-top: 16px;
+  display: flex; align-items: center; gap: 16px;
+}
+.universal-banner .ub-icon {
+  width: 44px; height: 44px;
+  background: var(--accent-green);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
+  flex-shrink: 0;
+}
+.universal-banner .ub-body { flex: 1; }
+.universal-banner h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 600; color: var(--text-primary);
+}
+.universal-banner p { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.universal-banner .ub-phone {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px; font-weight: 700; color: var(--accent-green);
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════════════════════════════════
+   BACK TO TOP
+   ═══════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 44px; height: 44px;
+  background: var(--text-primary);
+  color: var(--warm-bg);
+  border: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(45,42,38,0.25);
+  opacity: 0; pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+  z-index: 100;
+}
+.back-to-top.visible {
+  opacity: 1; pointer-events: auto; transform: translateY(0);
+}
+.back-to-top:hover { background: var(--accent-amber); }
+.back-to-top svg { width: 20px; height: 20px; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px 40px; }
+  .nav-bar { padding: 16px 16px 0; }
+  .main-wrap { padding: 10px 16px 80px; }
+  .theme-grid { grid-template-columns: repeat(2, 1fr); }
+  .resource-card { padding: 14px 16px; gap: 12px; }
+  .urgent-banner { flex-direction: column; padding: 20px; }
+  .universal-banner { flex-direction: column; text-align: center; padding: 20px; }
+  .universal-banner .ub-phone { font-size: 32px; }
+  .back-to-top { bottom: 20px; right: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="top">
+  <div class="hero-badge">Québec</div>
+  <h1>Ressources <em>Québec</em> — Vivre Solo</h1>
+  <p class="subtitle">Des outils, de l'écoute, de l'inspiration — selon ce dont tu as besoin.</p>
+  <div class="location-tag">
+    <span class="dot"></span> Montréal — Montréal
+  </div>
+</section>
+
+<!-- ═══════ NAV ═══════ -->
+<div class="nav-bar">
+  <a href="#" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Retour
+  </a>
+  <div class="region-select">Montréal ▾</div>
+</div>
+
+<!-- ═══════ MAIN CONTENT ═══════ -->
+<div class="main-wrap">
+
+  <!-- Aide immédiate -->
+  <div class="urgent-banner">
+    <div class="urgent-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M5.07 19h13.86a2 2 0 001.74-2.97L13.74 4.03a2 2 0 00-3.48 0L3.33 16.03A2 2 0 005.07 19z"/></svg>
+    </div>
+    <div class="urgent-body">
+      <h3>Aide immédiate — 24/7</h3>
+      <p>Tu traverses un moment difficile ? Quelqu'un est toujours là, de jour comme de nuit.</p>
+      <div class="urgent-numbers">
+        <a href="tel:811" class="urgent-pill">811 <span class="pill-label">Info-Social</span></a>
+        <a href="tel:18775594095" class="urgent-pill">1-877-559-4095 <span class="pill-label">Tel-Écoute</span></a>
+        <a href="tel:211" class="urgent-pill">211 <span class="pill-label">Orientation</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 211 banner -->
+  <div class="universal-banner">
+    <div class="ub-icon">211</div>
+    <div class="ub-body">
+      <h4>211 Québec — Trouvez des ressources près de chez vous</h4>
+      <p>Service gratuit, multilingue, 24/7. Orientation vers des milliers d'organismes communautaires.</p>
+    </div>
+    <div class="ub-phone">2-1-1</div>
+  </div>
+
+  <!-- ═══════ THEME NAVIGATION GRID ═══════ -->
+  <div class="theme-nav">
+    <div class="theme-nav-title">Accès par thème</div>
+    <div class="theme-grid">
+      <a href="#logement" class="theme-box" data-theme="logement">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Logement</span><small>7 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#finances" class="theme-box" data-theme="finances">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Finances</span><small>6 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#alimentation" class="theme-box" data-theme="alimentation">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Alimentation</span><small>5 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#securite" class="theme-box" data-theme="securite">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Sécurité</span><small>3 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#sante" class="theme-box" data-theme="sante">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Santé</span><small>5 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#sociale" class="theme-box" data-theme="sociale">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Vie sociale</span><small>4 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#entraide" class="theme-box" data-theme="entraide">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Entraide</span><small>4 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#animaux" class="theme-box" data-theme="animaux">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Animaux</span><small>3 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#droits" class="theme-box" data-theme="droits">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Droits</span><small>4 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#transport" class="theme-box" data-theme="transport">
+        <div class="theme-dot"></div>
+        <div class="theme-box-text"><span>Transport</span><small>5 ressources</small></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════ 1. LOGEMENT ═══════ -->
+  <div class="category-section" id="logement">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-green-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2"><path d="M3 9.5L12 4l9 5.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+      </div>
+      <h2>Logement et habitation</h2>
+      <span class="count">7 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="logement">
+        <div class="card-dot" style="background: var(--accent-green);"></div>
+        <div class="card-body">
+          <h3>Office municipal d'habitation de Montréal (OMHM)</h3>
+          <p class="card-desc">Plus de 20 000 logements sociaux et abordables (HLM et supplément au loyer) pour personnes seules à faible revenu.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-872-6646</span>
+            <span class="card-tag scope montreal">Montréal</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="logement">
+        <div class="card-dot" style="background: var(--accent-green);"></div>
+        <div class="card-body">
+          <h3>Programme Allocation-logement (PAL)</h3>
+          <p class="card-desc">Aide financière mensuelle de 100 à 170 $/mois pour ménages à faible revenu. Personnes seules de 50 ans et plus admissibles.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">1-800-267-6299</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="logement">
+        <div class="card-dot" style="background: var(--accent-green);"></div>
+        <div class="card-body">
+          <h3>Fédération de l'Habitation Coopérative du Québec (FHCQ)</h3>
+          <p class="card-desc">Coopératives d'habitation offrant logements abordables et vie communautaire.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-843-6929</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 2. FINANCES ═══════ -->
+  <div class="category-section" id="finances">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-amber-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 9.5c0-1 1-2 4-2s4 1 4 2-1.5 2-4 2.5-4 1.5-4 2.5 1 2 4 2 4-1 4-2"/></svg>
+      </div>
+      <h2>Finances personnelles</h2>
+      <span class="count">6 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="finances">
+        <div class="card-dot" style="background: var(--accent-amber);"></div>
+        <div class="card-body">
+          <h3>ACEF de l'Est de Montréal</h3>
+          <p class="card-desc">Consultations budgétaires gratuites, aide aux dettes, défense des droits des consommateurs et locataires.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-257-6622</span>
+            <span class="card-tag scope montreal">Montréal Est</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="finances">
+        <div class="card-dot" style="background: var(--accent-amber);"></div>
+        <div class="card-body">
+          <h3>Crédit d'impôt pour solidarité — Revenu Québec</h3>
+          <p class="card-desc">Crédit remboursable mensuel pour personnes seules à faible revenu : TVQ, logement et taxe municipale.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">1-800-267-6299</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 3. ALIMENTATION ═══════ -->
+  <div class="category-section" id="alimentation">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-coral-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-coral)" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+      </div>
+      <h2>Alimentation</h2>
+      <span class="count">5 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="alimentation">
+        <div class="card-dot" style="background: var(--accent-coral);"></div>
+        <div class="card-body">
+          <h3>Moisson Montréal</h3>
+          <p class="card-desc">Plus grande banque alimentaire au Canada, approvisionne plus de 300 organismes sur l'île de Montréal.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-344-4494</span>
+            <span class="card-tag scope montreal">Montréal</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="alimentation">
+        <div class="card-dot" style="background: var(--accent-coral);"></div>
+        <div class="card-body">
+          <h3>Banques alimentaires du Québec (BAQ)</h3>
+          <p class="card-desc">33 membres Moisson desservant 1 400 organismes et 600 000 personnes par mois. Trouve la Moisson de ta région.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-344-0799</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 4. SÉCURITÉ ═══════ -->
+  <div class="category-section" id="securite">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-slate-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-slate)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h2>Sécurité à domicile</h2>
+      <span class="count">3 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="securite">
+        <div class="card-dot" style="background: var(--accent-slate);"></div>
+        <div class="card-body">
+          <h3>Services de maintien à domicile — CISSS/CIUSSS</h3>
+          <p class="card-desc">Évaluation des besoins, soins à domicile, aide quotidienne, orientation vers téléassistance.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">811</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 5. SANTÉ ═══════ -->
+  <div class="category-section" id="sante">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-rose-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-rose)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <h2>Santé et bien-être</h2>
+      <span class="count">5 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="sante">
+        <div class="card-dot" style="background: var(--accent-rose);"></div>
+        <div class="card-body">
+          <h3>Info-Santé / Info-Social 811</h3>
+          <p class="card-desc">Infirmière ou intervenant psychosocial 24/7. Orientation vers GMF, cliniques et groupes de soutien.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">811</span>
+            <span class="card-tag scope">Provincial — 24/7</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="sante">
+        <div class="card-dot" style="background: var(--accent-rose);"></div>
+        <div class="card-body">
+          <h3>Tel-Écoute</h3>
+          <p class="card-desc">Écoute active et bienveillante pour les personnes de 18 à 59 ans vivant solitude, détresse ou isolement.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">1-877-559-4095</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 6. VIE SOCIALE ═══════ -->
+  <div class="category-section" id="sociale">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-blue-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h2>Vie sociale et rencontres</h2>
+      <span class="count">4 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="sociale">
+        <div class="card-dot" style="background: var(--accent-blue);"></div>
+        <div class="card-body">
+          <h3>Together Club</h3>
+          <p class="card-desc">Club social : ateliers créatifs, sports, slow dating, jeux, sorties culturelles dans une ambiance bienveillante.</p>
+          <div class="card-meta">
+            <span class="card-tag">thetogether.club</span>
+            <span class="card-tag scope montreal">Montréal</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="sociale">
+        <div class="card-dot" style="background: var(--accent-blue);"></div>
+        <div class="card-body">
+          <h3>Réseau des bibliothèques publiques + BAnQ</h3>
+          <p class="card-desc">Clubs de lecture, conférences, ateliers numériques, animations. Lieux importants de socialisation gratuite.</p>
+          <div class="card-meta">
+            <span class="card-tag">banq.qc.ca</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 7. ENTRAIDE ═══════ -->
+  <div class="category-section" id="entraide">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-purple-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </div>
+      <h2>Associations d'entraide</h2>
+      <span class="count">4 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="entraide">
+        <div class="card-dot" style="background: var(--accent-purple);"></div>
+        <div class="card-body">
+          <h3>Les Petits Frères</h3>
+          <p class="card-desc">Accompagnement à long terme pour aînés isolés : visites de bénévoles, appels d'amitié, activités. Présent dans 12 régions.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">1-866-627-8653</span>
+            <span class="card-tag scope">12 régions du QC</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="entraide">
+        <div class="card-dot" style="background: var(--accent-purple);"></div>
+        <div class="card-body">
+          <h3>Centres d'action bénévole (CAB)</h3>
+          <p class="card-desc">Visites de courtoisie, accompagnement-transport, appels d'amitié. Présents dans chaque MRC du Québec.</p>
+          <div class="card-meta">
+            <span class="card-tag">Trouver via 211 ou fcabq.org</span>
+            <span class="card-tag scope">Chaque MRC</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 8. ANIMAUX ═══════ -->
+  <div class="category-section" id="animaux">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-warm-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-warm)" stroke-width="2"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><path d="M12 21c-4 0-7-2-7-5 0-2 2-4 4-5s4-1 6 0 4 3 4 5c0 3-3 5-7 5z"/></svg>
+      </div>
+      <h2>Animaux de compagnie</h2>
+      <span class="count">3 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="animaux">
+        <div class="card-dot" style="background: var(--accent-warm);"></div>
+        <div class="card-body">
+          <h3>SPCA de Montréal</h3>
+          <p class="card-desc">Refuge majeur : adoption chiens, chats, petits animaux. Processus encadré et soutien post-adoption.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-735-2711</span>
+            <span class="card-tag scope montreal">Montréal</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="animaux">
+        <div class="card-dot" style="background: var(--accent-warm);"></div>
+        <div class="card-body">
+          <h3>SPA de Québec</h3>
+          <p class="card-desc">Refuge offrant adoption de chiens, chats et autres animaux avec procédures encadrées.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">418-527-9104</span>
+            <span class="card-tag scope regional">Ville de Québec</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 9. DROITS ═══════ -->
+  <div class="category-section" id="droits">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-teal-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2"><path d="M12 1v4M4 8l3 3M20 8l-3 3"/><rect x="8" y="5" width="8" height="14" rx="1"/><path d="M10 19v2M14 19v2"/></svg>
+      </div>
+      <h2>Droits et protections juridiques</h2>
+      <span class="count">4 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="droits">
+        <div class="card-dot" style="background: var(--accent-teal);"></div>
+        <div class="card-body">
+          <h3>Centres de justice de proximité (CJP)</h3>
+          <p class="card-desc">Information juridique gratuite dans presque toutes les régions : mandats, testaments, logement, dettes.</p>
+          <div class="card-meta">
+            <span class="card-tag">justicedeproximite.qc.ca</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="droits">
+        <div class="card-dot" style="background: var(--accent-teal);"></div>
+        <div class="card-body">
+          <h3>Éducaloi</h3>
+          <p class="card-desc">Information juridique gratuite et vulgarisée : mandats de protection, testaments, droits des personnes seules.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">1-844-343-7529</span>
+            <span class="card-tag scope">Provincial</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 10. TRANSPORT ═══════ -->
+  <div class="category-section" id="transport">
+    <div class="category-header">
+      <div class="category-indicator" style="background: var(--accent-olive-light);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-olive)" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M6 20h12M8 16v4M16 16v4M7 12h0M17 12h0"/></svg>
+      </div>
+      <h2>Transport et mobilité</h2>
+      <span class="count">5 ressources</span>
+    </div>
+    <div class="card-grid">
+      <div class="resource-card" data-cat="transport">
+        <div class="card-dot" style="background: var(--accent-olive);"></div>
+        <div class="card-body">
+          <h3>STM — Métro et bus</h3>
+          <p class="card-desc">Réseau de transport en commun. 41 stations accessibles, tous les bus avec rampes. Gratuité 65 ans et plus (résidents).</p>
+          <div class="card-meta">
+            <span class="card-tag phone">514-786-4636</span>
+            <span class="card-tag scope montreal">Montréal</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="resource-card" data-cat="transport">
+        <div class="card-dot" style="background: var(--accent-olive);"></div>
+        <div class="card-body">
+          <h3>Communauto — Autopartage</h3>
+          <p class="card-desc">4 400 véhicules à Montréal en mode station ou FLEX. Tarifs abordables, sans les frais d'une voiture.</p>
+          <div class="card-meta">
+            <span class="card-tag phone">1-877-461-8777</span>
+            <span class="card-tag scope montreal">Montréal et environs</span>
+          </div>
+        </div>
+        <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <?php include '../components/boite-proposer-ressource.php'; ?>
+
+</div>
+
+<!-- ═══════ BACK TO TOP ═══════ -->
+<button class="back-to-top" id="backToTop" title="Remonter">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+// Back to top button
+const btn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
+});
+btn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

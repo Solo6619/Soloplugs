@@ -1,0 +1,2397 @@
+/* ============================================================
+   🔧 FIX OVERFLOW MOBILE - Empêcher le débordement horizontal
+   ============================================================ */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+*, *::before, *::after {
+  max-width: 100vw;
+}
+
+/* Fix spécifique pour les sections hero */
+.hero-ado,
+.hero-deuil,
+section[class*="hero"] {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix pour les images */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+
+/* ============================================================
+   🍔 FIX HAMBURGER MOBILE - PRIORITÉ MAXIMALE
+   ============================================================ */
+@media (max-width: 768px) {
+  nav.nav > button.hamburger,
+  .nav > .hamburger,
+  button.hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0.5rem !important;
+    z-index: 1001 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    order: 2 !important;
+  }
+  
+  nav.nav > button.hamburger span,
+  .nav > .hamburger span,
+  button.hamburger span {
+    display: block !important;
+    width: 24px !important;
+    height: 2px !important;
+    background: #2C3338 !important;
+    transition: all 0.3s ease !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ============================================================
+   💜 ADO-SOLO — CSS ENRICHI (Version avec échelle)
+   Requiert: theme-base.css chargé AVANT ce fichier
+   Atmosphère : Dynamique, complice, moderne, safe space
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES DU THÈME ADO-SOLO
+   ============================================================ */
+:root {
+  /* Palette principale - Violet */
+  --ado-purple: #9B59B6;
+  --ado-purple-light: #BB8FCE;
+  --ado-purple-dark: #7D3C98;
+  --ado-purple-pale: #F4ECF7;
+  --ado-purple-glow: rgba(155, 89, 182, 0.15);
+  
+  /* Palette accent - Orange énergique */
+  --ado-orange: #E67E22;
+  --ado-orange-light: #F39C12;
+  --ado-orange-dark: #D35400;
+  
+  /* Neutres */
+  --ado-cream: #FDFBF9;
+  --ado-text: #2C3338;
+  --ado-text-soft: #5A5A5A;
+  
+  /* Effets */
+  --ado-shadow-soft: 0 4px 20px rgba(155, 89, 182, 0.1);
+  --ado-shadow-hover: 0 12px 40px rgba(155, 89, 182, 0.2);
+  
+  /* Typographie */
+  --font-display: 'Poppins', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ============================================================
+   BODY SPÉCIFIQUE
+   ============================================================ */
+body {
+  background-color: var(--ado-cream);
+  color: var(--ado-text);
+  font-family: var(--font-body);
+  padding-top: 80px;
+}
+
+/* Motif de fond - dots */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(155, 89, 182, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ============================================================
+   HEADER - Bordure orange (harmonisée avec l'image hero)
+   ============================================================ */
+.nav {
+  border-bottom: 5px solid rgba(18, 16, 14, 0.5);
+}
+
+/* ============================================================
+   HERO SECTION — Ado-solo
+   ============================================================ */
+.hero-ado {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                    url('../images/ado-solo/hero-ado.jpg');
+  background-size: cover;
+  background-color: #1a1a1a;
+  background-position: center;  
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  text-align: center;
+  aspect-ratio: 16 / 9;
+  min-height: auto;
+}
+
+.hero-ado .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+   margin-top: -8rem;
+}
+
+.hero-ado .hero-title,
+.hero-ado .hero-subtitle,
+.hero-ado .hero-description {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center !important;
+  width: 100%;
+}
+
+.hero-ado .hero-badge {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.hero-ado .hero-icon {
+  display: none;
+}
+
+.hero-ado .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero-ado .hero-title .highlight {
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+.hero-ado .hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+}
+
+/* ============================================================
+   SECTION ALT BACKGROUND
+   ============================================================ */
+.section-alt {
+  background: #F5F5F5;
+}
+
+/* ============================================================
+   SECTION HEADER — Couleurs thème
+   ============================================================ */
+.section-header h2 {
+  color: var(--ado-text);
+  font-family: var(--font-display);
+}
+
+.section-header h2 .emoji {
+  font-size: 1.2em;
+}
+
+.section-header p {
+  color: var(--ado-text-soft);
+}
+
+/* ============================================================
+   INTRO BOX — "On te comprend"
+   ============================================================ */
+.intro-box {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: var(--ado-shadow-soft);
+  border-left: 5px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, var(--ado-purple-pale), transparent);
+  border-radius: 0 0 0 100%;
+}
+
+.intro-box p {
+  font-size: 1.1rem;
+  color: var(--ado-text-soft);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.intro-box .highlight-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ado-purple);
+  background: var(--ado-purple-pale);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   CARTES VISUELLES — Style Feed Social
+   Images + contenu pour attirer l'attention des ados
+   ============================================================ */
+.cards-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card-visual {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.card-visual:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(155, 89, 182, 0.2);
+}
+
+/* Image container */
+.card-visual-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.card-visual-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.card-visual:hover .card-visual-image img {
+  transform: scale(1.08);
+}
+
+/* Overlay gradient sur l'image */
+.card-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  transition: all 0.3s ease;
+}
+
+.card-visual:hover .card-visual-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(155, 89, 182, 0.1) 0%,
+    transparent 40%,
+    rgba(155, 89, 182, 0.15) 100%
+  );
+}
+
+/* Contenu de la carte */
+.card-visual-content {
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Tag/Badge de catégorie */
+.card-visual-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, var(--ado-purple) 0%, var(--ado-purple-dark) 100%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.card-visual-content h3 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ado-text);
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.card-visual:hover .card-visual-content h3 {
+  color: var(--ado-purple);
+}
+
+.card-visual-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--ado-text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Bordure animée au hover */
+.card-visual::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ado-purple), var(--ado-orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 10;
+}
+
+.card-visual:hover::before {
+  transform: scaleX(1);
+}
+
+/* Icône "play" subtile pour suggérer l'interaction */
+.card-visual-image::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239B59B6'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z'/%3E%3C/svg%3E");
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-visual:hover .card-visual-image::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Responsive - Mobile first */
+@media (max-width: 768px) {
+  .cards-visual-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0 0.5rem;
+  }
+  
+  .card-visual {
+    border-radius: 16px;
+  }
+  
+  .card-visual-image {
+    aspect-ratio: 16 / 10;
+  }
+  
+  .card-visual-content {
+    padding: 1.25rem;
+  }
+  
+  .card-visual-content h3 {
+    font-size: 1.05rem;
+  }
+  
+  .card-visual-content p {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-visual-grid {
+    gap: 1rem;
+  }
+  
+  .card-visual-image {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .card-visual-content {
+    padding: 1rem;
+  }
+  
+  .card-visual-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .card-visual-content h3 {
+    font-size: 1rem;
+  }
+  
+  .card-visual-image::after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ============================================================
+   CARTES — Style Ado (ancien, gardé pour compatibilité)
+   ============================================================ */
+.theme-card {
+  box-shadow: var(--ado-shadow-soft);
+  border: 2px solid transparent;
+}
+
+.theme-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ado-purple), var(--ado-orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.theme-card:hover {
+  border-color: var(--ado-purple-light);
+  box-shadow: var(--ado-shadow-hover);
+}
+
+.theme-card:hover::before {
+  transform: scaleX(1);
+}
+
+.card-icon {
+  background: linear-gradient(135deg, var(--ado-purple-pale), #FEF5E7);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-card:hover .card-icon {
+  transform: scale(1.1) rotate(-5deg);
+  background: linear-gradient(135deg, var(--ado-purple-light), var(--ado-orange-light));
+}
+
+.card-icon svg {
+  stroke: var(--ado-purple);
+}
+
+.theme-card:hover .card-icon svg {
+  stroke: white;
+}
+
+.theme-card h3 {
+  font-family: var(--font-display);
+  color: var(--ado-text);
+}
+
+.theme-card p {
+  color: var(--ado-text-soft);
+}
+
+.theme-card li::before {
+  color: var(--ado-purple);
+}
+
+/* ============================================================
+   BOX D'URGENCE
+   ============================================================ */
+.emergency-box {
+  background: linear-gradient(135deg, #FFF3CD 0%, #FFE8A1 100%);
+  border: 3px solid var(--ado-orange);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-box::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(230, 126, 34, 0.1);
+  border-radius: 50%;
+}
+
+.emergency-box h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ado-orange-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.emergency-box p {
+  font-size: 1.05rem;
+  color: var(--ado-text-soft);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.emergency-box .strong-text {
+  font-weight: 600;
+  color: var(--ado-text);
+}
+
+.emergency-numbers {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.emergency-numbers li {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(230, 126, 34, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emergency-numbers li:last-child {
+  border-bottom: none;
+}
+
+.emergency-numbers .label {
+  color: var(--ado-orange-dark);
+  min-width: 180px;
+}
+
+.emergency-numbers .number {
+  color: var(--ado-text);
+}
+
+.emergency-note {
+  font-style: italic;
+  color: var(--ado-text-soft);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px dashed rgba(230, 126, 34, 0.3);
+}
+
+/* ============================================================
+   TÉMOIGNAGES — Couleurs thème
+   ============================================================ */
+.testimonial-card::before {
+  color: var(--ado-purple-light);
+}
+
+.testimonial-icon {
+  background: linear-gradient(135deg, var(--ado-purple-pale), var(--ado-purple-light));
+}
+
+.testimonial-card h3 {
+  color: var(--ado-purple);
+}
+
+/* ============================================================
+   CTA SECTION — Style sombre
+   ============================================================ */
+.cta-section {
+  background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(155, 89, 182, 0.3);
+  border-radius: 50%;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(230, 126, 34, 0.2);
+  border-radius: 50%;
+}
+
+.btn-primary {
+  color: var(--ado-purple);
+}
+
+.btn-secondary:hover {
+  color: var(--ado-purple);
+}
+
+/* ============================================================
+   FOOTER — Couleurs thème
+   ============================================================ */
+#footer {
+  background: linear-gradient(180deg, var(--ado-text) 0%, #1a1d20 100%);
+}
+
+.footer-quote {
+  color: var(--ado-purple-light);
+}
+
+.footer-links a:hover {
+  color: var(--ado-purple-light);
+}
+
+.footer-social a:hover {
+  background: var(--ado-purple);
+}
+
+/* ============================================================
+   BACK TO TOP — Couleur thème
+   ============================================================ */
+.back-to-top {
+  background: linear-gradient(135deg, var(--ado-purple), var(--ado-purple-dark));
+  box-shadow: var(--ado-shadow-soft);
+}
+
+.back-to-top:hover {
+  box-shadow: var(--ado-shadow-hover);
+}
+
+/* ============================================================
+   BOUTON THÈMES — Couleur thème
+   ============================================================ */
+.themes-toggle {
+  border: 2px solid var(--ado-purple) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.themes-label {
+  color: var(--ado-purple) !important;
+}
+
+.hamburger-icon span {
+  background: var(--ado-purple) !important;
+}
+
+.themes-toggle:hover {
+  background: var(--ado-purple-pale) !important;
+}
+
+/* ============================================================
+   💭 BOUTON FLOTTANT "COMMENT TU TE SENS?"
+   ============================================================ */
+.feeling-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--ado-orange) 0%, var(--ado-orange-dark) 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(230, 126, 34, 0.35),
+              0 2px 8px rgba(230, 126, 34, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.feeling-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(230, 126, 34, 0.45),
+              0 4px 12px rgba(230, 126, 34, 0.25);
+}
+
+.feeling-btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.feeling-btn-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.feeling-btn-text {
+  font-family: 'Nunito', 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Pulsation douce */
+.feeling-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: feeling-pulse 3s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes feeling-pulse {
+  0%, 100% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+}
+
+/* ============================================================
+   MODAL OVERLAY
+   ============================================================ */
+.feeling-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.feeling-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================
+   MODAL ÉCHELLE
+   ============================================================ */
+.feeling-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  background: #FDF8F3;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10001;
+  overflow: hidden;
+}
+
+.feeling-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.feeling-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.feeling-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.feeling-modal-close svg {
+  width: 18px;
+  height: 18px;
+  stroke: #666;
+  stroke-width: 2;
+}
+
+.feeling-modal-content {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* ============================================================
+   ÉCHELLE - HEADER
+   ============================================================ */
+.echelle-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.echelle-header h2 {
+  font-family: 'Quicksand', 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #3D3D3D;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.echelle-header p {
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 400;
+}
+
+/* ============================================================
+   ÉCHELLE - VERTICALE
+   ============================================================ */
+.echelle-scale {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+/* Ligne de gradient verticale */
+.echelle-scale::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    #7CB342 0%,
+    #9CCC65 15%,
+    #CDDC39 28%,
+    #FFEB3B 42%,
+    #FFC107 56%,
+    #FF9800 70%,
+    #F44336 85%,
+    #D32F2F 100%
+  );
+  border-radius: 2px;
+}
+
+/* Items */
+.echelle-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.echelle-item:hover {
+  background: rgba(155, 89, 182, 0.08);
+}
+
+.echelle-item.selected {
+  background: rgba(155, 89, 182, 0.12);
+}
+
+/* Emoji container */
+.echelle-emoji-wrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.echelle-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.echelle-item:hover .echelle-emoji {
+  transform: scale(1.1);
+}
+
+.echelle-item.selected .echelle-emoji {
+  transform: scale(1.15);
+}
+
+/* Texte */
+.echelle-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4A4A4A;
+  line-height: 1.35;
+}
+
+.echelle-item.selected .echelle-text {
+  color: #2C3338;
+}
+
+/* ============================================================
+   ÉCHELLE - MESSAGE DYNAMIQUE
+   ============================================================ */
+.echelle-message {
+  padding: 1.2rem;
+  border-radius: 16px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-bottom: 0;
+}
+
+.echelle-message.visible {
+  opacity: 1;
+  max-height: 400px;
+  margin-bottom: 1rem;
+}
+
+/* Couleurs par zone */
+.echelle-message.zone-verte {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border-left: 4px solid #7CB342;
+}
+
+.echelle-message.zone-jaune {
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+  border-left: 4px solid #FFC107;
+}
+
+.echelle-message.zone-orange {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  border-left: 4px solid #FF9800;
+}
+
+.echelle-message.zone-rouge {
+  background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+  border-left: 4px solid #EF5350;
+}
+
+.message-text {
+  font-size: 0.92rem;
+  color: #3D3D3D;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.message-question {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2C3338;
+  margin-bottom: 0.8rem;
+}
+
+/* ============================================================
+   ÉCHELLE - BOUTONS DE RÉPONSE
+   ============================================================ */
+.response-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.btn-response {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(100, 100, 100, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5C554E;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-response:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--ado-purple);
+  color: #3D3D3D;
+  transform: translateY(-2px);
+}
+
+.btn-response.selected {
+  background: var(--ado-purple);
+  border-color: var(--ado-purple);
+  color: #FFF;
+}
+
+/* Variantes par zone */
+.zone-verte .btn-response:hover { border-color: #7CB342; }
+.zone-verte .btn-response.selected { background: #7CB342; border-color: #7CB342; }
+
+.zone-jaune .btn-response:hover { border-color: #F9A825; }
+.zone-jaune .btn-response.selected { background: #F9A825; border-color: #F9A825; }
+
+.zone-orange .btn-response:hover { border-color: #FF9800; }
+.zone-orange .btn-response.selected { background: #FF9800; border-color: #FF9800; }
+
+.zone-rouge .btn-response:hover { border-color: #EF5350; }
+.zone-rouge .btn-response.selected { background: #EF5350; border-color: #EF5350; }
+
+/* ============================================================
+   ÉCHELLE - MESSAGE URGENCE
+   ============================================================ */
+.echelle-urgence {
+  padding: 1rem;
+  background: rgba(239, 83, 80, 0.08);
+  border: 1px solid rgba(239, 83, 80, 0.2);
+  border-radius: 12px;
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.echelle-urgence.visible {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+.echelle-urgence .urgence-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.echelle-urgence .urgence-header svg {
+  width: 16px;
+  height: 16px;
+  stroke: #E53935;
+}
+
+.echelle-urgence .urgence-header span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #E53935;
+}
+
+.echelle-urgence .urgence-text {
+  font-size: 0.8rem;
+  color: #5C554E;
+  margin-bottom: 0.6rem;
+}
+
+.echelle-urgence .urgence-contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.echelle-urgence .urgence-contacts li {
+  padding: 0.2rem 0;
+  color: #4A4A4A;
+}
+
+.echelle-urgence .urgence-contacts strong {
+  color: #2C3338;
+}
+
+/* ============================================================
+   ÉCHELLE - BOUTON CONTINUER
+   ============================================================ */
+.echelle-cta {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.echelle-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.btn-continuer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(135deg, var(--ado-purple) 0%, var(--ado-purple-dark) 100%);
+  color: #FFF;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.btn-continuer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4);
+}
+
+.btn-continuer svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-continuer:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   BLOC PROMO RESSOURCES
+   (Déplacé depuis ado-solo.php inline styles)
+   ============================================================ */
+.section-ressources-promo {
+  padding: 3rem 0;
+  background: linear-gradient(180deg, #FEF0F2 0%, #FFFBFC 100%);
+}
+
+.ressources-promo {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(232, 93, 117, 0.1);
+  border: 2px solid #F5E6E9;
+}
+
+.ressources-promo-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ressources-promo h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.75rem;
+  color: #4A4A4A;
+  margin-bottom: 0.75rem;
+}
+
+.ressources-promo > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #6B6B6B;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+.ressources-promo-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ressources-promo-features span {
+  background: #FEF0F2;
+  color: #D14D65;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ressources-promo .btn-ressources {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #E85D75 0%, #D14D65 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 93, 117, 0.3);
+}
+
+.ressources-promo .btn-ressources:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(232, 93, 117, 0.4);
+}
+
+.ressources-promo .btn-ressources svg {
+  transition: transform 0.3s ease;
+}
+
+.ressources-promo .btn-ressources:hover svg {
+  transform: translateX(4px);
+}
+
+/* Urgence rapide sous le CTA */
+.urgence-rapide {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #F5E6E9;
+}
+
+.urgence-rapide p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #6B6B6B;
+  margin-bottom: 0.75rem;
+}
+
+.urgence-rapide-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.urgence-rapide-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF5F5;
+  color: #D32F2F;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #FFD4D4;
+  transition: all 0.2s ease;
+}
+
+.urgence-rapide-links a:hover {
+  background: #FFEBEE;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   ARTICLE FEATURED : "LA SOLITUDE QUI CONSTRUIT"
+   ============================================================ */
+.section-article-featured {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #F5F5F5 0%, #FDFBF9 100%);
+  position: relative;
+}
+
+.section-article-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ado-purple), var(--ado-orange), var(--ado-purple));
+}
+
+.article-featured {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 8px 40px rgba(155, 89, 182, 0.1);
+  border: 1px solid rgba(155, 89, 182, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Décoration coin */
+.article-featured::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, var(--ado-purple-pale), transparent);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.article-featured::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent, rgba(230, 126, 34, 0.1));
+  border-radius: 50%;
+}
+
+/* Header de l'article */
+.article-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.article-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--ado-purple-pale);
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ado-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.article-badge svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--ado-purple);
+}
+
+.article-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ado-text);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.article-intro {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ado-text-soft);
+}
+
+/* Contenu de l'article */
+.article-content {
+  position: relative;
+}
+
+.article-excerpt p,
+.article-full p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #4A4A4A;
+  margin-bottom: 1.25rem;
+}
+
+.article-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.article-excerpt em {
+  color: var(--ado-purple);
+  font-style: italic;
+}
+
+.article-answer {
+  font-size: 1.2rem !important;
+  color: var(--ado-purple) !important;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Contenu complet (caché par défaut) */
+.article-full {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin-top: 0;
+}
+
+.article-full.expanded {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(155, 89, 182, 0.15);
+}
+
+/* Citations dans l'article */
+.article-quote {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--ado-text);
+  text-align: center;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, var(--ado-purple-pale) 0%, #FEF5E7 100%);
+  border-radius: 16px;
+  position: relative;
+}
+
+.article-quote::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4rem;
+  color: var(--ado-purple-light);
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.article-quote.accent {
+  background: linear-gradient(135deg, var(--ado-purple) 0%, var(--ado-purple-dark) 100%);
+  color: white;
+}
+
+.article-quote.accent::before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Sous-titres dans l'article */
+.article-full h3 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ado-text);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--ado-purple);
+}
+
+/* Conclusion */
+.article-conclusion {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.article-conclusion p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 0.75rem;
+}
+
+.article-conclusion p:last-child {
+  margin-bottom: 0;
+  font-size: 1.15rem;
+  color: var(--ado-orange-light) !important;
+}
+
+.article-conclusion strong {
+  color: white;
+}
+
+/* Bouton Toggle */
+.article-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: transparent;
+  border: 2px solid var(--ado-purple);
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ado-purple);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.article-toggle:hover {
+  background: var(--ado-purple);
+  color: white;
+}
+
+.article-toggle:hover .toggle-icon {
+  stroke: white;
+}
+
+.toggle-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--ado-purple);
+  transition: all 0.3s ease;
+}
+
+.article-toggle.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Responsive article */
+@media (max-width: 768px) {
+  .article-featured {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .article-title {
+    font-size: 1.6rem;
+  }
+  
+  .article-quote {
+    font-size: 1.15rem;
+    padding: 1.5rem;
+  }
+  
+  .article-quote::before {
+    font-size: 3rem;
+    left: 1rem;
+  }
+  
+  .article-conclusion {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-article-featured {
+    padding: 3rem 0;
+  }
+  
+  .article-featured {
+    padding: 1.5rem;
+  }
+  
+  .article-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-excerpt p,
+  .article-full p {
+    font-size: 1rem;
+  }
+  
+  .article-full h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+  
+  .hero-ado {
+    min-height: 80vh;
+    padding: 4rem 1.5rem;
+  }
+  
+  .emergency-numbers li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .emergency-numbers .label {
+    min-width: auto;
+    font-size: 0.9rem;
+  }
+  
+  /* Bouton flottant mobile */
+  .feeling-btn {
+    bottom: 16px;
+    left: 16px;
+    padding: 12px 16px;
+  }
+  
+  .feeling-btn-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Modal mobile */
+  .feeling-modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .feeling-modal-content {
+    padding: 1.5rem;
+  }
+  
+  .echelle-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .echelle-emoji {
+    font-size: 2rem;
+  }
+  
+  .echelle-emoji-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .echelle-text {
+    font-size: 0.82rem;
+  }
+  
+  /* Ressources promo mobile */
+  .ressources-promo {
+    padding: 1.75rem;
+  }
+  
+  .ressources-promo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .ressources-promo-features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ressources-promo .btn-ressources {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .urgence-rapide-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-ado .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .intro-box,
+  .emergency-box {
+    padding: 1.5rem;
+  }
+  
+  /* Bouton flottant très petit écran */
+  .feeling-btn {
+    bottom: 12px;
+    left: 12px;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  
+  .feeling-btn-icon {
+    font-size: 1.2rem;
+  }
+  
+  .feeling-btn-text {
+    font-size: 0.8rem;
+  }
+  
+  /* Modal très petit écran */
+  .feeling-modal-content {
+    padding: 1.25rem;
+  }
+  
+  .echelle-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .response-buttons {
+    gap: 0.4rem;
+  }
+  
+  .btn-response {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITÉ
+   ============================================================ */
+.feeling-btn:focus-visible,
+.feeling-modal-close:focus-visible,
+.echelle-item:focus-visible,
+.btn-response:focus-visible,
+.btn-continuer:focus-visible {
+  outline: 3px solid var(--ado-purple);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feeling-btn::after {
+    animation: none;
+  }
+  
+  .feeling-modal,
+  .feeling-overlay,
+  .feeling-btn,
+  .echelle-message,
+  .echelle-cta {
+    transition: none;
+  }
+}
+/* ============================================================
+   ARTICLE TÉMOIGNAGE — SOLITUDE ET HARCÈLEMENT
+   VERSION HUMAINE - Style conversationnel, fond clair
+   À remplacer dans ado-solo.css (lignes 1796-2219)
+   ============================================================ */
+
+/* Section container - FOND CLAIR qui s'intègre à la page */
+.section-temoignage {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #2d2d44 0%, var(--ado-cream, #FDFBF9) 20%);
+  position: relative;
+}
+
+/* Header */
+.temoignage-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.temoignage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(155, 89, 182, 0.2);
+  border: 1px solid rgba(155, 89, 182, 0.4);
+  border-radius: 50px;
+  color: var(--ado-purple-light);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.temoignage-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.temoignage-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #FFFFFF;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Contenu principal - fond semi-transparent */
+.temoignage-content {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(155, 89, 182, 0.15);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Texte du témoignage au JE */
+.temoignage-texte {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--ado-purple);
+  margin-bottom: 3rem;
+}
+
+.temoignage-texte p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #4A4A4A;
+  margin-bottom: 1.25rem;
+}
+
+.temoignage-texte p:first-child {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.temoignage-texte p:last-child {
+  margin-bottom: 0;
+}
+
+/* Transition italique */
+.temoignage-transition {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin: 2rem 0;
+  border-top: 1px solid rgba(155, 89, 182, 0.2);
+  border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.temoignage-transition p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.temoignage-transition p:last-child {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.temoignage-transition strong {
+  color: var(--ado-orange);
+  font-weight: 600;
+}
+
+/* Bouton toggle */
+.temoignage-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto 0;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--ado-purple) 0%, var(--ado-purple-dark) 100%);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(155, 89, 182, 0.4);
+}
+
+.temoignage-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(155, 89, 182, 0.5);
+}
+
+.temoignage-toggle .toggle-icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  transition: transform 0.4s ease;
+}
+
+.temoignage-toggle.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Contenu déroulant */
+.temoignage-suite {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.6s ease;
+  margin-top: 0;
+}
+
+.temoignage-suite.expanded {
+  max-height: none;
+  opacity: 1;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+/* ============================================================
+   SECTIONS - Style fluide et humain
+   ============================================================ */
+.suite-section {
+  margin-bottom: 3rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.suite-section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.suite-section:last-child {
+  margin-bottom: 0;
+}
+
+.suite-section h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ado-purple);
+  margin-bottom: 1.5rem;
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+
+.suite-section p {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #4A4A4A;
+  margin-bottom: 1.25rem;
+}
+
+/* ============================================================
+   ILLUSTRATIONS
+   ============================================================ */
+.illustration-float-left {
+  float: left;
+  width: 42%;
+  max-width: 320px;
+  margin: 0.5rem 2rem 1.5rem 0;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.illustration-float-right {
+  float: right;
+  width: 42%;
+  max-width: 320px;
+  margin: 0.5rem 0 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Image parcours - Comment s'en sortir */
+.illustration-parcours {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================
+   TEXTE MIS EN VALEUR - Style doux
+   ============================================================ */
+.suite-section .emphase {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ado-purple);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, #F4ECF7 0%, #FEF9E7 100%);
+  border-radius: 20px;
+  clear: both;
+}
+
+/* ============================================================
+   PENSÉES NÉGATIVES - Style bulles
+   ============================================================ */
+.pensees-negatives {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background: transparent;
+  border: none;
+  clear: both;
+}
+
+.pensees-negatives span {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #666;
+  background: #f5f5f5;
+  padding: 0.75rem 1.25rem;
+  border-radius: 20px;
+  border-left: 3px solid #ccc;
+}
+
+/* ============================================================
+   DROITS - Style encourageant (vert doux)
+   ============================================================ */
+.droits {
+  padding: 2rem;
+  background: linear-gradient(135deg, #E8F5E9 0%, #FFF8E1 100%);
+  border-radius: 20px;
+  margin: 2rem 0;
+  border: none;
+  clear: both;
+}
+
+.droits p {
+  font-size: 1.1rem;
+  color: #2E7D32;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.droits p:last-child {
+  margin-bottom: 0;
+}
+
+.droits strong {
+  color: #1B5E20;
+}
+
+/* ============================================================
+   CONSEILS - Style cartes blanches simples
+   ============================================================ */
+.conseil {
+  display: block;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E8E8E8;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.conseil-numero {
+  display: none; /* On cache les numéros - trop scolaire */
+}
+
+.conseil-contenu h4 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ado-purple);
+  margin-bottom: 1rem;
+}
+
+.conseil-contenu p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.conseil-contenu p:last-child {
+  margin-bottom: 0;
+}
+
+/* Exemple de phrase à dire */
+.conseil-contenu .exemple {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  color: #666;
+  padding: 1rem 1.5rem;
+  background: #FAFAFA;
+  border-radius: 12px;
+  border-left: 3px solid var(--ado-purple);
+}
+
+/* ============================================================
+   MESSAGE FINAL - Style chaleureux
+   ============================================================ */
+.message-fin {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--ado-purple-pale, #F4ECF7) 0%, #E8F5E9 100%);
+  border-radius: 24px;
+  text-align: center;
+}
+
+.message-fin p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.message-fin p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--ado-purple);
+}
+
+/* ============================================================
+   ALERTE URGENCE - Style doux mais visible
+   ============================================================ */
+.alerte-urgence {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFEBEE 100%);
+  border: 2px solid #FFAB91;
+  border-radius: 20px;
+}
+
+.alerte-urgence p {
+  color: #5D4037;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.alerte-urgence p:last-child {
+  margin-bottom: 0;
+}
+
+.alerte-urgence strong {
+  color: #D84315;
+}
+
+.alerte-urgence .final {
+  font-size: 1.15rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.alerte-urgence .final strong {
+  color: #E65100;
+}
+
+/* ============================================================
+   RESPONSIVE — ARTICLE TÉMOIGNAGE
+   ============================================================ */
+@media (max-width: 768px) {
+  .section-temoignage {
+    padding: 3rem 0;
+  }
+  
+  .temoignage-content {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .temoignage-texte {
+    padding-left: 1.25rem;
+  }
+  
+  .temoignage-texte p {
+    font-size: 1rem;
+  }
+  
+  .temoignage-transition {
+    padding: 2rem 0.5rem;
+  }
+  
+  .temoignage-transition p {
+    font-size: 1.05rem;
+  }
+  
+  .temoignage-toggle {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .suite-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  /* Images en pleine largeur sur mobile */
+  .illustration-float-left,
+  .illustration-float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 1.5rem 0;
+  }
+  
+  .illustration-parcours {
+    border-radius: 12px;
+  }
+  
+  .conseil {
+    padding: 1.25rem;
+  }
+  
+  .pensees-negatives {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pensees-negatives span {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .temoignage-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .temoignage-title {
+    font-size: 1.3rem;
+  }
+  
+  .temoignage-texte {
+    padding-left: 1rem;
+    border-left-width: 2px;
+  }
+  
+  .suite-section {
+    margin-bottom: 2rem;
+  }
+  
+  .droits {
+    padding: 1.25rem 1rem;
+  }
+  
+  .alerte-urgence {
+    padding: 1.5rem 1rem;
+  }
+  
+  .message-fin {
+    padding: 1.5rem;
+  }
+}
+/* ============================================================
+   RESPONSIVE — ARTICLE TÉMOIGNAGE
+   ============================================================ */
+@media (max-width: 768px) {
+  .section-temoignage {
+    padding: 3rem 0;
+  }
+  
+  .temoignage-content {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .temoignage-texte {
+    padding-left: 1.25rem;
+  }
+  
+  .temoignage-texte p {
+    font-size: 1rem;
+  }
+  
+  .temoignage-transition {
+    padding: 2rem 0.5rem;
+  }
+  
+  .temoignage-transition p {
+    font-size: 1.05rem;
+  }
+  
+  .temoignage-toggle {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .suite-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  /* Images en pleine largeur sur mobile */
+  .illustration-float-left,
+  .illustration-float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 1.5rem 0;
+  }
+  
+  .conseil {
+    padding: 1.25rem;
+  }
+  
+  .pensees-negatives {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pensees-negatives span {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .temoignage-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .temoignage-title {
+    font-size: 1.3rem;
+  }
+  
+  .temoignage-texte {
+    padding-left: 1rem;
+    border-left-width: 2px;
+  }
+  
+  .suite-section {
+    margin-bottom: 2rem;
+  }
+  
+  .droits {
+    padding: 1.25rem 1rem;
+  }
+  
+  .alerte-urgence {
+    padding: 1.5rem 1rem;
+  }
+  
+  .message-fin {
+    padding: 1.5rem;
+  }
+}

@@ -4,988 +4,441 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magazine – Soloplugs</title>
-  <meta name="description" content="Articles, témoignages et ressources pour mieux vivre avec soi-même.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Un magazine pour celles et ceux qui vivent seuls — et qui veulent comprendre, apprécier et apprivoiser cette réalité.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   
-  <style>
-    /* ============================================================
-       RESET & BASE
-       ============================================================ */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+ 
+  <link rel="stylesheet" href="css/magazine.css">
+  
+  <link rel="stylesheet" href="css/components.css">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Lora', Georgia, serif;
-      background: #FFFDF9;
-      color: #2C3338;
-      line-height: 1.7;
-      font-size: 1.05rem;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ============================================================
-       NAVIGATION
-       ============================================================ */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1.2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 253, 249, 0.95);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 2px 30px rgba(0,0,0,0.06);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: #2C3338;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #5C554E;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #D4A574;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #D4A574;
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
-
-    /* ============================================================
-       HERO MAGAZINE
-       ============================================================ */
-    .magazine-hero {
-      padding-top: 80px;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(180deg, #F5EDE4 0%, #FFFDF9 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .magazine-hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 80%;
-      height: 200%;
-      background: radial-gradient(ellipse, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-text {
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 0.5rem 1.2rem;
-      background: rgba(212, 165, 116, 0.15);
-      border-radius: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #D4A574;
-      margin-bottom: 1.5rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 400;
-      color: #2C3338;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-text p {
-      font-size: 1.15rem;
-      color: #5C554E;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .hero-featured {
-      position: relative;
-      animation: fadeIn 1.2s ease-out 0.3s both;
-    }
-
-    .featured-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease;
-    }
-
-    .featured-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .featured-card img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-    }
-
-    .featured-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 3rem 2rem 2rem;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
-    }
-
-    .featured-tag {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background: #D4A574;
-      border-radius: 15px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #FFFFFF;
-      margin-bottom: 1rem;
-    }
-
-    .featured-overlay h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: #FFFFFF;
-      margin-bottom: 0.5rem;
-    }
-
-    .featured-overlay p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 1rem;
-    }
-
-    .featured-meta {
-      display: flex;
-      gap: 1.5rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-    }
-
-    /* ============================================================
-       SECTION LA VOIX
-       ============================================================ */
-    .voix-section {
-      padding: 6rem 2rem;
-      background: #FFFDF9;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-    }
-
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 400;
-      color: #2C3338;
-      margin-bottom: 1rem;
-    }
-
-    .section-header p {
-      font-size: 1.1rem;
-      color: #7A726A;
-      font-style: italic;
-    }
-
-    .ligne-decorative {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #D4A574, #E8C9A8);
-      margin: 1.5rem auto 0;
-      border-radius: 2px;
-    }
-
-    .voix-carousel {
-      display: flex;
-      gap: 2rem;
-      max-width: 1300px;
-      margin: 0 auto;
-      overflow-x: auto;
-      padding: 1rem 0.5rem 2rem;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .voix-carousel::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .voix-carousel::-webkit-scrollbar-track {
-      background: #F5EDE4;
-      border-radius: 3px;
-    }
-
-    .voix-carousel::-webkit-scrollbar-thumb {
-      background: #D4A574;
-      border-radius: 3px;
-    }
-
-    .voix-card-link {
-      flex: 0 0 380px;
-      scroll-snap-align: start;
-    }
-
-    .voix-card {
-      background: #FFFFFF;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-      transition: all 0.4s ease;
-      height: 100%;
-    }
-
-    .voix-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-    }
-
-    .voix-card-image {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-    }
-
-    .voix-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .voix-card:hover .voix-card-image img {
-      transform: scale(1.08);
-    }
-
-    .voix-card-content {
-      padding: 1.8rem;
-    }
-
-    .voix-card-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #2C3338;
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
-    }
-
-    .voix-card-content p {
-      font-size: 0.95rem;
-      color: #6B6560;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .voix-card-footer {
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      color: #A69080;
-    }
-
-    /* ============================================================
-       SECTION BD
-       ============================================================ */
-    .bd-section {
-      padding: 5rem 2rem;
-      background: linear-gradient(180deg, #FFFDF9 0%, #F5EDE4 100%);
-    }
-
-    .bd-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .bd-header {
-      margin-bottom: 3rem;
-    }
-
-    .bd-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 500;
-      color: #2C3338;
-      margin-bottom: 0.5rem;
-    }
-
-    .bd-subtitle {
-      font-size: 1rem;
-      color: #7A726A;
-      font-style: italic;
-    }
-
-    .bd-nav {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .bd-nav-btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background: #FFFFFF;
-      border: 2px solid #E8DDD4;
-      border-radius: 30px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #5C554E;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .bd-nav-btn:hover:not(.disabled) {
-      background: #D4A574;
-      border-color: #D4A574;
-      color: #FFFFFF;
-    }
-
-    .bd-nav-btn.disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-
-    .bd-episode {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: #A69080;
-      margin-bottom: 1.5rem;
-    }
-
-    .bd-slider-container {
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
-      background: #FFFFFF;
-    }
-
-    .bd-slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .bd-slide {
-      min-width: 100%;
-      padding: 1.5rem;
-    }
-
-    .bd-strip {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-    /* ============================================================
-       SECTION RUBRIQUES
-       ============================================================ */
-    .rubriques-section {
-      padding: 6rem 2rem 7rem;
-      background: #F5EDE4;
-    }
-
-    .rubriques-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .rubrique-card {
-      background: #FFFFFF;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-      transition: all 0.4s ease;
-      position: relative;
-    }
-
-    .rubrique-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 70px rgba(0,0,0,0.12);
-    }
-
-    .rubrique-image {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .rubrique-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .rubrique-card:hover .rubrique-image img {
-      transform: scale(1.08);
-    }
-
-    .rubrique-icon {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 50px;
-      height: 50px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .rubrique-content {
-      padding: 1.8rem;
-    }
-
-    .rubrique-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: #2C3338;
-      margin-bottom: 0.6rem;
-    }
-
-    .rubrique-content p {
-      font-size: 0.95rem;
-      color: #6B6560;
-      margin-bottom: 1rem;
-    }
-
-    .rubrique-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #D4A574;
-      transition: gap 0.3s ease;
-    }
-
-    .rubrique-card:hover .rubrique-link {
-      gap: 0.8rem;
-    }
-
-    /* ============================================================
-       NEWSLETTER
-       ============================================================ */
-    .newsletter-section {
-      padding: 6rem 2rem;
-      background: linear-gradient(180deg, #F5EDE4 0%, #EDE5DB 100%);
-      text-align: center;
-    }
-
-    .newsletter-container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .newsletter-container h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      color: #2C3338;
-      margin-bottom: 1rem;
-    }
-
-    .newsletter-container p {
-      font-size: 1.05rem;
-      color: #5C554E;
-      margin-bottom: 2rem;
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      padding: 1rem 1.5rem;
-      border: 2px solid #E8DDD4;
-      border-radius: 30px;
-      font-family: 'Lora', serif;
-      font-size: 1rem;
-      background: #FFFFFF;
-      transition: border-color 0.3s ease;
-    }
-
-    .newsletter-form input:focus {
-      outline: none;
-      border-color: #D4A574;
-    }
-
-    .newsletter-form button {
-      padding: 1rem 2rem;
-      background: #2C3338;
-      border: none;
-      border-radius: 30px;
-      color: #FFFFFF;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .newsletter-form button:hover {
-      background: #D4A574;
-    }
-
-    /* ============================================================
-       FOOTER
-       ============================================================ */
-    .footer {
-      padding: 4rem 2rem 2rem;
-      background: #2C3338;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: #FFFFFF;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: #D4A574;
-    }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 3rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
-    }
-
-    /* ============================================================
-       ANIMATIONS
-       ============================================================ */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
-    @media (max-width: 968px) {
-      .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-featured {
-        max-width: 500px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        padding: 1rem 1.5rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .voix-card-link {
-        flex: 0 0 320px;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .featured-card img {
-        height: 350px;
-      }
-    }
-  </style>
 </head>
 <body>
 
 <!-- ============================================================
      NAVIGATION
      ============================================================ -->
-<nav class="nav">
+<nav class="nav" id="nav">
   <a href="index.php" class="nav-logo">Soloplugs</a>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <ul class="nav-links">
-    <li><a href="index.php#themes">Les 7 thèmes</a></li>
-    <li><a href="index.php#compagnons">Compagnons IA</a></li>
+    <li class="has-submenu">
+      <a href="#" class="submenu-trigger" onclick="event.preventDefault(); this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open'); return false;">Les 7 thèmes <span class="submenu-arrow">›</span></a>
+      <ul class="submenu">
+        <li><a href="7_themes/vivre-solo.php">Vivre Solo</a></li>
+        <li><a href="7_themes/ado-solo.php">Ado Solo</a></li>
+        <li><a href="7_themes/parent-solo.php">Parent Solo</a></li>
+        <li><a href="7_themes/vieillir-solo.php">Vieillir Solo</a></li>
+        <li><a href="7_themes/voyages-solo.php">Voyages Solo</a></li>
+        <li><a href="7_themes/sorties-loisirs-rencontres.php">Sorties & Loisirs</a></li>
+        <li><a href="7_themes/divorces-separations-deces.php">Divorces & Séparations</a></li>
+      </ul>
+    </li>
+    
     <li><a href="apropos.php">À propos</a></li>
     <li><a href="magazine.php" class="active">Magazine</a></li>
   </ul>
 </nav>
 
 <!-- ============================================================
-     HERO MAGAZINE
+     HERO
      ============================================================ -->
-<section class="magazine-hero">
-  <div class="hero-container">
-    <div class="hero-text">
-      <span class="hero-badge">Magazine</span>
-      <h1>La voix de la solitude</h1>
-      <p>Articles, réflexions et découvertes pour mieux vivre avec soi-même. Un espace où la solitude devient source d'inspiration.</p>
+<section class="hero">
+  <div class="hero-background">
+    <img src="images/Magazine/images/Solitude_invisible_01.png" alt="Magazine Soloplugs">
+  </div>
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+    <div class="hero-label">
+      <span class="hero-label-line"></span>
+      <span class="hero-label-text">Magazine</span>
     </div>
     
-    <div class="hero-featured">
-      <a href="articles/solitude-invisible.php" class="featured-card">
-        <img src="images/Magazine/images/Solitude_invisible_01.png" alt="Article vedette">
-        <div class="featured-overlay">
-          <span class="featured-tag">À la une</span>
-          <h2>La solitude invisible</h2>
-          <p>On peut être entouré et se sentir profondément seul...</p>
-          <div class="featured-meta">
-            <span>5 min de lecture</span>
-            <span>6 déc 2025</span>
-          </div>
-        </div>
-      </a>
+    <h1 class="hero-title">
+      <span class="line"><span>La voix</span></span>
+      <span class="line"><span>de la</span></span>
+      <span class="line"><span><em>solitude</em></span></span>
+    </h1>
+    
+    <p class="hero-subtitle">
+      Un magazine pour celles et ceux qui vivent seuls ou se sentent seuls - et qui veulent comprendre, 
+      apprécier et apprivoiser cette réalité.
+    </p>
+  </div>
+  
+  <div class="scroll-indicator">
+    <span>Défiler</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION : ARTICLE FONDATEUR
+     ============================================================ -->
+<section class="article-fondateur">
+  <div class="fondateur-container">
+    <div class="fondateur-badge">
+      <span>Lire en premier</span>
+    </div>
+    
+    <h2 class="fondateur-title">Solitude et isolement : deux réalités que l'on confond trop souvent</h2>
+    
+    <p class="fondateur-subtitle">Pourquoi vivre seul n'est pas toujours souffrir — et pourquoi l'isolement fait si mal.</p>
+    
+    <button class="fondateur-toggle" id="fondateur-toggle" onclick="toggleFondateur()">
+      <span class="toggle-text">Lire l'article</span>
+      <span class="toggle-icon">↓</span>
+    </button>
+    
+<div class="fondateur-expandable" id="fondateur-expandable">
+      <div class="fondateur-content">
+        <p>En français, on utilise un seul mot pour parler de choses très différentes. On dit <em>solitude</em> pour évoquer le calme comme le manque, la paix comme la douleur, le choix comme la contrainte.</p>
+        
+        <p>À force, on finit par croire quelque chose de simple, mais faux : être seul voudrait forcément dire aller mal. Pourtant, de plus en plus de personnes vivent seules sans en souffrir, et beaucoup d'autres souffrent profondément sans être seules.</p>
+        
+        <p>La solitude, ce n’est pas l’absence des autres, c’est la rencontre avec soi-même. Parfois on la choisit, on l'accepte. Elle peut être douce, réparatrice, féconde. Mais elle peut aussi être inconfortable, voire douloureuse.</p>
+        
+        <p>L'isolement, lui, est autre chose. Ce n'est pas un état intérieur, mais une rupture de lien. On peut se sentir isolé en couple, en famille, au travail, même entouré. Ce n'est pas une question de quantité de relations, mais de ce qu'on y vit vraiment. Et cette souffrance-là ne disparaît pas simplement en « voyant du monde ».</p>
+        
+        <p>En anglais, on distingue clairement <em>solitude</em> et <em>loneliness</em>. En français, tout se mélange sous un seul mot. Soloplugs part de là : prendre le temps de nommer ce qu'on vit, pour mieux le comprendre.</p>
+        
+        <p>On peut aimer vivre seul à un moment de sa vie, et traverser une période d'isolement à un autre. Rien n'est figé. Comprendre la différence, ce n'est pas se ranger d'un côté ou de l'autre, c'est simplement se donner le droit de reconnaître ce que l'on vit.</p>
+      </div>
+      
+      <div class="fondateur-signature">
+        <p>Soloplugs existe pour rappeler que la solitude n'est pas un problème à corriger, mais que l'isolement mérite d'être reconnu et accompagné.</p>
+        <span>C'est sur cette distinction que repose toute la démarche du magazine.</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION LA VOIX
+     SECTION : LA VOIX (Articles avec images)
      ============================================================ -->
 <section class="voix-section">
-  <div class="section-header">
+  <div class="voix-header">
     <h2>La Voix</h2>
-    <p>Articles de fond empathiques sur la solitude</p>
-    <div class="ligne-decorative"></div>
+    
+    <div class="ligne-deco"></div>
   </div>
 
-  <div class="voix-carousel" id="voix-carousel">
+  <div class="voix-grid">
     <!-- Article 1 -->
-    <a href="articles/solitude-invisible.php" class="voix-card-link">
-      <article class="voix-card">
-        <div class="voix-card-image">
-          <img src="images/Magazine/images/Solitude_invisible_01.png" alt="La solitude invisible">
+    <a href="articles/solitude-invisible.php" class="voix-card" data-animate>
+      <div class="voix-card-image">
+        <img src="images/Magazine/images/Solitude_invisible_01.png" alt="La solitude invisible">
+      </div>
+      <div class="voix-card-content">
+        <h3>La solitude invisible</h3>
+        <p>On peut être entouré et se sentir profondément seul. La solitude ne dépend pas du fait d'être seul ou entouré.</p>
+        <div class="voix-card-footer">
+          <span>5 min</span>
+          <span>6 déc 2025</span>
         </div>
-        <div class="voix-card-content">
-          <h3>La solitude invisible</h3>
-          <p>On peut être entouré et se sentir profondément seul. La solitude ne dépend pas du fait d'être seul ou entouré.</p>
-          <div class="voix-card-footer">
-            <span>5 min</span>
-            <span>6 déc 2025</span>
-          </div>
-        </div>
-      </article>
+      </div>
     </a>
 
     <!-- Article 2 -->
-    <a href="articles/apprivoiser-le-silence.php" class="voix-card-link">
-      <article class="voix-card">
-        <div class="voix-card-image">
-          <img src="images/Magazine/images/mag1.jpg" alt="Apprivoiser le silence">
+    <a href="articles/apprivoiser-le-silence.php" class="voix-card" data-animate>
+      <div class="voix-card-image">
+        <img src="images/Magazine/images/mag_01.png" alt="Apprivoiser le silence">
+      </div>
+      <div class="voix-card-content">
+        <h3>Apprivoiser le silence du dimanche</h3>
+        <p>Le dimanche en solo peut être lourd. Comment transformer cette journée en temps choisi plutôt que subi.</p>
+        <div class="voix-card-footer">
+          <span>7 min</span>
+          <span>15 oct 2025</span>
         </div>
-        <div class="voix-card-content">
-          <h3>Apprivoiser le silence du dimanche</h3>
-          <p>Le dimanche en solo peut être lourd. Comment transformer cette journée en temps choisi plutôt que subi.</p>
-          <div class="voix-card-footer">
-            <span>7 min</span>
-            <span>15 oct 2025</span>
-          </div>
-        </div>
-      </article>
+      </div>
     </a>
 
     <!-- Article 3 -->
-    <a href="#" class="voix-card-link">
-      <article class="voix-card">
-        <div class="voix-card-image">
-          <img src="images/Magazine/images/Solitude_silencieuse_02.jpg" alt="Les petits matins">
+    <a href="articles/beaute-petits-matins.php" class="voix-card" data-animate>
+      <div class="voix-card-image">
+        <img src="images/Magazine/images/beaute_des_petits_matins.png" alt="Les petits matins">
+      </div>
+      <div class="voix-card-content">
+        <h3>La beauté des petits matins</h3>
+        <p>Ces heures calmes où le monde semble attendre. Un temps pour soi, avant le bruit du jour.</p>
+        <div class="voix-card-footer">
+          
         </div>
-        <div class="voix-card-content">
-          <h3>La beauté des petits matins</h3>
-          <p>Ces heures calmes où le monde semble attendre. Un temps pour soi, avant le bruit du jour.</p>
-          <div class="voix-card-footer">
-            <span>5 min</span>
-            <span>10 oct 2025</span>
-          </div>
-        </div>
-      </article>
+      </div>
     </a>
   </div>
 </section>
 
-<section class="bd-section" id="bd-section">
-  <div class="bd-container">
-    <div class="bd-header">
-      <h2 class="bd-title">Solo BD</h2>
-      <p class="bd-subtitle">La solitude en images</p>
-    </div>
+<!-- ============================================================
+     SECTION : LES 5 UNIVERS DU MAGAZINE
+     À coller dans magazine.php APRÈS la section "voix-section"
+     et AVANT la section "articles-fondamentaux"
+     ============================================================ -->
+<section class="univers-section">
+  <div class="univers-header">
+    <p class="overline">Explorer le magazine</p>
+    <h2>Cinq univers, <em>une même solitude</em></h2>
+    <p>Chaque univers explore une facette de la vie solo. Trouvez celui qui vous parle aujourd'hui.</p>
+    <div class="ligne-deco"></div>
+  </div>
+
+  <!-- Row 1 : 3 cartes -->
+  <div class="univers-grid">
+
+    <!-- 1. Bien-être & Quotidien -->
+    <a href="articles/univers-bienetre.php" class="univers-card univers-card-image" data-animate>
+      <img src="images/Magazine/univers/univers_01.png" alt="Bien-être & Quotidien">
+    </a>
+
+    <!-- 2. Relations & Connexions -->
+    <a href="articles/univers-relations.php" class="univers-card univers-card-image" data-animate>
+      <img src="images/Magazine/univers/univers_02.png" alt="Relations & Connexions">
+    </a>
+
+    <!-- 3. Créativité & Épanouissement -->
+    <a href="articles/univers-creativite.php" class="univers-card univers-card-image" data-animate>
+      <img src="images/Magazine/univers/univers_03.png" alt="Créativité & Épanouissement">
+    </a>
+
+  </div>
+
+  <!-- Row 2 : 2 cartes centrées -->
+  <div class="univers-grid-bottom">
+
+    <!-- 4. Autonomie & Liberté -->
+    <a href="articles/univers-autonomie.php" class="univers-card univers-card-image" data-animate>
+      <img src="images/Magazine/univers/univers_04.png" alt="Autonomie & Liberté">
+    </a>
+
+    <!-- 5. Philosophie & Long-terme -->
+    <a href="articles/univers-philosophie.php" class="univers-card univers-card-image" data-animate>
+      <img src="images/Magazine/univers/univers_05.png" alt="Philosophie & Long-terme">
+    </a>
+
+  </div>
+</section>
+     <!-- ============================================================
+     SECTION : À LIRE QUAND ON VIT SEUL
+      ======================================================= -->
+<section class="articles-fondamentaux">
+  <div class="section-intro">
+    <h2 class="section-intro-title">À lire quand on vit seul</h2>
+    <p class="section-intro-text">
+      Des articles de fond pour explorer, comprendre et habiter sa solitude. 
+      Pas de conseils rapides. Pas de solutions miracles. Juste des mots qui prennent le temps.
+    </p>
+  </div>
+
+  <div class="articles-list">
     
-    <div class="bd-episode" id="bd-episode">Épisode 1 / 1</div>
-    
-    <div class="bd-slider-container">
-      <div class="bd-slider" id="bd-slider">
-        <!-- Les séries seront injectées ici par JavaScript -->
+ <!-- Article 1 -->
+<a href="articles/solitude-dans-le-couple.php" class="article-item" data-animate>
+  <div class="article-item-image">
+    <img src="images/Magazine/articles/solitude-couple.png" alt="La solitude dans le couple">
+  </div>
+  
+  <h3 class="article-item-title">La solitude dans le couple</h3>
+  <p class="article-item-excerpt">
+    On associe souvent la solitude au fait d'être seul. Pourtant, certaines des solitudes 
+    les plus profondes se vivent à deux. Cette solitude-là est souvent difficile à nommer, 
+    parce qu'elle semble illégitime.
+  </p>
+  
+  <span class="article-item-link">Lire l'article →</span>
+</a>
+
+    <!-- Article 2 -->
+    <a href="articles/liberte-invisible.php" class="article-item" data-animate>
+      <div class="article-item-image">
+        <img src="images/Magazine/articles/liberte-invisible-hero.jpg" alt="La liberté invisible">
       </div>
-    </div>
+     
+      <h3 class="article-item-title">La liberté invisible : vivre seul au quotidien</h3>
+      <p class="article-item-excerpt">
+        Horaires, silence, désordre, liberté : ce que vivre seul permet vraiment. 
+        Personne pour commenter l'heure du dîner. Personne pour négocier la température du chauffage. 
+        Ce qui ressemble parfois à de l'isolement est souvent une forme rare de souveraineté sur son propre temps.
+      </p>
+      
+      <span class="article-item-link">Lire l'article →</span>
+    </a>
+
+    <!-- Article 3 -->
+    <a href="articles/etre-seul-sans-etre-isole.php" class="article-item" data-animate>
+      <div class="article-item-image">
+        <img src="images/Magazine/articles/etre-seul-sans-etre-isole.jpg" alt="Être seul sans être isolé">
+      </div>
+      
+      <h3 class="article-item-title">Être seul sans être isolé : comprendre la différence pour mieux la vivre</h3>
+      <p class="article-item-excerpt">
+        Un article de référence, clair, nuancé, concret. La solitude est un état. 
+        L'isolement est une privation. Confondre les deux, c'est se condamner à mal vivre l'un ou l'autre. 
+        Cet article pose les définitions, explore les zones grises, et propose des repères pour naviguer entre les deux.
+      </p>
+      
+      <span class="article-item-link">Lire l'article →</span>
+    </a>
+  
+    <!-- Article 4 : Hikikomori -->
+    <a href="articles/hikikomori.php" class="article-item" data-animate>
+      <div class="article-item-image">
+        <img src="images/Magazine/articles/hikikomori.png" alt="Les hikikomori">
+      </div>
+      
+      <h3 class="article-item-title">Les hikikomori : quand la solitude devient refuge</h3>
+      <p class="article-item-excerpt">
+        Ils sont plus d'un million au Japon à vivre reclus, coupés du monde. 
+        Qui sont-ils, que fuient-ils, et quel rapport entretiennent-ils avec la solitude ? 
+        Une plongée dans ce phénomène qui interroge la frontière entre refuge et prison.
+      </p>
+      
+      <span class="article-item-link">Lire l'article →</span>
+    </a>
     
-    <div class="bd-nav">
-      <button class="bd-nav-btn" id="bd-prev" onclick="slideBD(-1)">← Précédent</button>
-      <button class="bd-nav-btn" id="bd-next" onclick="slideBD(1)">Suivant →</button>
+    <!-- Article 5 -->
+    <a href="articles/recuperation-mentale.php" class="article-item" data-animate>
+      <div class="article-item-image">
+        <img src="images/Magazine/images/Solitude_silence_use_01.png" alt="Récupération mentale">
+      </div>
+     
+      <h3 class="article-item-title">Quand la solitude devient un espace de récupération mentale</h3>
+      <p class="article-item-excerpt">
+        Ce que la science et l'expérience disent vraiment. Les études en neurosciences montrent 
+        que le cerveau a besoin de périodes sans stimulation sociale pour consolider la mémoire, 
+        traiter les émotions, et restaurer l'attention. Vivre seul, c'est avoir accès à ce temps de récupération chaque jour.
+      </p>
+     
+      <span class="article-item-link">Lire l'article →</span>
+    </a>
+
+    
+   <!-- Article 6 -->
+<a href="articles/femmes-vieillissent-seules.php" class="article-item" data-animate>
+  <div class="article-item-image">
+    <img src="images/Magazine/articles/mag_03.png" alt="Les femmes vieillissent seules">
+  </div>
+  
+  <h3 class="article-item-title">Les femmes vieillissent plus souvent seules</h3>
+  <p class="article-item-excerpt">
+    Elles vivent plus longtemps, et donc plus longtemps seules. Derrière les statistiques 
+    se cache une réalité nuancée : entre fragilité réelle et force tranquille, le portrait 
+    d'une résilience féminine au grand âge.
+  </p>
+  
+  <span class="article-item-link">Lire l'article →</span>
+</a>
+
+    <!-- Article 7 : Vivre seul avec un animal -->
+    <a href="articles/vivre-seul-animal.php" class="article-item" data-animate>
+      <div class="article-item-image">
+        <img src="images/Magazine/articles/vivre-seul-animal.png" alt="Vivre seul avec un animal">
+      </div>
+      
+      <h3 class="article-item-title">Vivre seul avec un animal : plus qu'une compagnie</h3>
+      <p class="article-item-excerpt">
+        Ce que la présence d'un chat, d'un chien ou d'un autre compagnon change vraiment au quotidien. 
+        Une présence qui remplit le silence, structure les journées et ouvre parfois la porte vers les autres.
+      </p>
+      
+      <span class="article-item-link">Lire l'article →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION : SOLO BD
+     ============================================================ -->
+<section class="solo-bd-section">
+  <div class="solo-bd-container">
+    <span class="solo-bd-label">Solo BD</span>
+    <h2 class="solo-bd-title">Une pensée en images</h2>
+    
+    <img src="images/Magazine/solo-bd/bd01.png" alt="Solo BD - Être seul" class="solo-bd-image" data-animate>
+    
+    <p class="solo-bd-quote">
+      « Être seul, c'est aussi savourer la paix et le plaisir de sa propre compagnie. »
+    </p>
+    
+    <div class="solo-bd-nav">
+      <button class="solo-bd-nav-btn" onclick="prevBD()">← Précédent</button>
+      <button class="solo-bd-nav-btn" onclick="nextBD()">Suivant →</button>
     </div>
   </div>
 </section>
 
-<script>
-// ===========================================
-// CONFIGURATION DES SÉRIES BD 
-// ===========================================
-const bdSeries = [
-  { id: 'bd01', titre: 'Être seul' },
-  { id: 'bd02', titre: 'Série suivante' },
-   { id: 'bd03', titre: 'Série suivante' },
-  // Ajoute tes nouvelles séries ici :
-  // { id: 'bd03', titre: 'Titre' },
-];
 
-let currentBD = 0;
-
-function initBD() {
-  const slider = document.getElementById('bd-slider');
-  slider.innerHTML = '';
-  
-  bdSeries.forEach((serie) => {
-    const slide = document.createElement('div');
-    slide.className = 'bd-slide';
-    
-    const img = document.createElement('img');
-    img.src = `../images/Magazine/solo-bd/${serie.id}.png`;
-    img.alt = serie.titre;
-    img.className = 'bd-strip';
-    slide.appendChild(img);
-    
-    slider.appendChild(slide);
-  });
-  
-  updateBD();
-}
-
-function slideBD(direction) {
-  const newIndex = currentBD + direction;
-  if (newIndex >= 0 && newIndex < bdSeries.length) {
-    currentBD = newIndex;
-    updateBD();
-  }
-}
-
-function updateBD() {
-  const slider = document.getElementById('bd-slider');
-  slider.style.transform = `translateX(-${currentBD * 100}%)`;
-  
-  document.getElementById('bd-episode').textContent = 
-    `Épisode ${currentBD + 1} / ${bdSeries.length}`;
-  
-  document.getElementById('bd-prev').classList.toggle('disabled', currentBD === 0);
-  document.getElementById('bd-next').classList.toggle('disabled', currentBD === bdSeries.length - 1);
-}
-
-document.addEventListener('DOMContentLoaded', initBD);
-</script>
 
 <!-- ============================================================
-     SECTION RUBRIQUES
+     SECTION : RUBRIQUES
      ============================================================ -->
 <section class="rubriques-section">
-  <div class="section-header">
+  <div class="rubriques-header">
     <h2>Nos rubriques</h2>
     <p>Explorer, créer, savourer la vie en solo</p>
-    <div class="ligne-decorative"></div>
+    <div class="ligne-deco"></div>
   </div>
 
   <div class="rubriques-grid">
+    
     <!-- Solo à table -->
-    <a href="section-table.php" class="rubrique-card animate-on-scroll">
+    <a href="section-table.php" class="rubrique-card" data-animate>
       <div class="rubrique-image">
-        <img src="images/Magazine/images/recettes/riz_saute_solo.jpg" alt="Solo à table">
+        <img src="images/Magazine/recettes/riz_saute_solo.jpg" alt="Solo à table">
         <span class="rubrique-icon">🍽️</span>
       </div>
       <div class="rubrique-content">
         <h3>Solo à table</h3>
-        <p>Recettes gourmandes pour une personne</p>
+        <p>Recettes gourmandes pour une personne. Cuisiner seul, c'est aussi se faire plaisir.</p>
         <span class="rubrique-link">Découvrir →</span>
       </div>
     </a>
 
     <!-- Jeux en Solo -->
-    <a href="articles/jeux-solo.php" class="rubrique-card animate-on-scroll">
+    <a href="articles/jeux-solo.php" class="rubrique-card" data-animate>
       <div class="rubrique-image">
         <img src="images/Magazine/images/Jeux_en_solo_001.png" alt="Jeux en Solo">
         <span class="rubrique-icon">🎮</span>
       </div>
       <div class="rubrique-content">
         <h3>Jeux en Solo</h3>
-        <p>Solitaire, Sudoku, échecs et plus encore</p>
+        <p>Solitaire, Sudoku, échecs, jeux vidéo... pour le plaisir de jouer avec soi-même.</p>
         <span class="rubrique-link">Découvrir →</span>
       </div>
     </a>
 
     <!-- Hobbies & Créativité -->
-    <a href="section-hobbies.php" class="rubrique-card animate-on-scroll">
+    <a href="section-hobbies.php" class="rubrique-card" data-animate>
       <div class="rubrique-image">
         <img src="images/Magazine/images/Hobbies_001.png" alt="Hobbies">
         <span class="rubrique-icon">🎨</span>
       </div>
       <div class="rubrique-content">
         <h3>Hobbies & Créativité</h3>
-        <p>Dessin, musique, artisanat et plus encore</p>
+        <p>Dessin, musique, artisanat, écriture... des passions à cultiver en solo.</p>
         <span class="rubrique-link">Découvrir →</span>
       </div>
     </a>
 
     <!-- Lectures & Découvertes -->
-    <a href="lectures-decouvertes.php" class="rubrique-card animate-on-scroll">
+    <a href="lectures-decouvertes.php" class="rubrique-card" data-animate>
       <div class="rubrique-image">
         <img src="images/Magazine/images/Lectures_decouvertes_001.png" alt="Lectures">
         <span class="rubrique-icon">📚</span>
       </div>
       <div class="rubrique-content">
         <h3>Lectures & Découvertes</h3>
-        <p>Livres, films, podcasts</p>
+        <p>Livres, films, podcasts, séries... des recommandations pour les moments solo.</p>
         <span class="rubrique-link">Découvrir →</span>
       </div>
     </a>
+
   </div>
 </section>
 
@@ -993,9 +446,12 @@ document.addEventListener('DOMContentLoaded', initBD);
      NEWSLETTER
      ============================================================ -->
 <section class="newsletter-section">
-  <div class="newsletter-container animate-on-scroll">
-    <h2>Reçois la solitude positive</h2>
-    <p>Une fois par semaine, des réflexions, des découvertes et de l'inspiration directement dans ta boîte mail.</p>
+  <div class="newsletter-container">
+    <h2 class="newsletter-title">Recois la solitude positive</h2>
+    <p class="newsletter-subtitle">
+      Des réflexions, des découvertes et de l'inspiration directement dans ta boîte mail.
+    </p>
+    
     <form class="newsletter-form">
       <input type="email" placeholder="Ton adresse email" required>
       <button type="submit">S'inscrire</button>
@@ -1004,28 +460,49 @@ document.addEventListener('DOMContentLoaded', initBD);
 </section>
 
 <!-- ============================================================
-     FOOTER
+     BOUTON SCROLL-TO-TOP
      ============================================================ -->
-<footer class="footer">
-  <div class="footer-content">
-    <span class="footer-logo">Soloplugs</span>
-    <ul class="footer-links">
-      <li><a href="apropos.php">À propos</a></li>
-      <li><a href="magazine.php">Magazine</a></li>
-      <li><a href="ressources.php">Ressources</a></li>
-      <li><a href="contact.php">Contact</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Soloplugs — La voix de la solitude</p>
-  </div>
-</footer>
+<button class="scroll-to-top" id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
 
 <!-- ============================================================
      SCRIPTS
      ============================================================ -->
 <script>
-  // Animation au scroll
+  // Scroll-to-top functionality
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+  
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
+  // Toggle article fondateur
+  function toggleFondateur() {
+    const toggle = document.getElementById('fondateur-toggle');
+    const expandable = document.getElementById('fondateur-expandable');
+    const toggleText = toggle.querySelector('.toggle-text');
+    
+    toggle.classList.toggle('active');
+    expandable.classList.toggle('open');
+    
+    if (expandable.classList.contains('open')) {
+      toggleText.textContent = 'Réduire';
+    } else {
+      toggleText.textContent = 'Lire l\'article';
+    }
+  }
+
+  // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -1039,9 +516,57 @@ document.addEventListener('DOMContentLoaded', initBD);
     });
   }, observerOptions);
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  document.querySelectorAll('[data-animate]').forEach(el => {
     observer.observe(el);
   });
+
+  // Parallax effect on hero
+  window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero-background img');
+    const scrolled = window.pageYOffset;
+    if (hero && scrolled < window.innerHeight) {
+      hero.style.transform = `scale(${1.1 - scrolled * 0.0001}) translateY(${scrolled * 0.3}px)`;
+    }
+  });
+
+  // Solo BD navigation
+  let currentBD = 1;
+  const bdTotal = 3;
+  
+  function nextBD() {
+    if (currentBD < bdTotal) {
+      currentBD++;
+      updateBD();
+    }
+  }
+  
+  function prevBD() {
+    if (currentBD > 1) {
+      currentBD--;
+      updateBD();
+    }
+  }
+  
+  function updateBD() {
+    const img = document.querySelector('.solo-bd-image');
+    img.src = `images/Magazine/solo-bd/bd0${currentBD}.png`;
+  }
+  
+  // Nav background on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 100) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+  // Menu hamburger
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+  
+  window.toggleMenu = toggleMenu;
 </script>
 
 </body>

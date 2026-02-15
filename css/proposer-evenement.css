@@ -1,0 +1,332 @@
+/* ============================================================
+   SOLOPLUGS - FORMULAIRE "PROPOSER UN ÉVÉNEMENT"
+   Extrait depuis sorties-loisirs-rencontres.php — 2025-02-01
+   ============================================================ */
+
+/* Encadré principal */
+.proposer-evenement {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: rgba(255, 253, 249, 0.95);
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.proposer-evenement.expanded {
+  border-color: rgba(212, 165, 116, 0.5);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Header cliquable */
+.proposer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.proposer-header:hover {
+  background: rgba(212, 165, 116, 0.08);
+}
+
+.proposer-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.proposer-icon {
+  font-size: 1.4rem;
+}
+
+.proposer-titre {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  color: #2C3338;
+  margin: 0;
+}
+
+.proposer-toggle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 165, 116, 0.15);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.proposer-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: #D4A574;
+  stroke-width: 2;
+  fill: none;
+  transition: transform 0.3s ease;
+}
+
+.proposer-evenement.expanded .proposer-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Contenu expansible */
+.proposer-contenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.proposer-evenement.expanded .proposer-contenu {
+  max-height: 1500px !important;
+}
+
+.proposer-inner {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.proposer-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #5C554E;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* Formulaire */
+.proposer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5C554E;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  border-radius: 10px;
+  color: #2C3338;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #D4A574;
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #A9A29B;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C554E' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 2.5rem;
+}
+
+.form-group textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Bouton envoyer */
+.btn-proposer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 1.75rem;
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, #D4A574 0%, #C4956A 100%);
+  border: none;
+  border-radius: 30px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-proposer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 165, 116, 0.4);
+}
+
+.btn-proposer:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-proposer svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Note de bas */
+.proposer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(212, 165, 116, 0.15);
+}
+
+.proposer-note-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.proposer-note p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #7A726A;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Message de confirmation */
+.proposer-confirmation {
+  display: none;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.proposer-confirmation.visible {
+  display: block;
+  animation: fadeInUp 0.5s ease;
+}
+
+.proposer-confirmation-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.proposer-confirmation h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: #2C3338;
+  margin-bottom: 0.75rem;
+}
+
+.proposer-confirmation p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #5C554E;
+  line-height: 1.7;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(15px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Checkbox abonnement */
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1rem;
+  background: rgba(212, 165, 116, 0.08);
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: #D4A574;
+  cursor: pointer;
+}
+
+.form-checkbox label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #5C554E;
+  line-height: 1.5;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.form-checkbox label strong {
+  color: #2C3338;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .proposer-inner {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .proposer-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .proposer-titre {
+    font-size: 1rem;
+  }
+}

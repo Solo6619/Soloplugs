@@ -1,0 +1,21 @@
+BACKUP NOTE — 2025-02-01
+========================
+
+This backup contains copies of all files modified during the CSS restructuring.
+The following files were backed up before modifications:
+
+CSS FILES:
+- css/theme-base.css (backed up below)
+- css/components.css (not modified, kept as-is)
+
+PHP FILES MODIFIED:
+- components/head.php → backed up in components/head.php
+- 7_themes/separation-deuil.php → inline CSS extracted to css/separation-deuil-enhanced.css
+- 7_themes/vivre-solo.php → inline CSS extracted to css/vivre-solo.css (already existed, augmented)
+- 7_themes/sorties-loisirs-rencontres.php → inline CSS extracted to css/proposer-evenement.css
+- 7_themes/divorces-separations-deces.php → added theme-base.css to $additionalCSS
+
+CSS FILES MOVED TO _orphans/:
+17 orphan CSS files moved (not deleted)
+
+To restore: copy files from this directory back to their original locations.

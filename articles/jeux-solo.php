@@ -260,6 +260,7 @@ include '../components/head.php';
   }
 }
 </style>
+<link rel="stylesheet" href="../css/components.css">
 </head>
 
 <body>
