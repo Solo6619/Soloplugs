@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les amitiés comme famille choisie – Soloplugs Magazine</title>
   <meta name="description" content="Quand le couple n'est pas au centre, d'autres liens prennent une place immense — si on les laisse faire.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/articles.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/articles.css">
 
 </head>
 <body>

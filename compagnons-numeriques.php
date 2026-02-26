@@ -9,9 +9,8 @@ ini_set('display_errors', 1);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compagnons IA - Solo et Soli | Soloplugs</title>
   <meta name="description" content="Solo et Soli : deux intelligences artificielles bienveillantes pour accompagner ta solitude.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="css/fonts.css">
+<style>
     /* ============================================================
        RESET & BASE
        ============================================================ */

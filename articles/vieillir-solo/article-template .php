@@ -22,8 +22,8 @@
     include '../../components/head.php';
   ?>
   <!-- Typographies -->
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo $basePath; ?>css/components.css">
+  <link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="<?php echo $basePath; ?>css/components.css">
 </head>
 <body class="article-page">
 

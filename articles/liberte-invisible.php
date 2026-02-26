@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La liberté invisible : vivre seul au quotidien – Soloplugs Magazine</title>
   <meta name="description" content="Ce que personne ne montre de la vie en solo. Horaires, silence, désordre, liberté : ce que vivre seul permet vraiment.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     /* ============================================================
        TEMPLATE ARTICLE — FORMAT IMAGE ENCADRÉE
        Soloplugs Magazine

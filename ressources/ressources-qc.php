@@ -6,9 +6,8 @@
   <title>Ressources Québec — Soloplugs</title>
   <meta name="description" content="Choisis ta région pour accéder aux ressources adaptées à ta situation.">
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {

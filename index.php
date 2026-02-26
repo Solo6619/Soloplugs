@@ -9,8 +9,7 @@ ini_set('display_errors', 1);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soloplugs – La voix de la solitude</title>
   <meta name="description" content="Soloplugs accompagne les personnes dans leurs différentes expériences de solitude.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
- 
+  <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/components.css">
 </head>

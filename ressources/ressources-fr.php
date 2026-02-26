@@ -6,9 +6,8 @@
   <title>Ressources France — Soloplugs</title>
   <meta name="description" content="Trouve les ressources adaptées à ta situation en France. Écoute, soutien, aide — sans jugement.">
   <link rel="icon" type="image/png" href="images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {

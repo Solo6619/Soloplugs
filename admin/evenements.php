@@ -77,9 +77,8 @@ $type_noms = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin — Événements | Soloplugs</title>
   <meta name="robots" content="noindex, nofollow">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     * {
       margin: 0;
       padding: 0;

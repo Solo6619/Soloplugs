@@ -13,8 +13,7 @@
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- CSS chargés via $additionalCSS : theme-base.css, parent-solo-enhanced.css, components.css -->
+<!-- CSS chargés via $additionalCSS : theme-base.css, parent-solo-enhanced.css, components.css -->
 </head>
 <body>
 

@@ -664,7 +664,7 @@ $colorMap = [
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ressources Montréal — Ado Solo | SOLOPLUGS</title>
 <meta name="description" content="70+ ressources pour les adolescents de 12 à 17 ans à Montréal et au Québec. Lignes d'écoute, santé mentale, intimidation, identité, droits, dépendances.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/fonts.css">
 <style>
 :root {
   --warm-bg: #FBF8F4;

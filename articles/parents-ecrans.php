@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Et si le vrai problème d'écran, c'était le nôtre? – Soloplugs Magazine</title>
   <meta name="description" content="On s'inquiète du temps d'écran des enfants. Mais le vrai coupable scroll peut-être dans notre main.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     /* ============================================================
        TEMPLATE ARTICLE — FORMAT IMAGE ENCADRÉE
        Soloplugs Magazine

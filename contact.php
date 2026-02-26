@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact – Soloplugs</title>
   <meta name="description" content="Une question, une suggestion, un témoignage? Écris-nous. Soloplugs est à ton écoute.">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>

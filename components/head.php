@@ -6,10 +6,8 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="<?php echo $basePath ?? ''; ?>images/favicon.ico">
 
-<!-- Typographies Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Typographies locales (self-hosted, zero cookies) -->
+<link rel="stylesheet" href="<?php echo $basePath ?? ''; ?>css/fonts.css">
 
 <!-- CSS Global (header, footer, variables) -->
 <link rel="stylesheet" href="<?php echo $basePath ?? ''; ?>css/global.css">
