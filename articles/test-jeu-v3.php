@@ -6,11 +6,8 @@
   <title>Solitaire Klondike - Jeu en Solo | SOLOPLUGS</title>
   
   <!-- Polices SOLOPLUGS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS Version 3 FINALE -->
+  <link rel="stylesheet" href="../css/fonts.css">
+<!-- CSS Version 3 FINALE -->
   <link rel="stylesheet" href="../css/test-jeu-v3.css">
 </head>
 <body>

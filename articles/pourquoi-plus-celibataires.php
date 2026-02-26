@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pourquoi sommes-nous de plus en plus nombreux à vivre seuls ? – Soloplugs Magazine</title>
     <meta name="description" content="Les chiffres, les raisons profondes, et ce qu'ils disent vraiment de notre époque.">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/article.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/article.css">
 </head>
 <body>
 

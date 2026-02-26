@@ -13,9 +13,7 @@
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS chargés via $additionalCSS : components.css, vivre-solo.css -->
+<!-- CSS chargés via $additionalCSS : components.css, vivre-solo.css -->
 </head>
 <body>
 

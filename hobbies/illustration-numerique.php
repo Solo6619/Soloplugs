@@ -71,7 +71,7 @@
       <div class="hobby-videos">
         <div class="video-item">
           <iframe 
-            src="https://www.youtube.com/embed/VIDEO_ID_1" 
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" 
             title="Débuter l'illustration numérique"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -81,7 +81,7 @@
         </div>
         <div class="video-item">
           <iframe 
-            src="https://www.youtube.com/embed/VIDEO_ID_2" 
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" 
             title="Techniques numériques"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -91,7 +91,7 @@
         </div>
         <div class="video-item">
           <iframe 
-            src="https://www.youtube.com/embed/VIDEO_ID_3" 
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3" 
             title="Illustration avancée"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

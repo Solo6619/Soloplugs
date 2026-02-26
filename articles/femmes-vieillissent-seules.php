@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les femmes vieillissent plus souvent seules – Soloplugs Magazine</title>
   <meta name="description" content="Les femmes vivent plus longtemps, et donc plus longtemps seules. Derrière les statistiques se cache une réalité plus nuancée : entre fragilité réelle et force tranquille.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     /* ============================================================
        TEMPLATE ARTICLE — Soloplugs Magazine
        ============================================================ */

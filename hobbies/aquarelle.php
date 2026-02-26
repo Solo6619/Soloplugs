@@ -67,7 +67,7 @@
       <div class="hobby-videos">
         <div class="video-item">
           <iframe 
-            src="https://www.youtube.com/embed/VIDEO_ID_1" 
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" 
             title="Débuter l'aquarelle"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -77,7 +77,7 @@
         </div>
         <div class="video-item">
           <iframe 
-            src="https://www.youtube.com/embed/VIDEO_ID_2" 
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" 
             title="Techniques aquarelle"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -87,7 +87,7 @@
         </div>
         <div class="video-item">
           <iframe 
-            src="https://www.youtube.com/embed/VIDEO_ID_3" 
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3" 
             title="Aquarelle avancée"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

@@ -13,8 +13,7 @@
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques à ce thème -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- CSS chargés via $additionalCSS : divorces-separations-deces-enhanced.css, components.css -->
+<!-- CSS chargés via $additionalCSS : divorces-separations-deces-enhanced.css, components.css -->
 </head>
 <body>
 

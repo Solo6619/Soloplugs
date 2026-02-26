@@ -13,8 +13,7 @@
     include '../components/head.php';
   ?>
   <!-- Typographies spécifiques -->
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <!-- CSS chargés via $additionalCSS : theme-base.css, vieillir-solo-enhanced.css, components.css -->
+<!-- CSS chargés via $additionalCSS : theme-base.css, vieillir-solo-enhanced.css, components.css -->
 </head>
 <body>
 

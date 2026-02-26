@@ -37,6 +37,7 @@ $basePath = $basePath ?? '';
       <a href="<?php echo $basePath; ?>magazine.php">Magazine</a>
       <a href="<?php echo $basePath; ?>ressources.php">Ressources</a>
       <a href="<?php echo $basePath; ?>apropos.php">À propos</a>
+      <a href="<?php echo $basePath; ?>vie-privee.php">Vie privée</a>
     </nav>
     
     <!-- Icônes réseaux sociaux -->
@@ -65,6 +66,7 @@ $basePath = $basePath ?? '';
     
     <!-- Copyright -->
     <p class="footer-copy">© <?php echo date('Y'); ?> Soloplugs — La voix de la solitude. Tous droits réservés.</p>
+    <p class="footer-privacy">Ce site ne dépose aucun cookie et ne transmet aucune donnée personnelle à des tiers.</p>
     
   </div>
 </footer>

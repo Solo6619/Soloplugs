@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apprendre à être bien avec soi quand personne ne regarde – Soloplugs Magazine</title>
   <meta name="description" content="Pourquoi la solitude révèle ce que la vie sociale cache. Quand on vit seul, il n'y a plus de témoin pour valider nos choix.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link rel="stylesheet" href="../css/fonts.css">
+<style>
     /* ============================================================
        TEMPLATE ARTICLE — Soloplugs Magazine
        ============================================================ */
